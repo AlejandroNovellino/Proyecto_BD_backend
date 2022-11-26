@@ -346,11 +346,12 @@ create table Color(
 	constraint PK_Color primary key (COL_Clave)
 );
 
-/*Paginas de la 12 a la 20--------------------------------------------------------------------------------------*/
+/*Paginas de la 12 a la 20---------------------------------------------------------------------------------------*/
 
 create	table Tipo_Medicamento(
 	TM_Clave	numeric(10) NOT NULL UNIQUE,
 	TM_Nombre	varchar(20) NOT NULL,
+	/*Clave primaria*/
 	constraint PK_tipoMedicamento primary key(TM_Clave)
 
 );
@@ -358,9 +359,11 @@ create	table Tipo_Medicamento(
 create	table Medicamento(
 	M_Codigo			numeric(10) NOT NULL UNIQUE,
 	M_Nombre			varchar(20) NOT NULL,
-	M_Descripcion		varchar(45),
+	M_Descripcion	varchar(45),
 	FK_Tipo_Medicamento	numeric(10) NOT NULL,
+	/*Clave primaria*/
 	constraint PK_Medicamento primary key(M_Codigo),
+	/*Clave foranea*/
 	constraint fk_Tipo_Medicamento foreign key (FK_Tipo_Medicamento) references Tipo_Medicamento(TM_Clave)
 
 );
@@ -368,35 +371,40 @@ create	table Medicamento(
 create	table Categoria_Carrera(
 	CA_Clave			numeric(10) NOT NULL UNIQUE,
 	CA_Nombre			varchar(20) NOT NULL,
-	
+	/*Clave primaria*/
 	constraint PK_Categoria_Carrera primary key(CA_Clave),
+	/*Clave foranea*/
 	constraint Check_Categoria_Nombre Check (CA_Nombre IN ('Normal','Clasico','Copa')) 
 );
 
 create	table Tipo_Carrera(
-	TC_Clave				numeric(10) NOT NULL UNIQUE,
-	TC_Nombre				varchar(20) NOT NULL,
-	TC_Sexo					varchar(45),
+	TC_Clave						numeric(10) NOT NULL UNIQUE,
+	TC_Nombre						varchar(20) NOT NULL,
+	TC_Sexo							varchar(45),
 	TC_Edad_Minima			Numeric(10),
 	TC_Edad_Maxima			Numeric(10),
-	TC_Victoria_Minima		Numeric(10),
-	TC_Victoria_Maxima		Numeric(10),
+	TC_Victoria_Minima	Numeric(10),
+	TC_Victoria_Maxima	Numeric(10),
+	/*Clave primaria*/
 	constraint PK_Tipo_Carrera primary key(TC_Clave),
+	/*Checks*/
 	constraint Check_Categoria_Genero Check (TC_Sexo IN ('Y','C')) 
 );
 
 create	table Carrera(
-	C_Clave				numeric(10) NOT NULL UNIQUE,
-	C_Nombre				varchar(45) ,
-	C_Fecha					date NOT NULL,
-	C_Hora					time NOT NULL,
-	C_Num_Llamado			Numeric(10) NOT NULL,
+	C_Clave								numeric(10) NOT NULL UNIQUE,
+	C_Nombre							varchar(45) ,
+	C_Fecha								date NOT NULL,
+	C_Hora								time NOT NULL,
+	C_Num_Llamado					Numeric(10) NOT NULL,
 	C_Pull_Dinero_Total		Numeric(10),
-	C_Distancia				Numeric(10) NOT NULL,
-	C_Comentario			varchar(100),
-	FK_Tipo_Carrera			numeric(10) NOT NULL,
+	C_Distancia						Numeric(10) NOT NULL,
+	C_Comentario					varchar(100),
+	FK_Tipo_Carrera				numeric(10) NOT NULL,
 	FK_Categoria_Carrera	numeric(10) NOT NULL,
+	/*Clave primaria*/
 	constraint PK_Carrera primary key(C_Clave),
+	/*Claves foraneas*/
 	constraint fk_Tipo_Carrera foreign key (FK_Tipo_Carrera) references Tipo_Carrera(TC_Clave),
 	constraint fk_Categoria_Carrera foreign key (FK_Categoria_Carrera) references Categoria_Carrera(CA_Clave)
 );
@@ -404,41 +412,259 @@ create	table Carrera(
 create	table Porcentaje_Dividendo(
 	PD_Clave			numeric(10) NOT NULL UNIQUE,
 	PD_Puesto			numeric(3) NOT NULL,
-	PD_Porcentaje		varchar(45)	NOT NULL,
+	PD_Porcentaje	varchar(45)	NOT NULL,
+	/*Clave primaria*/
 	constraint PK_Porcentaje_Dividendo primary key(PD_Clave)
-	
 );
+
 create	table Carrera_Porcentaje_Dividendo(
-	CPD_Clave				numeric(10) NOT NULL UNIQUE,
-	CPD_Monto_Otorgar		decimal		NOT NULL,
-	FK_Carrera				numeric(10) NOT NULL,
+	CPD_Clave								numeric(10) NOT NULL UNIQUE,
+	CPD_Monto_Otorgar				decimal		NOT NULL,
+	FK_Carrera							numeric(10) NOT NULL,
 	FK_Porcentaje_Dividendo	numeric(10) NOT NULL,
+	/*Clave primaria*/
 	constraint PK_Carrera_Percentaje_Dividendo  primary key (CPD_Clave),
+	/*Claves foraneas*/
 	constraint fk_Carrera foreign key (FK_Carrera) references Carrera(C_Clave),
 	constraint fk_Porcentaje_Dividendo foreign key (FK_Porcentaje_Dividendo) references Porcentaje_Dividendo(PD_Clave)
 );
 
-alter  table Carrera_Porcentaje_Dividendo ADD constraint PK_Carrera_Percentaje_Dividendo  primary key (CPD_Clave);
-
 create	table Causa_Retiro(
 	CR_Clave				numeric(10) NOT NULL UNIQUE,
-	CR_Descripcion			varchar(45)	NOT NULL,
+	CR_Descripcion	varchar(45)	NOT NULL,
 	CR_Nombre				varchar(45) NOT NULL,
-	CR_Duracion				numeric(10) NOT NULL,
+	CR_Duracion			numeric(10) NOT NULL,
+	/*Clave primaria*/
 	constraint PK_Causa_Retiro  primary key (CR_Clave)
-	
 );
 
 create table Implemento(
 	I_Codigo				numeric(10) NOT NULL UNIQUE,
 	I_Nombre				varchar(45)	NOT NULL,
-	I_Diminutivo			varchar(3) NOT NULL,
+	I_Diminutivo		varchar(3) NOT NULL,
+	/*Clave primaria*/
 	constraint PK_Implemento  primary key (I_Codigo),
+	/*Checks*/
 	constraint Check_Implemento_Nombre Check (I_Nombre IN ('Gringola','Lengua ','Amarrada
-','Bozal','Bozal Lengüero','Bozal Blanco','Nose Band
-','Martingala ','Preta','Guayo','Vendas','Orejas Tapadas','Látigo','Casquillos ','Correctivos','Casquillos de Hierro') ),
+		','Bozal','Bozal Lengüero','Bozal Blanco','Nose Band',
+		'Martingala ','Preta','Guayo','Vendas','Orejas Tapadas','Látigo','Casquillos ','Correctivos','Casquillos de Hierro') ),
 	constraint Check_Implemento_Diminutivo Check (I_Diminutivo IN ('CC','CH','LA','BZ','BL','BB','M','P','G','V','OT','L') )
-)
+);
 
+/*Paginas de la 21 en adelante --------------------------------------------------------------------------------------*/
 
+create table Usuario(
+	U_Clave 					Numeric(10),
+	U_Correo_E 				varchar(45) NOT NULL UNIQUE,
+	U_Password 				varchar(16) NOT NULL,
+	U_Fecha_Registro 	date not null,
+	FK_Entrenador 		Numeric(10),
+	FK_Propietario 		Numeric(10),
+	FK_Jinete 				Numeric(10),
+	FK_Veterinario 		Numeric(10),
+	FK_Aficionado 		Numeric(10),
+	FK_Tipo_Usuario 	Numeric(10) not null,
+	/*Clave primaria*/
+	constraint PK_Usuario 		primary key(U_Clave),
+	/*Claves foraneas*/
+	constraint FK_Entrenador 		foreign key(FK_Entrenador) references Entrenador(P_Cedula),
+	constraint FK_Propietario 	foreign key(FK_Propietario) references Propietario(P_Cedula),
+	constraint FK_Jinete 				foreign key(FK_Jinete) references Jinete(P_Cedula),
+	constraint FK_Veterinario 	foreign key(FK_Veterinario) references Veterinario(P_Cedula),
+	constraint FK_Aficionado 		foreign key(FK_Aficionado) references Aficionado(P_Cedula),
+	constraint FK_Tipo_Usuario 	foreign key(FK_Tipo-Usuario) references Tipo_Usuario(TU_Clave)
+);
 
+create table Accion_Usuario(
+	AU_Clave										Numeric(10),
+	AU_Fecha_Hora								SmallDateTime not null unique,
+	AU_Clave_Elemento_Afectado	Numeric(10) not null,
+	FK_Usuario									Numeric(10) not null,
+	FK_Accion										Numeric(10) not null,
+	/*Clave primaria*/
+	constraint PK_Accion_Usuario	primary key(AU_Clave),
+	/*Claves foraneas*/
+	constraint FK_Usuario		foreign key(FK_Usuario) references Usuario(U_Clave),
+	constraint FK_Accion		foreign key(FK_Accion) references Accion(ACC_Clave),
+);
+
+create table Accion_Tipo_Usuario(
+	ATU_Clave				Numeric(10),
+	FK_TipoUsuario	Numeric(10) not null,
+	FK_Accion				Numeric(10) not null,
+	/*Clave primaria*/
+	constraint PK_Accion_Tipo_Usuario primary key(ATU_Clave),
+	/*Claves foraneas*/
+	constraint FK_Tipo_Usuario foreign key(FK_TipoUsuario) references Tipo_Usuario(TU_Clave),
+	constraint FK_Accion foreign key(FK_Accion) references Accion(ACC_Clave),
+);
+
+create table Accion(
+	ACC_Clave			Numeric(10),
+	ACC_Objetivo	Numeric(10) not null unique,
+	/*Clave primaria*/
+	constraint PK_Accion primary key(ACC_Clave),
+);
+
+create table Pregunta_Seguridad(
+	PS_Clave		Numeric(10),
+	PS_Titulo		Varchar(45) not null,
+	/*Clave primaria*/
+	constraint PK_Pregunta_Seguridad primary key(PS_Clave),
+);
+
+create table Pregunta_Usuario(
+	PU_Clave							Numeric(10),
+	PU_Respuesta					Varchar(45) not null,
+	FK_Usuario						Numeric(10) not null,
+	FK_Pregunta_Seguridad	Numeric(10) not null,
+	/*Clave primaria*/
+	constraint PK_Pregunta_Usuario 	primary key(PU_Clave),
+	/*Claves foraneas*/
+	constraint FK_Usuario			foreign key(FK_Usuario) references Usuario(U_Clave),
+	constraint FK_Pregunta_Seguridad	foreign key(FK_Pregunta_Seguridad) references Pregunta_Seguridad(PS_Clave),
+);
+
+create table Tipo_Usuario(
+	TU_Clave		Numeric(10),
+	TU_Nombre		Varchar(45) not null,
+	/*Clave primaria*/
+	constraint PK_Tipo_Usuario primary key(TU_Clave),
+);
+
+create Table Apuesta(
+	APU_Clave				Numeric(10),
+	APU_Saldo_Total	Decimal(10,2) not null,
+	APU_Combinacion	Numeric(5),
+	APU_Fecha_Hora	SmallDateTime not null,
+	FK_TipoApuesta	Numeric(10) not null,
+	FK_Usuario			Numeric(10),
+	FK_Aficionado			Numeric(10),
+	/*Clave primaria*/
+	constraint PK_Apuesta 		primary key(APU_Clave),
+	/*Claves foraneas*/
+	constraint FK_TipoApuesta foreign key(FK_TipoApuesta) references Tipo_Apuesta(TA_Clave),
+	constraint FK_Usuario 		foreign key(FK_Usuario) references Usuario(U_Clave),
+	constraint FK_Aficionado	foreign key(FK_Aficionado) references Aficionado(P_Clave),
+);
+
+create Table Tipo_Apuesta(
+	TA_Clave													Numeric(10),
+	TA_Nombre													Varchar(20) not null,
+	TA_Precio													Decimal(6,2) not null,
+	TA_Saldo_Minimo										Decimal(6,2),
+	TA_Precio_Jugada_Adicional				Numeric(10,2),
+	TA_Cant_Caballo_Minimo_Carrera		Numeric(3),
+	TA_Num_Ejemplar_Minimo_Necesario	Numeric(3),
+	/*Clave primaria*/
+	constraint PK_Tipo_Apuesta primary key(TA_Clave),
+);
+
+create table Detalle_Apuesta(
+	DA_Clave									Numeric(10),
+	DA_Orden_Llegada_Ejemplar	Numeric(2) not null,
+	FK_Apuesta								Numeric(10) not null,
+	FK_Inscripcion						Numeric(10) not null unique,
+	/*Clave primaria*/	
+	constraint PK_Detalle_Apuesta	primary key(DA_Clave),
+	/*Claves foraneas*/
+	constraint FK_Apuesta foreign key(FK_Apuesta) references Apuesta(APU_Clave),
+	constraint FK_Inscripcion foreign key(FK_Inscripcion) references Inscripcion(INS_Clave),
+);	
+
+create table Aficionado(
+	P_Cedula						Numeric(10),
+	P_Primer_Nombre			Varchar(20) not null,
+	P_Segundo_Nombre		Varchar(20),
+	P_Primer_Apellido		Varchar(20) not null,
+	P_Segundo_Apellido	Varchar(20),
+	P_Sexo							Char(1) not null,
+	P_Direccion					Varchar(50) not null,
+	AF_Profesion				Varchar(30),
+	FK_Lugar						Numeric(10) not null,
+	/*Clave primaria*/
+	constraint PK_Aficionado	primary key(P_Cedula),
+	/*Claves foraneas*/
+	constraint FK_Lugar 		foreign key(FK_Lugar) references Lugar(L_Clave),
+	constraint Check_Sexo check(P_Sexo in('M','F')),
+);
+
+create table Entrenador(
+	P_Cedula						Numeric(10),
+	P_Primer_Nombre			Varchar(20) not null,
+	P_Segundo_Nombre		Varchar(20),
+	P_Primer_Apellido		Varchar(20) not null,
+	P_Segundo_Apellido	Varchar(20),
+	P_Sexo							Char(1) not null,
+	P_Direccion					Varchar(50) not null,
+	ENT_Fecha_Ing_Hipo	Date not null,
+	FK_Lugar						Numeric(10) not null,
+	/*Clave primaria*/
+	constraint PK_Entrenador	primary key(P_Cedula),
+	/*Claves foraneas*/
+	constraint FK_Lugar foreign key(FK_Lugar) references Lugar(L_Clave),
+	constraint Check_Sexo check(P_Sexo in('M','F')),
+);
+
+create table Veterinario(
+	P_Cedula							Numeric(10),
+	P_Primer_Nombre				Varchar(20) not null,
+	P_Segundo_Nombre			Varchar(20),
+	P_Primer_Apellido			Varchar(20) not null,
+	P_Segundo_Apellido		Varchar(20),
+	P_Sexo								Char(1) not null,
+	P_Direccion						Varchar(50) not null,
+	V_Numero_Colegiatura	Numeric(10) not null,
+	FK_Lugar							Numeric(10) not null,
+	FK_Caballeriza				Numeric(10) not null,
+	/*Clave primaria*/
+	constraint PK_Veterinario	primary key(P_Cedula),
+	/*Claves foraneas*/
+	constraint FK_Lugar 		foreign key(FK_Lugar) references Lugar(L_Clave),
+	constraint FK_Caballeriza 	foreign key(FK_Caballeriza) references Caballeriza(CA_Clave),
+	/*Checks*/
+	constraint Check_Sexo check(P_Sexo in('M','F')),
+);
+
+create table Propietario(
+	P_Cedula						Numeric(10),
+	P_Primer_Nombre			Varchar(20) not null,
+	P_Segundo_Nombre		Varchar(20),
+	P_Primer_Apellido		Varchar(20) not null,
+	P_Segundo_Apellido	Varchar(20),
+	P_Sexo							Char(1) not null,
+	P_Direccion					Varchar(50) not null,
+	PR_Correo						Varchar(40) not null unique,
+	PR_Fecha_Nacimiento	Date not null,
+	FK_Lugar						Numeric(10) not null,
+	FK_Telefono					Numeric(10),
+	/*Clave primaria*/ 
+	constraint PK_Propietario	primary key(P_Cedula),
+	/*Claves foraneas*/
+	constraint FK_Lugar foreign key(FK_Lugar) references Lugar(L_Clave),
+	/*Checks*/
+	constraint Check_Sexo check (P_Sexo in('M','F')),
+);
+
+create table Jinete(
+	P_Cedula						Numeric(10),
+	P_Primer_Nombre			Varchar(20) not null,
+	P_Segundo_Nombre		Varchar(20),
+	P_Primer_Apellido		Varchar(20) not null,
+	P_Segundo_Apellido	Varchar(20),
+	P_Sexo							Char(1) not null,
+	P_Direccion					Varchar(50) not null,
+	J_Altura						Numeric(3,2) not null,
+	J_Peso_Al_Ingresar	Numeric(2) not null,
+	J_Peso_Actual				Numeric(2) not null,
+	J_Rango							Varchar(15),
+	J_Fecha_Nacimiento	Date not null,
+	FK_Lugar						Numeric(10) not null,
+	/*Clave primaria*/
+	constraint PK_Jinete primary key(P_Cedula),
+	/*Clave foranea*/
+	constraint FK_Lugar foreign key(FK_Lugar) references Lugar(L_Clave),
+	/*Checks*/
+	constraint Check_Sexo 	check(P_Sexo in('M','F')),
+	constraint Check_Rango 	check(J_Rango in('Aprendiz','Profesional')), 
+);
