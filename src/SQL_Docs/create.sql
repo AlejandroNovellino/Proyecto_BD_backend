@@ -1,7 +1,3 @@
-/*Crea la base de datos ---------------------------------------------------------------------------------------*/
-
-create database Proyecto_BD;
-
 /*Paginas de la 2 a la 11---------------------------------------------------------------------------------------*/
 
 	/*Checks*/
@@ -370,7 +366,7 @@ create	table Medicamento(
 );
 
 
- create table Aplicacion_Medicamento(
+create table Aplicacion_Medicamento(
 	AM_Clave						serial not null unique ,
 	AM_Fecha_Hora				 	timestamp not null,   
 	FK_Carrera						Numeric(10) not null,
@@ -384,7 +380,6 @@ create	table Medicamento(
 	constraint FK_Jinete foreign key(FK_Jinete) references Jinete(P_Cedula),
 	constraint FK_Ejemplar foreign key(FK_Ejemplar) references Ejemplar(E_Tatuaje_Labial),
 	constraint FK_Binomio foreign key(FK_Binomio) references Binomio(BI_Clave)
-	 
 );
 
 create	table Categoria_Carrera(
@@ -491,7 +486,7 @@ create table Incripcion(
 	constraint FK_Implemento foreign key(FK_Implemento) references Implemento(I_Codigo)
 	
 );
- create table Comentario(
+create table Comentario(
 	COM_Clave						serial not null unique ,
 	COM_Descripcion					Varchar(45) not null,
 	FK_Usuario						Numeric(10) not null,
@@ -510,7 +505,7 @@ create table Incripcion(
 	
 );
 
- create table Retiro(
+create table Retiro(
 	R_Clave							serial not null unique ,
 	R_Fecha_Retiro					Date not null, 
 	R_Descripcion					Varchar(45) not null,
@@ -530,7 +525,7 @@ create table Incripcion(
 	
 );
 
- create table Resultado_Ejemplar(
+create table Resultado_Ejemplar(
 	RES_Clave							serial not null unique ,
 	RES_Orden_Llegada					Numeric(10) not null, 
 	RES_Diferencia_Cuerpos				Numeric(10) not null,
@@ -550,7 +545,7 @@ create table Incripcion(
 	constraint FK_Binomio foreign key(FK_Binomio) references Binomio(BI_Clave)
 );
 
- create table Posicion_Parcial(
+create table Posicion_Parcial(
 	PP_Clave							serial not null unique ,
 	PP_Distancia						Numeric(10) not null, 
 	PP_Tiempo							Time not null,
@@ -563,7 +558,7 @@ create table Incripcion(
 	
 );
 
- create table Solicitud_Implemento(
+create table Solicitud_Implemento(
 	SI_Clave							serial not null unique ,
 	SI_Fecha_Solicitud					Date not null, 
 	SI_Aceptada							char(1) not null,
@@ -583,12 +578,11 @@ create table Incripcion(
 	constraint FK_Binomio foreign key(FK_Binomio) references Binomio(BI_Clave),
 	constraint FK_Usuario foreign key(FK_Usuario) references Usuario(U_Clave),
 	/*Checks*/
-	 constraint Check_Aceptada check (SI_Aceptada in('S','N'))
-	 
+	constraint Check_Aceptada check (SI_Aceptada in('S','N'))
 );
 
 
- create table Telefono(
+create table Telefono(
 	T_ID							serial not null unique ,
 	T_Codigo_Area					varchar(4) not null, 
 	T_Numero						varchar(7) not null,
@@ -603,8 +597,7 @@ create table Incripcion(
 	constraint FK_Propietario foreign key(FK_Propietario) references Propietario(P_Cedula),
 
 	/*Checks*/
-	 constraint Check_Tipo_Telefono check (T_Tipo in('Local','Trabajo','Movil'))
-	 
+	constraint Check_Tipo_Telefono check (T_Tipo in('Local','Trabajo','Movil'))
 );
 
 /*Paginas de la 21 en adelante --------------------------------------------------------------------------------------*/
@@ -824,5 +817,3 @@ create table Jinete(
 	constraint Check_Sexo 	check(P_Sexo in('M','F')),
 	constraint Check_Rango 	check(J_Rango in('Aprendiz','Profesional'))
 );
-
-
