@@ -1,7 +1,10 @@
 import os
 
-command = "sqlacodegen postgresql+psycopg2://postgres:1224g@localhost/BD_app > .\generated_models.txt"
+# postgresql+psycopg2://postgres:1224@localhost/IS_app
 
-test = "systeminfo > .\Process.txt"
+# command without flask
+command = "sqlacodegen postgresql+psycopg2://postgres:1224@localhost/BD_app > .\generated_models.txt"
+# command with flask
+command2 = "python -m sqlacodegen.main --flask --outfile generated_models.py postgresql+psycopg2://postgres:1224@localhost:5432/BD_app"
 
-os.system(test)
+os.system(command2)
