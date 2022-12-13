@@ -62,12 +62,12 @@ create	table Categoria_Carrera(
 
 create	table Tipo_Carrera(
 	TC_Clave				serial NOT NULL UNIQUE,
-	TC_Nombre				varchar(20) NOT NULL,
-	TC_Sexo					varchar(45),
-	TC_Edad_Minima			Numeric(10),
-	TC_Edad_Maxima			Numeric(10),
-	TC_Victoria_Minima		Numeric(10),
-	TC_Victoria_Maxima		Numeric(10),
+	TC_Nombre				varchar(60) NOT NULL,
+	TC_Sexo					varchar(1),
+	TC_Edad_Minima			Numeric(1),
+	TC_Edad_Maxima			Numeric(1),
+	TC_Victoria_Minima		Numeric(1),
+	TC_Victoria_Maxima		Numeric(1),
 	/*Clave primaria*/
 	constraint PK_Tipo_Carrera primary key(TC_Clave),
 	/*Checks*/
@@ -77,7 +77,7 @@ create	table Tipo_Carrera(
 create	table Porcentaje_Dividendo(
 	PD_Clave			serial NOT NULL UNIQUE,
 	PD_Puesto			numeric(3) NOT NULL,
-	PD_Porcentaje	varchar(45)	NOT NULL,
+	PD_Porcentaje		numeric(3,2)	NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Porcentaje_Dividendo primary key(PD_Clave)
 );
@@ -126,12 +126,12 @@ create Table Tipo_Apuesta(
 --Entidades con claves foráneas
 
 create table Lugar(
-	L_Clave		serial NOT NULL UNIQUE,
-	L_Nombre 	varchar(45) NOT NULL,
-	L_Tipo 		varchar(45) NOT NULL,
-	FK_Lugar 	integer,
+	L_Clave		 serial NOT NULL UNIQUE,
+	L_Nombre 	 varchar(45) NOT NULL,
+	L_Tipo 		 varchar(45) NOT NULL,
+	FK_Lugar 	 integer,
 	/*Checks*/
-	constraint Check_Lugar_Tipo CHECK (L_Tipo in ('ESTADO', 'MUNICIPIO','PARROQUIA')),
+	constraint Check_Lugar_Tipo CHECK (L_Tipo in ('Estado','Municipio','Parroquia')),
 	/*Clave primaria*/
 	constraint PK_Lugar primary key (L_Clave),
 	/*Claves foraneas*/
