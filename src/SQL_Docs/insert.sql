@@ -1571,71 +1571,70 @@ insert into Jinete VALUES(18889203,'Edgardo',null,'Arevalo',null,'M','dir',1.61,
 insert into Jinete VALUES(25902227,'Jaime',null,'Lugo','C','M','dir',1.57,48,53,null,'1996-10-21',230);
 insert into Jinete VALUES(24773280,'Jose','Gilberto','Hernandez',null,'M','dir',1.63,48,53,null,'1995-01-16',235);
 insert into Jinete VALUES(19293169,'Francisco','Jose','Quevedo','Suarez','M','dir',1.55,48,53,'PROFESIONAL','1989-09-04',25);
-insert into Jinete VALUES(17878274,'Jervis','Jose','Alvarado','Torres','M','dir',1.59,48,53,null,'1987-12-08',97); --cm upata
-insert into Jinete VALUES(19235964,'Cindy','Paola','Carrero',null,'F','dir',1.51,48,53,null,'1989-02-20',297); --sn juan bautista
-insert into Jinete VALUES(18750673,'Gerfrin','Jesus','Cordero','Villegas','M','dir',1.60,48,53,null,'1988-12-25',24); --coche
-insert into Jinete VALUES(16702617,'Maria','Alejandra','Bruzual','Bruzual','F','dir',1.52,48,54,null,'1982-12-26',273); --altagracia
-insert into Jinete VALUES(17528845,'Julio','Valmore','Moncada','Zambrano','M','dir',1.55,48,55,null,'1987-09-14',297); --la concordia
-insert into Jinete VALUES(22002987,'Yaniel',null,'Caguado',null,'M','dir',1.59,48,53,null,'1993-03-23',66);
-insert into Jinete VALUES(20398837,'Yonecso',null,'Bermudez',null,'M','dir',1.62,48,53,null,'1991-09-03',112);
-insert into Jinete VALUES(17665830,'Carlos',null,'Brito',null,'M','dir',1.63,48,53,null,'1985-08-03',331);
-insert into Jinete VALUES(24424219,'Dellan',null,'Derrick',null,'M','dir',1.63,48,53,null,'1995-12-19',203);
-insert into Jinete VALUES(26630998,'Kelvin','Jose','Perfecto',null,'M','dir',1.61,48,53,null,'1996-07-29',177);
+insert into Jinete VALUES(17878274,'Jervis','Jose','Alvarado','Torres','M','dir',1.59,48,53,null,'1987-12-08',601); --cm upata
+insert into Jinete VALUES(19235964,'Cindy','Paola','Carrero',null,'F','dir',1.51,48,53,null,'1989-02-20',1241); --sn juan bautista
+insert into Jinete VALUES(18750673,'Gerfrin','Jesus','Cordero','Villegas','M','dir',1.60,48,53,null,'1988-12-25',1485); --coche
+insert into Jinete VALUES(16702617,'Maria','Alejandra','Bruzual','Bruzual','F','dir',1.52,48,54,null,'1982-12-26',1178); --altagracia
+insert into Jinete VALUES(17528845,'Julio','Valmore','Moncada','Zambrano','M','dir',1.55,48,55,null,'1987-09-14',1239); --la concordia
+insert into Jinete VALUES(22002987,'Yaniel',null,'Caguado',null,'M','dir',1.59,48,53,null,'1993-03-23',778);
+insert into Jinete VALUES(20398837,'Yonecso',null,'Bermudez',null,'M','dir',1.62,48,53,null,'1991-09-03',839);
+insert into Jinete VALUES(17665830,'Carlos',null,'Brito',null,'M','dir',1.63,48,53,null,'1985-08-03',1220);
+insert into Jinete VALUES(24424219,'Dellan',null,'Derrick',null,'M','dir',1.63,48,53,null,'1995-12-19',993);
+insert into Jinete VALUES(26630998,'Kelvin','Jose','Perfecto',null,'M','dir',1.61,48,53,null,'1996-07-29',1387);
 insert into Jinete VALUES(20754266,'Deyker','Douglas','Acosta','Meza','M','dir',1.55,48,53,null,'1989-07-12',1491);
-insert into Jinete VALUES(19273373,'Kervin','B','Briceno',null,'M','dir',1.54,48,53,null,'1988-04-13',171);
-insert into Jinete VALUES(24424219,'Dellan',null,'Derrick',null,'M','dir',1.63,48,53,null,'1995-12-19',203);
+insert into Jinete VALUES(19273373,'Kervin','B','Briceno',null,'M','dir',1.54,48,53,null,'1988-04-13',1171);
 
 --Entrenadores
 insert into Entrenador VALUES(13339835,'Fernando','Andres','Parilli','Tota','M','dir','2002-12-03',203);
 insert into Entrenador VALUES(14486022,'Radames',null,'Santamaria',null,'M','dir','2004-06-21',203);
-insert into Entrenador VALUES(6371724,'Yanir','Jose','Hurtado','Davila','M','dir','1998-02-11',653); --san blas
+insert into Entrenador VALUES(6371724,'Yanir','Jose','Hurtado','Davila','M','dir','1998-02-11',653);
 insert into Entrenador VALUES(11922339,'Dotwing','Alexander','Fernandez','Balza','M','dir','2015-06-29',1500); 
 insert into Entrenador VALUES(5132768,'Ezequiel','Eduardo','Gonzalez',"Calatayud",'M','dir','1997-05-10',1498);
 insert into Entrenador VALUES(8757187,'Wladimir',null,'Sanchez','Gonzalez','M','dir','1993-08-13',203);
-insert into Entrenador VALUES(7282219,'Ruben','Antonio','Lanz','Lovera','M','dir','1999-10-06',219); --leoncio martinez
+insert into Entrenador VALUES(7282219,'Ruben','Antonio','Lanz','Lovera','M','dir','1999-10-06',1020);
 insert into Entrenador VALUES(6431196,'Abraham','Jose','Campos','Guerrero','M','dir','2003-11-09',1500);
-insert into Entrenador VALUES(6997630,'German','Jose','Rojas','Cabriles','M','dir','2004-05-26',220); --cua
-insert into Entrenador VALUES(5363393,'Jose','Gregorio','Querales',null,'M','dir','1997-08-22',259); --san isidro labrador
-insert into Entrenador VALUES(11954569,'Ismael','Antonio','Paredes','Vargas','M','dir','2015-10-16',189); --milla
+insert into Entrenador VALUES(6997630,'German','Jose','Rojas','Cabriles','M','dir','2004-05-26',1021);
+insert into Entrenador VALUES(5363393,'Jose','Gregorio','Querales',null,'M','dir','1997-08-22',1131);
+insert into Entrenador VALUES(11954569,'Ismael','Antonio','Paredes','Vargas','M','dir','2015-10-16',932);
 insert into Entrenador VALUES(18015608,'Ademar','Antonio','Rodriguez','Pinango','M','dir','2012-08-31',1487);
-insert into Entrenador VALUES(7258517,'Freddy','Jose','Escobar','Romero','M','dir','1996-09-09',63); --jose casanova godoy
+insert into Entrenador VALUES(7258517,'Freddy','Jose','Escobar','Romero','M','dir','1996-09-09',476);
 insert into Entrenador VALUES(10484532,'Gabriel','Alexander','Marquez','Mendez','M','dir','2011-01-29',1496);
 insert into Entrenador VALUES(11366327,'Luis','Eleazar','Peraza','Rondon','M','dir','2010-08-25',1496);
 insert into Entrenador VALUES(10864313,'Carlos','Enrique','Regalado','Soto','M','dir','2011-05-27',1497);
 insert into Entrenador VALUES(13069496,'Ingerman','Adrian','Sanoja','Rodriguez','M','dir','2017-04-04',1479);
-insert into Entrenador VALUES(8242467,'Rafael','V','Aleman','H','M','dir','2007-04-18',34); --san cristobal
-insert into Entrenador VALUES(9745920,'David','Jose','Palencia','Abreu','M','dir','2007-02-16',351); --cecilio acosta
-insert into Entrenador VALUES(11738715,'Ramon',null,'Garcia','Mosquera','M','dir','2016-09-08',219); --petare
-insert into Entrenador VALUES(13398444,'Ismael',null,'Martinez',null,'M','dir','2011-01-26',251);
-insert into Entrenador VALUES(4450307,'Jesus','Rafael','Villegas','Soto','M','dir','1991-09-29',114); --rafael urdaneta
-insert into Entrenador VALUES(5596194,'Juan','Carlos','Garcia','Matute','M','dir','2002-02-03',203); --el cafetal
+insert into Entrenador VALUES(8242467,'Rafael','V','Aleman','H','M','dir','2007-04-18',399);
+insert into Entrenador VALUES(9745920,'David','Jose','Palencia','Abreu','M','dir','2007-02-16',1429);
+insert into Entrenador VALUES(11738715,'Ramon',null,'Garcia','Mosquera','M','dir','2016-09-08',1016);
+insert into Entrenador VALUES(13398444,'Ismael',null,'Martinez',null,'M','dir','2011-01-26',1101);
+insert into Entrenador VALUES(4450307,'Jesus','Rafael','Villegas','Soto','M','dir','1991-09-29',652);
+insert into Entrenador VALUES(5596194,'Juan','Carlos','Garcia','Matute','M','dir','2002-02-03',981);
 insert into Entrenador VALUES(6965129,'Humberto','Jose Gregorio','Correia','De Jesus','M','dir','2007-03-25',1485);
-insert into Entrenador VALUES(9745334,'Cesar',null,'Perez',null,'M','dir','1997-11-16',321);
+insert into Entrenador VALUES(9745334,'Cesar',null,'Perez',null,'M','dir','1997-11-16',1327);
 insert into Entrenador VALUES(16524826,'Carlos','Luis','Giardinella','Ortiz','M','dir','2019-12-06',1487);
 insert into Entrenador VALUES(15200887,'Yordi','Antonio','Carvajal','Alzuarte','M','dir','2020-08-21',1485);
-insert into Entrenador VALUES(6359664,'Antonio',null,'Bellardi','Di Sante','M','dir','1986-09-03',203); --baruta
+insert into Entrenador VALUES(6359664,'Antonio',null,'Bellardi','Di Sante','M','dir','1986-09-03',980);
 insert into Entrenador VALUES(11409376,'Vincenzo','Eugenio','Di Luca','Fortunato','M','dir','2012-06-03',1497);
-insert into Entrenador VALUES(14969394,'Rohendy','Celestino','Gamez','Garcia','M','dir','2009-05-11',91); --agua salada
-insert into Entrenador VALUES(7136471,'Wilmer','Edgardo','Landaeta','Lara','M','dir','1968-03-17',107); --u los guayos
+insert into Entrenador VALUES(14969394,'Rohendy','Celestino','Gamez','Garcia','M','dir','2009-05-11',592);
+insert into Entrenador VALUES(7136471,'Wilmer','Edgardo','Landaeta','Lara','M','dir','1968-03-17',634);
 insert into Entrenador VALUES(17562195,'Jesus','Antonio','Romero','Rojas','M','dir','2016-09-06',1487);
-insert into Entrenador VALUES(17753077,'Ricardo','Argenis','Rosillo','Salvatori','M','dir','2016-03-10',91); --catedral
-insert into Entrenador VALUES(7550053,'Rafael','Pietro','Cartolano','Logecio','M','dir','2002-06-29',334); --cm san felipe
-insert into Entrenador VALUES(11111422,'Luis',null,'Gomez',null,'M','dir','2004-04-12',245);
-insert into Entrenador VALUES(12198300,'Luis',null,'Rosendo',null,'M','dir','2007-02-16',351);
-insert into Entrenador VALUES(11258728,'Nelson',null,'Henriquez',null,'M','dir','2006-12-07',347); --andres bello km 48
-insert into Entrenador VALUES(9912834,'Miguel',null,'Hernandez',null,'M','dir','2002-07-07',55);
-insert into Entrenador VALUES(3520385,'Fernando','Jose','Parilli','Araujo','M','dir','1990-07-19',219); --petare
-insert into Entrenador VALUES(6509247,'Jose','Gregorio','Rodriguez','Gonzalez','M','dir','2004-03-10',217); --santa lucia
-insert into Entrenador VALUES(4441641,'Manuel','Antonio','Perez','Gleciano','M','dir','1994-08-14',219); --petare
-insert into Entrenador VALUES(12975659,'Dany','Jesus','Pimentel','Bregantes','M','dir','2015-11-02',220); --nueva cua
-insert into Entrenador VALUES(9604431,'Carlos','Rafael','Arocha','Silva','M','dir','2008-08-13',174); --jose g bastidas
+insert into Entrenador VALUES(17753077,'Ricardo','Argenis','Rosillo','Salvatori','M','dir','2016-03-10',593);
+insert into Entrenador VALUES(7550053,'Rafael','Pietro','Cartolano','Logecio','M','dir','2002-06-29',1362);
+insert into Entrenador VALUES(11111422,'Luis',null,'Gomez',null,'M','dir','2004-04-12',1088);
+insert into Entrenador VALUES(12198300,'Luis',null,'Rosendo',null,'M','dir','2007-02-16',1430);
+insert into Entrenador VALUES(11258728,'Nelson',null,'Henriquez',null,'M','dir','2006-12-07',1404);
+insert into Entrenador VALUES(9912834,'Miguel',null,'Hernandez',null,'M','dir','2002-07-07',1033);
+insert into Entrenador VALUES(3520385,'Fernando','Jose','Parilli','Araujo','M','dir','1990-07-19',1016);
+insert into Entrenador VALUES(6509247,'Jose','Gregorio','Rodriguez','Gonzalez','M','dir','2004-03-10',1010);
+insert into Entrenador VALUES(4441641,'Manuel','Antonio','Perez','Gleciano','M','dir','1994-08-14',1016);
+insert into Entrenador VALUES(12975659,'Dany','Jesus','Pimentel','Bregantes','M','dir','2015-11-02',1022);
+insert into Entrenador VALUES(9604431,'Carlos','Rafael','Arocha','Silva','M','dir','2008-08-13',858);
 
-insert into Aficionado VALUES(30395284,'Nicolas','Adrian','Setien','Briceno','M','dir','Estudiante',183); --montalban
+insert into Aficionado VALUES(30395284,'Nicolas','Adrian','Setien','Briceno','M','dir','Estudiante',906); --montalban
 
 insert into Haras VALUES(DEFAULT,'Alegria');
 insert into Haras VALUES(DEFAULT,'Bello Monte');
 insert into Haras VALUES(DEFAULT,'Los Caracaros');
-insert into Haras VALUES(DEFAULT,'Aguua Miel');
+insert into Haras VALUES(DEFAULT,'Agua Miel');
 insert into Haras VALUES(DEFAULT,'Luisiana');
 insert into Haras VALUES(DEFAULT,'La Orlyana');
 insert into Haras VALUES(DEFAULT,'La Primavera');
@@ -1798,6 +1797,122 @@ insert into Causa_Retiro VALUES(DEFAULT,'desc','Castracion',2);
 insert into Causa_Retiro VALUES(DEFAULT,'desc','Miositis',2);
 insert into Causa_Retiro VALUES(DEFAULT,'desc','Erlichosis',1);
 
+insert into Implemento VALUES(DEFAULT,'Gringola','GR');
+insert into Implemento VALUES(DEFAULT,'Lengua Amarrada','LA');
+insert into Implemento VALUES(DEFAULT,'Bozal','BZ');
+insert into Implemento VALUES(DEFAULT,'Bozal Lenguero','BL');
+insert into Implemento VALUES(DEFAULT,'Bozal Blanco Nose Band','BB');
+insert into Implemento VALUES(DEFAULT,'Martingala','M');
+insert into Implemento VALUES(DEFAULT,'Preta','P');
+insert into Implemento VALUES(DEFAULT,'Guayo','G');
+insert into Implemento VALUES(DEFAULT,'Vendas','V');
+insert into Implemento VALUES(DEFAULT,'Orejas Tapadas','OT');
+insert into Implemento VALUES(DEFAULT,'Latigo','L');
+insert into Implemento VALUES(DEFAULT,'Casquillos Correctivos','CC');
+insert into Implemento VALUES(DEFAULT,'Casquillos de Hierro','CH');
+
+insert into Porcentaje_Dividendo VALUES(DEFAULT,1,0.60);
+insert into Porcentaje_Dividendo VALUES(DEFAULT,2,0.28);
+insert into Porcentaje_Dividendo VALUES(DEFAULT,3,0.07);
+insert into Porcentaje_Dividendo VALUES(DEFAULT,4,0.03);
+insert into Porcentaje_Dividendo VALUES(DEFAULT,5,0.02);
+
+insert into Categoria_Carrera VALUES(DEFAULT,'Normal');
+insert into Categoria_Carrera VALUES(DEFAULT,'Clasico');
+insert into Categoria_Carrera VALUES(DEFAULT,'Copa');
+
 --agregar descripcion historica
 insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24)
 
+insert into Caballeriza VALUES(DEFAULT,1,30,1);
+insert into Caballeriza VALUES(DEFAULT,2,30,1);
+insert into Caballeriza VALUES(DEFAULT,3,20,1);
+insert into Caballeriza VALUES(DEFAULT,4,30,1);
+insert into Caballeriza VALUES(DEFAULT,5,20,1);
+
+insert into Puesto VALUES(DEFAULT,1,1);insert into Puesto VALUES(DEFAULT,2,1);insert into Puesto VALUES(DEFAULT,3,1);insert into Puesto VALUES(DEFAULT,4,1);insert into Puesto VALUES(DEFAULT,5,1);insert into Puesto VALUES(DEFAULT,6,1);insert into Puesto VALUES(DEFAULT,7,1);insert into Puesto VALUES(DEFAULT,8,1);insert into Puesto VALUES(DEFAULT,9,1);insert into Puesto VALUES(DEFAULT,10,1);insert into Puesto VALUES(DEFAULT,11,1);insert into Puesto VALUES(DEFAULT,12,1);insert into Puesto VALUES(DEFAULT,13,1);insert into Puesto VALUES(DEFAULT,14,1);insert into Puesto VALUES(DEFAULT,15,1);insert into Puesto VALUES(DEFAULT,16,1);insert into Puesto VALUES(DEFAULT,17,1);insert into Puesto VALUES(DEFAULT,18,1);insert into Puesto VALUES(DEFAULT,19,1);insert into Puesto VALUES(DEFAULT,20,1);insert into Puesto VALUES(DEFAULT,21,1);insert into Puesto VALUES(DEFAULT,22,1);insert into Puesto VALUES(DEFAULT,23,1);insert into Puesto VALUES(DEFAULT,24,1);insert into Puesto VALUES(DEFAULT,25,1);insert into Puesto VALUES(DEFAULT,26,1);insert into Puesto VALUES(DEFAULT,27,1);insert into Puesto VALUES(DEFAULT,28,1);insert into Puesto VALUES(DEFAULT,29,1);insert into Puesto VALUES(DEFAULT,30,1);
+insert into Puesto VALUES(DEFAULT,1,2);insert into Puesto VALUES(DEFAULT,2,2);insert into Puesto VALUES(DEFAULT,3,2);insert into Puesto VALUES(DEFAULT,4,2);insert into Puesto VALUES(DEFAULT,5,2);insert into Puesto VALUES(DEFAULT,6,2);insert into Puesto VALUES(DEFAULT,7,2);insert into Puesto VALUES(DEFAULT,8,2);insert into Puesto VALUES(DEFAULT,9,2);insert into Puesto VALUES(DEFAULT,10,2);insert into Puesto VALUES(DEFAULT,11,2);insert into Puesto VALUES(DEFAULT,12,2);insert into Puesto VALUES(DEFAULT,13,2);insert into Puesto VALUES(DEFAULT,14,2);insert into Puesto VALUES(DEFAULT,15,2);insert into Puesto VALUES(DEFAULT,16,2);insert into Puesto VALUES(DEFAULT,17,2);insert into Puesto VALUES(DEFAULT,18,2);insert into Puesto VALUES(DEFAULT,19,2);insert into Puesto VALUES(DEFAULT,20,2);insert into Puesto VALUES(DEFAULT,21,2);insert into Puesto VALUES(DEFAULT,22,2);insert into Puesto VALUES(DEFAULT,23,2);insert into Puesto VALUES(DEFAULT,24,2);insert into Puesto VALUES(DEFAULT,25,2);insert into Puesto VALUES(DEFAULT,26,2);insert into Puesto VALUES(DEFAULT,27,2);insert into Puesto VALUES(DEFAULT,28,2);insert into Puesto VALUES(DEFAULT,29,2);insert into Puesto VALUES(DEFAULT,30,2);
+insert into Puesto VALUES(DEFAULT,1,3);insert into Puesto VALUES(DEFAULT,2,3);insert into Puesto VALUES(DEFAULT,3,3);insert into Puesto VALUES(DEFAULT,4,3);insert into Puesto VALUES(DEFAULT,5,3);insert into Puesto VALUES(DEFAULT,6,3);insert into Puesto VALUES(DEFAULT,7,3);insert into Puesto VALUES(DEFAULT,8,3);insert into Puesto VALUES(DEFAULT,9,3);insert into Puesto VALUES(DEFAULT,10,3);insert into Puesto VALUES(DEFAULT,11,3);insert into Puesto VALUES(DEFAULT,12,3);insert into Puesto VALUES(DEFAULT,13,3);insert into Puesto VALUES(DEFAULT,14,3);insert into Puesto VALUES(DEFAULT,15,3);insert into Puesto VALUES(DEFAULT,16,3);insert into Puesto VALUES(DEFAULT,17,3);insert into Puesto VALUES(DEFAULT,18,3);insert into Puesto VALUES(DEFAULT,19,3);insert into Puesto VALUES(DEFAULT,20,3);
+insert into Puesto VALUES(DEFAULT,1,4);insert into Puesto VALUES(DEFAULT,2,4);insert into Puesto VALUES(DEFAULT,3,4);insert into Puesto VALUES(DEFAULT,4,4);insert into Puesto VALUES(DEFAULT,5,4);insert into Puesto VALUES(DEFAULT,6,4);insert into Puesto VALUES(DEFAULT,7,4);insert into Puesto VALUES(DEFAULT,8,4);insert into Puesto VALUES(DEFAULT,9,4);insert into Puesto VALUES(DEFAULT,10,4);insert into Puesto VALUES(DEFAULT,11,4);insert into Puesto VALUES(DEFAULT,12,4);insert into Puesto VALUES(DEFAULT,13,4);insert into Puesto VALUES(DEFAULT,14,4);insert into Puesto VALUES(DEFAULT,15,4);insert into Puesto VALUES(DEFAULT,16,4);insert into Puesto VALUES(DEFAULT,17,4);insert into Puesto VALUES(DEFAULT,18,4);insert into Puesto VALUES(DEFAULT,19,4);insert into Puesto VALUES(DEFAULT,20,4);insert into Puesto VALUES(DEFAULT,21,4);insert into Puesto VALUES(DEFAULT,22,4);insert into Puesto VALUES(DEFAULT,23,4);insert into Puesto VALUES(DEFAULT,24,4);insert into Puesto VALUES(DEFAULT,25,4);insert into Puesto VALUES(DEFAULT,26,4);insert into Puesto VALUES(DEFAULT,27,4);insert into Puesto VALUES(DEFAULT,28,4);insert into Puesto VALUES(DEFAULT,29,4);insert into Puesto VALUES(DEFAULT,30,4);
+insert into Puesto VALUES(DEFAULT,1,5);insert into Puesto VALUES(DEFAULT,2,5);insert into Puesto VALUES(DEFAULT,3,5);insert into Puesto VALUES(DEFAULT,4,5);insert into Puesto VALUES(DEFAULT,5,5);insert into Puesto VALUES(DEFAULT,6,5);insert into Puesto VALUES(DEFAULT,7,5);insert into Puesto VALUES(DEFAULT,8,5);insert into Puesto VALUES(DEFAULT,9,5);insert into Puesto VALUES(DEFAULT,10,5);insert into Puesto VALUES(DEFAULT,11,5);insert into Puesto VALUES(DEFAULT,12,5);insert into Puesto VALUES(DEFAULT,13,5);insert into Puesto VALUES(DEFAULT,14,5);insert into Puesto VALUES(DEFAULT,15,5);insert into Puesto VALUES(DEFAULT,16,5);insert into Puesto VALUES(DEFAULT,17,5);insert into Puesto VALUES(DEFAULT,18,5);insert into Puesto VALUES(DEFAULT,19,5);insert into Puesto VALUES(DEFAULT,20,5);
+
+insert into Grada VALUES(DEFAULT,'Grada central',8000,1);
+insert into Grada VALUES(DEFAULT,'Mezzanina',3000,1);
+insert into Grada VALUES(DEFAULT,'Palco con pantalla privada',1500,1);
+
+insert into Entrada VALUES(DEFAULT,'A','Este',1);
+insert into Entrada VALUES(DEFAULT,'B','Este',1);
+insert into Entrada VALUES(DEFAULT,'C','Centro',1);
+insert into Entrada VALUES(DEFAULT,'D','Centro',1);
+insert into Entrada VALUES(DEFAULT,'E','Oeste',1);
+insert into Entrada VALUES(DEFAULT,'F','Oeste',1);
+insert into Entrada VALUES(DEFAULT,'A','Este',2);
+insert into Entrada VALUES(DEFAULT,'B','Este',2);
+insert into Entrada VALUES(DEFAULT,'C','Centro',2);
+insert into Entrada VALUES(DEFAULT,'D','Centro',2);
+insert into Entrada VALUES(DEFAULT,'E','Oeste',2);
+insert into Entrada VALUES(DEFAULT,'F','Oeste',2);
+insert into Entrada VALUES(DEFAULT,'A','Este',3);
+insert into Entrada VALUES(DEFAULT,'B','Este',3);
+insert into Entrada VALUES(DEFAULT,'C','Centro',3);
+insert into Entrada VALUES(DEFAULT,'D','Centro',3);
+insert into Entrada VALUES(DEFAULT,'E','Oeste',3);
+insert into Entrada VALUES(DEFAULT,'F','Oeste',3);
+
+insert into Estacionamiento VALUES(DEFAULT,4000,1);
+insert into Estacionamiento VALUES(DEFAULT,4000,3);
+
+insert into Nivel VALUES(DEFAULT,125,100,50,1);
+insert into Nivel VALUES(DEFAULT,140,110,60,1);
+
+insert into Taquilla_Apuesta VALUES(DEFAULT,1,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,2,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,3,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,4,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,5,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,6,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,7,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,8,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,9,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,10,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,11,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,12,1);
+insert into Taquilla_Apuesta VALUES(DEFAULT,1,2);
+insert into Taquilla_Apuesta VALUES(DEFAULT,2,2);
+insert into Taquilla_Apuesta VALUES(DEFAULT,3,2);
+insert into Taquilla_Apuesta VALUES(DEFAULT,4,2);
+insert into Taquilla_Apuesta VALUES(DEFAULT,5,2);
+insert into Taquilla_Apuesta VALUES(DEFAULT,6,2);
+insert into Taquilla_Apuesta VALUES(DEFAULT,7,2);
+insert into Taquilla_Apuesta VALUES(DEFAULT,8,2);
+
+insert into Taquilla_Boleto VALUES(DEFAULT,1,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,2,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,3,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,4,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,5,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,6,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,7,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,8,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,9,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,10,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,11,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,12,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,13,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,14,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,15,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,16,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,17,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,18,1);
+insert into Taquilla_Boleto VALUES(DEFAULT,1,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,2,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,3,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,4,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,5,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,6,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,7,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,8,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,9,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,10,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,11,2);
+insert into Taquilla_Boleto VALUES(DEFAULT,12,2);

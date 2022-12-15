@@ -98,10 +98,10 @@ create table Implemento(
 	/*Clave primaria*/
 	constraint PK_Implemento  primary key (I_Codigo),
 	/*Checks*/
-	constraint Check_Implemento_Nombre Check (I_Nombre IN ('Gringola','Lengua Amarrada','Bozal','Bozal Lengüero',
-		'Bozal Blanco Nose Band','Martingala','Preta','Guayo','Vendas','Orejas Tapadas','Látigo','Casquillos Correctivos',
+	constraint Check_Implemento_Nombre Check (I_Nombre IN ('Gringola','Lengua Amarrada','Bozal','Bozal Lenguero',
+		'Bozal Blanco Nose Band','Martingala','Preta','Guayo','Vendas','Orejas Tapadas','Latigo','Casquillos Correctivos',
 		'Casquillos de Hierro') ),
-	constraint Check_Implemento_Diminutivo Check (I_Diminutivo IN ('CC','CH','LA','BZ','BL','BB','M','P','G','V','OT','L') )
+	constraint Check_Implemento_Diminutivo Check (I_Diminutivo IN ('GR','CC','CH','LA','BZ','BL','BB','M','P','G','V','OT','L') )
 );
 
 create table Pregunta_Seguridad(
@@ -314,7 +314,7 @@ create table Binomio(
 create table Grada(
 	G_Clave				serial NOT NULL UNIQUE,
 	G_Nombre			varchar(45) NOT NULL,
-	G_Capacidad		numeric(10)	NOT NULL,
+	G_Capacidad		numeric(5)	NOT NULL,
 	FK_Hipodromo	integer NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Grada primary key (G_Clave),
@@ -335,7 +335,7 @@ create table Entrada(
 
 create table Estacionamiento(
 	E_Clave							serial NOT NULL UNIQUE,
-	E_Capacidad_Total		numeric(15) NOT NULL,
+	E_Capacidad_Total		numeric(4) NOT NULL,
 	FK_Entrada					integer NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Estacionamiento primary key (E_Clave),
@@ -345,9 +345,9 @@ create table Estacionamiento(
 
 create table Nivel(
 	NI_Clave				serial NOT NULL UNIQUE,
-	NI_Apartado_4P	numeric(10) NOT NULL,
-	NI_Apartado_6P	numeric(10) NOT NULL,
-	NI_Apartado_8P	numeric(10) NOT NULL,
+	NI_Apartado_4P	numeric(3) NOT NULL,
+	NI_Apartado_6P	numeric(3) NOT NULL,
+	NI_Apartado_8P	numeric(3) NOT NULL,
 	FK_Grada				integer NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Nivel primary key (NI_Clave),
@@ -357,7 +357,7 @@ create table Nivel(
 
 create table Taquilla_Apuesta(
 	TAA_Clave		serial NOT NULL UNIQUE,
-	TAA_Numero	numeric(10) NOT NULL,
+	TAA_Numero	numeric(2) NOT NULL,
 	FK_Nivel		integer,
 	/*Clave primaria*/
 	constraint PK_Taquilla_Apuesta primary key (TAA_Clave),
@@ -389,7 +389,7 @@ create table Usuario(
 
 create table Taquilla_Boleto(
 	TAB_Clave		serial NOT NULL UNIQUE,
-	TAB_Numero	numeric(10) NOT NULL,
+	TAB_Numero	numeric(2) NOT NULL,
 	FK_Nivel 		integer	NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Taquilla_Boleto primary key (TAB_Clave),
@@ -414,7 +414,7 @@ create table Venta_Boleto(
 
 create table Boleto(
 	BO_Clave 		serial NOT NULL UNIQUE,
-	BO_Precio 	numeric(10) NOT NULL,
+	BO_Precio 	numeric(10,2) NOT NULL,
 	FK_Nivel		integer NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Boleto primary key (BO_Clave),
