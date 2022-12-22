@@ -174,7 +174,7 @@ class Boleto(db.Model):
     __tablename__ = 'boleto'
 
     bo_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    bo_precio = db.Column(db.Numeric(10, 0), nullable=False)
+    bo_precio = db.Column(db.Numeric(10, 2), nullable=False)
     fk_nivel = db.Column(db.ForeignKey('nivel.ni_clave'), nullable=False)
 
     nivel = db.relationship('Nivel', primaryjoin='Boleto.fk_nivel == Nivel.ni_clave', backref='boletoes')
@@ -537,7 +537,7 @@ class Estacionamiento(db.Model):
     __tablename__ = 'estacionamiento'
 
     e_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    e_capacidad_total = db.Column(db.Numeric(15, 0), nullable=False)
+    e_capacidad_total = db.Column(db.Numeric(4, 0), nullable=False)
     fk_entrada = db.Column(db.ForeignKey('entrada.en_clave'), nullable=False)
 
     entrada = db.relationship('Entrada', primaryjoin='Estacionamiento.fk_entrada == Entrada.en_clave', backref='estacionamientoes')
@@ -559,7 +559,7 @@ class Grada(db.Model):
 
     g_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     g_nombre = db.Column(db.String(45), nullable=False)
-    g_capacidad = db.Column(db.Numeric(10, 0), nullable=False)
+    g_capacidad = db.Column(db.Numeric(5, 0), nullable=False)
     fk_hipodromo = db.Column(db.ForeignKey('hipodromo.h_id'), nullable=False)
 
     hipodromo = db.relationship('Hipodromo', primaryjoin='Grada.fk_hipodromo == Hipodromo.h_id', backref='gradas')
@@ -699,8 +699,8 @@ class Horario(db.Model):
 class Implemento(db.Model):
     __tablename__ = 'implemento'
     __table_args__ = (
-        db.CheckConstraint("(i_diminutivo)::text = ANY ((ARRAY['CC'::character varying, 'CH'::character varying, 'LA'::character varying, 'BZ'::character varying, 'BL'::character varying, 'BB'::character varying, 'M'::character varying, 'P'::character varying, 'G'::character varying, 'V'::character varying, 'OT'::character varying, 'L'::character varying])::text[])"),
-        db.CheckConstraint("(i_nombre)::text = ANY ((ARRAY['Gringola'::character varying, 'Lengua Amarrada'::character varying, 'Bozal'::character varying, 'Bozal Lengüero'::character varying, 'Bozal Blanco Nose Band'::character varying, 'Martingala'::character varying, 'Preta'::character varying, 'Guayo'::character varying, 'Vendas'::character varying, 'Orejas Tapadas'::character varying, 'Látigo'::character varying, 'Casquillos Correctivos'::character varying, 'Casquillos de Hierro'::character varying])::text[])")
+        db.CheckConstraint("(i_diminutivo)::text = ANY ((ARRAY['GR'::character varying, 'CC'::character varying, 'CH'::character varying, 'LA'::character varying, 'BZ'::character varying, 'BL'::character varying, 'BB'::character varying, 'M'::character varying, 'P'::character varying, 'G'::character varying, 'V'::character varying, 'OT'::character varying, 'L'::character varying])::text[])"),
+        db.CheckConstraint("(i_nombre)::text = ANY ((ARRAY['Gringola'::character varying, 'Lengua Amarrada'::character varying, 'Bozal'::character varying, 'Bozal Lenguero'::character varying, 'Bozal Blanco Nose Band'::character varying, 'Martingala'::character varying, 'Preta'::character varying, 'Guayo'::character varying, 'Vendas'::character varying, 'Orejas Tapadas'::character varying, 'Latigo'::character varying, 'Casquillos Correctivos'::character varying, 'Casquillos de Hierro'::character varying])::text[])")
     )
 
     i_codigo = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
@@ -786,7 +786,7 @@ class Jinete(db.Model):
 class Lugar(db.Model):
     __tablename__ = 'lugar'
     __table_args__ = (
-        db.CheckConstraint("(l_tipo)::text = ANY ((ARRAY['ESTADO'::character varying, 'MUNICIPIO'::character varying, 'PARROQUIA'::character varying])::text[])"),
+        db.CheckConstraint("(l_tipo)::text = ANY ((ARRAY['Estado'::character varying, 'Municipio'::character varying, 'Parroquia'::character varying])::text[])"),
     )
 
     l_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
@@ -852,9 +852,9 @@ class Nivel(db.Model):
     __tablename__ = 'nivel'
 
     ni_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    ni_apartado_4p = db.Column(db.Numeric(10, 0), nullable=False)
-    ni_apartado_6p = db.Column(db.Numeric(10, 0), nullable=False)
-    ni_apartado_8p = db.Column(db.Numeric(10, 0), nullable=False)
+    ni_apartado_4p = db.Column(db.Numeric(3, 0), nullable=False)
+    ni_apartado_6p = db.Column(db.Numeric(3, 0), nullable=False)
+    ni_apartado_8p = db.Column(db.Numeric(3, 0), nullable=False)
     fk_grada = db.Column(db.ForeignKey('grada.g_clave'), nullable=False)
 
     grada = db.relationship('Grada', primaryjoin='Nivel.fk_grada == Grada.g_clave', backref='nivels')
@@ -927,7 +927,7 @@ class PorcentajeDividendo(db.Model):
 
     pd_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     pd_puesto = db.Column(db.Numeric(3, 0), nullable=False)
-    pd_porcentaje = db.Column(db.String(45), nullable=False)
+    pd_porcentaje = db.Column(db.Numeric(3, 2), nullable=False)
 
     @classmethod
     def create(cls, **kwargs):
@@ -1210,7 +1210,7 @@ class TaquillaApuesta(db.Model):
     __tablename__ = 'taquilla_apuesta'
 
     taa_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    taa_numero = db.Column(db.Numeric(10, 0), nullable=False)
+    taa_numero = db.Column(db.Numeric(2, 0), nullable=False)
     fk_nivel = db.Column(db.ForeignKey('nivel.ni_clave'))
 
     nivel = db.relationship('Nivel', primaryjoin='TaquillaApuesta.fk_nivel == Nivel.ni_clave', backref='taquilla_apuestas')
@@ -1231,7 +1231,7 @@ class TaquillaBoleto(db.Model):
     __tablename__ = 'taquilla_boleto'
 
     tab_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    tab_numero = db.Column(db.Numeric(10, 0), nullable=False)
+    tab_numero = db.Column(db.Numeric(2, 0), nullable=False)
     fk_nivel = db.Column(db.ForeignKey('nivel.ni_clave'), nullable=False)
 
     nivel = db.relationship('Nivel', primaryjoin='TaquillaBoleto.fk_nivel == Nivel.ni_clave', backref='taquilla_boletoes')
@@ -1307,12 +1307,12 @@ class TipoCarrera(db.Model):
     )
 
     tc_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    tc_nombre = db.Column(db.String(20), nullable=False)
-    tc_sexo = db.Column(db.String(45))
-    tc_edad_minima = db.Column(db.Numeric(10, 0))
-    tc_edad_maxima = db.Column(db.Numeric(10, 0))
-    tc_victoria_minima = db.Column(db.Numeric(10, 0))
-    tc_victoria_maxima = db.Column(db.Numeric(10, 0))
+    tc_nombre = db.Column(db.String(60), nullable=False)
+    tc_sexo = db.Column(db.String(1))
+    tc_edad_minima = db.Column(db.Numeric(1, 0))
+    tc_edad_maxima = db.Column(db.Numeric(1, 0))
+    tc_victoria_minima = db.Column(db.Numeric(1, 0))
+    tc_victoria_maxima = db.Column(db.Numeric(1, 0))
 
     @classmethod
     def create(cls, **kwargs):
