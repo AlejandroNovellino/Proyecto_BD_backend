@@ -1,8 +1,8 @@
+# coding: utf-8
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
 
-# generated code by sqlcodegen
+db = SQLAlchemy()
 
 class Accion(db.Model):
     __tablename__ = 'accion'
@@ -10,7 +10,17 @@ class Accion(db.Model):
     acc_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     acc_objetivo = db.Column(db.Numeric(10, 0), nullable=False, unique=True)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class AccionTipoUsuario(db.Model):
     __tablename__ = 'accion_tipo_usuario'
@@ -22,7 +32,17 @@ class AccionTipoUsuario(db.Model):
     accion = db.relationship('Accion', primaryjoin='AccionTipoUsuario.fk_accion == Accion.acc_clave', backref='accion_tipo_usuarios')
     tipo_usuario = db.relationship('TipoUsuario', primaryjoin='AccionTipoUsuario.fk_tipousuario == TipoUsuario.tu_clave', backref='accion_tipo_usuarios')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class AccionUsuario(db.Model):
     __tablename__ = 'accion_usuario'
@@ -36,7 +56,17 @@ class AccionUsuario(db.Model):
     accion = db.relationship('Accion', primaryjoin='AccionUsuario.fk_accion == Accion.acc_clave', backref='accion_usuarios')
     usuario = db.relationship('Usuario', primaryjoin='AccionUsuario.fk_usuario == Usuario.u_clave', backref='accion_usuarios')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Aficionado(db.Model):
     __tablename__ = 'aficionado'
@@ -56,7 +86,17 @@ class Aficionado(db.Model):
 
     lugar = db.relationship('Lugar', primaryjoin='Aficionado.fk_lugar == Lugar.l_clave', backref='aficionados')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class AplicacionMedicamento(db.Model):
     __tablename__ = 'aplicacion_medicamento'
@@ -67,7 +107,17 @@ class AplicacionMedicamento(db.Model):
 
     inscripcion = db.relationship('Inscripcion', primaryjoin='AplicacionMedicamento.fk_inscripcion == Inscripcion.ins_clave', backref='aplicacion_medicamentoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Apuesta(db.Model):
     __tablename__ = 'apuesta'
@@ -84,7 +134,17 @@ class Apuesta(db.Model):
     tipo_apuesta = db.relationship('TipoApuesta', primaryjoin='Apuesta.fk_tipoapuesta == TipoApuesta.ta_clave', backref='apuestas')
     usuario = db.relationship('Usuario', primaryjoin='Apuesta.fk_usuario == Usuario.u_clave', backref='apuestas')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Binomio(db.Model):
     __tablename__ = 'binomio'
@@ -98,7 +158,17 @@ class Binomio(db.Model):
     ejemplar = db.relationship('Ejemplar', primaryjoin='Binomio.fk_ejemplar == Ejemplar.e_tatuaje_labial', backref='binomios')
     jinete = db.relationship('Jinete', primaryjoin='Binomio.fk_jinete == Jinete.p_cedula', backref='binomios')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Boleto(db.Model):
     __tablename__ = 'boleto'
@@ -109,7 +179,17 @@ class Boleto(db.Model):
 
     nivel = db.relationship('Nivel', primaryjoin='Boleto.fk_nivel == Nivel.ni_clave', backref='boletoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Caballeriza(db.Model):
     __tablename__ = 'caballeriza'
@@ -121,7 +201,17 @@ class Caballeriza(db.Model):
 
     hipodromo = db.relationship('Hipodromo', primaryjoin='Caballeriza.fk_hipodromo == Hipodromo.h_id', backref='caballerizas')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Carrera(db.Model):
     __tablename__ = 'carrera'
@@ -136,11 +226,23 @@ class Carrera(db.Model):
     c_comentario = db.Column(db.String(100))
     fk_tipo_carrera = db.Column(db.ForeignKey('tipo_carrera.tc_clave'), nullable=False)
     fk_categoria_carrera = db.Column(db.ForeignKey('categoria_carrera.ca_clave'), nullable=False)
+    fk_pista = db.Column(db.ForeignKey('pista.pi_clave'), nullable=False)
 
     categoria_carrera = db.relationship('CategoriaCarrera', primaryjoin='Carrera.fk_categoria_carrera == CategoriaCarrera.ca_clave', backref='carreras')
+    pista = db.relationship('Pista', primaryjoin='Carrera.fk_pista == Pista.pi_clave', backref='carreras')
     tipo_carrera = db.relationship('TipoCarrera', primaryjoin='Carrera.fk_tipo_carrera == TipoCarrera.tc_clave', backref='carreras')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class CarreraPorcentajeDividendo(db.Model):
     __tablename__ = 'carrera_porcentaje_dividendo'
@@ -153,7 +255,17 @@ class CarreraPorcentajeDividendo(db.Model):
     carrera = db.relationship('Carrera', primaryjoin='CarreraPorcentajeDividendo.fk_carrera == Carrera.c_clave', backref='carrera_porcentaje_dividendoes')
     porcentaje_dividendo = db.relationship('PorcentajeDividendo', primaryjoin='CarreraPorcentajeDividendo.fk_porcentaje_dividendo == PorcentajeDividendo.pd_clave', backref='carrera_porcentaje_dividendoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class CategoriaCarrera(db.Model):
     __tablename__ = 'categoria_carrera'
@@ -164,7 +276,17 @@ class CategoriaCarrera(db.Model):
     ca_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     ca_nombre = db.Column(db.String(20), nullable=False)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class CausaRetiro(db.Model):
     __tablename__ = 'causa_retiro'
@@ -174,7 +296,17 @@ class CausaRetiro(db.Model):
     cr_nombre = db.Column(db.String(45), nullable=False)
     cr_duracion = db.Column(db.Numeric(10, 0), nullable=False)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class CirculoGanadore(db.Model):
     __tablename__ = 'circulo_ganadores'
@@ -185,7 +317,17 @@ class CirculoGanadore(db.Model):
 
     hipodromo = db.relationship('Hipodromo', primaryjoin='CirculoGanadore.fk_hipodromo == Hipodromo.h_id', backref='circulo_ganadores')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Color(db.Model):
     __tablename__ = 'color'
@@ -193,7 +335,17 @@ class Color(db.Model):
     col_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     col_nombre = db.Column(db.String(45), nullable=False)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Comentario(db.Model):
     __tablename__ = 'comentario'
@@ -206,7 +358,17 @@ class Comentario(db.Model):
     inscripcion = db.relationship('Inscripcion', primaryjoin='Comentario.fk_inscripcion == Inscripcion.ins_clave', backref='comentarios')
     usuario = db.relationship('Usuario', primaryjoin='Comentario.fk_usuario == Usuario.u_clave', backref='comentarios')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class DetalladoVenta(db.Model):
     __tablename__ = 'detallado_venta'
@@ -215,11 +377,23 @@ class DetalladoVenta(db.Model):
     dv_precio_venta = db.Column(db.Numeric(10, 0), nullable=False)
     fk_venta_boleto = db.Column(db.ForeignKey('venta_boleto.vb_clave'), nullable=False)
     fk_boleto = db.Column(db.ForeignKey('boleto.bo_clave'), nullable=False)
+    fk_metodopago = db.Column(db.ForeignKey('metodo_pago.mp_clave'), nullable=False)
 
     boleto = db.relationship('Boleto', primaryjoin='DetalladoVenta.fk_boleto == Boleto.bo_clave', backref='detallado_ventas')
+    metodo_pago = db.relationship('MetodoPago', primaryjoin='DetalladoVenta.fk_metodopago == MetodoPago.mp_clave', backref='detallado_ventas')
     venta_boleto = db.relationship('VentaBoleto', primaryjoin='DetalladoVenta.fk_venta_boleto == VentaBoleto.vb_clave', backref='detallado_ventas')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class DetalleApuesta(db.Model):
     __tablename__ = 'detalle_apuesta'
@@ -227,12 +401,24 @@ class DetalleApuesta(db.Model):
     da_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     da_orden_llegada_ejemplar = db.Column(db.Numeric(2, 0), nullable=False)
     fk_apuesta = db.Column(db.ForeignKey('apuesta.apu_clave'), nullable=False)
-    fk_inscripcion = db.Column(db.ForeignKey('inscripcion.ins_clave'), nullable=False, unique=True)
+    fk_inscripcion = db.Column(db.ForeignKey('inscripcion.ins_clave'), nullable=False)
+    fk_metodopago = db.Column(db.ForeignKey('metodo_pago.mp_clave'), nullable=False)
 
     apuesta = db.relationship('Apuesta', primaryjoin='DetalleApuesta.fk_apuesta == Apuesta.apu_clave', backref='detalle_apuestas')
-    inscripcion = db.relationship('Inscripcion', uselist=False, primaryjoin='DetalleApuesta.fk_inscripcion == Inscripcion.ins_clave', backref='detalle_apuestas')
+    inscripcion = db.relationship('Inscripcion', primaryjoin='DetalleApuesta.fk_inscripcion == Inscripcion.ins_clave', backref='detalle_apuestas')
+    metodo_pago = db.relationship('MetodoPago', primaryjoin='DetalleApuesta.fk_metodopago == MetodoPago.mp_clave', backref='detalle_apuestas')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Ejemplar(db.Model):
     __tablename__ = 'ejemplar'
@@ -260,7 +446,17 @@ class Ejemplar(db.Model):
     parent1 = db.relationship('Ejemplar', remote_side=[e_tatuaje_labial], primaryjoin='Ejemplar.fk_padre == Ejemplar.e_tatuaje_labial', backref='ejemplar_ejemplars_0')
     puesto = db.relationship('Puesto', primaryjoin='Ejemplar.fk_puesto == Puesto.pu_clave', backref='ejemplars')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class EjemplarPropietarioStud(db.Model):
     __tablename__ = 'ejemplar_propietario_stud'
@@ -273,7 +469,17 @@ class EjemplarPropietarioStud(db.Model):
     ejemplar = db.relationship('Ejemplar', primaryjoin='EjemplarPropietarioStud.fk_ejemplar == Ejemplar.e_tatuaje_labial', backref='ejemplar_propietario_studs')
     propietario_stud = db.relationship('PropietarioStud', primaryjoin='EjemplarPropietarioStud.fk_propietario_stud == PropietarioStud.ps_clave', backref='ejemplar_propietario_studs')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Entrada(db.Model):
     __tablename__ = 'entrada'
@@ -285,7 +491,17 @@ class Entrada(db.Model):
 
     grada = db.relationship('Grada', primaryjoin='Entrada.fk_grada == Grada.g_clave', backref='entradas')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Entrenador(db.Model):
     __tablename__ = 'entrenador'
@@ -305,7 +521,17 @@ class Entrenador(db.Model):
 
     lugar = db.relationship('Lugar', primaryjoin='Entrenador.fk_lugar == Lugar.l_clave', backref='entrenadors')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Estacionamiento(db.Model):
     __tablename__ = 'estacionamiento'
@@ -316,7 +542,17 @@ class Estacionamiento(db.Model):
 
     entrada = db.relationship('Entrada', primaryjoin='Estacionamiento.fk_entrada == Entrada.en_clave', backref='estacionamientoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Grada(db.Model):
     __tablename__ = 'grada'
@@ -328,15 +564,38 @@ class Grada(db.Model):
 
     hipodromo = db.relationship('Hipodromo', primaryjoin='Grada.fk_hipodromo == Hipodromo.h_id', backref='gradas')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Hara(db.Model):
     __tablename__ = 'haras'
 
     h_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     h_nombre = db.Column(db.String(45), nullable=False)
+    fk_lugar = db.Column(db.ForeignKey('lugar.l_clave'), nullable=False)
 
+    lugar = db.relationship('Lugar', primaryjoin='Hara.fk_lugar == Lugar.l_clave', backref='haras')
 
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Hipodromo(db.Model):
     __tablename__ = 'hipodromo'
@@ -350,7 +609,17 @@ class Hipodromo(db.Model):
 
     lugar = db.relationship('Lugar', primaryjoin='Hipodromo.fk_lugar == Lugar.l_clave', backref='hipodromoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class HistoricoEntrenador(db.Model):
     __tablename__ = 'historico_entrenador'
@@ -365,7 +634,41 @@ class HistoricoEntrenador(db.Model):
     caballeriza = db.relationship('Caballeriza', primaryjoin='HistoricoEntrenador.fk_caballeriza == Caballeriza.ca_clave', backref='historico_entrenadors')
     entrenador = db.relationship('Entrenador', primaryjoin='HistoricoEntrenador.fk_entrenador == Entrenador.p_cedula', backref='historico_entrenadors')
 
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
+class HistoricoPuesto(db.Model):
+    __tablename__ = 'historico_puesto'
+
+    hp_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
+    hp_fecha_inicio = db.Column(db.Date, nullable=False)
+    hp_fecha_final = db.Column(db.Date)
+    fk_puesto = db.Column(db.ForeignKey('puesto.pu_clave'), nullable=False)
+    fk_ejemplar = db.Column(db.ForeignKey('ejemplar.e_tatuaje_labial'), nullable=False)
+
+    ejemplar = db.relationship('Ejemplar', primaryjoin='HistoricoPuesto.fk_ejemplar == Ejemplar.e_tatuaje_labial', backref='historico_puestoes')
+    puesto = db.relationship('Puesto', primaryjoin='HistoricoPuesto.fk_puesto == Puesto.pu_clave', backref='historico_puestoes')
+
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Horario(db.Model):
     __tablename__ = 'horario'
@@ -378,12 +681,20 @@ class Horario(db.Model):
     ho_hora_apertura = db.Column(db.Time, nullable=False)
     ho_hora_cierre = db.Column(db.Time, nullable=False)
     fk_hipodromo = db.Column(db.ForeignKey('hipodromo.h_id'))
-    fk_restaurant = db.Column(db.ForeignKey('restaurant.r_rif'))
 
     hipodromo = db.relationship('Hipodromo', primaryjoin='Horario.fk_hipodromo == Hipodromo.h_id', backref='horarios')
-    restaurant = db.relationship('Restaurant', primaryjoin='Horario.fk_restaurant == Restaurant.r_rif', backref='horarios')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Implemento(db.Model):
     __tablename__ = 'implemento'
@@ -396,7 +707,17 @@ class Implemento(db.Model):
     i_nombre = db.Column(db.String(45), nullable=False)
     i_diminutivo = db.Column(db.String(3), nullable=False)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Inscripcion(db.Model):
     __tablename__ = 'inscripcion'
@@ -415,7 +736,17 @@ class Inscripcion(db.Model):
     carrera = db.relationship('Carrera', primaryjoin='Inscripcion.fk_carrera == Carrera.c_clave', backref='inscripcions')
     implemento = db.relationship('Implemento', primaryjoin='Inscripcion.fk_implemento == Implemento.i_codigo', backref='inscripcions')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Jinete(db.Model):
     __tablename__ = 'jinete'
@@ -440,7 +771,17 @@ class Jinete(db.Model):
 
     lugar = db.relationship('Lugar', primaryjoin='Jinete.fk_lugar == Lugar.l_clave', backref='jinetes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Lugar(db.Model):
     __tablename__ = 'lugar'
@@ -455,7 +796,17 @@ class Lugar(db.Model):
 
     parent = db.relationship('Lugar', remote_side=[l_clave], primaryjoin='Lugar.fk_lugar == Lugar.l_clave', backref='lugars')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Medicamento(db.Model):
     __tablename__ = 'medicamento'
@@ -467,7 +818,35 @@ class Medicamento(db.Model):
 
     tipo_medicamento = db.relationship('TipoMedicamento', primaryjoin='Medicamento.fk_tipo_medicamento == TipoMedicamento.tm_clave', backref='medicamentoes')
 
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
+class MetodoPago(db.Model):
+    __tablename__ = 'metodo_pago'
+
+    mp_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
+    mp_nombre = db.Column(db.String(56))
+
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Nivel(db.Model):
     __tablename__ = 'nivel'
@@ -480,7 +859,17 @@ class Nivel(db.Model):
 
     grada = db.relationship('Grada', primaryjoin='Nivel.fk_grada == Grada.g_clave', backref='nivels')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Paddock(db.Model):
     __tablename__ = 'paddock'
@@ -491,7 +880,17 @@ class Paddock(db.Model):
 
     hipodromo = db.relationship('Hipodromo', primaryjoin='Paddock.fk_hipodromo == Hipodromo.h_id', backref='paddocks')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Pista(db.Model):
     __tablename__ = 'pista'
@@ -511,7 +910,17 @@ class Pista(db.Model):
 
     hipodromo = db.relationship('Hipodromo', primaryjoin='Pista.fk_hipodromo == Hipodromo.h_id', backref='pistas')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class PorcentajeDividendo(db.Model):
     __tablename__ = 'porcentaje_dividendo'
@@ -520,7 +929,17 @@ class PorcentajeDividendo(db.Model):
     pd_puesto = db.Column(db.Numeric(3, 0), nullable=False)
     pd_porcentaje = db.Column(db.String(45), nullable=False)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class PosicionParcial(db.Model):
     __tablename__ = 'posicion_parcial'
@@ -533,28 +952,17 @@ class PosicionParcial(db.Model):
 
     resultado_ejemplar = db.relationship('ResultadoEjemplar', primaryjoin='PosicionParcial.fk_resultado_ejemplar == ResultadoEjemplar.res_clave', backref='posicion_parcials')
 
-
-
-class PreguntaSeguridad(db.Model):
-    __tablename__ = 'pregunta_seguridad'
-
-    ps_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    ps_titulo = db.Column(db.String(45), nullable=False)
-
-
-
-class PreguntaUsuario(db.Model):
-    __tablename__ = 'pregunta_usuario'
-
-    pu_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    pu_respuesta = db.Column(db.String(45), nullable=False)
-    fk_usuario = db.Column(db.ForeignKey('usuario.u_clave'), nullable=False)
-    fk_pregunta_seguridad = db.Column(db.ForeignKey('pregunta_seguridad.ps_clave'), nullable=False)
-
-    pregunta_seguridad = db.relationship('PreguntaSeguridad', primaryjoin='PreguntaUsuario.fk_pregunta_seguridad == PreguntaSeguridad.ps_clave', backref='pregunta_usuarios')
-    usuario = db.relationship('Usuario', primaryjoin='PreguntaUsuario.fk_usuario == Usuario.u_clave', backref='pregunta_usuarios')
-
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Propietario(db.Model):
     __tablename__ = 'propietario'
@@ -575,7 +983,17 @@ class Propietario(db.Model):
 
     lugar = db.relationship('Lugar', primaryjoin='Propietario.fk_lugar == Lugar.l_clave', backref='propietarios')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class PropietarioStud(db.Model):
     __tablename__ = 'propietario_stud'
@@ -588,7 +1006,17 @@ class PropietarioStud(db.Model):
     propietario = db.relationship('Propietario', primaryjoin='PropietarioStud.fk_propietario == Propietario.p_cedula', backref='propietario_studs')
     stud = db.relationship('Stud', primaryjoin='PropietarioStud.fk_stud == Stud.s_clave', backref='propietario_studs')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Puesto(db.Model):
     __tablename__ = 'puesto'
@@ -602,7 +1030,17 @@ class Puesto(db.Model):
 
     caballeriza = db.relationship('Caballeriza', primaryjoin='Puesto.fk_caballeriza == Caballeriza.ca_clave', backref='puestoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Restaurant(db.Model):
     __tablename__ = 'restaurant'
@@ -614,7 +1052,39 @@ class Restaurant(db.Model):
 
     nivel = db.relationship('Nivel', primaryjoin='Restaurant.fk_nivel == Nivel.ni_clave', backref='restaurants')
 
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
+class RestaurantHorario(db.Model):
+    __tablename__ = 'restaurant_horario'
+
+    rh_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
+    fk_horario = db.Column(db.ForeignKey('horario.ho_clave'), nullable=False)
+    fk_restaurant = db.Column(db.ForeignKey('restaurant.r_rif'), nullable=False)
+
+    horario = db.relationship('Horario', primaryjoin='RestaurantHorario.fk_horario == Horario.ho_clave', backref='restaurant_horarios')
+    restaurant = db.relationship('Restaurant', primaryjoin='RestaurantHorario.fk_restaurant == Restaurant.r_rif', backref='restaurant_horarios')
+
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class ResultadoEjemplar(db.Model):
     __tablename__ = 'resultado_ejemplar'
@@ -629,7 +1099,17 @@ class ResultadoEjemplar(db.Model):
 
     inscripcion = db.relationship('Inscripcion', primaryjoin='ResultadoEjemplar.fk_inscripcion == Inscripcion.ins_clave', backref='resultado_ejemplars')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Retiro(db.Model):
     __tablename__ = 'retiro'
@@ -642,7 +1122,17 @@ class Retiro(db.Model):
 
     causa_retiro = db.relationship('CausaRetiro', primaryjoin='Retiro.fk_causaretiro == CausaRetiro.cr_clave', backref='retiros')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class SolicitudImplemento(db.Model):
     __tablename__ = 'solicitud_implemento'
@@ -661,7 +1151,17 @@ class SolicitudImplemento(db.Model):
     inscripcion = db.relationship('Inscripcion', primaryjoin='SolicitudImplemento.fk_inscripcion == Inscripcion.ins_clave', backref='solicitud_implementoes')
     usuario = db.relationship('Usuario', primaryjoin='SolicitudImplemento.fk_usuario == Usuario.u_clave', backref='solicitud_implementoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Stud(db.Model):
     __tablename__ = 'stud'
@@ -670,7 +1170,17 @@ class Stud(db.Model):
     s_nombre = db.Column(db.String(45), nullable=False)
     s_fecha_creacion = db.Column(db.Date, nullable=False)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class StudColor(db.Model):
     __tablename__ = 'stud_color'
@@ -684,7 +1194,17 @@ class StudColor(db.Model):
     color = db.relationship('Color', primaryjoin='StudColor.fk_color == Color.col_clave', backref='stud_colors')
     stud = db.relationship('Stud', primaryjoin='StudColor.fk_stud == Stud.s_clave', backref='stud_colors')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class TaquillaApuesta(db.Model):
     __tablename__ = 'taquilla_apuesta'
@@ -695,7 +1215,17 @@ class TaquillaApuesta(db.Model):
 
     nivel = db.relationship('Nivel', primaryjoin='TaquillaApuesta.fk_nivel == Nivel.ni_clave', backref='taquilla_apuestas')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class TaquillaBoleto(db.Model):
     __tablename__ = 'taquilla_boleto'
@@ -706,7 +1236,17 @@ class TaquillaBoleto(db.Model):
 
     nivel = db.relationship('Nivel', primaryjoin='TaquillaBoleto.fk_nivel == Nivel.ni_clave', backref='taquilla_boletoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Telefono(db.Model):
     __tablename__ = 'telefono'
@@ -725,7 +1265,17 @@ class Telefono(db.Model):
     hipodromo = db.relationship('Hipodromo', primaryjoin='Telefono.fk_hipodromo == Hipodromo.h_id', backref='telefonoes')
     propietario = db.relationship('Propietario', primaryjoin='Telefono.fk_propietario == Propietario.p_cedula', backref='telefonoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class TipoApuesta(db.Model):
     __tablename__ = 'tipo_apuesta'
@@ -738,7 +1288,17 @@ class TipoApuesta(db.Model):
     ta_cant_caballo_minimo_carrera = db.Column(db.Numeric(3, 0))
     ta_num_ejemplar_minimo_necesario = db.Column(db.Numeric(3, 0))
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class TipoCarrera(db.Model):
     __tablename__ = 'tipo_carrera'
@@ -754,7 +1314,17 @@ class TipoCarrera(db.Model):
     tc_victoria_minima = db.Column(db.Numeric(10, 0))
     tc_victoria_maxima = db.Column(db.Numeric(10, 0))
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class TipoMedicamento(db.Model):
     __tablename__ = 'tipo_medicamento'
@@ -762,7 +1332,17 @@ class TipoMedicamento(db.Model):
     tm_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     tm_nombre = db.Column(db.String(20), nullable=False)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class TipoUsuario(db.Model):
     __tablename__ = 'tipo_usuario'
@@ -770,7 +1350,17 @@ class TipoUsuario(db.Model):
     tu_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     tu_nombre = db.Column(db.String(45), nullable=False)
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Usuario(db.Model):
     __tablename__ = 'usuario'
@@ -793,7 +1383,17 @@ class Usuario(db.Model):
     tipo_usuario = db.relationship('TipoUsuario', primaryjoin='Usuario.fk_tipo_usuario == TipoUsuario.tu_clave', backref='usuarios')
     veterinario = db.relationship('Veterinario', primaryjoin='Usuario.fk_veterinario == Veterinario.p_cedula', backref='usuarios')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class VentaBoleto(db.Model):
     __tablename__ = 'venta_boleto'
@@ -809,7 +1409,17 @@ class VentaBoleto(db.Model):
     taquilla_boleto = db.relationship('TaquillaBoleto', primaryjoin='VentaBoleto.fk_taquilla_boleto == TaquillaBoleto.tab_clave', backref='venta_boletoes')
     usuario = db.relationship('Usuario', primaryjoin='VentaBoleto.fk_usuario == Usuario.u_clave', backref='venta_boletoes')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class VentaRestaurant(db.Model):
     __tablename__ = 'venta_restaurant'
@@ -821,7 +1431,17 @@ class VentaRestaurant(db.Model):
 
     restaurant = db.relationship('Restaurant', primaryjoin='VentaRestaurant.fk_restaurant == Restaurant.r_rif', backref='venta_restaurants')
 
-
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element
 
 class Veterinario(db.Model):
     __tablename__ = 'veterinario'
@@ -843,3 +1463,14 @@ class Veterinario(db.Model):
     caballeriza = db.relationship('Caballeriza', primaryjoin='Veterinario.fk_caballeriza == Caballeriza.ca_clave', backref='veterinarios')
     lugar = db.relationship('Lugar', primaryjoin='Veterinario.fk_lugar == Lugar.l_clave', backref='veterinarios')
 
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except Exception as error:
+            print(error.args)
+            db.session.rollback()
+            return False
+        return element

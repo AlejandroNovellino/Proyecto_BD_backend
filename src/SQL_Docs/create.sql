@@ -6,14 +6,7 @@
 	/*Clave primaria*/
 	/*Claves foraneas*/
 
---Entidades sin claves foráneas
-
-create table Haras(
-	H_Clave 	serial NOT NULL UNIQUE,
-	H_Nombre 	varchar(45) NOT NULL,
-	/*Clave primaria*/
-	constraint PK_Haras primary key (H_Clave)
-);
+--Entidades sin claves foráneas------------------------------------------------------------------------------------------
 
 create table Stud(
 	S_Clave				serial NOT NULL UNIQUE,
@@ -104,13 +97,6 @@ create table Implemento(
 	constraint Check_Implemento_Diminutivo Check (I_Diminutivo IN ('CC','CH','LA','BZ','BL','BB','M','P','G','V','OT','L') )
 );
 
-create table Pregunta_Seguridad(
-	PS_Clave		serial not null unique,
-	PS_Titulo		Varchar(45) not null,
-	/*Clave primaria*/
-	constraint PK_Pregunta_Seguridad primary key(PS_Clave)
-);
-
 create Table Tipo_Apuesta(
 	TA_Clave							serial not null unique,
 	TA_Nombre							Varchar(20) not null,
@@ -123,7 +109,14 @@ create Table Tipo_Apuesta(
 	constraint PK_Tipo_Apuesta primary key(TA_Clave)
 );
 
---Entidades con claves foráneas
+create table Metodo_Pago(
+	MP_Clave 	serial not null unique,
+	MP_Nombre	varchar(56),
+	/*Clave primaria*/
+	constraint PK_Metodo_Pago primary key(MP_Clave)
+);
+
+--Entidades con claves foráneas------------------------------------------------------------------------------------------
 
 create table Lugar(
 	L_Clave		serial NOT NULL UNIQUE,
@@ -134,6 +127,16 @@ create table Lugar(
 	constraint Check_Lugar_Tipo CHECK (L_Tipo in ('ESTADO', 'MUNICIPIO','PARROQUIA')),
 	/*Clave primaria*/
 	constraint PK_Lugar primary key (L_Clave),
+	/*Claves foraneas*/
+	constraint fk_Lugar foreign key (FK_Lugar) references Lugar(L_Clave)
+);
+
+create table Haras(
+	H_Clave 	serial NOT NULL UNIQUE,
+	H_Nombre 	varchar(45) NOT NULL,
+	FK_Lugar	integer NOT NULL,
+	/*Clave primaria*/
+	constraint PK_Haras primary key (H_Clave),
 	/*Claves foraneas*/
 	constraint fk_Lugar foreign key (FK_Lugar) references Lugar(L_Clave)
 );
@@ -427,11 +430,13 @@ create table Detallado_Venta(
 	DV_Precio_Venta		numeric(10) NOT NULL,
 	FK_Venta_Boleto		integer NOT NULL,
 	FK_Boleto					integer NOT NULL,
+	FK_MetodoPago			integer NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Detallado_Venta primary key (DV_Clave),
 	/*Claves foraneas*/
-	constraint fk_Venta_Boleto foreign key (FK_Venta_Boleto) references Venta_Boleto(VB_Clave),
-	constraint fk_Boleto foreign key (FK_Boleto) references Boleto(BO_Clave)
+	constraint fk_Venta_Boleto	foreign key (FK_Venta_Boleto) references Venta_Boleto(VB_Clave),
+	constraint fk_Boleto 				foreign key (FK_Boleto) references Boleto(BO_Clave),
+	constraint fK_MetodoPago	 	foreign key (FK_MetodoPago) references Metodo_Pago(MP_Clave)
 );
 
 create table Restaurant(
@@ -451,14 +456,12 @@ create table Horario(
 	HO_Hora_Apertura		time NOT NULL,
 	HO_Hora_Cierre			time NOT NULL,
 	FK_Hipodromo			integer,
-	FK_Restaurant			integer,
 	/*Checks*/
 	constraint Check_Dia_Semana_Horario CHECK (HO_Dia_Semana in ('LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO')),
 	/*Clave primaria*/
 	constraint PK_Horario primary key (HO_Clave),
 	/*Claves foraneas*/
-	constraint fk_Hipodromo foreign key (FK_Hipodromo) references Hipodromo(H_ID),
-	constraint fk_Restaurant foreign key (FK_Restaurant) references Restaurant(R_Rif)
+	constraint fk_Hipodromo foreign key (FK_Hipodromo) references Hipodromo(H_ID)
 );
 
 create table Pista(
@@ -584,11 +587,13 @@ create	table Carrera(
 	C_Comentario					varchar(100),
 	FK_Tipo_Carrera				integer NOT NULL,
 	FK_Categoria_Carrera	integer NOT NULL,
+	FK_Pista							integer NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Carrera primary key(C_Clave),
 	/*Claves foraneas*/
 	constraint fk_Tipo_Carrera foreign key (FK_Tipo_Carrera) references Tipo_Carrera(TC_Clave),
-	constraint fk_Categoria_Carrera foreign key (FK_Categoria_Carrera) references Categoria_Carrera(CA_Clave)
+	constraint fk_Categoria_Carrera foreign key (FK_Categoria_Carrera) references Categoria_Carrera(CA_Clave),
+	constraint fK_Pista foreign key (FK_Pista) references Pista(PI_Clave)
 );
 
 create	table Carrera_Porcentaje_Dividendo(
@@ -744,20 +749,8 @@ create table Accion_Tipo_Usuario(
 	constraint FK_Accion foreign key(FK_Accion) references Accion(ACC_Clave)
 );
 
-create table Pregunta_Usuario(
-	PU_Clave								serial  not null unique,
-	PU_Respuesta						Varchar(45) not null,
-	FK_Usuario							integer not null,
-	FK_Pregunta_Seguridad		integer not null,
-	/*Clave primaria*/
-	constraint PK_Pregunta_Usuario 	primary key(PU_Clave),
-	/*Claves foraneas*/
-	constraint FK_Usuario				foreign key(FK_Usuario) references Usuario(U_Clave),
-	constraint FK_Pregunta_Seguridad	foreign key(FK_Pregunta_Seguridad) references Pregunta_Seguridad(PS_Clave)
-);
-
 create Table Apuesta(
-	APU_Clave						serial  not null unique ,
+	APU_Clave						serial  not null unique,
 	APU_Saldo_Total			Decimal(10,2) not null,
 	APU_Combinacion			Numeric(5),
 	APU_Fecha_Hora			timestamp not null,
@@ -776,10 +769,37 @@ create table Detalle_Apuesta(
 	DA_Clave										serial not null unique ,
 	DA_Orden_Llegada_Ejemplar		Numeric(2) not null,
 	FK_Apuesta									integer not null,
-	FK_Inscripcion						  integer not null unique,
+	FK_Inscripcion						  integer not null,
+	FK_MetodoPago								integer NOT NULL,
 	/*Clave primaria*/	
 	constraint PK_Detalle_Apuesta	primary key(DA_Clave),
 	/*Claves foraneas*/
-	constraint FK_Apuesta 		foreign key(FK_Apuesta) references Apuesta(APU_Clave),
-	constraint FK_Inscripcion 	foreign key(FK_Inscripcion) references Inscripcion(INS_Clave)
-);	
+	constraint FK_Apuesta 			foreign key(FK_Apuesta) references Apuesta(APU_Clave),
+	constraint FK_Inscripcion 	foreign key(FK_Inscripcion) references Inscripcion(INS_Clave),
+	constraint fK_MetodoPago	 	foreign key(FK_MetodoPago) references Metodo_Pago(MP_Clave)
+
+);
+
+create table Restaurant_Horario(
+	RH_Clave 				serial not null unique,
+	FK_Horario			integer not null,
+	FK_Restaurant		numeric(10) not null,
+	/*Clave primaria*/	
+	constraint PK_Restaurant_Horario	primary key(RH_Clave),
+	/*Claves foraneas*/
+	constraint fK_Horario 		foreign key(FK_Horario) references Horario(HO_Clave),
+	constraint fK_Restaurant	foreign key(FK_Restaurant) references Restaurant(R_Rif)
+);
+
+create table Historico_Puesto(
+	HP_Clave				serial not null unique,
+	HP_Fecha_Inicio date not null,
+	HP_Fecha_Final 	date,
+	FK_Puesto 			integer not null,
+	FK_Ejemplar 		numeric(10) not null,
+	/*Clave primaria*/	
+	constraint PK_Historico_Puesto	primary key(HP_Clave),
+	/*Claves foraneas*/
+	constraint fK_Puesto 		foreign key(FK_Puesto) references Puesto(PU_Clave),
+	constraint fK_Ejemplar	foreign key(FK_Ejemplar) references Ejemplar(E_Tatuaje_Labial)
+);

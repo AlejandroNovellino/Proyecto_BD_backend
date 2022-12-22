@@ -1,5 +1,11 @@
 import os
 
+# Como correr este codigo
+# Desde la carpeta padre del proyecto correr
+# "pipenv run python .\src\modelsGenerator.py"
+# Se genera un nuevo archivo donde estan los nuevos modelos creados
+# Se ejecuta desde pipenv porque alli estan los paquetes instalados
+
 # postgresql+psycopg2://postgres:1224@localhost/IS_app
 
 # command without flask
