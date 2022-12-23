@@ -106,6 +106,11 @@ propietario_parser.add_argument('fk_lugar')
 tipo_usuario_parser = reqparse.RequestParser()
 tipo_usuario_parser.add_argument('tu_clave') 
 tipo_usuario_parser.add_argument('tu_nombre')
+# AccionTipoUsuario --------------------------------------------------------------------------------
+accion_tipo_usuario_parser = reqparse.RequestParser()
+accion_tipo_usuario_parser.add_argument('atu_clave') 
+accion_tipo_usuario_parser.add_argument('fk_tipousuario') 
+accion_tipo_usuario_parser.add_argument('fk_accion')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -172,6 +177,24 @@ class TipoUsuarioSchema(ma.SQLAlchemyAutoSchema):
         include_fk = True
 # instance the class
 tipo_usuario_schema = TipoUsuarioSchema()
+
+# Accion schema
+class AccionSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Accion
+        include_fk = True
+# instance the class
+accion_schema = AccionSchema()
+
+# AccionTipoUsuario schema
+class AccionTipoUsuarioSchema(ma.SQLAlchemyAutoSchema):
+    accion = ma.Nested(AccionSchema)
+    tipo_usuario = ma.Nested(TipoUsuarioSchema)
+    class Meta:
+        model = AccionTipoUsuario
+        include_fk = True
+# instance the class
+accion_tipo_usuario_schema = AccionTipoUsuarioSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -610,6 +633,60 @@ class TipoUsuarioListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(TipoUsuarioListEndPoint, '/tipos-usuarios')
+
+
+### Accion_Tipo_Usuario ###
+
+# RUD for one AccionTipoUsuario
+class AccionTipoUsuarioEndPoint(Resource):
+    def get(self, accion_tipo_usuario_id):
+        accion_tipo_usuario = AccionTipoUsuario.query.get(accion_tipo_usuario_id)
+        # ejemplar does not exist
+        if not accion_tipo_usuario:
+            abort(404, message="Accion tipo usuario {} doesn't exist".format(accion_tipo_usuario_id))
+
+        return accion_tipo_usuario_schema.dump(accion_tipo_usuario)
+
+    def delete(self, accion_tipo_usuario_id):
+        accion_tipo_usuario = AccionTipoUsuario.query.get(accion_tipo_usuario_id)
+        response = deleteElement(accion_tipo_usuario)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, accion_tipo_usuario_id):
+        args = accion_tipo_usuario_parser.parse_args()
+        accion_tipo_usuario = AccionTipoUsuario.query.get(accion_tipo_usuario_id)
+        #update the Stud
+        accion_tipo_usuario.fk_tipousuario = args["fk_tipousuario"]
+        accion_tipo_usuario.fk_accion = args["fk_accion"]
+
+        try:
+            db.session.commit()
+            return accion_tipo_usuario_schema.dump(accion_tipo_usuario), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(AccionTipoUsuarioEndPoint, '/accion-tipos-usuarios/<accion_tipo_usuario_id>')
+
+# list all AccionTipoUsuario and create one
+class AccionTipoUsuarioListEndPoint(Resource):
+    def get(self):
+        acciones_tipo_usuario = AccionTipoUsuario.query.all()
+        return [accion_tipo_usuario_schema.dump(accion_tipo_usuario) for accion_tipo_usuario in acciones_tipo_usuario]
+
+    def post(self):
+        try:
+            args = accion_tipo_usuario_parser.parse_args()
+            accion_tipo_usuario = AccionTipoUsuario.create(**args)
+            return accion_tipo_usuario_schema.dump(accion_tipo_usuario), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(AccionTipoUsuarioListEndPoint, '/accion-tipos-usuarios')
 
 
 ### Color ###
