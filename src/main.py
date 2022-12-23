@@ -77,6 +77,20 @@ stud_parser = reqparse.RequestParser()
 stud_parser.add_argument('s_clave') 
 stud_parser.add_argument('s_nombre')
 stud_parser.add_argument('s_fecha_creacion')
+# Carrera --------------------------------------------------------------------------------
+carrera_parser = reqparse.RequestParser()
+carrera_parser.add_argument('c_clave') 
+carrera_parser.add_argument('c_nombre')
+carrera_parser.add_argument('c_fecha')
+carrera_parser.add_argument('c_hora')
+carrera_parser.add_argument('c_num_llamado')
+carrera_parser.add_argument('c_pull_dinero_total')
+carrera_parser.add_argument('c_distancia')
+carrera_parser.add_argument('c_comentario')
+carrera_parser.add_argument('fk_tipo_carrera')
+carrera_parser.add_argument('fk_categoria_carrera')
+carrera_parser.add_argument('fk_pista')
+
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -117,6 +131,15 @@ class StudSchema(ma.SQLAlchemyAutoSchema):
         include_fk = True
 # instance the class
 stud_schema = StudSchema()
+
+# Carrera schema
+class CarreraSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Carrera
+        include_fk = True
+        json_module = simplejson
+# instance the class
+carrera_schema = CarreraSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -379,6 +402,68 @@ class StudListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(StudListEndPoint, '/studs')
+
+
+### Carrera ###
+
+# RUD for one stud
+class CarreraEndPoint(Resource):
+    def get(self, carrera_id):
+        carrera = Carrera.query.get(carrera_id)
+        # ejemplar does not exist
+        if not carrera:
+            abort(404, message="Stud {} doesn't exist".format(carrera_id))
+
+        return carrera_schema.dumps(carrera)
+
+    def delete(self, carrera_id):
+        carrera = Carrera.query.get(carrera_id)
+        response = deleteElement(carrera)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, carrera_id):
+        args = carrera_parser.parse_args()
+        carrera = Carrera.query.get(carrera_id)
+        #update the Carrera
+        carrera.c_nombre = args["c_nombre"]
+        carrera.c_fecha = args["c_fecha"]
+        carrera.c_hora = args["c_hora"]
+        carrera.c_num_llamado = args["c_num_llamado"]
+        carrera.c_pull_dinero_total = args["c_pull_dinero_total"]
+        carrera.c_distancia = args["c_distancia"]
+        carrera.c_comentario = args["c_comentario"]
+        carrera.fk_tipo_carrera = args["fk_tipo_carrera"]
+        carrera.fk_categoria_carrera = args["fk_categoria_carrera"]
+        carrera.fk_pista = args["fk_pista"]
+
+        try:
+            db.session.commit()
+            return carrera_schema.dumps(carrera), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(CarreraEndPoint, '/carreras/<carrera_id>')
+
+# list all carreras and create one
+class CarreraListEndPoint(Resource):
+    def get(self):
+        carreras = Carrera.query.all()
+        return [carrera_schema.dumps(carrera) for carrera in carreras]
+
+    def post(self):
+        try:
+            args = carrera_parser.parse_args()
+            carrera = Carrera.create(**args)
+            return carrera_schema.dumps(carrera), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(CarreraListEndPoint, '/carreras')
 
 
 ### Color ###

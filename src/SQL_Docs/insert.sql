@@ -1923,3 +1923,5 @@ insert into Taquilla_Boleto VALUES(DEFAULT,12,2);
 -- FK_Madre, FK_Padre, FK_Puesto, FK_Caballeriza
 insert into Ejemplar VALUES(1,'Alfredo','C','C','2017-04-04','2017-04-04',90,1,null,null,1,1);
 
+-- pista
+insert into Pista(PI_Longitud, PI_Capacidad, PI_Num_Salida, PI_Tipo, FK_Hipodromo) VALUES(1800,16,2,'ARENA',1);
