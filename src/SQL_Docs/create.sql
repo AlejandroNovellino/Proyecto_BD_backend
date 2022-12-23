@@ -24,8 +24,9 @@ create table Tipo_Usuario(
 );
 
 create table Accion(
-	ACC_Clave				serial not null  unique,
-	ACC_Objetivo			Numeric(10) not null unique,
+	ACC_Clave							serial not null  unique,
+	ACC_Nombre						varchar(45) NOT NULL,
+	ACC_Tabla_Objetivo		varchar(45) NOT NULL,
 	/*Clave primaria*/
 	constraint PK_Accion primary key(ACC_Clave)
 );
@@ -54,13 +55,13 @@ create	table Categoria_Carrera(
 );
 
 create	table Tipo_Carrera(
-	TC_Clave				serial NOT NULL UNIQUE,
-	TC_Nombre				varchar(60) NOT NULL,
-	TC_Sexo					varchar(1),
-	TC_Edad_Minima			Numeric(1),
-	TC_Edad_Maxima			Numeric(1),
-	TC_Victoria_Minima		Numeric(1),
-	TC_Victoria_Maxima		Numeric(1),
+	TC_Clave						serial NOT NULL UNIQUE,
+	TC_Nombre						varchar(60) NOT NULL,
+	TC_Sexo							varchar(1),
+	TC_Edad_Minima			Numeric(4),
+	TC_Edad_Maxima			Numeric(4),
+	TC_Victoria_Minima	Numeric(4),
+	TC_Victoria_Maxima	Numeric(4),
 	/*Clave primaria*/
 	constraint PK_Tipo_Carrera primary key(TC_Clave),
 	/*Checks*/

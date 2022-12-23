@@ -8,7 +8,8 @@ class Accion(db.Model):
     __tablename__ = 'accion'
 
     acc_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    acc_objetivo = db.Column(db.Numeric(10, 0), nullable=False, unique=True)
+    acc_nombre = db.Column(db.String(45), nullable=False)
+    acc_tabla_objetivo = db.Column(db.String(45), nullable=False)
 
     @classmethod
     def create(cls, **kwargs):
@@ -1309,10 +1310,10 @@ class TipoCarrera(db.Model):
     tc_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     tc_nombre = db.Column(db.String(60), nullable=False)
     tc_sexo = db.Column(db.String(1))
-    tc_edad_minima = db.Column(db.Numeric(1, 0))
-    tc_edad_maxima = db.Column(db.Numeric(1, 0))
-    tc_victoria_minima = db.Column(db.Numeric(1, 0))
-    tc_victoria_maxima = db.Column(db.Numeric(1, 0))
+    tc_edad_minima = db.Column(db.Numeric(4, 0))
+    tc_edad_maxima = db.Column(db.Numeric(4, 0))
+    tc_victoria_minima = db.Column(db.Numeric(4, 0))
+    tc_victoria_maxima = db.Column(db.Numeric(4, 0))
 
     @classmethod
     def create(cls, **kwargs):

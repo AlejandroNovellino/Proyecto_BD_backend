@@ -1589,7 +1589,7 @@ insert into Entrenador VALUES(13339835,'Fernando','Andres','Parilli','Tota','M',
 insert into Entrenador VALUES(14486022,'Radames',null,'Santamaria',null,'M','dir','2004-06-21',203);
 insert into Entrenador VALUES(6371724,'Yanir','Jose','Hurtado','Davila','M','dir','1998-02-11',653);
 insert into Entrenador VALUES(11922339,'Dotwing','Alexander','Fernandez','Balza','M','dir','2015-06-29',1500); 
-insert into Entrenador VALUES(5132768,'Ezequiel','Eduardo','Gonzalez',"Calatayud",'M','dir','1997-05-10',1498);
+insert into Entrenador VALUES(5132768,'Ezequiel','Eduardo','Gonzalez','Calatayud','M','dir','1997-05-10',1498);
 insert into Entrenador VALUES(8757187,'Wladimir',null,'Sanchez','Gonzalez','M','dir','1993-08-13',203);
 insert into Entrenador VALUES(7282219,'Ruben','Antonio','Lanz','Lovera','M','dir','1999-10-06',1020);
 insert into Entrenador VALUES(6431196,'Abraham','Jose','Campos','Guerrero','M','dir','2003-11-09',1500);
@@ -1631,37 +1631,37 @@ insert into Entrenador VALUES(9604431,'Carlos','Rafael','Arocha','Silva','M','di
 
 insert into Aficionado VALUES(30395284,'Nicolas','Adrian','Setien','Briceno','M','dir','Estudiante',906); --montalban
 
-insert into Haras VALUES(DEFAULT,'Alegria');
-insert into Haras VALUES(DEFAULT,'Bello Monte');
-insert into Haras VALUES(DEFAULT,'Los Caracaros');
-insert into Haras VALUES(DEFAULT,'Agua Miel');
-insert into Haras VALUES(DEFAULT,'Luisiana');
-insert into Haras VALUES(DEFAULT,'La Orlyana');
-insert into Haras VALUES(DEFAULT,'La Primavera');
-insert into Haras VALUES(DEFAULT,'Los Samanes');
-insert into Haras VALUES(DEFAULT,'Vista Hermosa');
-insert into Haras VALUES(DEFAULT,'La Celeste');
-insert into Haras VALUES(DEFAULT,'Paumar');
-insert into Haras VALUES(DEFAULT,'Monumental');
-insert into Haras VALUES(DEFAULT,'Urama');
-insert into Haras VALUES(DEFAULT,'La Alhambra');
-insert into Haras VALUES(DEFAULT,'Oropal');
-insert into Haras VALUES(DEFAULT,'La Mulera');
-insert into Haras VALUES(DEFAULT,'Montesano');
-insert into Haras VALUES(DEFAULT,'El Bosque');
-insert into Haras VALUES(DEFAULT,'H.M.');
-insert into Haras VALUES(DEFAULT,'La Invasion');
-insert into Haras VALUES(DEFAULT,'La Encantada');
-insert into Haras VALUES(DEFAULT,'Erre-Ene');
-insert into Haras VALUES(DEFAULT,'La Lechuza');
-insert into Haras VALUES(DEFAULT,'Del Mar');
-insert into Haras VALUES(DEFAULT,'San Joaquin');
-insert into Haras VALUES(DEFAULT,'La Giralda');
-insert into Haras VALUES(DEFAULT,'El Rosal');
-insert into Haras VALUES(DEFAULT,'La Alameda');
-insert into Haras VALUES(DEFAULT,'El Centauro');
-insert into Haras VALUES(DEFAULT,'Los Aguacates');
-insert into Haras VALUES(DEFAULT,'El Nuevo Color');
+insert into Haras VALUES(DEFAULT,'Alegria', 1);
+insert into Haras VALUES(DEFAULT,'Bello Monte', 2);
+insert into Haras VALUES(DEFAULT,'Los Caracaros', 3);
+insert into Haras VALUES(DEFAULT,'Agua Miel', 1);
+insert into Haras VALUES(DEFAULT,'Luisiana', 2);
+insert into Haras VALUES(DEFAULT,'La Orlyana', 3);
+insert into Haras VALUES(DEFAULT,'La Primavera', 1);
+insert into Haras VALUES(DEFAULT,'Los Samanes', 2);
+insert into Haras VALUES(DEFAULT,'Vista Hermosa', 3);
+insert into Haras VALUES(DEFAULT,'La Celeste', 1);
+insert into Haras VALUES(DEFAULT,'Paumar', 2);
+insert into Haras VALUES(DEFAULT,'Monumental', 3);
+insert into Haras VALUES(DEFAULT,'Urama', 1);
+insert into Haras VALUES(DEFAULT,'La Alhambra', 2);
+insert into Haras VALUES(DEFAULT,'Oropal', 3);
+insert into Haras VALUES(DEFAULT,'La Mulera', 1);
+insert into Haras VALUES(DEFAULT,'Montesano', 2);
+insert into Haras VALUES(DEFAULT,'El Bosque', 3);
+insert into Haras VALUES(DEFAULT,'H.M.', 1);
+insert into Haras VALUES(DEFAULT,'La Invasion', 2);
+insert into Haras VALUES(DEFAULT,'La Encantada', 3);
+insert into Haras VALUES(DEFAULT,'Erre-Ene', 1);
+insert into Haras VALUES(DEFAULT,'La Lechuza', 2);
+insert into Haras VALUES(DEFAULT,'Del Mar', 3);
+insert into Haras VALUES(DEFAULT,'San Joaquin', 1);
+insert into Haras VALUES(DEFAULT,'La Giralda', 2);
+insert into Haras VALUES(DEFAULT,'El Rosal', 3);
+insert into Haras VALUES(DEFAULT,'La Alameda', 1);
+insert into Haras VALUES(DEFAULT,'El Centauro', 2);
+insert into Haras VALUES(DEFAULT,'Los Aguacates', 3);
+insert into Haras VALUES(DEFAULT,'El Nuevo Color', 1);
 
 insert into Stud VALUES(DEFAULT,'Punto Blanco','1963-06-28');
 insert into Stud VALUES(DEFAULT,'Yofyel','1973-10-09');
@@ -1752,10 +1752,10 @@ insert into Tipo_Usuario VALUES(DEFAULT,'Entrenador');
 insert into Tipo_Usuario VALUES(DEFAULT,'Personal'); --jinete propietario veterinario
 insert into Tipo_Usuario VALUES(DEFAULT,'Administrador');
 
-insert into Accion VALUES(DEFAULT,'Renombrar');
-insert into Accion VALUES(DEFAULT,'Cambiar atributo');
-insert into Accion VALUES(DEFAULT,'Insertar');
-insert into Accion VALUES(DEFAULT,'Eliminar');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Ejemplar');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Ejemplar');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Ejemplar');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Ejemplar');
 
 insert into Color VALUES(DEFAULT,'Azul');
 insert into Color VALUES(DEFAULT,'Amarillo');
@@ -1822,7 +1822,7 @@ insert into Categoria_Carrera VALUES(DEFAULT,'Clasico');
 insert into Categoria_Carrera VALUES(DEFAULT,'Copa');
 
 --agregar descripcion historica
-insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24)
+insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24);
 
 insert into Caballeriza VALUES(DEFAULT,1,30,1);
 insert into Caballeriza VALUES(DEFAULT,2,30,1);
@@ -1916,3 +1916,10 @@ insert into Taquilla_Boleto VALUES(DEFAULT,9,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,10,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,11,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,12,2);
+
+-- Ejemplares
+-- E_Tatuaje_Labial, E_Nombre, E_Color_Pelaje, E_Sexo, 
+-- E_Fecha_Nacimiento, E_Fecha_Ing_Hipo, E_Peso, FK_Haras, 
+-- FK_Madre, FK_Padre, FK_Puesto, FK_Caballeriza
+insert into Ejemplar VALUES(1,'Alfredo','C','C','2017-04-04','2017-04-04',90,1,null,null,1,1);
+
