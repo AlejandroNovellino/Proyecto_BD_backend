@@ -46,6 +46,17 @@ ejemplar_parser.add_argument('fk_madre')
 ejemplar_parser.add_argument('fk_padre')
 ejemplar_parser.add_argument('fk_puesto')
 ejemplar_parser.add_argument('fk_caballeriza')
+# Entrenador --------------------------------------------------------------------------------
+entrenador_parser = reqparse.RequestParser()
+entrenador_parser.add_argument('p_cedula') 
+entrenador_parser.add_argument('p_primer_nombre')
+entrenador_parser.add_argument('p_segundo_nombre')
+entrenador_parser.add_argument('p_primer_apellido')
+entrenador_parser.add_argument('p_segundo_apellido')
+entrenador_parser.add_argument('p_sexo')
+entrenador_parser.add_argument('p_direccion')
+entrenador_parser.add_argument('ent_fecha_ing_hipo')
+entrenador_parser.add_argument('fk_lugar')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -60,6 +71,14 @@ class EjemplarSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 ejemplar_schema = EjemplarSchema()
+
+class EntrenadorSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Entrenador
+        include_fk = True
+        json_module = simplejson
+# instance the class
+entrenador_schema = EntrenadorSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -143,6 +162,67 @@ class EjemplarListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(EjemplarListEndPoint, '/ejemplares')
+
+
+### Entrenador ###
+
+# RUD for one Entrenador
+class EntrenadorEndPoint(Resource):
+    def get(self, entrenador_id):
+        entrenador = Entrenador.query.get(entrenador_id)
+        # ejemplar does not exist
+        if not entrenador:
+            abort(404, message="Entrenador {} doesn't exist".format(entrenador_id))
+
+        return entrenador_schema.dumps(entrenador)
+
+    def delete(self, entrenador_id):
+        entrenador = Entrenador.query.get(entrenador_id)
+        response = deleteElement(entrenador)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, entrenador_id):
+        args = entrenador_parser.parse_args()
+        entrenador = Entrenador.query.get(entrenador_id)
+        #update the Ejemplar
+        entrenador.p_primer_nombre = args["p_primer_nombre"]
+        entrenador.p_segundo_nombre = args["p_segundo_nombre"]
+        entrenador.p_primer_apellido = args["p_primer_apellido"]
+        entrenador.p_segundo_apellido = args["p_segundo_apellido"]
+        entrenador.p_sexo = args["p_sexo"]
+        entrenador.p_direccion = args["p_direccion"]
+        entrenador.ent_fecha_ing_hipo = args["ent_fecha_ing_hipo"]
+        entrenador.fk_lugar = args["fk_lugar"]
+
+        try:
+            db.session.commit()
+            return entrenador_schema.dumps(entrenador), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(EntrenadorEndPoint, '/entrenadores/<entrenador_id>')
+
+# list all ejemplares and create one
+class EntrenadorListEndPoint(Resource):
+    def get(self):
+        entrenadores = Entrenador.query.all()
+        return [entrenador_schema.dumps(entrenador) for entrenador in entrenadores]
+
+    def post(self):
+        try:
+            args = entrenador_parser.parse_args()
+            entrenador = Entrenador.create(**args)
+            return entrenador_schema.dumps(entrenador), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(EntrenadorListEndPoint, '/entrenadores')
+
 
 ### Color ###
 # shows a list of all colors, and lets you POST to add new colors
