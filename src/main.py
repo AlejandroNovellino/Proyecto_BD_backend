@@ -102,6 +102,10 @@ propietario_parser.add_argument('p_direccion')
 propietario_parser.add_argument('pr_correo')
 propietario_parser.add_argument('pr_fecha_nacimiento')
 propietario_parser.add_argument('fk_lugar')
+# Tipo Usuario --------------------------------------------------------------------------------
+tipo_usuario_parser = reqparse.RequestParser()
+tipo_usuario_parser.add_argument('tu_clave') 
+tipo_usuario_parser.add_argument('tu_nombre')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -160,6 +164,14 @@ class PropietarioSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 propietario_schema = PropietarioSchema()
+
+# TipoUsuario schema
+class TipoUsuarioSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = TipoUsuario
+        include_fk = True
+# instance the class
+tipo_usuario_schema = TipoUsuarioSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -488,7 +500,7 @@ api.add_resource(CarreraListEndPoint, '/carreras')
 
 ### Propietario ###
 
-# RUD for one jinete
+# RUD for one propietario
 class PropietarioEndPoint(Resource):
     def get(self, propietario_id):
         propietario = Propietario.query.get(propietario_id)
@@ -529,7 +541,7 @@ class PropietarioEndPoint(Resource):
 # add the endpoint ot the api
 api.add_resource(PropietarioEndPoint, '/propietarios/<propietario_id>')
 
-# list all jinetes and create one
+# list all propietarios and create one
 class PropietarioListEndPoint(Resource):
     def get(self):
         propietarios = Propietario.query.all()
@@ -545,6 +557,59 @@ class PropietarioListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(PropietarioListEndPoint, '/propietarios')
+
+
+### Tipo_Usuario ###
+
+# RUD for one TipoUsuario
+class TipoUsuarioEndPoint(Resource):
+    def get(self, tipo_usuario_id):
+        tipo_usuario = TipoUsuario.query.get(tipo_usuario_id)
+        # ejemplar does not exist
+        if not tipo_usuario:
+            abort(404, message="Stud {} doesn't exist".format(tipo_usuario_id))
+
+        return tipo_usuario_schema.dump(tipo_usuario)
+
+    def delete(self, tipo_usuario_id):
+        tipo_usuario = TipoUsuario.query.get(tipo_usuario_id)
+        response = deleteElement(tipo_usuario)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, tipo_usuario_id):
+        args = tipo_usuario_parser.parse_args()
+        tipo_usuario = TipoUsuario.query.get(tipo_usuario_id)
+        #update the Stud
+        tipo_usuario.tu_nombre = args["tu_nombre"]
+
+        try:
+            db.session.commit()
+            return tipo_usuario_schema.dump(tipo_usuario), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(TipoUsuarioEndPoint, '/tipos-usuarios/<tipo_usuario_id>')
+
+# list all TipoUsuario and create one
+class TipoUsuarioListEndPoint(Resource):
+    def get(self):
+        tipos_usuarios = TipoUsuario.query.all()
+        return [tipo_usuario_schema.dump(tipo_usuario) for tipo_usuario in tipos_usuarios]
+
+    def post(self):
+        try:
+            args = tipo_usuario_parser.parse_args()
+            tipo_usuario = TipoUsuario.create(**args)
+            return tipo_usuario_schema.dump(tipo_usuario), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(TipoUsuarioListEndPoint, '/tipos-usuarios')
 
 
 ### Color ###
