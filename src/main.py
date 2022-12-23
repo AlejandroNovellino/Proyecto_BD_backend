@@ -72,6 +72,11 @@ jinete_parser.add_argument('j_peso_actual')
 jinete_parser.add_argument('j_rango')
 jinete_parser.add_argument('j_fecha_nacimiento')
 jinete_parser.add_argument('fk_lugar')
+# Stud --------------------------------------------------------------------------------
+stud_parser = reqparse.RequestParser()
+stud_parser.add_argument('s_clave') 
+stud_parser.add_argument('s_nombre')
+stud_parser.add_argument('s_fecha_creacion')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -104,6 +109,14 @@ class JineteSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 jinete_schema = JineteSchema()
+
+# Stud schema
+class StudSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Stud
+        include_fk = True
+# instance the class
+stud_schema = StudSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -258,7 +271,7 @@ class JineteEndPoint(Resource):
         jinete = Jinete.query.get(jinete_id)
         # ejemplar does not exist
         if not jinete:
-            abort(404, message="Entrenador {} doesn't exist".format(jinete_id))
+            abort(404, message="Jinete {} doesn't exist".format(jinete_id))
 
         return jinete_schema.dumps(jinete)
 
@@ -273,7 +286,7 @@ class JineteEndPoint(Resource):
     def put(self, jinete_id):
         args = jinete_parser.parse_args()
         jinete = Jinete.query.get(jinete_id)
-        #update the Ejemplar
+        #update the Jinete
         jinete.p_primer_nombre = args["p_primer_nombre"]
         jinete.p_segundo_nombre = args["p_segundo_nombre"]
         jinete.p_primer_apellido = args["p_primer_apellido"]
@@ -296,7 +309,7 @@ class JineteEndPoint(Resource):
 # add the endpoint ot the api
 api.add_resource(JineteEndPoint, '/jinetes/<jinete_id>')
 
-# list all entrenadores and create one
+# list all jinetes and create one
 class JineteListEndPoint(Resource):
     def get(self):
         jinetes = Jinete.query.all()
@@ -312,6 +325,61 @@ class JineteListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(JineteListEndPoint, '/jinetes')
+
+
+### Stud ###
+
+# RUD for one stud
+class StudEndPoint(Resource):
+    def get(self, stud_id):
+        stud = Stud.query.get(stud_id)
+        # ejemplar does not exist
+        if not stud:
+            abort(404, message="Stud {} doesn't exist".format(stud_id))
+
+        return stud_schema.dump(stud)
+
+    def delete(self, stud_id):
+        stud = Stud.query.get(stud_id)
+        response = deleteElement(stud)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, stud_id):
+        args = stud_parser.parse_args()
+        stud = Stud.query.get(stud_id)
+        #update the Stud
+        stud.s_nombre = args["s_nombre"]
+        stud.s_fecha_creacion = args["s_fecha_creacion"]
+
+        try:
+            db.session.commit()
+            return stud_schema.dump(stud), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(StudEndPoint, '/studs/<stud_id>')
+
+# list all studs and create one
+class StudListEndPoint(Resource):
+    def get(self):
+        studs = Stud.query.all()
+        return [stud_schema.dump(stud) for stud in studs]
+
+    def post(self):
+        try:
+            args = stud_parser.parse_args()
+            stud = Stud.create(**args)
+            return stud_schema.dump(stud), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(StudListEndPoint, '/studs')
+
 
 ### Color ###
 # shows a list of all colors, and lets you POST to add new colors
