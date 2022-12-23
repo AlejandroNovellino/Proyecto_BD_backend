@@ -90,7 +90,18 @@ carrera_parser.add_argument('c_comentario')
 carrera_parser.add_argument('fk_tipo_carrera')
 carrera_parser.add_argument('fk_categoria_carrera')
 carrera_parser.add_argument('fk_pista')
-
+# Propietario --------------------------------------------------------------------------------
+propietario_parser = reqparse.RequestParser()
+propietario_parser.add_argument('p_cedula') 
+propietario_parser.add_argument('p_primer_nombre')
+propietario_parser.add_argument('p_segundo_nombre')
+propietario_parser.add_argument('p_primer_apellido')
+propietario_parser.add_argument('p_segundo_apellido')
+propietario_parser.add_argument('p_sexo')
+propietario_parser.add_argument('p_direccion')
+propietario_parser.add_argument('pr_correo')
+propietario_parser.add_argument('pr_fecha_nacimiento')
+propietario_parser.add_argument('fk_lugar')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -140,6 +151,15 @@ class CarreraSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 carrera_schema = CarreraSchema()
+
+# Propietario schema
+class PropietarioSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Propietario
+        include_fk = True
+        json_module = simplejson
+# instance the class
+propietario_schema = PropietarioSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -412,7 +432,7 @@ class CarreraEndPoint(Resource):
         carrera = Carrera.query.get(carrera_id)
         # ejemplar does not exist
         if not carrera:
-            abort(404, message="Stud {} doesn't exist".format(carrera_id))
+            abort(404, message="Carrera {} doesn't exist".format(carrera_id))
 
         return carrera_schema.dumps(carrera)
 
@@ -464,6 +484,67 @@ class CarreraListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(CarreraListEndPoint, '/carreras')
+
+
+### Propietario ###
+
+# RUD for one jinete
+class PropietarioEndPoint(Resource):
+    def get(self, propietario_id):
+        propietario = Propietario.query.get(propietario_id)
+        # ejemplar does not exist
+        if not propietario:
+            abort(404, message="Propietario {} doesn't exist".format(propietario_id))
+
+        return propietario_schema.dumps(propietario)
+
+    def delete(self, propietario_id):
+        propietario = Propietario.query.get(propietario_id)
+        response = deleteElement(propietario)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, propietario_id):
+        args = propietario_parser.parse_args()
+        propietario = Propietario.query.get(propietario_id)
+        #update the Jinete
+        propietario.p_primer_nombre = args["p_primer_nombre"]
+        propietario.p_segundo_nombre = args["p_segundo_nombre"]
+        propietario.p_primer_apellido = args["p_primer_apellido"]
+        propietario.p_segundo_apellido = args["p_segundo_apellido"]
+        propietario.p_sexo = args["p_sexo"]
+        propietario.p_direccion = args["p_direccion"]
+        propietario.pr_correo = args["pr_correo"]
+        propietario.pr_fecha_nacimiento = args["pr_fecha_nacimiento"]
+        propietario.fk_lugar = args["fk_lugar"]
+
+        try:
+            db.session.commit()
+            return propietario_schema.dumps(propietario), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(PropietarioEndPoint, '/propietarios/<propietario_id>')
+
+# list all jinetes and create one
+class PropietarioListEndPoint(Resource):
+    def get(self):
+        propietarios = Propietario.query.all()
+        return [propietario_schema.dumps(propietario) for propietario in propietarios]
+
+    def post(self):
+        try:
+            args = propietario_parser.parse_args()
+            propietario = Propietario.create(**args)
+            return propietario_schema.dumps(propietario), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(PropietarioListEndPoint, '/propietarios')
 
 
 ### Color ###
