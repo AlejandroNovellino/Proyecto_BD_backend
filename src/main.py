@@ -57,6 +57,21 @@ entrenador_parser.add_argument('p_sexo')
 entrenador_parser.add_argument('p_direccion')
 entrenador_parser.add_argument('ent_fecha_ing_hipo')
 entrenador_parser.add_argument('fk_lugar')
+# Jinete --------------------------------------------------------------------------------
+jinete_parser = reqparse.RequestParser()
+jinete_parser.add_argument('p_cedula') 
+jinete_parser.add_argument('p_primer_nombre')
+jinete_parser.add_argument('p_segundo_nombre')
+jinete_parser.add_argument('p_primer_apellido')
+jinete_parser.add_argument('p_segundo_apellido')
+jinete_parser.add_argument('p_sexo')
+jinete_parser.add_argument('p_direccion')
+jinete_parser.add_argument('j_altura')
+jinete_parser.add_argument('j_peso_al_ingresar')
+jinete_parser.add_argument('j_peso_actual')
+jinete_parser.add_argument('j_rango')
+jinete_parser.add_argument('j_fecha_nacimiento')
+jinete_parser.add_argument('fk_lugar')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -72,6 +87,7 @@ class EjemplarSchema(ma.SQLAlchemyAutoSchema):
 # instance the class
 ejemplar_schema = EjemplarSchema()
 
+# Entrenador schema
 class EntrenadorSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Entrenador
@@ -79,6 +95,15 @@ class EntrenadorSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 entrenador_schema = EntrenadorSchema()
+
+# Jinete schema
+class JineteSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Jinete
+        include_fk = True
+        json_module = simplejson
+# instance the class
+jinete_schema = JineteSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -100,6 +125,7 @@ def deleteElement(model_object):
     except:
         db.session.rollback()
         return False
+
 
 ### Ejemplar ###
 
@@ -206,7 +232,7 @@ class EntrenadorEndPoint(Resource):
 # add the endpoint ot the api
 api.add_resource(EntrenadorEndPoint, '/entrenadores/<entrenador_id>')
 
-# list all ejemplares and create one
+# list all entrenadores and create one
 class EntrenadorListEndPoint(Resource):
     def get(self):
         entrenadores = Entrenador.query.all()
@@ -223,6 +249,69 @@ class EntrenadorListEndPoint(Resource):
 # add the endpoint ot the api
 api.add_resource(EntrenadorListEndPoint, '/entrenadores')
 
+
+### Jinete ###
+
+# RUD for one jinete
+class JineteEndPoint(Resource):
+    def get(self, jinete_id):
+        jinete = Jinete.query.get(jinete_id)
+        # ejemplar does not exist
+        if not jinete:
+            abort(404, message="Entrenador {} doesn't exist".format(jinete_id))
+
+        return jinete_schema.dumps(jinete)
+
+    def delete(self, jinete_id):
+        jinete = Jinete.query.get(jinete_id)
+        response = deleteElement(jinete)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, jinete_id):
+        args = jinete_parser.parse_args()
+        jinete = Jinete.query.get(jinete_id)
+        #update the Ejemplar
+        jinete.p_primer_nombre = args["p_primer_nombre"]
+        jinete.p_segundo_nombre = args["p_segundo_nombre"]
+        jinete.p_primer_apellido = args["p_primer_apellido"]
+        jinete.p_segundo_apellido = args["p_segundo_apellido"]
+        jinete.p_sexo = args["p_sexo"]
+        jinete.p_direccion = args["p_direccion"]
+        jinete.j_altura = args["j_altura"]
+        jinete.j_peso_al_ingresar = args["j_peso_al_ingresar"]
+        jinete.j_peso_actual = args["j_peso_actual"]
+        jinete.j_rango = args["j_rango"]
+        jinete.j_fecha_nacimiento = args["j_fecha_nacimiento"]
+        jinete.fk_lugar = args["fk_lugar"]
+
+        try:
+            db.session.commit()
+            return jinete_schema.dumps(jinete), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(JineteEndPoint, '/jinetes/<jinete_id>')
+
+# list all entrenadores and create one
+class JineteListEndPoint(Resource):
+    def get(self):
+        jinetes = Jinete.query.all()
+        return [jinete_schema.dumps(jinete) for jinete in jinetes]
+
+    def post(self):
+        try:
+            args = jinete_parser.parse_args()
+            jinete = Jinete.create(**args)
+            return jinete_schema.dumps(jinete), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(JineteListEndPoint, '/jinetes')
 
 ### Color ###
 # shows a list of all colors, and lets you POST to add new colors
