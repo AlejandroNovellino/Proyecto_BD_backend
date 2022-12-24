@@ -407,7 +407,7 @@ create table Venta_Boleto(
 	VB_Total_Venta			numeric(10,2) NOT NULL,
 	FK_Taquilla_Boleto	integer,
 	FK_Usuario					integer,
-	FK_Aficionado				integer,
+	FK_Aficionado				numeric(10),
 	/*Clave primaria*/
 	constraint PK_Venta_Boleto primary key (VB_Clave),
 	/*Claves foraneas*/
