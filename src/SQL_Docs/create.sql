@@ -98,16 +98,6 @@ create table Implemento(
 	constraint Check_Implemento_Diminutivo Check (I_Diminutivo IN ('GR','CC','CH','LA','BZ','BL','BB','M','P','G','V','OT','L') )
 );
 
-<<<<<<< HEAD
-create table Pregunta_Seguridad(
-	PS_Clave		serial not null unique,
-	PS_Titulo		nvarchar(55) not null,
-	/*Clave primaria*/
-	constraint PK_Pregunta_Seguridad primary key(PS_Clave)
-);
-
-=======
->>>>>>> 11cd155fdc8c8702656d43697f8cb192d3d6106c
 create Table Tipo_Apuesta(
 	TA_Clave							serial not null unique,
 	TA_Nombre							Varchar(20) not null,
