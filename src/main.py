@@ -111,6 +111,18 @@ accion_tipo_usuario_parser = reqparse.RequestParser()
 accion_tipo_usuario_parser.add_argument('atu_clave') 
 accion_tipo_usuario_parser.add_argument('fk_tipousuario') 
 accion_tipo_usuario_parser.add_argument('fk_accion')
+# Usuario --------------------------------------------------------------------------------
+usuario_parser = reqparse.RequestParser()
+usuario_parser.add_argument('u_clave') 
+usuario_parser.add_argument('u_correo_e')
+usuario_parser.add_argument('u_password')
+usuario_parser.add_argument('u_fecha_registro')
+usuario_parser.add_argument('fk_entrenador')
+usuario_parser.add_argument('fk_propietario')
+usuario_parser.add_argument('fk_jinete')
+usuario_parser.add_argument('fk_veterinario')
+usuario_parser.add_argument('fk_aficionado')
+usuario_parser.add_argument('fk_tipo_usuario')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -195,6 +207,51 @@ class AccionTipoUsuarioSchema(ma.SQLAlchemyAutoSchema):
         include_fk = True
 # instance the class
 accion_tipo_usuario_schema = AccionTipoUsuarioSchema()
+
+# Aficionado schema
+class AficionadoSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Aficionado
+        include_fk = True
+        json_module = simplejson
+# instance the class
+aficionado_schema = AficionadoSchema()
+
+
+# Entrenador schema
+class EntrenadorSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Entrenador
+        include_fk = True
+        json_module = simplejson
+# instance the class
+entrenador_schema = EntrenadorSchema()
+
+# Veterinario schema
+class VeterinarioSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Veterinario
+        include_fk = True
+        json_module = simplejson
+# instance the class
+veterinario_schema = VeterinarioSchema()
+
+# Usuario schema
+class UsuarioSchema(ma.SQLAlchemyAutoSchema):
+    # TipoUsuario
+    tipo_usuario = ma.Nested(TipoUsuarioSchema)
+    # Persona
+    aficionado = ma.Nested(AficionadoSchema)
+    entrenador = ma.Nested(EntrenadorSchema)
+    jinete = ma.Nested(JineteSchema)
+    propietario = ma.Nested(PropietarioSchema)
+    veterinario = ma.Nested(VeterinarioSchema)
+    class Meta:
+        model = AccionTipoUsuario
+        include_fk = True
+        json_module = simplejson
+# instance the class
+usuario_schema = UsuarioSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -687,6 +744,66 @@ class AccionTipoUsuarioListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(AccionTipoUsuarioListEndPoint, '/accion-tipos-usuarios')
+
+
+### Usuario ###
+
+# RUD for one Usuario
+class UsuarioEndPoint(Resource):
+    def get(self, usuario_id):
+        usuario = Usuario.query.get(usuario_id)
+        # ejemplar does not exist
+        if not usuario:
+            abort(404, message="Usuario {} doesn't exist".format(usuario_id))
+
+        return usuario_schema.dumps(usuario)
+
+    def delete(self, usuario_id):
+        usuario = Usuario.query.get(usuario_id)
+        response = deleteElement(usuario)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, usuario_id):
+        args = usuario_parser.parse_args()
+        usuario = Usuario.query.get(usuario_id)
+        #update the Stud
+        usuario.u_password = args["u_password"]
+        usuario.u_fecha_registro = args["u_fecha_registro"]
+        usuario.fk_entrenador = args["fk_entrenador"]
+        usuario.fk_propietario = args["fk_propietario"]
+        usuario.fk_jinete = args["fk_jinete"]
+        usuario.fk_veterinario = args["fk_veterinario"]
+        usuario.fk_aficionado = args["fk_aficionado"]
+        usuario.fk_tipo_usuario = args["fk_tipo_usuario"]
+        
+        try:
+            db.session.commit()
+            return usuario_schema.dumps(usuario), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(UsuarioEndPoint, '/usuarios/<usuario_id>')
+
+# list all Usuario and create one
+class UsuarioListEndPoint(Resource):
+    def get(self):
+        usuarios = Usuario.query.all()
+        return [usuario_schema.dumps(usuario) for usuario in usuarios]
+
+    def post(self):
+        try:
+            args = usuario_parser.parse_args()
+            usuario = Usuario.create(**args)
+            return usuario_schema.dumps(usuario), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(UsuarioListEndPoint, '/usuarios')
 
 
 ### Color ###
