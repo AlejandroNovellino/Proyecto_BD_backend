@@ -106,7 +106,7 @@ create table Implemento(
 
 create table Pregunta_Seguridad(
 	PS_Clave		serial not null unique,
-	PS_Titulo		Varchar(45) not null,
+	PS_Titulo		nvarchar(55) not null,
 	/*Clave primaria*/
 	constraint PK_Pregunta_Seguridad primary key(PS_Clave)
 );
@@ -400,10 +400,10 @@ create table Taquilla_Boleto(
 create table Venta_Boleto(
 	VB_Clave				    serial NOT NULL UNIQUE,
 	VB_Fecha				    date NOT NULL,
-	VB_Total_Venta			numeric(10) NOT NULL,
+	VB_Total_Venta			numeric(10,2) NOT NULL,
 	FK_Taquilla_Boleto	integer,
 	FK_Usuario					integer,
-	FK_Aficionado				numeric(10),
+	FK_Aficionado				integer,
 	/*Clave primaria*/
 	constraint PK_Venta_Boleto primary key (VB_Clave),
 	/*Claves foraneas*/
@@ -424,7 +424,7 @@ create table Boleto(
 
 create table Detallado_Venta(
 	DV_Clave					serial NOT NULL UNIQUE,
-	DV_Precio_Venta		numeric(10) NOT NULL,
+	DV_Precio_Venta		numeric(10,2) NOT NULL,
 	FK_Venta_Boleto		integer NOT NULL,
 	FK_Boleto					integer NOT NULL,
 	/*Clave primaria*/
@@ -447,7 +447,7 @@ create table Restaurant(
 
 create table Horario(
 	HO_Clave				serial NOT NULL UNIQUE,
-	HO_Dia_Semana			varchar(45) NOT NULL,
+	HO_Dia_Semana			varchar(9) NOT NULL,
 	HO_Hora_Apertura		time NOT NULL,
 	HO_Hora_Cierre			time NOT NULL,
 	FK_Hipodromo			integer,
@@ -463,8 +463,8 @@ create table Horario(
 
 create table Pista(
 	PI_Clave				serial NOT NULL UNIQUE,
-	PI_Longitud			numeric(10)	NOT NULL,
-	PI_Capacidad		numeric(10) NOT NULL,
+	PI_Longitud			numeric(5)	NOT NULL,
+	PI_Capacidad		numeric(3) NOT NULL,
 	PI_Num_Salida 	numeric(10) NOT NULL,
 	PI_Tipo					varchar(45) NOT NULL,
 	FK_Hipodromo		integer,

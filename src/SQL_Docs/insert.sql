@@ -1,3 +1,5 @@
+--Tipo_Medicamento, Tipo_Apuesta, Propietario, Ejemplar, Binomio, vENTA_RESTAURANT
+
 --Lugares
 insert into Lugar(L_Nombre,L_Tipo) values ('Amazonas','Estado');
 insert into Lugar(L_Nombre,L_Tipo) values ('Anzoategui','Estado');
@@ -1629,7 +1631,45 @@ insert into Entrenador VALUES(4441641,'Manuel','Antonio','Perez','Gleciano','M',
 insert into Entrenador VALUES(12975659,'Dany','Jesus','Pimentel','Bregantes','M','dir','2015-11-02',1022);
 insert into Entrenador VALUES(9604431,'Carlos','Rafael','Arocha','Silva','M','dir','2008-08-13',858);
 
-insert into Aficionado VALUES(30395284,'Nicolas','Adrian','Setien','Briceno','M','dir','Estudiante',906); --montalban
+insert into Veterinario VALUES(4673725,'Freddy','Antonio','Morales','Bandes','M','dir',10385,1016,1);
+insert into Veterinario VALUES(6818946,'Carlos','Ignacio','Larrazabal','Alamo','M','dir',12481,980,2);
+insert into Veterinario VALUES(6670241,'David','Rafael','Rodriguez','Luna','M','dir',12399,619,3);
+insert into Veterinario VALUES(12294752,'Nahomy',null,'Arana','Perez','F','dir',23885,1488,4);
+insert into Veterinario VALUES(14143896,'Gabriel','Mauricio','Oliveros','Ojeda','M','dir',22834,1494,5);
+
+insert into Propietario VALUES(6126381,'Jesus',null,'Romero','Mendez','M','dir','jesusromero61@inh.gob.ve','1957-02-12',1359);
+insert into Propietario VALUES(8823193,'Luis','Alfredo','Martin','Campisi','M','dir','luismartin88@inh.gob.ve','1969-09-01',981);
+insert into Propietario VALUES(5222820,'Manuel','Simon','Barreto','Baute','M','dir','manuelbarreto52@inh.gob.ve','1958-08-07',991);
+insert into Propietario VALUES(13779603,'Michel','Antoine','Douaihy','Leon','M','dir','micheldouaihy137@inh.gob.ve','1977-09-27',1016);
+insert into Propietario VALUES(3719492,'Victor','Manuel','Lozada','Avendano','M','dir','victorlozada37@inh.gob.ve','1955-01-03',1004);
+insert into Propietario VALUES(6918483,'Piar','Jose','Martinez','Rizzuti','M','dir','piarmartinez69@inh.gob.ve','1968-11-01',981);
+insert into Propietario VALUES(5543111,'Jorge',null,'Pimentel','Rodriguez','M','dir','jorgepimentel55@inh.gob.ve','1961-05-10',991);
+insert into Propietario VALUES(6844510,'Vicente','Augusto','Rubino','Arriaga','M','dir','vicenterubino68@inh.gob.ve','1963-12-28',1020);
+insert into Propietario VALUES(15149582,'Carlos','Luis','Uzcategui','Sanchez','M','dir','carlosuzcategui151@inh.gob.ve','1979-06-28',988);
+insert into Propietario VALUES(3224737,'Francisco','Antonio','Convit','Marotta','M','dir','franciscoconvit32@inh.gob.ve','1948-02-01',982);
+insert into Propietario VALUES(5530617,'Jose','Carlos','Gomez','Rodriguez','M','dir','josegomez55@inh.gob.ve','1959-11-28',1482);
+insert into Propietario VALUES(6879925,'Luis','Guillermo','Haddad','Crasto','M','dir','luishaddad68@inh.gob.ve','1967-12-18',1004);
+insert into Propietario VALUES(8391395,'Emilio','Jose','Leon','Silva','M','dir','emilioleon83@inh.gob.ve','1962-09-20',1089);
+insert into Propietario VALUES(12958794,'Jorge','Eduardo','Madrid','Azocar','M','dir','jorgemadrid129@inh.gob.ve','1976-01-31',1497);
+insert into Propietario VALUES(6822722,'Ignacio','Jose','Zubillaga','Perera','M','dir','ignaciozubillaga68@inh.gob.ve','1964-05-01',863);
+insert into Propietario VALUES(6844526,'Luigi',null,'Miglietti','Torrealba','M','dir','luigimiglietti68@inh.gob.ve','1965-08-01',991);
+insert into Propietario VALUES(3189825,'Luis','Alberto','Garcia','Montoya','M','dir','luisgarcia31@inh.gob.ve','1951-11-06',981);
+insert into Propietario VALUES(3225959,'Kelvin','Alxis','Alvarez','Parodis','M','dir','kelvinalvarez32@inh.gob.ve','1949-06-04',991);
+insert into Propietario VALUES(15222348,'Alfonso','Javier','Delgado','Vilera','M','dir','alfonsodelgado152@inh.gob.ve','1978-10-07',490);
+insert into Propietario VALUES(7090152,'Ruben',null,'Rodriguez','Joya','M','dir','rubenrodriguez70@inh.gob.ve','1965-10-22',1378);
+insert into Propietario VALUES(6428607,'Armando',null,'Rodriguez','Garcia','M','dir','armandorodriguez64@inh.gob.ve','1963-10-23',1486);
+insert into Propietario VALUES(5972079,'Jose','Gregorio','Castro',null,'M','dir','josecastro59@inh.gob.ve','1961-01-19',1479);
+insert into Propietario VALUES(5414243,'Vittorio','Antonio','Lungavite','Liberto','M','dir','vittoriolungavite54@inh.gob.ve','1941-01-14',980);
+insert into Propietario VALUES(5973529,'Arne','Stvenson','Chacon','Escamilla','M','dir','arnechacon59@inh.gob.ve','1963-01-02',980);
+insert into Propietario VALUES(8179306,'Alberto','Jose','Acosta','Espinoza','M','dir','albertoacosta81@inh.gob.ve','1965-02-06',578);
+insert into Propietario VALUES(14394858,'Raed','Muhamed','Badwan','Abdel','M','dir','raedbadwan143@inh.gob.ve','1979-04-06',807);
+
+insert into Aficionado VALUES(30395284,'Nicolas','Adrian','Setien','Briceno','M','Salado Bajo','Estudiante',906); --montalban
+insert into Aficionado VALUES(27670971,'Eduardo','Miguel','Consalvo','Perez','M','La Trinidad','Estudiante',980); --baruta
+insert into Aficionado VALUES(28426562,'Jose','Jesus','Nunez','Gonzalez','M','Montalban II','Estudiante',1491); --la vega
+insert into Aficionado VALUES(29553823,'Johandry','Steiker','Mieles','Mora','M','Av. Vollmer','Estudiante',1494); --san bernardino
+insert into Aficionado VALUES(29583211,'Marco','Fidel','Castro','Ochoa','M','Capitolio','Estudiante',1484); --catedral
+insert into Aficionado VALUES(29551908,'Eduardo',null,'Alvarez de Lugo','Carvallo','M','Campo Alegre','Estudiante',988);
 
 insert into Haras VALUES(DEFAULT,'Alegria');
 insert into Haras VALUES(DEFAULT,'Bello Monte');
@@ -1663,87 +1703,87 @@ insert into Haras VALUES(DEFAULT,'El Centauro');
 insert into Haras VALUES(DEFAULT,'Los Aguacates');
 insert into Haras VALUES(DEFAULT,'El Nuevo Color');
 
-insert into Stud VALUES(DEFAULT,'Punto Blanco','1963-06-28');
+insert into Stud VALUES(DEFAULT,'Punto Blanco','1963-06-28'); --1
 insert into Stud VALUES(DEFAULT,'Yofyel','1973-10-09');
 insert into Stud VALUES(DEFAULT,'M.M.','2016-09-24');
-insert into Stud VALUES(DEFAULT,'Daga Espanola','1958-04-19');
+insert into Stud VALUES(DEFAULT,'Daga Espanola','1958-04-19');--4
 insert into Stud VALUES(DEFAULT,'San Remo','1966-09-07');
 insert into Stud VALUES(DEFAULT,'Barcelona','1990-05-04');
-insert into Stud VALUES(DEFAULT,'Adag','1974-02-03');
+insert into Stud VALUES(DEFAULT,'Adag','1974-02-03');--7
 insert into Stud VALUES(DEFAULT,'Azatlan','2007-03-14');
 insert into Stud VALUES(DEFAULT,'Hermanos Egas','1977-08-22');
-insert into Stud VALUES(DEFAULT,'Inaki','1996-09-06');
+insert into Stud VALUES(DEFAULT,'Inaki','1996-09-06');--10
 insert into Stud VALUES(DEFAULT,'Mi Gran Abuela','1978-08-23');
 insert into Stud VALUES(DEFAULT,'DAF 1','1979-03-30');
 insert into Stud VALUES(DEFAULT,'Extinguisher Capi','1968-04-18');
-insert into Stud VALUES(DEFAULT,'Los Cotuas','1957-04-20');
+insert into Stud VALUES(DEFAULT,'Los Cotuas','1957-04-20');--14
 insert into Stud VALUES(DEFAULT,'King of Kings','2000-10-06');
 insert into Stud VALUES(DEFAULT,'Apple','2003-10-20');
-insert into Stud VALUES(DEFAULT,'Dava','1987-08-27');
+insert into Stud VALUES(DEFAULT,'Dava','1987-08-27');--17
 insert into Stud VALUES(DEFAULT,'Doble S','1993-03-24');
 insert into Stud VALUES(DEFAULT,'Chamus','1956-01-20');
-insert into Stud VALUES(DEFAULT,'Ayubi \& Aleman','1980-12-28');
+insert into Stud VALUES(DEFAULT,'Ayubi \& Aleman','1980-12-28');--20
 insert into Stud VALUES(DEFAULT,'Los Samanes & Susana','1969-03-27');
 insert into Stud VALUES(DEFAULT,'Grupo El Yankee','1997-02-23');
 insert into Stud VALUES(DEFAULT,'St Lucia -Santanyi','1959-07-02');
-insert into Stud VALUES(DEFAULT,'Mo Cuishle','2006-06-15');
+insert into Stud VALUES(DEFAULT,'Mo Cuishle','2006-06-15');--24
 insert into Stud VALUES(DEFAULT,'Cigar','1962-07-25');
 insert into Stud VALUES(DEFAULT,'Odde','2017-05-16');
-insert into Stud VALUES(DEFAULT,'La Fontonera','2007-03-27');
+insert into Stud VALUES(DEFAULT,'La Fontonera','2007-03-27');--27
 insert into Stud VALUES(DEFAULT,'Loschads','2016-12-28');
 insert into Stud VALUES(DEFAULT,'Z.M.','1972-06-13');
-insert into Stud VALUES(DEFAULT,'J. Sanchez','1992-05-27');
+insert into Stud VALUES(DEFAULT,'J. Sanchez','1992-05-27');--30
 insert into Stud VALUES(DEFAULT,'My Society','1954-05-12');
 insert into Stud VALUES(DEFAULT,'Agnelbel','1982-06-30');
-insert into Stud VALUES(DEFAULT,'P.P.','1981-07-16');
+insert into Stud VALUES(DEFAULT,'P.P.','1981-07-16');--33
 insert into Stud VALUES(DEFAULT,'La Ciencia','2012-05-15');
 insert into Stud VALUES(DEFAULT,'Emma Lucia','1963-11-09');
-insert into Stud VALUES(DEFAULT,'Corinthius','1992-04-14');
+insert into Stud VALUES(DEFAULT,'Corinthius','1992-04-14');--36
 insert into Stud VALUES(DEFAULT,'Mon Rol','1961-01-14');
 insert into Stud VALUES(DEFAULT,'Mama Adela','1998-02-17');
-insert into Stud VALUES(DEFAULT,'Dubai 2021','2004-07-24');
+insert into Stud VALUES(DEFAULT,'Dubai 2021','2004-07-24');--39
 insert into Stud VALUES(DEFAULT,'El Incomodo','1989-07-28');
 insert into Stud VALUES(DEFAULT,'Gimnasio','1997-02-24');
-insert into Stud VALUES(DEFAULT,'El Doret','1982-06-08');
+insert into Stud VALUES(DEFAULT,'El Doret','1982-06-08');--42
 insert into Stud VALUES(DEFAULT,'El Patriarca','1994-03-20');
 insert into Stud VALUES(DEFAULT,'Zurich','1968-11-18');
-insert into Stud VALUES(DEFAULT,'Arantxa II','2006-05-30');
-insert into Stud VALUES(DEFAULT,'Lucky Dog ','1967-01-30');
+insert into Stud VALUES(DEFAULT,'Arantxa II','2006-05-30');--45
+insert into Stud VALUES(DEFAULT,'Lucky Dog','1967-01-30');
 insert into Stud VALUES(DEFAULT,'Los Precisos','1996-07-30');
-insert into Stud VALUES(DEFAULT,'Taramundi','2000-09-19');
+insert into Stud VALUES(DEFAULT,'Taramundi','2000-09-19');--48
 insert into Stud VALUES(DEFAULT,'R.Q.','2002-03-30');
 insert into Stud VALUES(DEFAULT,'Diego ysus AmigosIII','1992-02-28');
-insert into Stud VALUES(DEFAULT,'P.G.','1994-09-28');
+insert into Stud VALUES(DEFAULT,'P.G.','1994-09-28');--51
 insert into Stud VALUES(DEFAULT,'Yurenyerly','1956-07-17');
 insert into Stud VALUES(DEFAULT,'Los Audaces','1985-11-14');
-insert into Stud VALUES(DEFAULT,'Adrian C','1992-05-08');
+insert into Stud VALUES(DEFAULT,'Adrian C','1992-05-08');--54
 insert into Stud VALUES(DEFAULT,'L & H','2011-01-02');
 insert into Stud VALUES(DEFAULT,'Surprise Day','2007-07-11');
-insert into Stud VALUES(DEFAULT,'Las Veritas','2010-03-27');
+insert into Stud VALUES(DEFAULT,'Las Veritas','2010-03-27');--57
 insert into Stud VALUES(DEFAULT,'Sanchecitos','1960-06-14');
 insert into Stud VALUES(DEFAULT,'Los Precisos','2006-01-22');
-insert into Stud VALUES(DEFAULT,'Sr Jose Luis','1959-09-28');
+insert into Stud VALUES(DEFAULT,'Sr Jose Luis','1959-09-28');--60
 insert into Stud VALUES(DEFAULT,'SettePower','1978-11-18');
 insert into Stud VALUES(DEFAULT,'Copo de Nieve','2005-11-20');
-insert into Stud VALUES(DEFAULT,'Black Tito','2013-11-02');
+insert into Stud VALUES(DEFAULT,'Black Tito','2013-11-02');--63
 insert into Stud VALUES(DEFAULT,'L.F.','1976-04-04');
 insert into Stud VALUES(DEFAULT,'Linda Abril','1997-10-09');
-insert into Stud VALUES(DEFAULT,'Fast Navy','1961-03-26');
+insert into Stud VALUES(DEFAULT,'Fast Navy','1961-03-26');--66
 insert into Stud VALUES(DEFAULT,'Las Acacias VBP','1969-06-09');
 insert into Stud VALUES(DEFAULT,'Mi Mamita','1980-04-27');
-insert into Stud VALUES(DEFAULT,'San Ros','1990-04-26');
+insert into Stud VALUES(DEFAULT,'San Ros','1990-04-26');--69
 insert into Stud VALUES(DEFAULT,'Transformers','1985-04-09');
 insert into Stud VALUES(DEFAULT,'Roygam','1998-04-28');
-insert into Stud VALUES(DEFAULT,'Hacedion','1977-05-19');
+insert into Stud VALUES(DEFAULT,'Hacedion','1977-05-19');--72
 insert into Stud VALUES(DEFAULT,'LosSamanes-Matilde&Domingo','1995-10-05');
 insert into Stud VALUES(DEFAULT,'Sermar','1951-12-27');
-insert into Stud VALUES(DEFAULT,'El Gran Misterio','1980-11-29');
+insert into Stud VALUES(DEFAULT,'El Gran Misterio','1980-11-29');--75
 insert into Stud VALUES(DEFAULT,'San Michael','1961-02-20');
 insert into Stud VALUES(DEFAULT,'Virgen de Guadalupe','1956-05-28');
-insert into Stud VALUES(DEFAULT,'Andrea  I','1967-08-13');
+insert into Stud VALUES(DEFAULT,'Andrea  I','1967-08-13');--78
 insert into Stud VALUES(DEFAULT,'Feralico','2003-10-23');
-insert into Stud VALUES(DEFAULT,' Copo de Nieve','2008-12-24');
-insert into Stud VALUES(DEFAULT,'Queen Feralico','2005-10-05');
+insert into Stud VALUES(DEFAULT,'Copo de Nieve','2008-12-24');
+insert into Stud VALUES(DEFAULT,'Queen Feralico','2005-10-05');--81
 insert into Stud VALUES(DEFAULT,'Odde','1973-04-27');
 insert into Stud VALUES(DEFAULT,'Cold Power','1982-07-20');
 
@@ -1757,22 +1797,28 @@ insert into Accion VALUES(DEFAULT,'Cambiar atributo');
 insert into Accion VALUES(DEFAULT,'Insertar');
 insert into Accion VALUES(DEFAULT,'Eliminar');
 
-insert into Color VALUES(DEFAULT,'Azul');
-insert into Color VALUES(DEFAULT,'Amarillo');
-insert into Color VALUES(DEFAULT,'Blanco');
-insert into Color VALUES(DEFAULT,'Beige');
-insert into Color VALUES(DEFAULT,'Celeste');
-insert into Color VALUES(DEFAULT,'Dorado');
-insert into Color VALUES(DEFAULT,'Fucsia');
-insert into Color VALUES(DEFAULT,'Gris');
-insert into Color VALUES(DEFAULT,'Lima');
-insert into Color VALUES(DEFAULT,'Marron');
-insert into Color VALUES(DEFAULT,'Morado');
-insert into Color VALUES(DEFAULT,'Negro');
-insert into Color VALUES(DEFAULT,'Plateado');
-insert into Color VALUES(DEFAULT,'Rosado');
-insert into Color VALUES(DEFAULT,'Turquesa');
-insert into Color VALUES(DEFAULT,'Verde');
+insert into Color VALUES(DEFAULT,'Azul');       --1
+insert into Color VALUES(DEFAULT,'Azul elec');  --2
+insert into Color VALUES(DEFAULT,'Azul marino');--3
+insert into Color VALUES(DEFAULT,'Amarillo');   --4
+insert into Color VALUES(DEFAULT,'Blanco');     --5
+insert into Color VALUES(DEFAULT,'Beige');      --6
+insert into Color VALUES(DEFAULT,'Carrubio');   --7
+insert into Color VALUES(DEFAULT,'Celeste');    --8
+insert into Color VALUES(DEFAULT,'Dorado');     --9
+insert into Color VALUES(DEFAULT,'Fucsia');     --10
+insert into Color VALUES(DEFAULT,'Gris');       --11
+insert into Color VALUES(DEFAULT,'Marron');     --12
+insert into Color VALUES(DEFAULT,'Morado');     --13
+insert into Color VALUES(DEFAULT,'Naranja');    --14
+insert into Color VALUES(DEFAULT,'Negro');      --15
+insert into Color VALUES(DEFAULT,'Plateado');   --16
+insert into Color VALUES(DEFAULT,'Rojo');       --17
+insert into Color VALUES(DEFAULT,'Rosado');     --18
+insert into Color VALUES(DEFAULT,'Turquesa');   --19
+insert into Color VALUES(DEFAULT,'Verde');      --20
+insert into Color VALUES(DEFAULT,'Verd osc');   --21
+insert into Color VALUES(DEFAULT,'Vinotinto');  --22
 
 insert into Categoria_Carrera VALUES(DEFAULT,'Normal');
 insert into Categoria_Carrera VALUES(DEFAULT,'Clasico');
@@ -1817,11 +1863,13 @@ insert into Porcentaje_Dividendo VALUES(DEFAULT,3,0.07);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,4,0.03);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,5,0.02);
 
-insert into Categoria_Carrera VALUES(DEFAULT,'Normal');
-insert into Categoria_Carrera VALUES(DEFAULT,'Clasico');
-insert into Categoria_Carrera VALUES(DEFAULT,'Copa');
+insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál fue la marca de tu primer teléfono?');
+insert into Pregunta_Seguridad VALUES(DEFAULT,'¿En qué ciudad se conocieron tus padres?');
+insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál era el nombre de tu primer amigo de la escuela?');
+insert into Pregunta_Seguridad VALUES(DEFAULT,'¿En qué ciudad nació tu abuelo materno?');
+insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál era el nombre de tu primera mascota?');
+insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál es tu película favorita?');
 
---agregar descripcion historica
 insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24)
 
 insert into Caballeriza VALUES(DEFAULT,1,30,1);
@@ -1837,8 +1885,8 @@ insert into Puesto VALUES(DEFAULT,1,4);insert into Puesto VALUES(DEFAULT,2,4);in
 insert into Puesto VALUES(DEFAULT,1,5);insert into Puesto VALUES(DEFAULT,2,5);insert into Puesto VALUES(DEFAULT,3,5);insert into Puesto VALUES(DEFAULT,4,5);insert into Puesto VALUES(DEFAULT,5,5);insert into Puesto VALUES(DEFAULT,6,5);insert into Puesto VALUES(DEFAULT,7,5);insert into Puesto VALUES(DEFAULT,8,5);insert into Puesto VALUES(DEFAULT,9,5);insert into Puesto VALUES(DEFAULT,10,5);insert into Puesto VALUES(DEFAULT,11,5);insert into Puesto VALUES(DEFAULT,12,5);insert into Puesto VALUES(DEFAULT,13,5);insert into Puesto VALUES(DEFAULT,14,5);insert into Puesto VALUES(DEFAULT,15,5);insert into Puesto VALUES(DEFAULT,16,5);insert into Puesto VALUES(DEFAULT,17,5);insert into Puesto VALUES(DEFAULT,18,5);insert into Puesto VALUES(DEFAULT,19,5);insert into Puesto VALUES(DEFAULT,20,5);
 
 insert into Grada VALUES(DEFAULT,'Grada central',8000,1);
-insert into Grada VALUES(DEFAULT,'Mezzanina',3000,1);
-insert into Grada VALUES(DEFAULT,'Palco con pantalla privada',1500,1);
+insert into Grada VALUES(DEFAULT,'Mezzanina',3200,1);
+insert into Grada VALUES(DEFAULT,'Palco con pantalla privada',1300,1);
 
 insert into Entrada VALUES(DEFAULT,'A','Este',1);
 insert into Entrada VALUES(DEFAULT,'B','Este',1);
@@ -1864,6 +1912,8 @@ insert into Estacionamiento VALUES(DEFAULT,4000,3);
 
 insert into Nivel VALUES(DEFAULT,125,100,50,1);
 insert into Nivel VALUES(DEFAULT,140,110,60,1);
+insert into Nivel VALUES(DEFAULT,250,200,125,2);
+insert into Nivel VALUES(DEFAULT,100,70,60,3);
 
 insert into Taquilla_Apuesta VALUES(DEFAULT,1,1);
 insert into Taquilla_Apuesta VALUES(DEFAULT,2,1);
@@ -1885,6 +1935,12 @@ insert into Taquilla_Apuesta VALUES(DEFAULT,5,2);
 insert into Taquilla_Apuesta VALUES(DEFAULT,6,2);
 insert into Taquilla_Apuesta VALUES(DEFAULT,7,2);
 insert into Taquilla_Apuesta VALUES(DEFAULT,8,2);
+
+insert into Usuario VALUES(DEFAULT,'nasetien.20@est.ucab.edu.ve','bgf07052021','2022-11-20',null,null,null,null,null,4);
+insert into Usuario VALUES(DEFAULT,'faparilli@gmail.com','2369rinconada','2022-12-18',13339835,null,null,null,null,2);
+insert into Usuario VALUES(DEFAULT,'educon001@gmail.com','ardosalvo2','2022-12-22',null,null,null,null,27670971,1);
+insert into Usuario VALUES(DEFAULT,'apandawriter@outlook.es','amoablackmidi','2022-12-20',null,null,null,null,29551908,1);
+insert into Usuario VALUES(DEFAULT,'yonder999@outlook.es','hipodromo9yonder','2022-12-17',null,null,18110290,null,null,1);
 
 insert into Taquilla_Boleto VALUES(DEFAULT,1,1);
 insert into Taquilla_Boleto VALUES(DEFAULT,2,1);
@@ -1916,3 +1972,452 @@ insert into Taquilla_Boleto VALUES(DEFAULT,9,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,10,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,11,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,12,2);
+
+insert into Boleto VALUES(DEFAULT,80.00,1);
+insert into Boleto VALUES(DEFAULT,80.00,2);
+insert into Boleto VALUES(DEFAULT,200.00,3);
+insert into Boleto VALUES(DEFAULT,1500.00,4);
+
+insert into Venta_Boleto VALUES(DEFAULT,'2022-11-24',240.00,22,null,28426562);
+insert into Venta_Boleto VALUES(DEFAULT,'2022-11-24',160.00,13,null,27670971);
+insert into Venta_Boleto VALUES(DEFAULT,'2022-11-25',3000.00,14,null,29553823);
+insert into Venta_Boleto VALUES(DEFAULT,'2022-11-25',80.00,3,null,27670971);
+insert into Venta_Boleto VALUES(DEFAULT,'2022-11-25',600.00,8,null,29583211);
+
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,2,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,2,1);
+insert into Detallado_Venta VALUES(DEFAULT,1500.00,3,4);
+insert into Detallado_Venta VALUES(DEFAULT,1500.00,3,4);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,4,1);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3);
+
+insert into Restaurant VALUES(299792458,'La Terraza',350,3);
+insert into Restaurant VALUES(279733963,'La Dupla',200,2);
+
+insert into Horario VALUES(DEFAULT,'SABADO','14:00:00','21:00:00',null,1);
+insert into Horario VALUES(DEFAULT,'DOMINGO','14:00:00','21:00:00',null,1);
+insert into Horario VALUES(DEFAULT,'SABADO','12:30:00','21:00:00',1,null);
+insert into Horario VALUES(DEFAULT,'DOMINGO','12:30:00','21:00:00',1,null);
+insert into Horario VALUES(DEFAULT,'SABADO','11:00:00','19:00:00',null,2);
+insert into Horario VALUES(DEFAULT,'DOMINGO','11:00:00','19:00:00',null,2);
+
+insert into Pista VALUES(DEFAULT,1800,16,2,'ARENA',1);
+insert into Pista VALUES(DEFAULT,1400,12,1,'GRAVA',1);
+
+insert into Paddock VALUES(DEFAULT,18,1);
+
+insert into Circulo_Ganadores VALUES(DEFAULT,3,1);
+
+insert into Historico_Entrenador VALUES(DEFAULT,'2016-03-17',null,TRUE,3,13339835);
+insert into Historico_Entrenador VALUES(DEFAULT,'2016-03-17','2016-03-16',FALSE,2,13339835);
+insert into Historico_Entrenador VALUES(DEFAULT,'2016-03-22',null,TRUE,2,5132768);
+insert into Historico_Entrenador VALUES(DEFAULT,'2007-06-22',null,TRUE,5,14486022);
+insert into Historico_Entrenador VALUES(DEFAULT,'2018-11-12',null,TRUE,1,6371724);
+insert into Historico_Entrenador VALUES(DEFAULT,'2004-10-03','2018-11-12',FALSE,4,6371724);
+insert into Historico_Entrenador VALUES(DEFAULT,'2018-11-12',null,TRUE,4,11922339);
+
+--insert into Venta_Restaurant VALUES(DEFAULT,'2022-11-26 19:10:25',4477.29,1);
+
+insert into Propietario_Stud VALUES(DEFAULT,100,1,3);
+insert into Propietario_Stud VALUES(DEFAULT,60,2,4);
+insert into Propietario_Stud VALUES(DEFAULT,40,2,5);
+insert into Propietario_Stud VALUES(DEFAULT,25,3,6);
+insert into Propietario_Stud VALUES(DEFAULT,25,3,7);
+insert into Propietario_Stud VALUES(DEFAULT,50,3,8);
+insert into Propietario_Stud VALUES(DEFAULT,100,4,9);
+insert into Propietario_Stud VALUES(DEFAULT,20,5,10);
+insert into Propietario_Stud VALUES(DEFAULT,25,5,11);
+insert into Propietario_Stud VALUES(DEFAULT,25,5,12);
+insert into Propietario_Stud VALUES(DEFAULT,30,5,13);
+insert into Propietario_Stud VALUES(DEFAULT,70,6,14);
+insert into Propietario_Stud VALUES(DEFAULT,30,6,15);
+insert into Propietario_Stud VALUES(DEFAULT,50,7,16);
+insert into Propietario_Stud VALUES(DEFAULT,50,7,17);
+insert into Propietario_Stud VALUES(DEFAULT,60,8,1);
+insert into Propietario_Stud VALUES(DEFAULT,40,8,11);
+insert into Propietario_Stud VALUES(DEFAULT,33,9,6);
+insert into Propietario_Stud VALUES(DEFAULT,33,9,3);
+insert into Propietario_Stud VALUES(DEFAULT,34,9,2);
+insert into Propietario_Stud VALUES(DEFAULT,100,10,2);
+insert into Propietario_Stud VALUES(DEFAULT,50,11,19);
+insert into Propietario_Stud VALUES(DEFAULT,50,11,13);
+insert into Propietario_Stud VALUES(DEFAULT,100,12,22);
+insert into Propietario_Stud VALUES(DEFAULT,100,13,14);
+insert into Propietario_Stud VALUES(DEFAULT,60,14,18);
+insert into Propietario_Stud VALUES(DEFAULT,40,14,9);
+insert into Propietario_Stud VALUES(DEFAULT,20,15,2);
+insert into Propietario_Stud VALUES(DEFAULT,40,15,20);
+insert into Propietario_Stud VALUES(DEFAULT,40,15,21);
+insert into Propietario_Stud VALUES(DEFAULT,100,16,22);
+insert into Propietario_Stud VALUES(DEFAULT,50,17,7);
+insert into Propietario_Stud VALUES(DEFAULT,50,17,8);
+insert into Propietario_Stud VALUES(DEFAULT,30,18,22);
+insert into Propietario_Stud VALUES(DEFAULT,70,18,24);
+insert into Propietario_Stud VALUES(DEFAULT,100,19,23);
+insert into Propietario_Stud VALUES(DEFAULT,100,20,25);
+insert into Propietario_Stud VALUES(DEFAULT,40,21,26);
+insert into Propietario_Stud VALUES(DEFAULT,60,21,18);
+insert into Propietario_Stud VALUES(DEFAULT,100,22,22);
+insert into Propietario_Stud VALUES(DEFAULT,50,23,5);
+insert into Propietario_Stud VALUES(DEFAULT,50,23,9);
+insert into Propietario_Stud VALUES(DEFAULT,50,24,1);
+insert into Propietario_Stud VALUES(DEFAULT,50,24,23);
+insert into Propietario_Stud VALUES(DEFAULT,100,25,6);
+insert into Propietario_Stud VALUES(DEFAULT,30,26,6);
+insert into Propietario_Stud VALUES(DEFAULT,40,26,13);
+insert into Propietario_Stud VALUES(DEFAULT,30,26,7);
+insert into Propietario_Stud VALUES(DEFAULT,100,27,11);
+insert into Propietario_Stud VALUES(DEFAULT,100,28,12);
+insert into Propietario_Stud VALUES(DEFAULT,50,29,4);
+insert into Propietario_Stud VALUES(DEFAULT,50,29,8);
+insert into Propietario_Stud VALUES(DEFAULT,80,30,25);
+insert into Propietario_Stud VALUES(DEFAULT,20,30,20);
+insert into Propietario_Stud VALUES(DEFAULT,100,31,3);
+insert into Propietario_Stud VALUES(DEFAULT,60,32,4);
+insert into Propietario_Stud VALUES(DEFAULT,40,32,5);
+insert into Propietario_Stud VALUES(DEFAULT,25,33,6);
+insert into Propietario_Stud VALUES(DEFAULT,25,33,7);
+insert into Propietario_Stud VALUES(DEFAULT,50,33,8);
+insert into Propietario_Stud VALUES(DEFAULT,100,34,9);
+insert into Propietario_Stud VALUES(DEFAULT,20,35,10);
+insert into Propietario_Stud VALUES(DEFAULT,25,35,11);
+insert into Propietario_Stud VALUES(DEFAULT,25,35,12);
+insert into Propietario_Stud VALUES(DEFAULT,30,35,13);
+insert into Propietario_Stud VALUES(DEFAULT,70,36,14);
+insert into Propietario_Stud VALUES(DEFAULT,30,36,15);
+insert into Propietario_Stud VALUES(DEFAULT,50,37,16);
+insert into Propietario_Stud VALUES(DEFAULT,50,37,17);
+insert into Propietario_Stud VALUES(DEFAULT,60,38,1);
+insert into Propietario_Stud VALUES(DEFAULT,40,38,11);
+insert into Propietario_Stud VALUES(DEFAULT,33,39,6);
+insert into Propietario_Stud VALUES(DEFAULT,33,39,3);
+insert into Propietario_Stud VALUES(DEFAULT,34,39,2);
+insert into Propietario_Stud VALUES(DEFAULT,100,40,2);
+insert into Propietario_Stud VALUES(DEFAULT,50,41,19);
+insert into Propietario_Stud VALUES(DEFAULT,50,41,13);
+insert into Propietario_Stud VALUES(DEFAULT,100,42,22);
+insert into Propietario_Stud VALUES(DEFAULT,100,43,14);
+insert into Propietario_Stud VALUES(DEFAULT,60,44,18);
+insert into Propietario_Stud VALUES(DEFAULT,40,44,9);
+insert into Propietario_Stud VALUES(DEFAULT,20,45,2);
+insert into Propietario_Stud VALUES(DEFAULT,40,45,20);
+insert into Propietario_Stud VALUES(DEFAULT,40,45,21);
+insert into Propietario_Stud VALUES(DEFAULT,100,46,22);
+insert into Propietario_Stud VALUES(DEFAULT,50,47,7);
+insert into Propietario_Stud VALUES(DEFAULT,50,47,8);
+insert into Propietario_Stud VALUES(DEFAULT,30,48,22);
+insert into Propietario_Stud VALUES(DEFAULT,70,48,24);
+insert into Propietario_Stud VALUES(DEFAULT,100,49,23);
+insert into Propietario_Stud VALUES(DEFAULT,100,50,25);
+insert into Propietario_Stud VALUES(DEFAULT,40,51,26);
+insert into Propietario_Stud VALUES(DEFAULT,60,51,18);
+insert into Propietario_Stud VALUES(DEFAULT,100,52,22);
+insert into Propietario_Stud VALUES(DEFAULT,50,53,5);
+insert into Propietario_Stud VALUES(DEFAULT,50,53,9);
+insert into Propietario_Stud VALUES(DEFAULT,50,54,1);
+insert into Propietario_Stud VALUES(DEFAULT,50,54,23);
+insert into Propietario_Stud VALUES(DEFAULT,100,55,6);
+insert into Propietario_Stud VALUES(DEFAULT,30,56,6);
+insert into Propietario_Stud VALUES(DEFAULT,40,56,13);
+insert into Propietario_Stud VALUES(DEFAULT,30,56,7);
+insert into Propietario_Stud VALUES(DEFAULT,100,57,11);
+insert into Propietario_Stud VALUES(DEFAULT,100,58,12);
+insert into Propietario_Stud VALUES(DEFAULT,50,59,4);
+insert into Propietario_Stud VALUES(DEFAULT,50,59,8);
+insert into Propietario_Stud VALUES(DEFAULT,80,60,25);
+insert into Propietario_Stud VALUES(DEFAULT,20,60,20);
+insert into Propietario_Stud VALUES(DEFAULT,100,61,3);
+insert into Propietario_Stud VALUES(DEFAULT,60,62,4);
+insert into Propietario_Stud VALUES(DEFAULT,40,62,5);
+insert into Propietario_Stud VALUES(DEFAULT,25,63,6);
+insert into Propietario_Stud VALUES(DEFAULT,25,63,7);
+insert into Propietario_Stud VALUES(DEFAULT,50,63,8);
+insert into Propietario_Stud VALUES(DEFAULT,100,64,9);
+insert into Propietario_Stud VALUES(DEFAULT,20,65,10);
+insert into Propietario_Stud VALUES(DEFAULT,25,65,11);
+insert into Propietario_Stud VALUES(DEFAULT,25,65,12);
+insert into Propietario_Stud VALUES(DEFAULT,30,65,13);
+insert into Propietario_Stud VALUES(DEFAULT,70,66,14);
+insert into Propietario_Stud VALUES(DEFAULT,30,66,15);
+insert into Propietario_Stud VALUES(DEFAULT,50,67,16);
+insert into Propietario_Stud VALUES(DEFAULT,50,67,17);
+insert into Propietario_Stud VALUES(DEFAULT,60,68,1);
+insert into Propietario_Stud VALUES(DEFAULT,40,68,11);
+insert into Propietario_Stud VALUES(DEFAULT,33,69,6);
+insert into Propietario_Stud VALUES(DEFAULT,33,69,3);
+insert into Propietario_Stud VALUES(DEFAULT,34,69,2);
+insert into Propietario_Stud VALUES(DEFAULT,100,70,2);
+insert into Propietario_Stud VALUES(DEFAULT,50,71,19);
+insert into Propietario_Stud VALUES(DEFAULT,50,71,13);
+insert into Propietario_Stud VALUES(DEFAULT,100,72,22);
+insert into Propietario_Stud VALUES(DEFAULT,100,73,14);
+insert into Propietario_Stud VALUES(DEFAULT,60,74,18);
+insert into Propietario_Stud VALUES(DEFAULT,40,74,9);
+insert into Propietario_Stud VALUES(DEFAULT,20,75,2);
+insert into Propietario_Stud VALUES(DEFAULT,40,75,20);
+insert into Propietario_Stud VALUES(DEFAULT,40,75,21);
+insert into Propietario_Stud VALUES(DEFAULT,100,76,22);
+insert into Propietario_Stud VALUES(DEFAULT,50,77,7);
+insert into Propietario_Stud VALUES(DEFAULT,50,77,8);
+insert into Propietario_Stud VALUES(DEFAULT,30,78,22);
+insert into Propietario_Stud VALUES(DEFAULT,70,78,24);
+insert into Propietario_Stud VALUES(DEFAULT,100,79,23);
+insert into Propietario_Stud VALUES(DEFAULT,100,80,25);
+insert into Propietario_Stud VALUES(DEFAULT,40,81,26);
+insert into Propietario_Stud VALUES(DEFAULT,60,81,18);
+insert into Propietario_Stud VALUES(DEFAULT,100,82,22);
+insert into Propietario_Stud VALUES(DEFAULT,50,83,5);
+insert into Propietario_Stud VALUES(DEFAULT,50,83,9);
+
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,1);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,1);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,1);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,2);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,13,2);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,3);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,3);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,3);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,9,4);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,4);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,4);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,5);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,5);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,5);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,5);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,5);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,6);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,6);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,6);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,7);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,9,7);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,22,7);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,8);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,8);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,8);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,13,9);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,9);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,9);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,10);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,10);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,10);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,10);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,11);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,11);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,11);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,12);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,7,12);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,7,12);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,13);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,10,13);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,13);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,14);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,14);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,15);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,15);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,16);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,16);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,17);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,13,17);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,13,17);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,18);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,18);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,21,19);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,19);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,19);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,20);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,20);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,20);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,21);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,21);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,3,22);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,22);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,13,23);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,23);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,23);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,13,23);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,23);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,23);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,24);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,24);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,24);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,25);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,25);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,2,26);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,2,26);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,13,27);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,27);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,27);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,13,27);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,28);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,28);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,16,28);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,28);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,28);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,16,28);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,29);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,29);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,30);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,30);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,30);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,31);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,31);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,31);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,32);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,32);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,32);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,33);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,14,33);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,33);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,19,34);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,19,34);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,35);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,35);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,35);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,14,36);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,36);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,36);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,37);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,37);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,37);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,38);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,38);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,38);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,39);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,39);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,40);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,40);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,40);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,41);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,41);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,42);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,42);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,42);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,43);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,13,43);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,43);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,44);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,44);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,2,45);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,14,45);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,45);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,14,45);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,46);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,46);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,46);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,46);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,47);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,47);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,47);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,48);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,22,48);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,48);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,49);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,49);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,50);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,50);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,50);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,14,51);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,51);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,51);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,52);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,52);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,52);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,53);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,53);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,54);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,54);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,54);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,55);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,55);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,55);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,14,56);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,14,56);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,14,57);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,57);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,14,57);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,57);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,58);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,58);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,58);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,59);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,59);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,59);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,60);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,60);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,61);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,61);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,61);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,62);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,62);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,63);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,63);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,63);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,63);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,64);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,13,64);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,13,64);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,65);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,65);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,65);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,4,66);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,12,66);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,66);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,12,66);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,67);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,67);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,67);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,67);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,68);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,68);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,20,69);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,69);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,20,69);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,70);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,70);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,70);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,70);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,71);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,71);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,17,71);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,71);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,72);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,4,72);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,73);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,73);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,9,73);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,73);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,1,73);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,74);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,9,74);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,74);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,14,75);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,14,75);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,19,75);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,1,76);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,76);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,77);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,77);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,77);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,18,78);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,78);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,19,78);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,78);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,19,78);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,14,79);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,79);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,9,79);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,79);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,80);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,5,80);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,80);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,10,81);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,81);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,2,82);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,2,82);
+insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,83);
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,83);
