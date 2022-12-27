@@ -1663,6 +1663,37 @@ insert into Propietario VALUES(5414243,'Vittorio','Antonio','Lungavite','Liberto
 insert into Propietario VALUES(5973529,'Arne','Stvenson','Chacon','Escamilla','M','dir','arnechacon59@inh.gob.ve','1963-01-02',980);
 insert into Propietario VALUES(8179306,'Alberto','Jose','Acosta','Espinoza','M','dir','albertoacosta81@inh.gob.ve','1965-02-06',578);
 insert into Propietario VALUES(14394858,'Raed','Muhamed','Badwan','Abdel','M','dir','raedbadwan143@inh.gob.ve','1979-04-06',807);
+---Telefono Propietario ---
+Insert into telefono values(Default,58,9831151,412,'Movil',null,6126381);
+Insert into telefono values(Default,58,	2480148,414,'Movil',null,8823193);
+Insert into telefono values(Default,58,	2450548,416,'Movil',null,5222820);
+Insert into telefono values(Default,58,	1739686,412,'Movil',null,13779603);
+Insert into telefono values(Default,58,	4562871,414,'Movil',null,3719492);
+Insert into telefono values(Default,58",1597534,412,'Movil'	,null,6918483);;
+Insert into telefono values(Default,58,	1478523,426,'Movil'	,null,5543111);
+Insert into telefono values(Default,58,	1674832,414,'Movil'	,null,6844510);
+Insert into telefono values(Default,58,	4236854,424,'Movil'	,null,15149582);
+Insert into telefono values(Default,58,	2783720,414,'Movil'	,null,3224737);
+Insert into telefono values(Default,58,	2856947,412,'Movil'	,null,5530617);
+Insert into telefono values(Default,58,	1469547,426",'Movil',null,6879925);
+Insert into telefono values(Default,58,	5458939,212",'Trabajo',null,8391395);
+Insert into telefono values(Default,58,	5419502,212",'Movil',null,	12958794);
+Insert into telefono values(Default,58,	4838246,212,'Local',null,6822722);
+Insert into telefono values(Default,58,	6514569	,412,'Movil',null,6844526);
+Insert into telefono values(Default,58,	1599512,414,'Movil',null,3189825);
+Insert into telefono values(Default,58,	2454045,424,'Movil',null,3225959);
+Insert into telefono values(Default,58,	161972,	414,'Movil',null,15222348);
+Insert into telefono values(Default,58,	3862154,412,'Movil',null,7090152);
+Insert into telefono values(Default,58,	2070107,424,'Movil',null,6428607);
+Insert into telefono values(Default,58,	9119618,412,'Movil',null,5972079);
+Insert into telefono values(Default,58,	6329958,212,'Trabajo',null,5414243);
+Insert into telefono values(Default,58,	2519983,424,'Movil',null,5973529);
+Insert into telefono values(Default,58,	5802387,426,'Movil',null,8179306);
+Insert into telefono values(Default,58,	1224305,414,'Movil',null,14394858);
+--Telefono Hipodromo--
+Insert into telefono values(Default,58,	8080349,212,'Movil',1,null);	
+
+
 
 insert into Aficionado VALUES(30395284,'Nicolas','Adrian','Setien','Briceno','M','Salado Bajo','Estudiante',906); --montalban
 insert into Aficionado VALUES(27670971,'Eduardo','Miguel','Consalvo','Perez','M','La Trinidad','Estudiante',980); --baruta
@@ -1898,14 +1929,6 @@ insert into Porcentaje_Dividendo VALUES(DEFAULT,3,0.07);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,4,0.03);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,5,0.02);
 
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál fue la marca de tu primer teléfono?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿En qué ciudad se conocieron tus padres?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál era el nombre de tu primer amigo de la escuela?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿En qué ciudad nació tu abuelo materno?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál era el nombre de tu primera mascota?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál es tu película favorita?');
-
---agregar descripcion historica
 insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24);
 
 insert into Caballeriza VALUES(DEFAULT,1,30,1);
@@ -2035,6 +2058,23 @@ insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3);
 insert into Restaurant VALUES(299792458,'La Terraza',350,3);
 insert into Restaurant VALUES(279733963,'La Dupla',200,2);
 
+---Venta Restaurant---
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 19:10:25',4477.29,299792458);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-28 18:20:45',5987,299792458);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-29 19:40:10',11596,299792458);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-04 18:00:25',10852,299792458);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 18:10:25',3760,279733963);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-10 18:30:45',4985,279733963);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 19:10:25',8654,29279733963);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-11 19:45:10',2575,279733963);
+
+----Horario Restaurant---
+insert into Restaurant_horario VALUES(DEFAULT,3,299792458);
+insert into Restaurant_Horario VALUES(DEFAULT,4,299792458);
+insert into Restaurant_horario VALUES(DEFAULT,1,279733963);
+insert into Restaurant_horario VALUES(DEFAULT,2,279733963);
+
+
 insert into Horario VALUES(DEFAULT,'SABADO','14:00:00','21:00:00',null,1);
 insert into Horario VALUES(DEFAULT,'DOMINGO','14:00:00','21:00:00',null,1);
 insert into Horario VALUES(DEFAULT,'SABADO','12:30:00','21:00:00',1,null);
@@ -2056,8 +2096,6 @@ insert into Historico_Entrenador VALUES(DEFAULT,'2007-06-22',null,TRUE,5,1448602
 insert into Historico_Entrenador VALUES(DEFAULT,'2018-11-12',null,TRUE,1,6371724);
 insert into Historico_Entrenador VALUES(DEFAULT,'2004-10-03','2018-11-12',FALSE,4,6371724);
 insert into Historico_Entrenador VALUES(DEFAULT,'2018-11-12',null,TRUE,4,11922339);
-
---insert into Venta_Restaurant VALUES(DEFAULT,'2022-11-26 19:10:25',4477.29,1);
 
 insert into Propietario_Stud VALUES(DEFAULT,100,1,5222820);
 insert into Propietario_Stud VALUES(DEFAULT,60,2,13779603);
@@ -2456,467 +2494,36 @@ insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,81);
 insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,2,82);
 insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,2,82);
 insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,83);
-insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,177,83);
-
-/*
-insert into Medicamento VALUES(DEFAULT,'Buta','Dolores articulares y lesiones musculares',);
-
-*/
-
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','13:30:00',1,1335.00,1100,null,1,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','13:50:00',2,836.00,1400,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','14:15:00',3,1214.00,1100,null,3,1,1);--3
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','14:35:00',4,1518.00,1300,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','15:00:00',5,951.00,1300,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','15:25:00',6,1350.00,1100,null,6,1,1);--6
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','15:45:00',7,1253.00,1100,null,7,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','16:10:00',8,1253.00,1100,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','16:35:00',9,1515.00,1600,null,9,1,1);--9
-insert into Carrera VALUES(DEFAULT,null,'2022-11-27','16:55:00',10,1214.00,1100,null,10,1,1);
---carreras pasadas
-insert into Carrera VALUES(DEFAULT,null,'2022-10-30','13:30:00',1,null,1100,null,1,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','14:35:00',4,null,1400,null,1,1,1);--12
-
-insert into Carrera VALUES(DEFAULT,null,'2022-09-04','16:55:00',10,null,1200,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-11','15:45:00',7,null,1400,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','16:10:00',8,null,1100,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','16:35:00',9,null,1800,null,2,1,1);--16
-
-insert into Carrera VALUES(DEFAULT,null,'2022-01-30','13:10:00',1,null,1200,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-02-06','16:10:00',8,null,1300,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-04-03','16:10:00',8,null,1100,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-04-10','13:30:00',1,null,1400,null,2,1,1);--20
-
-insert into Carrera VALUES(DEFAULT,null,'2021-06-27','13:30:00',1,null,1200,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2021-07-04','16:10:00',8,null,1300,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2021-11-07','16:10:00',8,null,1100,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-23','16:35:00',9,null,1300,null,2,1,1);--24
-
-insert into Carrera VALUES(DEFAULT,null,'2021-07-18','13:30:00',1,null,1200,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2021-09-05','16:10:00',8,null,1300,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-03-27','15:45:00',7,null,1300,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-05-29','15:45:00',7,null,1200,null,2,1,1);--28
-
-insert into Carrera VALUES(DEFAULT,null,'2022-07-10','15:45:00',7,null,1200,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-08-07','16:10:00',8,null,1200,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-04','15:20:00',6,null,1200,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','16:10:00',8,null,1100,null,2,1,1);--32
-
-insert into Carrera VALUES(DEFAULT,null,'2022-05-15','13:50:00',2,null,1100,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-05-29','15:45:00',7,null,1200,null,2,1,1);--34
----------------------------------------clave 14 (2022-09-11)
----------------------------------------clave 32 (2022-10-02)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-09-04','16:55:00',10,null,1200,null,2,1,1);
-----------------------------------------clave 14 (2022-09-11)
-------------------------------------------clave 16 (2022-10-09)
-insert into Carrera VALUES(DEFAULT,null,'2022-10-23','16:35:00',9,null,1300,null,2,1,1);--36
-
-insert into Carrera VALUES(DEFAULT,null,'2022-07-17','15:45:00',7,null,1400,null,2,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-08-14','15:45:00',7,null,1200,null,2,1,1);--38
-------------------------------------------clave 14 (2022-09-11)
-----------------------------------------clave 36 (2022-10-23)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-06-19','15:45:00',7,null,1100,null,2,1,1);--39
-----------------------------------------clave 29 (2022-07-10)
-----------------------------------------clave 38 (2022-08-14)
-----------------------------------------clave 35 (2022-09-04)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-05-08','15:45:00',7,null,1300,null,3,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-18','16:35:00',9,null,1100,null,3,1,1);--41
-
-----------------------------------------clave 41 (2022-09-18)
-insert into Carrera VALUES(DEFAULT,null,'2022-09-25','15:25:00',6,null,1400,null,3,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','15:00:00',5,null,1100,null,3,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-06','15:25:00',6,null,1200,null,3,1,1);--44
-
-insert into Carrera VALUES(DEFAULT,null,'2022-09-11','14:15:00',3,null,1200,null,3,1,1);
------------------------------------------clave 43 (2022-10-02)
-insert into Carrera VALUES(DEFAULT,null,'2022-10-30','15:25:00',6,null,1100,null,3,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','13:30:00',1,null,1100,null,3,1,1);--47
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-21','15:00:00',5,null,1100,null,3,1,1);
-------------------------------------------clave 41 (2022-09-18)
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','13:30:00',1,null,1300,null,3,1,1);--49
--------------------------------------------clave 44 (2022-11-06)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-02-13','13:50:00',2,null,1100,null,3,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-04-17','16:10:00',8,null,1400,null,3,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-17','13:50:00',2,null,1600,null,3,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-08-14','13:40:00',1,null,1400,null,3,1,1);--53
-
--------------------------------------------clave 43 (2022-10-02)
--------------------------------------------clave 47 (2022-11-13)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-07','14:15:00',3,null,1200,null,3,1,1);--54
--------------------------------------------clave 43 (2022-10-02)
-------------------------------------------clave 46 (2022-10-30)
------------------------------------------clave 47 (2022-11-13)
-
-------------------------------------------clave 48 (2022-08-21)
-------------------------------------------clave 42 (2022-09-25)
-------------------------------------------clave 43 (2022-10-02)
-------------------------------------------clave 44 (2022-11-06)
-
---------------------------------------------clave 46 (2022-10-30)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-07-24','15:45:00',7,null,1800,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-11','13:30:00',1,null,1400,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','15:45:00',7,null,1800,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-30','14:15:00',3,null,1300,null,4,1,1);--58
-
-insert into Carrera VALUES(DEFAULT,null,'2022-04-17','14:35:00',4,null,1200,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-05-22','13:30:00',1,null,1200,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-04','16:35:00',9,null,1300,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-06','13:50:00',2,null,1200,null,4,1,1);--62
-
-insert into Carrera VALUES(DEFAULT,null,'2022-06-12','14:15:00',3,null,1400,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-10','14:15:00',3,null,1200,null,4,1,1);
-------------------------------------------clave 61 (2022-09-04)
-insert into Carrera VALUES(DEFAULT,null,'2022-09-25','15:45:00',7,null,1400,null,4,1,1);--65
-
-insert into Carrera VALUES(DEFAULT,null,'2022-07-31','15:45:00',7,null,1200,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','15:45:00',7,null,1100,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-23','16:55:00',10,null,1300,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-20','16:00:00',8,null,1300,null,4,1,1);--69
-
-insert into Carrera VALUES(DEFAULT,null,'2022-04-03','15:00:00',5,null,1400,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-05-15','15:45:00',7,null,1200,null,4,1,1);--71
---------------------------------------clave 56 (2022-09-11)
---------------------------------------clave 57 (2022-10-09)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-04-24','15:25:00',6,null,1200,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-17','15:00:00',5,null,1300,null,4,1,1);
-------------------------------------------clave 56 (2022-09-11)
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','16:35:00',9,null,1200,null,4,1,1);--74
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-14','15:45:00',7,null,1200,null,4,1,1);
-------------------------------------------clave 61 (2022-09-04)
------------------------------------------clave 65 (2022-09-25)
-insert into Carrera VALUES(DEFAULT,null,'2022-10-16','14:15:00',3,null,1500,null,4,1,1);--76
-
-insert into Carrera VALUES(DEFAULT,null,'2022-02-20','15:45:00',7,null,1200,null,4,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-06-19','16:10:00',8,null,1200,null,4,1,1);--78
-
-insert into Carrera VALUES(DEFAULT,null,'2022-07-03','15:45:00',7,null,1100,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-31','16:10:00',8,null,1200,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-08-14','17:20:00',11,null,1100,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-06','16:10:00',8,null,1200,null,5,1,1);--82
-
-insert into Carrera VALUES(DEFAULT,null,'2022-02-06','15:45:00',7,null,1100,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-03-06','17:20:00',11,null,1100,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-04','17:20:00',11,null,1200,null,5,1,1);--85
-------------------------------------------clave 82 (2022-11-06)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-02-13','15:25:00',6,null,1300,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-03-13','15:25:00',6,null,1300,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-04-03','15:45:00',7,null,1400,null,5,1,1);--88
-------------------------------------------clave 72 (2022-04-24)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','16:10:00',8,null,1100,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-23','15:00:00',5,null,1200,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-30','16:55:00',10,null,1300,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-20','17:30:00',12,null,1100,null,5,1,1);--92
-
-insert into Carrera VALUES(DEFAULT,null,'2022-06-19','14:15:00',3,null,1200,null,5,1,1);--93
----------------------------------------------clave 81 (2022-08-14)
----------------------------------------------clave 91 (2022-10-30)
----------------------------------------------clave 92 (2022-11-20)
-
-----------------------------------------------clave 85 (2022-09-04)
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','16:35:00',9,null,1300,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-16','16:10:00',8,null,1200,null,5,1,1);--95
-----------------------------------------------clave 92 (2022-11-20)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-03-13','14:15:00',3,null,1300,null,5,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-18','16:55:00',10,null,1200,null,5,1,1);--97
-
-----------------------------------------------CLAVE 94 (2022-10-02)
-----------------------------------------------clave 95 (2022-10-16)
-----------------------------------------------clave 91 (2022-10-30)
-----------------------------------------------clave 92 (2022-11-20)
-
-----------------------------------------------clave 83 (2022-02-06)
------------------------------------------------clave 80 (07-31)
----------------------------------------------------clave 97 (09-18)
----------------------------------------------clave 94 (10-02)
-
----------------------------------------------clave 72 (04-24)
-insert into Carrera VALUES(DEFAULT,null,'2022-05-22','16:10:00',8,null,1200,null,5,1,1);--98
--------------------------------------------clave 89 (10-09)
-----------------------------------------------clave 92 (11-20)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-03-27','13:30:00',1,null,1200,null,5,1,1);
---------------------------------------------------clave 88 (04-03)
-insert into Carrera VALUES(DEFAULT,null,'2022-07-03','15:25:00',6,null,1100,null,5,1,1);--100
--------------------------------------------------clave 92 (11-20)
-
-------------------------------------------------clave 85 (09-04)
-------------------------------------------------clave 97 (09-18)
-------------------------------------------------clave 91 (10-30)
-------------------------------------------------clave 92 (11-20)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-09-04','13:30:00',1,null,1400,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-23','13:50:00',2,null,1600,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-30','14:15:00',3,null,1300,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','13:50:00',2,null,1300,null,6,1,1);--104
-
-insert into Carrera VALUES(DEFAULT,null,'2022-05-22','14:35:00',4,null,1200,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-06-19','15:45:00',7,null,1100,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-17','16:55:00',10,null,1300,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-25','15:00:00',5,null,1200,null,6,1,1);--108
-
--------------------------------------------clave 101 (09-04)
-insert into Carrera VALUES(DEFAULT,null,'2022-09-18','13:50:00',2,null,1300,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','16:55:00',10,null,1100,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-23','13:30:00',1,null,1400,null,6,1,1);--111
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-21','16:55:00',10,null,1300,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-18','15:45:00',7,null,1100,null,6,1,1);
------------------------------------------clave 110 (10-02)
-insert into Carrera VALUES(DEFAULT,null,'2022-11-06','15:00:00',5,null,1100,null,6,1,1);--114
-
-insert into Carrera VALUES(DEFAULT,null,'2022-05-08','16:55:00',10,null,1300,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-05-29','15:25:00',6,null,1200,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-31','14:15:00',3,null,1100,null,6,1,1);--117
-----------------------------------------clave 108 (09-25)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-05-22','13:50:00',2,null,1200,null,6,1,1);
---------------------------------------------clave 107 (07-17)
-insert into Carrera VALUES(DEFAULT,null,'2022-08-07','15:00:00',5,null,1300,null,6,1,1);--119
-------------------------------------------------clave 114 (11-06)
-
--------------------------------------------clave 101 (09-04)
---------------------------------------------clave 109 (09-18)
-----------------------------------------------clave 111 (10-23)
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','16:35:00',9,null,1200,null,6,1,1);--120
-
-insert into Carrera VALUES(DEFAULT,null,'2022-06-26','15:25:00',6,null,1300,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-08-07','15:00:00',5,null,1300,null,6,1,1);--121
----------------------------------------------clave 108 (09-25)
----------------------------------------------clave 103 (10-30)
-
----------------------------------------clave 101 (09-04)
------------------------------------------clave 110 (10-02)
------------------------------------------clave 111 (10-23)
------------------------------------------clave 114 (11-06)
-
-----------------------------------clave 105 (05-22)
-insert into Carrera VALUES(DEFAULT,null,'2022-06-12','16:10:00',8,null,1800,null,6,1,1);
-----------------------------------clave 107
-insert into Carrera VALUES(DEFAULT,null,'2022-08-28','15:45:00',7,null,1900,null,6,1,1);--123
-
-insert into Carrera VALUES(DEFAULT,null,'2022-04-03','16:55:00',10,null,1300,null,6,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-03','15:45:00',7,null,1100,null,6,1,1);--125
----------------------------------------clave 110 (10-02)
-----------------------------------------clave 114 (11-06)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-09-11','14:35:00',4,null,1200,null,6,1,1);
------------------------------------------clave 108 (09-25)
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','16:55:00',10,null,1300,null,6,1,1);--127
-------------------------------------------clave 103 (10-30)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-21','13:50:00',2,null,1200,null,7,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-11','13:50:00',2,null,1200,null,7,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-16','13:30:00',1,null,1200,null,7,1,1);--130
-------------------------------------------clave 114 (11-06)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-06-12','15:00:00',5,null,1200,null,7,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-06-19','16:55:00',10,null,1100,null,7,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-24','15:00:00',5,null,1200,null,7,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-08-07','15:25:00',6,null,1400,null,7,1,1);--133
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-21','16:35:00',9,null,1300,null,7,1,1);--134
-------------------------------------------clave 129 (09-11)
-------------------------------------------clave 130 (10-16)
-------------------------------------------clave 114 (11-06)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-04-24','15:45:00',7,null,1200,null,7,1,1);--135
-------------------------------------------clave 128 (08-21)
-------------------------------------------clave 130 (10-16)
-------------------------------------------clave 114 (11-06)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-06-26','15:45:00',7,null,1100,null,7,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-10','15:00:00',5,null,1400,null,7,1,1);--136
------------------------------------------clave 128 (08-21)
-------------------------------------clave 130 (10-16)
-
-------------------------------------------clave 128 (08-21)
-------------------------------------------clave 129 (09-11)
-------------------------------------------clave 130 (10-16)
-------------------------------------------clave 114 (11-06)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-04-24','15:45:00',7,null,1200,null,7,1,1);--137
-------------------------------------------clave 135 (06-26)
-------------------------------------------clave 130 (10-16)
-------------------------------------------clave 114 (11-06)
-
-------------------------------------------clave 128 (08-21)
-------------------------------------------clave 129 (09-11)
-------------------------------------------clave 130 (10-16)
-------------------------------------------clave 114 (11-06)
-
-------------------------------------------clave 135 (06-26)
-------------------------------------------clave 136 (07-10)
-insert into Carrera VALUES(DEFAULT,null,'2022-07-17','15:45:00',7,null,1100,null,7,1,1);--138
-------------------------------------------clave 114 (11-06)
-
-------------------------------------------clave 129 (09-11)
-insert into Carrera VALUES(DEFAULT,null,'2022-09-25','15:00:00',5,null,1200,null,7,1,1);--139
-------------------------------------------clave 130 (10-16)
-------------------------------------------clave 114 (11-06)
-
-insert into Carrera VALUES(DEFAULT,null,'2022-05-29','15:45:00',7,null,1200,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-06-26','16:10:00',8,null,1300,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-17','15:45:00',7,null,1400,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-08-14','15:20:00',6,null,1200,null,8,1,1);--143
-
-insert into Carrera VALUES(DEFAULT,null,'2021-08-15','15:45:00',7,null,1200,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2021-08-29','15:45:00',7,null,1100,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2021-10-10','16:55:00',10,null,1100,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2021-10-24','15:00:00',5,null,1100,null,8,1,1);--147
-
------------------------------------------clave 143
-insert into Carrera VALUES(DEFAULT,null,'2022-09-11','16:55:00',10,null,1200,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','14:15:00',3,null,1300,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-16','16:55:00',10,null,1200,null,8,1,1);--150
-
-insert into Carrera VALUES(DEFAULT,null,'2021-01-10','15:45:00',7,null,1200,null,8,1,1);
---------------------------------------------clave 146
-insert into Carrera VALUES(DEFAULT,null,'2022-05-08','17:20:00',11,null,1300,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-10','16:55:00',10,null,1400,null,8,1,1);--153
-
-------------------------------------------------clave 152
-----------------------------------------------clave 153
-insert into Carrera VALUES(DEFAULT,null,'2022-07-31','16:55:00',10,null,1300,null,8,1,1);--154
-------------------------------------------------clave 149
-
------------------------------------------clave 143
------------------------------------------clave 148
------------------------------------------clave 149
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','15:25:00',6,null,1300,null,8,1,1);--155
-
------------------------------------------clave 148
------------------------------------------clave 149
------------------------------------------clave 150
-insert into Carrera VALUES(DEFAULT,null,'2022-11-06','16:55:00',10,null,1100,null,8,1,1);--156
-
------------------------------------------clave 143
-insert into Carrera VALUES(DEFAULT,null,'2022-09-25','16:55:00',10,null,1200,null,8,1,1);--157
------------------------------------------clave 156
------------------------------------------clave 155
-
------------------------------------------clave 148
------------------------------------------clave 149
------------------------------------------clave 150
------------------------------------------clave 156
-
------------------------------------------clave 149
------------------------------------------clave 150
------------------------------------------clave 156
------------------------------------------clave 155
-
--------------------------------------------clave 144
--------------------------------------------clave 145
-insert into Carrera VALUES(DEFAULT,null,'2021-09-19','16:55:00',10,null,1100,null,8,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2021-12-11','15:00:00',5,null,1100,null,8,1,1);--159
-
-insert into Carrera VALUES(DEFAULT,null,'2022-07-31','16:35:00',9,null,1300,null,9,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-04','14:10:00',3,null,1300,null,9,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-16','15:00:00',5,null,1300,null,9,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','17:20:00',11,null,1300,null,9,1,1);--163
-
-insert into Carrera VALUES(DEFAULT,null,'2022-09-18','14:15:00',3,null,1300,null,9,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','14:35:00',4,null,1100,null,9,1,1);--165
----------------------------clave 162
-------------------------clave 163
-
----------------------clave 165
----------------------clave 162
-insert into Carrera VALUES(DEFAULT,null,'2022-11-06','14:35:00',4,null,1200,null,9,1,1);--166
----------------------clave 163
-
---------------------clave 161
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','14:35:00',4,null,1100,null,9,1,1);--167
---------------------clave 162
---------------------clave 163
-
-insert into Carrera VALUES(DEFAULT,null,'2022-06-12','15:45:00',7,null,1300,null,9,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-07-10','14:35:00',4,null,1400,null,9,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','15:00:00',5,null,1200,null,9,1,1);--170
------------------------clave 163
-
----------------------clave 160
-----------------------clave 161
------------------clave 167
-----------------------clave 163
-
-insert into Carrera VALUES(DEFAULT,null,'2022-07-10','16:55:00',10,null,1400,null,9,1,1);
-----------------clave 160
-insert into Carrera VALUES(DEFAULT,null,'2022-08-21','16:10:00',8,null,1300,null,9,1,1);--172
---------------clave 161
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-07','16:35:00',9,null,1600,null,9,1,1);
--------------------clave 164
----------------------clave 162
----------------------clave 163
-
-insert into Carrera VALUES(DEFAULT,null,'2022-05-15','15:45:00',7,null,1200,null,9,1,1);
-----------------------clave 160
-----------------------clave 161
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','15:25:00',6,null,1300,null,9,1,1);--175
-
-insert into Carrera VALUES(DEFAULT,null,'2022-07-31','16:55:00',10,null,1300,null,9,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-11','16:55:00',10,null,1200,null,9,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','14:15:00',3,null,1300,null,9,1,1);--178
---------------------clave 163
-
-insert into Carrera VALUES(DEFAULT,null,'2022-10-09','17:20:00',11,null,1300,null,10,1,1);--179
-
-insert into Carrera VALUES(DEFAULT,null,'2022-09-11','16:10:00',8,null,1200,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-02','15:25:00',6,null,1100,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-23','15:00:00',5,null,1200,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-11-13','16:10:00',8,null,1100,null,10,1,1);--183
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-21','15:25:00',6,null,1100,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-04','16:10:00',8,null,1200,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-16','16:10:00',8,null,1200,null,10,1,1);--186
---------------------clave183
-
-insert into Carrera VALUES(DEFAULT,null,'2022-08-07','13:30:00',1,null,1200,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-09-18','15:25:00',6,null,1100,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-10-30','15:45:00',7,null,1100,null,10,1,1);--189
--------------------clave 183
-
--------------------clave 189
-
--------------------clave 189
-
-insert into Carrera VALUES(DEFAULT,null,'2022-02-13','15:45:00',7,null,1100,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-03-06','16:55:00',10,null,1100,null,10,1,1);
-----------------------clave 184
-----------------------clave 183
-
---
-
------------------------clave 189
-
---
-
---
-
------------------------clave 188
--------------------clave 186
-
-insert into Carrera VALUES(DEFAULT,null,'2022-06-26','16:55:00',10,null,1300,null,10,1,1);
-insert into Carrera VALUES(DEFAULT,null,'2022-08-28','16:10:00',8,null,1300,null,10,1,1);
---------------------clave 179
-
---
-
+insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,83);
 
 -- Ejemplares
 -- E_Tatuaje_Labial, E_Nombre, E_Color_Pelaje, E_Sexo, 
 -- E_Fecha_Nacimiento, E_Fecha_Ing_Hipo, E_Peso, FK_Haras, 
 -- FK_Madre, FK_Padre, FK_Puesto, FK_Caballeriza
 insert into Ejemplar VALUES(1,'Alfredo','C','C','2017-04-04','2017-04-04',90,1,null,null,1,1);
+
+----Tipo de medicamento---
+insert into Tipo_medicamento VALUES(DEFAULT,'Antiflamatorio');
+insert into Tipo_medicamento VALUES(DEFAULT,'Diurético');
+insert into Tipo_medicamento VALUES(DEFAULT,'Analgesico');
+insert into Tipo_medicamento VALUES(DEFAULT,'Antialergico');
+insert into Tipo_medicamento VALUES(DEFAULT,'Antibiotico');
+insert into Tipo_medicamento VALUES(DEFAULT,'Relajante muscular');
+insert into Tipo_medicamento VALUES(DEFAULT,'Antipirético');
+insert into Tipo_medicamento VALUES(DEFAULT,'Hormona');
+insert into Tipo_medicamento VALUES(DEFAULT,'Multivitaminico');
+
+---Medicamento--
+
+insert into medicamento VALUES(DEFAULT,'Buta','Tratamiento contra los dolores articulares',1);
+insert into medicamento VALUES(DEFAULT,'Laxis','Previene el sangrado respiratorio',2);
+insert into medicamento VALUES(DEFAULT,'Tiroxina','Hipotiroidismo y acelera el metabolismo',8);
+insert into medicamento VALUES(DEFAULT,'Power pak nitro','Mejora la respiración y la respuesta al dolor',9);
+insert into medicamento VALUES(DEFAULT,'Etorfina','Estimulante de energia',3);
+
+----Metodo De pago---
+insert into metodo_pago VALUES(DEFAULT,'Tarjeta de Credito');
+insert into metodo_pago VALUES(DEFAULT,'Tarjeta de Debito');
+insert into metodo_pago VALUES(DEFAULT,'Efectivo');
+insert into metodo_pago VALUES(DEFAULT,'Pago Movil');
+insert into metodo_pago VALUES(DEFAULT,'Tranferencia');

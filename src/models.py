@@ -375,7 +375,7 @@ class DetalladoVenta(db.Model):
     __tablename__ = 'detallado_venta'
 
     dv_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    dv_precio_venta = db.Column(db.Numeric(10, 0), nullable=False)
+    dv_precio_venta = db.Column(db.Numeric(10, 2), nullable=False)
     fk_venta_boleto = db.Column(db.ForeignKey('venta_boleto.vb_clave'), nullable=False)
     fk_boleto = db.Column(db.ForeignKey('boleto.bo_clave'), nullable=False)
     fk_metodopago = db.Column(db.ForeignKey('metodo_pago.mp_clave'), nullable=False)
@@ -678,7 +678,7 @@ class Horario(db.Model):
     )
 
     ho_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    ho_dia_semana = db.Column(db.String(45), nullable=False)
+    ho_dia_semana = db.Column(db.String(9), nullable=False)
     ho_hora_apertura = db.Column(db.Time, nullable=False)
     ho_hora_cierre = db.Column(db.Time, nullable=False)
     fk_hipodromo = db.Column(db.ForeignKey('hipodromo.h_id'))
@@ -903,8 +903,8 @@ class Pista(db.Model):
     )
 
     pi_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
-    pi_longitud = db.Column(db.Numeric(10, 0), nullable=False)
-    pi_capacidad = db.Column(db.Numeric(10, 0), nullable=False)
+    pi_longitud = db.Column(db.Numeric(5, 0), nullable=False)
+    pi_capacidad = db.Column(db.Numeric(3, 0), nullable=False)
     pi_num_salida = db.Column(db.Numeric(10, 0), nullable=False)
     pi_tipo = db.Column(db.String(45), nullable=False)
     fk_hipodromo = db.Column(db.ForeignKey('hipodromo.h_id'))
@@ -1401,7 +1401,7 @@ class VentaBoleto(db.Model):
 
     vb_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     vb_fecha = db.Column(db.Date, nullable=False)
-    vb_total_venta = db.Column(db.Numeric(10, 0), nullable=False)
+    vb_total_venta = db.Column(db.Numeric(10, 2), nullable=False)
     fk_taquilla_boleto = db.Column(db.ForeignKey('taquilla_boleto.tab_clave'))
     fk_usuario = db.Column(db.ForeignKey('usuario.u_clave'))
     fk_aficionado = db.Column(db.ForeignKey('aficionado.p_cedula'))
