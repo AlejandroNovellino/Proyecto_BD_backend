@@ -1929,19 +1929,7 @@ insert into Porcentaje_Dividendo VALUES(DEFAULT,3,0.07);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,4,0.03);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,5,0.02);
 
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál fue la marca de tu primer teléfono?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿En qué ciudad se conocieron tus padres?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál era el nombre de tu primer amigo de la escuela?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿En qué ciudad nació tu abuelo materno?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál era el nombre de tu primera mascota?');
-insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál es tu película favorita?');
-
-
-insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24)
-=======
---agregar descripcion historica
 insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24);
->>>>>>> 11cd155fdc8c8702656d43697f8cb192d3d6106c
 
 insert into Caballeriza VALUES(DEFAULT,1,30,1);
 insert into Caballeriza VALUES(DEFAULT,2,30,1);
@@ -2518,8 +2506,6 @@ insert into Ejemplar VALUES(1,'Alfredo','C','C','2017-04-04','2017-04-04',90,1,n
 
 -- pista
 insert into Pista(PI_Longitud, PI_Capacidad, PI_Num_Salida, PI_Tipo, FK_Hipodromo) VALUES(1800,16,2,'ARENA',1);
-
-
 
 ----Tipo de medicamento---
 insert into Tipo_medicamento VALUES(DEFAULT,'Antiflamatorio');

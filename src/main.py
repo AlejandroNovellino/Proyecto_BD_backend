@@ -253,6 +253,14 @@ class UsuarioSchema(ma.SQLAlchemyAutoSchema):
 # instance the class
 usuario_schema = UsuarioSchema()
 
+# Lugar schema
+class LugarSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Lugar
+        include_fk = True
+# instance the class
+lugar_schema = LugarSchema()
+
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
@@ -804,6 +812,56 @@ class UsuarioListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(UsuarioListEndPoint, '/usuarios')
+
+
+### Lugar ###
+class LugarListEndPoint(Resource):
+    def get(self):
+        lugares = Lugar.query.all()
+        return [lugar_schema.dump(lugar) for lugar in lugares]
+# add the endpoint ot the api
+api.add_resource(LugarListEndPoint, '/lugares')
+
+
+### Login ###
+class LogInEndPoint(Resource):    
+    def post(self):
+        try:
+            args = request.json
+            # select the values
+            correo = args['u_correo_e']
+            password = args['u_password']
+            # make the query searching from correo
+            usuario = {}
+            try:
+                usuario = db.session.execute(db.select(Usuario).filter_by(u_correo_e=correo)).one()
+            except:
+                usuario = None
+
+            # if correo does not exist
+            if not usuario: 
+                return simplejson.dumps({
+                        "msg": "No existe usuario con este correo",
+                        "correo": False,
+                        "password": False
+                    }), 404
+            
+            if usuario['u_password'] != password:
+                return simplejson.dumps({
+                        "msg": "No existe usuario con este correo",
+                        "correo": True,
+                        "password": False
+                    }), 404
+
+            print(args)
+            return usuario_schema.dumps(usuario), 200
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+    
+# add the endpoint ot the api
+api.add_resource(LogInEndPoint, '/login')
+
 
 
 ### Color ###
