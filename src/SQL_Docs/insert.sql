@@ -1663,6 +1663,37 @@ insert into Propietario VALUES(5414243,'Vittorio','Antonio','Lungavite','Liberto
 insert into Propietario VALUES(5973529,'Arne','Stvenson','Chacon','Escamilla','M','dir','arnechacon59@inh.gob.ve','1963-01-02',980);
 insert into Propietario VALUES(8179306,'Alberto','Jose','Acosta','Espinoza','M','dir','albertoacosta81@inh.gob.ve','1965-02-06',578);
 insert into Propietario VALUES(14394858,'Raed','Muhamed','Badwan','Abdel','M','dir','raedbadwan143@inh.gob.ve','1979-04-06',807);
+---Telefono Propietario ---
+Insert into telefono values(Default,58,9831151,412,'Movil',null,6126381);
+Insert into telefono values(Default,58,	2480148,414,'Movil',null,8823193);
+Insert into telefono values(Default,58,	2450548,416,'Movil',null,5222820);
+Insert into telefono values(Default,58,	1739686,412,'Movil',null,13779603);
+Insert into telefono values(Default,58,	4562871,414,'Movil',null,3719492);
+Insert into telefono values(Default,58",1597534,412,'Movil'	,null,6918483);;
+Insert into telefono values(Default,58,	1478523,426,'Movil'	,null,5543111);
+Insert into telefono values(Default,58,	1674832,414,'Movil'	,null,6844510);
+Insert into telefono values(Default,58,	4236854,424,'Movil'	,null,15149582);
+Insert into telefono values(Default,58,	2783720,414,'Movil'	,null,3224737);
+Insert into telefono values(Default,58,	2856947,412,'Movil'	,null,5530617);
+Insert into telefono values(Default,58,	1469547,426",'Movil',null,6879925);
+Insert into telefono values(Default,58,	5458939,212",'Trabajo',null,8391395);
+Insert into telefono values(Default,58,	5419502,212",'Movil',null,	12958794);
+Insert into telefono values(Default,58,	4838246,212,'Local',null,6822722);
+Insert into telefono values(Default,58,	6514569	,412,'Movil',null,6844526);
+Insert into telefono values(Default,58,	1599512,414,'Movil',null,3189825);
+Insert into telefono values(Default,58,	2454045,424,'Movil',null,3225959);
+Insert into telefono values(Default,58,	161972,	414,'Movil',null,15222348);
+Insert into telefono values(Default,58,	3862154,412,'Movil',null,7090152);
+Insert into telefono values(Default,58,	2070107,424,'Movil',null,6428607);
+Insert into telefono values(Default,58,	9119618,412,'Movil',null,5972079);
+Insert into telefono values(Default,58,	6329958,212,'Trabajo',null,5414243);
+Insert into telefono values(Default,58,	2519983,424,'Movil',null,5973529);
+Insert into telefono values(Default,58,	5802387,426,'Movil',null,8179306);
+Insert into telefono values(Default,58,	1224305,414,'Movil',null,14394858);
+--Telefono Hipodromo--
+Insert into telefono values(Default,58,	8080349,212,'Movil',1,null);	
+
+
 
 insert into Aficionado VALUES(30395284,'Nicolas','Adrian','Setien','Briceno','M','Salado Bajo','Estudiante',906); --montalban
 insert into Aficionado VALUES(27670971,'Eduardo','Miguel','Consalvo','Perez','M','La Trinidad','Estudiante',980); --baruta
@@ -1905,7 +1936,7 @@ insert into Pregunta_Seguridad VALUES(DEFAULT,'¿En qué ciudad nació tu abuelo
 insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál era el nombre de tu primera mascota?');
 insert into Pregunta_Seguridad VALUES(DEFAULT,'¿Cuál es tu película favorita?');
 
-<<<<<<< HEAD
+
 insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24)
 =======
 --agregar descripcion historica
@@ -2013,7 +2044,6 @@ insert into Taquilla_Boleto VALUES(DEFAULT,10,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,11,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,12,2);
 
-<<<<<<< HEAD
 insert into Boleto VALUES(DEFAULT,80.00,1);
 insert into Boleto VALUES(DEFAULT,80.00,2);
 insert into Boleto VALUES(DEFAULT,200.00,3);
@@ -2040,6 +2070,23 @@ insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3);
 insert into Restaurant VALUES(299792458,'La Terraza',350,3);
 insert into Restaurant VALUES(279733963,'La Dupla',200,2);
 
+---Venta Restaurant---
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 19:10:25',4477.29,299792458);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-28 18:20:45',5987,299792458);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-29 19:40:10',11596,299792458);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-04 18:00:25',10852,299792458);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 18:10:25',3760,279733963);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-10 18:30:45',4985,279733963);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 19:10:25',8654,29279733963);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-11 19:45:10',2575,279733963);
+
+----Horario Restaurant---
+insert into Restaurant_horario VALUES(DEFAULT,3,299792458);
+insert into Restaurant_Horario VALUES(DEFAULT,4,299792458);
+insert into Restaurant_horario VALUES(DEFAULT,1,279733963);
+insert into Restaurant_horario VALUES(DEFAULT,2,279733963);
+
+
 insert into Horario VALUES(DEFAULT,'SABADO','14:00:00','21:00:00',null,1);
 insert into Horario VALUES(DEFAULT,'DOMINGO','14:00:00','21:00:00',null,1);
 insert into Horario VALUES(DEFAULT,'SABADO','12:30:00','21:00:00',1,null);
@@ -2062,7 +2109,7 @@ insert into Historico_Entrenador VALUES(DEFAULT,'2018-11-12',null,TRUE,1,6371724
 insert into Historico_Entrenador VALUES(DEFAULT,'2004-10-03','2018-11-12',FALSE,4,6371724);
 insert into Historico_Entrenador VALUES(DEFAULT,'2018-11-12',null,TRUE,4,11922339);
 
---insert into Venta_Restaurant VALUES(DEFAULT,'2022-11-26 19:10:25',4477.29,1);
+
 
 insert into Propietario_Stud VALUES(DEFAULT,100,1,3);
 insert into Propietario_Stud VALUES(DEFAULT,60,2,4);
@@ -2462,7 +2509,7 @@ insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,2,82);
 insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,2,82);
 insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,83);
 insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,17,83);
-=======
+
 -- Ejemplares
 -- E_Tatuaje_Labial, E_Nombre, E_Color_Pelaje, E_Sexo, 
 -- E_Fecha_Nacimiento, E_Fecha_Ing_Hipo, E_Peso, FK_Haras, 
@@ -2471,4 +2518,31 @@ insert into Ejemplar VALUES(1,'Alfredo','C','C','2017-04-04','2017-04-04',90,1,n
 
 -- pista
 insert into Pista(PI_Longitud, PI_Capacidad, PI_Num_Salida, PI_Tipo, FK_Hipodromo) VALUES(1800,16,2,'ARENA',1);
->>>>>>> 11cd155fdc8c8702656d43697f8cb192d3d6106c
+
+
+
+----Tipo de medicamento---
+insert into Tipo_medicamento VALUES(DEFAULT,'Antiflamatorio');
+insert into Tipo_medicamento VALUES(DEFAULT,'Diurético');
+insert into Tipo_medicamento VALUES(DEFAULT,'Analgesico');
+insert into Tipo_medicamento VALUES(DEFAULT,'Antialergico');
+insert into Tipo_medicamento VALUES(DEFAULT,'Antibiotico');
+insert into Tipo_medicamento VALUES(DEFAULT,'Relajante muscular');
+insert into Tipo_medicamento VALUES(DEFAULT,'Antipirético');
+insert into Tipo_medicamento VALUES(DEFAULT,'Hormona');
+insert into Tipo_medicamento VALUES(DEFAULT,'Multivitaminico');
+
+---Medicamento--
+
+insert into medicamento VALUES(DEFAULT,'Buta','Tratamiento contra los dolores articulares',1);
+insert into medicamento VALUES(DEFAULT,'Laxis','Previene el sangrado respiratorio',2);
+insert into medicamento VALUES(DEFAULT,'Tiroxina','Hipotiroidismo y acelera el metabolismo',8);
+insert into medicamento VALUES(DEFAULT,'Power pak nitro','Mejora la respiración y la respuesta al dolor',9);
+insert into medicamento VALUES(DEFAULT,'Etorfina','Estimulante de energia',3);
+
+----Metodo De pago---
+insert into metodo_pago VALUES(DEFAULT,'Tarjeta de Credito');
+insert into metodo_pago VALUES(DEFAULT,'Tarjeta de Debito');
+insert into metodo_pago VALUES(DEFAULT,'Efectivo');
+insert into metodo_pago VALUES(DEFAULT,'Pago Movil');
+insert into metodo_pago VALUES(DEFAULT,'Tranferencia');
