@@ -1550,6 +1550,58 @@ insert into Lugar values(DEFAULT,'Santa Rosalia','Parroquia',360);
 insert into Lugar values(DEFAULT,'Santa Teresa','Parroquia',360);
 insert into Lugar values(DEFAULT,'Sucre','Parroquia',360);
 
+--Hipodromo
+insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24);
+
+--Caballerizas
+insert into Caballeriza VALUES(DEFAULT,1,30,1);
+insert into Caballeriza VALUES(DEFAULT,2,30,1);
+insert into Caballeriza VALUES(DEFAULT,3,20,1);
+insert into Caballeriza VALUES(DEFAULT,4,30,1);
+insert into Caballeriza VALUES(DEFAULT,5,20,1);
+
+--Puestos en las caballerizas
+/*50*/insert into Puesto VALUES(DEFAULT,1,1);insert into Puesto VALUES(DEFAULT,2,1);insert into Puesto VALUES(DEFAULT,3,1);insert into Puesto VALUES(DEFAULT,4,1);insert into Puesto VALUES(DEFAULT,5,1);insert into Puesto VALUES(DEFAULT,6,1);insert into Puesto VALUES(DEFAULT,7,1);insert into Puesto VALUES(DEFAULT,8,1);insert into Puesto VALUES(DEFAULT,9,1);insert into Puesto VALUES(DEFAULT,10,1);insert into Puesto VALUES(DEFAULT,11,1);insert into Puesto VALUES(DEFAULT,12,1);insert into Puesto VALUES(DEFAULT,13,1);insert into Puesto VALUES(DEFAULT,14,1);insert into Puesto VALUES(DEFAULT,15,1);insert into Puesto VALUES(DEFAULT,16,1);insert into Puesto VALUES(DEFAULT,17,1);insert into Puesto VALUES(DEFAULT,18,1);insert into Puesto VALUES(DEFAULT,19,1);insert into Puesto VALUES(DEFAULT,20,1);insert into Puesto VALUES(DEFAULT,21,1);insert into Puesto VALUES(DEFAULT,22,1);insert into Puesto VALUES(DEFAULT,23,1);insert into Puesto VALUES(DEFAULT,24,1);insert into Puesto VALUES(DEFAULT,25,1);insert into Puesto VALUES(DEFAULT,26,1);insert into Puesto VALUES(DEFAULT,27,1);insert into Puesto VALUES(DEFAULT,28,1);insert into Puesto VALUES(DEFAULT,29,1);insert into Puesto VALUES(DEFAULT,30,1);insert into Puesto VALUES(DEFAULT,31,1);insert into Puesto VALUES(DEFAULT,32,1);insert into Puesto VALUES(DEFAULT,33,1);insert into Puesto VALUES(DEFAULT,34,1);insert into Puesto VALUES(DEFAULT,35,1);insert into Puesto VALUES(DEFAULT,36,1);insert into Puesto VALUES(DEFAULT,37,1);insert into Puesto VALUES(DEFAULT,38,1);insert into Puesto VALUES(DEFAULT,39,1);insert into Puesto VALUES(DEFAULT,40,1);insert into Puesto VALUES(DEFAULT,41,1);insert into Puesto VALUES(DEFAULT,42,1);insert into Puesto VALUES(DEFAULT,43,1);insert into Puesto VALUES(DEFAULT,44,1);insert into Puesto VALUES(DEFAULT,45,1);insert into Puesto VALUES(DEFAULT,46,1);insert into Puesto VALUES(DEFAULT,47,1);insert into Puesto VALUES(DEFAULT,48,1);insert into Puesto VALUES(DEFAULT,49,1);insert into Puesto VALUES(DEFAULT,50,1);
+/*50*/insert into Puesto VALUES(DEFAULT,1,2);insert into Puesto VALUES(DEFAULT,2,2);insert into Puesto VALUES(DEFAULT,3,2);insert into Puesto VALUES(DEFAULT,4,2);insert into Puesto VALUES(DEFAULT,5,2);insert into Puesto VALUES(DEFAULT,6,2);insert into Puesto VALUES(DEFAULT,7,2);insert into Puesto VALUES(DEFAULT,8,2);insert into Puesto VALUES(DEFAULT,9,2);insert into Puesto VALUES(DEFAULT,10,2);insert into Puesto VALUES(DEFAULT,11,2);insert into Puesto VALUES(DEFAULT,12,2);insert into Puesto VALUES(DEFAULT,13,2);insert into Puesto VALUES(DEFAULT,14,2);insert into Puesto VALUES(DEFAULT,15,2);insert into Puesto VALUES(DEFAULT,16,2);insert into Puesto VALUES(DEFAULT,17,2);insert into Puesto VALUES(DEFAULT,18,2);insert into Puesto VALUES(DEFAULT,19,2);insert into Puesto VALUES(DEFAULT,20,2);insert into Puesto VALUES(DEFAULT,21,2);insert into Puesto VALUES(DEFAULT,22,2);insert into Puesto VALUES(DEFAULT,23,2);insert into Puesto VALUES(DEFAULT,24,2);insert into Puesto VALUES(DEFAULT,25,2);insert into Puesto VALUES(DEFAULT,26,2);insert into Puesto VALUES(DEFAULT,27,2);insert into Puesto VALUES(DEFAULT,28,2);insert into Puesto VALUES(DEFAULT,29,2);insert into Puesto VALUES(DEFAULT,30,2);insert into Puesto VALUES(DEFAULT,31,2);insert into Puesto VALUES(DEFAULT,32,2);insert into Puesto VALUES(DEFAULT,33,2);insert into Puesto VALUES(DEFAULT,34,2);insert into Puesto VALUES(DEFAULT,35,2);insert into Puesto VALUES(DEFAULT,36,2);insert into Puesto VALUES(DEFAULT,37,2);insert into Puesto VALUES(DEFAULT,38,2);insert into Puesto VALUES(DEFAULT,39,2);insert into Puesto VALUES(DEFAULT,40,2);insert into Puesto VALUES(DEFAULT,41,2);insert into Puesto VALUES(DEFAULT,42,2);insert into Puesto VALUES(DEFAULT,43,2);insert into Puesto VALUES(DEFAULT,44,2);insert into Puesto VALUES(DEFAULT,45,2);insert into Puesto VALUES(DEFAULT,46,2);insert into Puesto VALUES(DEFAULT,47,2);insert into Puesto VALUES(DEFAULT,48,2);insert into Puesto VALUES(DEFAULT,49,2);insert into Puesto VALUES(DEFAULT,50,2);
+/*50*/insert into Puesto VALUES(DEFAULT,1,3);insert into Puesto VALUES(DEFAULT,2,3);insert into Puesto VALUES(DEFAULT,3,3);insert into Puesto VALUES(DEFAULT,4,3);insert into Puesto VALUES(DEFAULT,5,3);insert into Puesto VALUES(DEFAULT,6,3);insert into Puesto VALUES(DEFAULT,7,3);insert into Puesto VALUES(DEFAULT,8,3);insert into Puesto VALUES(DEFAULT,9,3);insert into Puesto VALUES(DEFAULT,10,3);insert into Puesto VALUES(DEFAULT,11,3);insert into Puesto VALUES(DEFAULT,12,3);insert into Puesto VALUES(DEFAULT,13,3);insert into Puesto VALUES(DEFAULT,14,3);insert into Puesto VALUES(DEFAULT,15,3);insert into Puesto VALUES(DEFAULT,16,3);insert into Puesto VALUES(DEFAULT,17,3);insert into Puesto VALUES(DEFAULT,18,3);insert into Puesto VALUES(DEFAULT,19,3);insert into Puesto VALUES(DEFAULT,20,3);insert into Puesto VALUES(DEFAULT,21,3);insert into Puesto VALUES(DEFAULT,22,3);insert into Puesto VALUES(DEFAULT,23,3);insert into Puesto VALUES(DEFAULT,24,3);insert into Puesto VALUES(DEFAULT,25,3);insert into Puesto VALUES(DEFAULT,26,3);insert into Puesto VALUES(DEFAULT,27,3);insert into Puesto VALUES(DEFAULT,28,3);insert into Puesto VALUES(DEFAULT,29,3);insert into Puesto VALUES(DEFAULT,30,3);insert into Puesto VALUES(DEFAULT,31,3);insert into Puesto VALUES(DEFAULT,32,3);insert into Puesto VALUES(DEFAULT,33,3);insert into Puesto VALUES(DEFAULT,34,3);insert into Puesto VALUES(DEFAULT,35,3);insert into Puesto VALUES(DEFAULT,36,3);insert into Puesto VALUES(DEFAULT,37,3);insert into Puesto VALUES(DEFAULT,38,3);insert into Puesto VALUES(DEFAULT,39,3);insert into Puesto VALUES(DEFAULT,40,3);insert into Puesto VALUES(DEFAULT,41,3);insert into Puesto VALUES(DEFAULT,42,3);insert into Puesto VALUES(DEFAULT,43,3);insert into Puesto VALUES(DEFAULT,44,3);insert into Puesto VALUES(DEFAULT,45,3);insert into Puesto VALUES(DEFAULT,46,3);insert into Puesto VALUES(DEFAULT,47,3);insert into Puesto VALUES(DEFAULT,48,3);insert into Puesto VALUES(DEFAULT,49,3);insert into Puesto VALUES(DEFAULT,50,3);
+/*50*/insert into Puesto VALUES(DEFAULT,1,4);insert into Puesto VALUES(DEFAULT,2,4);insert into Puesto VALUES(DEFAULT,3,4);insert into Puesto VALUES(DEFAULT,4,4);insert into Puesto VALUES(DEFAULT,5,4);insert into Puesto VALUES(DEFAULT,6,4);insert into Puesto VALUES(DEFAULT,7,4);insert into Puesto VALUES(DEFAULT,8,4);insert into Puesto VALUES(DEFAULT,9,4);insert into Puesto VALUES(DEFAULT,10,4);insert into Puesto VALUES(DEFAULT,11,4);insert into Puesto VALUES(DEFAULT,12,4);insert into Puesto VALUES(DEFAULT,13,4);insert into Puesto VALUES(DEFAULT,14,4);insert into Puesto VALUES(DEFAULT,15,4);insert into Puesto VALUES(DEFAULT,16,4);insert into Puesto VALUES(DEFAULT,17,4);insert into Puesto VALUES(DEFAULT,18,4);insert into Puesto VALUES(DEFAULT,19,4);insert into Puesto VALUES(DEFAULT,20,4);insert into Puesto VALUES(DEFAULT,21,4);insert into Puesto VALUES(DEFAULT,22,4);insert into Puesto VALUES(DEFAULT,23,4);insert into Puesto VALUES(DEFAULT,24,4);insert into Puesto VALUES(DEFAULT,25,4);insert into Puesto VALUES(DEFAULT,26,4);insert into Puesto VALUES(DEFAULT,27,4);insert into Puesto VALUES(DEFAULT,28,4);insert into Puesto VALUES(DEFAULT,29,4);insert into Puesto VALUES(DEFAULT,30,4);insert into Puesto VALUES(DEFAULT,31,4);insert into Puesto VALUES(DEFAULT,32,4);insert into Puesto VALUES(DEFAULT,33,4);insert into Puesto VALUES(DEFAULT,34,4);insert into Puesto VALUES(DEFAULT,35,4);insert into Puesto VALUES(DEFAULT,36,4);insert into Puesto VALUES(DEFAULT,37,4);insert into Puesto VALUES(DEFAULT,38,4);insert into Puesto VALUES(DEFAULT,39,4);insert into Puesto VALUES(DEFAULT,40,4);insert into Puesto VALUES(DEFAULT,41,4);insert into Puesto VALUES(DEFAULT,42,4);insert into Puesto VALUES(DEFAULT,43,4);insert into Puesto VALUES(DEFAULT,44,4);insert into Puesto VALUES(DEFAULT,45,4);insert into Puesto VALUES(DEFAULT,46,4);insert into Puesto VALUES(DEFAULT,47,4);insert into Puesto VALUES(DEFAULT,48,4);insert into Puesto VALUES(DEFAULT,49,4);insert into Puesto VALUES(DEFAULT,50,4);
+/*50*/insert into Puesto VALUES(DEFAULT,1,5);insert into Puesto VALUES(DEFAULT,2,5);insert into Puesto VALUES(DEFAULT,3,5);insert into Puesto VALUES(DEFAULT,4,5);insert into Puesto VALUES(DEFAULT,5,5);insert into Puesto VALUES(DEFAULT,6,5);insert into Puesto VALUES(DEFAULT,7,5);insert into Puesto VALUES(DEFAULT,8,5);insert into Puesto VALUES(DEFAULT,9,5);insert into Puesto VALUES(DEFAULT,10,5);insert into Puesto VALUES(DEFAULT,11,5);insert into Puesto VALUES(DEFAULT,12,5);insert into Puesto VALUES(DEFAULT,13,5);insert into Puesto VALUES(DEFAULT,14,5);insert into Puesto VALUES(DEFAULT,15,5);insert into Puesto VALUES(DEFAULT,16,5);insert into Puesto VALUES(DEFAULT,17,5);insert into Puesto VALUES(DEFAULT,18,5);insert into Puesto VALUES(DEFAULT,19,5);insert into Puesto VALUES(DEFAULT,20,5);insert into Puesto VALUES(DEFAULT,21,5);insert into Puesto VALUES(DEFAULT,22,5);insert into Puesto VALUES(DEFAULT,23,5);insert into Puesto VALUES(DEFAULT,24,5);insert into Puesto VALUES(DEFAULT,25,5);insert into Puesto VALUES(DEFAULT,26,5);insert into Puesto VALUES(DEFAULT,27,5);insert into Puesto VALUES(DEFAULT,28,5);insert into Puesto VALUES(DEFAULT,29,5);insert into Puesto VALUES(DEFAULT,30,5);insert into Puesto VALUES(DEFAULT,31,5);insert into Puesto VALUES(DEFAULT,32,5);insert into Puesto VALUES(DEFAULT,33,5);insert into Puesto VALUES(DEFAULT,34,5);insert into Puesto VALUES(DEFAULT,35,5);insert into Puesto VALUES(DEFAULT,36,5);insert into Puesto VALUES(DEFAULT,37,5);insert into Puesto VALUES(DEFAULT,38,5);insert into Puesto VALUES(DEFAULT,39,5);insert into Puesto VALUES(DEFAULT,40,5);insert into Puesto VALUES(DEFAULT,41,5);insert into Puesto VALUES(DEFAULT,42,5);insert into Puesto VALUES(DEFAULT,43,5);insert into Puesto VALUES(DEFAULT,44,5);insert into Puesto VALUES(DEFAULT,45,5);insert into Puesto VALUES(DEFAULT,46,5);insert into Puesto VALUES(DEFAULT,47,5);insert into Puesto VALUES(DEFAULT,48,5);insert into Puesto VALUES(DEFAULT,49,5);insert into Puesto VALUES(DEFAULT,50,5);
+
+--Gradas del hipodromo
+insert into Grada VALUES(DEFAULT,'Grada central',8000,1);
+insert into Grada VALUES(DEFAULT,'Mezzanina',3200,1);
+insert into Grada VALUES(DEFAULT,'Palco con pantalla privada',1300,1);
+
+--Niveles de las gradas
+insert into Nivel VALUES(DEFAULT,125,100,50,1);
+insert into Nivel VALUES(DEFAULT,140,110,60,1);
+insert into Nivel VALUES(DEFAULT,250,200,125,2);
+insert into Nivel VALUES(DEFAULT,100,70,60,3);
+
+--Entradas al hipodromo
+insert into Entrada VALUES(DEFAULT,'A','Este',1);
+insert into Entrada VALUES(DEFAULT,'B','Este',1);
+insert into Entrada VALUES(DEFAULT,'C','Centro',1);
+insert into Entrada VALUES(DEFAULT,'D','Centro',1);
+insert into Entrada VALUES(DEFAULT,'E','Oeste',1);
+insert into Entrada VALUES(DEFAULT,'F','Oeste',1);
+insert into Entrada VALUES(DEFAULT,'A','Este',2);
+insert into Entrada VALUES(DEFAULT,'B','Este',2);
+insert into Entrada VALUES(DEFAULT,'C','Centro',2);
+insert into Entrada VALUES(DEFAULT,'D','Centro',2);
+insert into Entrada VALUES(DEFAULT,'E','Oeste',2);
+insert into Entrada VALUES(DEFAULT,'F','Oeste',2);
+insert into Entrada VALUES(DEFAULT,'A','Este',3);
+insert into Entrada VALUES(DEFAULT,'B','Este',3);
+insert into Entrada VALUES(DEFAULT,'C','Centro',3);
+insert into Entrada VALUES(DEFAULT,'D','Centro',3);
+insert into Entrada VALUES(DEFAULT,'E','Oeste',3);
+insert into Entrada VALUES(DEFAULT,'F','Oeste',3);
+
+--Estacionamientos del hipodromo
+insert into Estacionamiento VALUES(DEFAULT,4000,1);
+insert into Estacionamiento VALUES(DEFAULT,4000,3);
+
 --Jinetes
 insert into Jinete VALUES(16929383,'Alvaro','Atilio','Finol',null,'M','dir',1.49,48,53,null,'1983-11-16',24);
 insert into Jinete VALUES(19039824,'Francisco',null,'Urdaneta',null,'M','dir',1.63,48,53,null,'1991-01-11',24);
@@ -1669,15 +1721,15 @@ Insert into telefono values(Default,58,	2480148,414,'Movil',null,8823193);
 Insert into telefono values(Default,58,	2450548,416,'Movil',null,5222820);
 Insert into telefono values(Default,58,	1739686,412,'Movil',null,13779603);
 Insert into telefono values(Default,58,	4562871,414,'Movil',null,3719492);
-Insert into telefono values(Default,58",1597534,412,'Movil'	,null,6918483);;
+Insert into telefono values(Default,58,1597534,412,'Movil'	,null,6918483);
 Insert into telefono values(Default,58,	1478523,426,'Movil'	,null,5543111);
 Insert into telefono values(Default,58,	1674832,414,'Movil'	,null,6844510);
 Insert into telefono values(Default,58,	4236854,424,'Movil'	,null,15149582);
 Insert into telefono values(Default,58,	2783720,414,'Movil'	,null,3224737);
 Insert into telefono values(Default,58,	2856947,412,'Movil'	,null,5530617);
-Insert into telefono values(Default,58,	1469547,426",'Movil',null,6879925);
-Insert into telefono values(Default,58,	5458939,212",'Trabajo',null,8391395);
-Insert into telefono values(Default,58,	5419502,212",'Movil',null,	12958794);
+Insert into telefono values(Default,58,	1469547,426,'Movil',null,6879925);
+Insert into telefono values(Default,58,	5458939,212,'Trabajo',null,8391395);
+Insert into telefono values(Default,58,	5419502,212,'Movil',null,	12958794);
 Insert into telefono values(Default,58,	4838246,212,'Local',null,6822722);
 Insert into telefono values(Default,58,	6514569	,412,'Movil',null,6844526);
 Insert into telefono values(Default,58,	1599512,414,'Movil',null,3189825);
@@ -1694,7 +1746,7 @@ Insert into telefono values(Default,58,	1224305,414,'Movil',null,14394858);
 Insert into telefono values(Default,58,	8080349,212,'Movil',1,null);	
 
 
-
+--Aficionados
 insert into Aficionado VALUES(30395284,'Nicolas','Adrian','Setien','Briceno','M','Salado Bajo','Estudiante',906); --montalban
 insert into Aficionado VALUES(27670971,'Eduardo','Miguel','Consalvo','Perez','M','La Trinidad','Estudiante',980); --baruta
 insert into Aficionado VALUES(28426562,'Jose','Jesus','Nunez','Gonzalez','M','Montalban II','Estudiante',1491); --la vega
@@ -1702,6 +1754,7 @@ insert into Aficionado VALUES(29553823,'Johandry','Steiker','Mieles','Mora','M',
 insert into Aficionado VALUES(29583211,'Marco','Fidel','Castro','Ochoa','M','Capitolio','Estudiante',1484); --catedral
 insert into Aficionado VALUES(29551908,'Eduardo',null,'Alvarez de Lugo','Carvallo','M','Campo Alegre','Estudiante',988);
 
+--Haras
 insert into Haras VALUES(DEFAULT,'Alegria', 1);
 insert into Haras VALUES(DEFAULT,'Bello Monte', 2);
 insert into Haras VALUES(DEFAULT,'Los Caracaros', 3);
@@ -1734,6 +1787,7 @@ insert into Haras VALUES(DEFAULT,'El Centauro', 2);
 insert into Haras VALUES(DEFAULT,'Los Aguacates', 3);
 insert into Haras VALUES(DEFAULT,'El Nuevo Color', 1);
 
+--Studs
 insert into Stud VALUES(DEFAULT,'Punto Blanco','1963-06-28'); --1
 insert into Stud VALUES(DEFAULT,'Yofyel','1973-10-09');
 insert into Stud VALUES(DEFAULT,'M.M.','2016-09-24');
@@ -1818,11 +1872,13 @@ insert into Stud VALUES(DEFAULT,'Queen Feralico','2005-10-05');--81
 insert into Stud VALUES(DEFAULT,'Odde','1973-04-27');
 insert into Stud VALUES(DEFAULT,'Cold Power','1982-07-20');
 
+--Tipos de usuario
 insert into Tipo_Usuario VALUES(DEFAULT,'Aficionado');
 insert into Tipo_Usuario VALUES(DEFAULT,'Entrenador');
 insert into Tipo_Usuario VALUES(DEFAULT,'Personal'); --jinete propietario veterinario
 insert into Tipo_Usuario VALUES(DEFAULT,'Administrador');
 
+--Acciones
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Ejemplar');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Ejemplar');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Ejemplar');
@@ -1862,7 +1918,9 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Usuario');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('SIGNIN', 'Usuario');
 
+--Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1
 insert into Color VALUES(DEFAULT,'Azul elec');  --2
 insert into Color VALUES(DEFAULT,'Azul marino');--3
@@ -1886,10 +1944,12 @@ insert into Color VALUES(DEFAULT,'Verde');      --20
 insert into Color VALUES(DEFAULT,'Verd osc');   --21
 insert into Color VALUES(DEFAULT,'Vinotinto');  --22
 
+--Categorias de carreras
 insert into Categoria_Carrera VALUES(DEFAULT,'Normal');
 insert into Categoria_Carrera VALUES(DEFAULT,'Clasico');
 insert into Categoria_Carrera VALUES(DEFAULT,'Copa');
 
+--Tipos de carreas
 insert into Tipo_Carrera VALUES(DEFAULT,'Potrancas de 2 annos, debutantes o no ganadoras.','Y',2,2,0,0);
 insert into Tipo_Carrera VALUES(DEFAULT,'Caballos de 5 y mas annos. Ganadores de 1 carrera.','C',5,20,1,1);
 insert into Tipo_Carrera VALUES(DEFAULT,'Caballos de 3 annos, debutantes o no ganadores.','C',3,3,0,0);
@@ -1901,6 +1961,7 @@ insert into Tipo_Carrera VALUES(DEFAULT,'Caballos de 6 y mas annos, ganadores de
 insert into Tipo_Carrera VALUES(DEFAULT,'Caballos de 6 y mas annos, ganadores de 4,5,6 carreras','C',6,20,4,6);
 insert into Tipo_Carrera VALUES(DEFAULT,'Yeguas de 3 annos, debutantes o no ganadoras','Y',3,3,0,0);
 
+--Causas de retiros
 insert into Causa_Retiro VALUES(DEFAULT,'desc','Caneras',3);
 insert into Causa_Retiro VALUES(DEFAULT,'desc','Esparavanes',1);
 insert into Causa_Retiro VALUES(DEFAULT,'desc','Carpitis',4);
@@ -1909,6 +1970,7 @@ insert into Causa_Retiro VALUES(DEFAULT,'desc','Castracion',2);
 insert into Causa_Retiro VALUES(DEFAULT,'desc','Miositis',2);
 insert into Causa_Retiro VALUES(DEFAULT,'desc','Erlichosis',1);
 
+--Implementos
 insert into Implemento VALUES(DEFAULT,'Gringola','GR');
 insert into Implemento VALUES(DEFAULT,'Lengua Amarrada','LA');
 insert into Implemento VALUES(DEFAULT,'Bozal','BZ');
@@ -1923,57 +1985,14 @@ insert into Implemento VALUES(DEFAULT,'Latigo','L');
 insert into Implemento VALUES(DEFAULT,'Casquillos Correctivos','CC');
 insert into Implemento VALUES(DEFAULT,'Casquillos de Hierro','CH');
 
+--Porcentajes dividendos
 insert into Porcentaje_Dividendo VALUES(DEFAULT,1,0.60);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,2,0.28);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,3,0.07);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,4,0.03);
 insert into Porcentaje_Dividendo VALUES(DEFAULT,5,0.02);
 
-insert into Hipodromo VALUES(DEFAULT,'Hipodromo La Rinconada','Calle Interna Hipodromo','1959-07-05','El hipodromo tiene un diseno arquitectural que refleja las tendencias de mediados de los 1950. Fue disenado por el arquitecto Arthur Froelich, quien esta detras del diseno de los hipodromos de diversas ciudades en los Estados Unidos. Por su parte, el paisajista Roberto Burle Marx, quien disenare el paisajismo del Parque del Este en 1961, fue el encargado de disenar los jardines y areas verdes del hipodromo, incluyendo el ovalo central. Ademas, los murales del ecimiento fueron disenados por el arquitecto Giuseppe Pizzo. La construccion del hipodromo inicio en 1956 bajo el mandato de Marcos Perez Jimenez, en terrenos comprados por 28 millones de dolares al Haras La Rinconada, y el 5 de julio de 1959 fue inaugurado. En 2009 el Instituto de Patrimonio Cultura declaro al Hipodromo La Rinconada como monumento nacional.',24);
-
-insert into Caballeriza VALUES(DEFAULT,1,30,1);
-insert into Caballeriza VALUES(DEFAULT,2,30,1);
-insert into Caballeriza VALUES(DEFAULT,3,20,1);
-insert into Caballeriza VALUES(DEFAULT,4,30,1);
-insert into Caballeriza VALUES(DEFAULT,5,20,1);
-
-/*50*/insert into Puesto VALUES(DEFAULT,1,1);insert into Puesto VALUES(DEFAULT,2,1);insert into Puesto VALUES(DEFAULT,3,1);insert into Puesto VALUES(DEFAULT,4,1);insert into Puesto VALUES(DEFAULT,5,1);insert into Puesto VALUES(DEFAULT,6,1);insert into Puesto VALUES(DEFAULT,7,1);insert into Puesto VALUES(DEFAULT,8,1);insert into Puesto VALUES(DEFAULT,9,1);insert into Puesto VALUES(DEFAULT,10,1);insert into Puesto VALUES(DEFAULT,11,1);insert into Puesto VALUES(DEFAULT,12,1);insert into Puesto VALUES(DEFAULT,13,1);insert into Puesto VALUES(DEFAULT,14,1);insert into Puesto VALUES(DEFAULT,15,1);insert into Puesto VALUES(DEFAULT,16,1);insert into Puesto VALUES(DEFAULT,17,1);insert into Puesto VALUES(DEFAULT,18,1);insert into Puesto VALUES(DEFAULT,19,1);insert into Puesto VALUES(DEFAULT,20,1);insert into Puesto VALUES(DEFAULT,21,1);insert into Puesto VALUES(DEFAULT,22,1);insert into Puesto VALUES(DEFAULT,23,1);insert into Puesto VALUES(DEFAULT,24,1);insert into Puesto VALUES(DEFAULT,25,1);insert into Puesto VALUES(DEFAULT,26,1);insert into Puesto VALUES(DEFAULT,27,1);insert into Puesto VALUES(DEFAULT,28,1);insert into Puesto VALUES(DEFAULT,29,1);insert into Puesto VALUES(DEFAULT,30,1);insert into Puesto VALUES(DEFAULT,31,1);insert into Puesto VALUES(DEFAULT,32,1);insert into Puesto VALUES(DEFAULT,33,1);insert into Puesto VALUES(DEFAULT,34,1);insert into Puesto VALUES(DEFAULT,35,1);insert into Puesto VALUES(DEFAULT,36,1);insert into Puesto VALUES(DEFAULT,37,1);insert into Puesto VALUES(DEFAULT,38,1);insert into Puesto VALUES(DEFAULT,39,1);insert into Puesto VALUES(DEFAULT,40,1);insert into Puesto VALUES(DEFAULT,41,1);insert into Puesto VALUES(DEFAULT,42,1);insert into Puesto VALUES(DEFAULT,43,1);insert into Puesto VALUES(DEFAULT,44,1);insert into Puesto VALUES(DEFAULT,45,1);insert into Puesto VALUES(DEFAULT,46,1);insert into Puesto VALUES(DEFAULT,47,1);insert into Puesto VALUES(DEFAULT,48,1);insert into Puesto VALUES(DEFAULT,49,1);insert into Puesto VALUES(DEFAULT,50,1);
-/*50*/insert into Puesto VALUES(DEFAULT,1,2);insert into Puesto VALUES(DEFAULT,2,2);insert into Puesto VALUES(DEFAULT,3,2);insert into Puesto VALUES(DEFAULT,4,2);insert into Puesto VALUES(DEFAULT,5,2);insert into Puesto VALUES(DEFAULT,6,2);insert into Puesto VALUES(DEFAULT,7,2);insert into Puesto VALUES(DEFAULT,8,2);insert into Puesto VALUES(DEFAULT,9,2);insert into Puesto VALUES(DEFAULT,10,2);insert into Puesto VALUES(DEFAULT,11,2);insert into Puesto VALUES(DEFAULT,12,2);insert into Puesto VALUES(DEFAULT,13,2);insert into Puesto VALUES(DEFAULT,14,2);insert into Puesto VALUES(DEFAULT,15,2);insert into Puesto VALUES(DEFAULT,16,2);insert into Puesto VALUES(DEFAULT,17,2);insert into Puesto VALUES(DEFAULT,18,2);insert into Puesto VALUES(DEFAULT,19,2);insert into Puesto VALUES(DEFAULT,20,2);insert into Puesto VALUES(DEFAULT,21,2);insert into Puesto VALUES(DEFAULT,22,2);insert into Puesto VALUES(DEFAULT,23,2);insert into Puesto VALUES(DEFAULT,24,2);insert into Puesto VALUES(DEFAULT,25,2);insert into Puesto VALUES(DEFAULT,26,2);insert into Puesto VALUES(DEFAULT,27,2);insert into Puesto VALUES(DEFAULT,28,2);insert into Puesto VALUES(DEFAULT,29,2);insert into Puesto VALUES(DEFAULT,30,2);insert into Puesto VALUES(DEFAULT,31,2);insert into Puesto VALUES(DEFAULT,32,2);insert into Puesto VALUES(DEFAULT,33,2);insert into Puesto VALUES(DEFAULT,34,2);insert into Puesto VALUES(DEFAULT,35,2);insert into Puesto VALUES(DEFAULT,36,2);insert into Puesto VALUES(DEFAULT,37,2);insert into Puesto VALUES(DEFAULT,38,2);insert into Puesto VALUES(DEFAULT,39,2);insert into Puesto VALUES(DEFAULT,40,2);insert into Puesto VALUES(DEFAULT,41,2);insert into Puesto VALUES(DEFAULT,42,2);insert into Puesto VALUES(DEFAULT,43,2);insert into Puesto VALUES(DEFAULT,44,2);insert into Puesto VALUES(DEFAULT,45,2);insert into Puesto VALUES(DEFAULT,46,2);insert into Puesto VALUES(DEFAULT,47,2);insert into Puesto VALUES(DEFAULT,48,2);insert into Puesto VALUES(DEFAULT,49,2);insert into Puesto VALUES(DEFAULT,50,2);
-/*50*/insert into Puesto VALUES(DEFAULT,1,3);insert into Puesto VALUES(DEFAULT,2,3);insert into Puesto VALUES(DEFAULT,3,3);insert into Puesto VALUES(DEFAULT,4,3);insert into Puesto VALUES(DEFAULT,5,3);insert into Puesto VALUES(DEFAULT,6,3);insert into Puesto VALUES(DEFAULT,7,3);insert into Puesto VALUES(DEFAULT,8,3);insert into Puesto VALUES(DEFAULT,9,3);insert into Puesto VALUES(DEFAULT,10,3);insert into Puesto VALUES(DEFAULT,11,3);insert into Puesto VALUES(DEFAULT,12,3);insert into Puesto VALUES(DEFAULT,13,3);insert into Puesto VALUES(DEFAULT,14,3);insert into Puesto VALUES(DEFAULT,15,3);insert into Puesto VALUES(DEFAULT,16,3);insert into Puesto VALUES(DEFAULT,17,3);insert into Puesto VALUES(DEFAULT,18,3);insert into Puesto VALUES(DEFAULT,19,3);insert into Puesto VALUES(DEFAULT,20,3);
-/*50*/insert into Puesto VALUES(DEFAULT,1,4);insert into Puesto VALUES(DEFAULT,2,4);insert into Puesto VALUES(DEFAULT,3,4);insert into Puesto VALUES(DEFAULT,4,4);insert into Puesto VALUES(DEFAULT,5,4);insert into Puesto VALUES(DEFAULT,6,4);insert into Puesto VALUES(DEFAULT,7,4);insert into Puesto VALUES(DEFAULT,8,4);insert into Puesto VALUES(DEFAULT,9,4);insert into Puesto VALUES(DEFAULT,10,4);insert into Puesto VALUES(DEFAULT,11,4);insert into Puesto VALUES(DEFAULT,12,4);insert into Puesto VALUES(DEFAULT,13,4);insert into Puesto VALUES(DEFAULT,14,4);insert into Puesto VALUES(DEFAULT,15,4);insert into Puesto VALUES(DEFAULT,16,4);insert into Puesto VALUES(DEFAULT,17,4);insert into Puesto VALUES(DEFAULT,18,4);insert into Puesto VALUES(DEFAULT,19,4);insert into Puesto VALUES(DEFAULT,20,4);insert into Puesto VALUES(DEFAULT,21,4);insert into Puesto VALUES(DEFAULT,22,4);insert into Puesto VALUES(DEFAULT,23,4);insert into Puesto VALUES(DEFAULT,24,4);insert into Puesto VALUES(DEFAULT,25,4);insert into Puesto VALUES(DEFAULT,26,4);insert into Puesto VALUES(DEFAULT,27,4);insert into Puesto VALUES(DEFAULT,28,4);insert into Puesto VALUES(DEFAULT,29,4);insert into Puesto VALUES(DEFAULT,30,4);insert into Puesto VALUES(DEFAULT,31,4);insert into Puesto VALUES(DEFAULT,32,4);insert into Puesto VALUES(DEFAULT,33,4);insert into Puesto VALUES(DEFAULT,34,4);insert into Puesto VALUES(DEFAULT,35,4);insert into Puesto VALUES(DEFAULT,36,4);insert into Puesto VALUES(DEFAULT,37,4);insert into Puesto VALUES(DEFAULT,38,4);insert into Puesto VALUES(DEFAULT,39,4);insert into Puesto VALUES(DEFAULT,40,4);insert into Puesto VALUES(DEFAULT,41,4);insert into Puesto VALUES(DEFAULT,42,4);insert into Puesto VALUES(DEFAULT,43,4);insert into Puesto VALUES(DEFAULT,44,4);insert into Puesto VALUES(DEFAULT,45,4);insert into Puesto VALUES(DEFAULT,46,4);insert into Puesto VALUES(DEFAULT,47,4);insert into Puesto VALUES(DEFAULT,48,4);insert into Puesto VALUES(DEFAULT,49,4);insert into Puesto VALUES(DEFAULT,50,4);
-/*50*/insert into Puesto VALUES(DEFAULT,1,5);insert into Puesto VALUES(DEFAULT,2,5);insert into Puesto VALUES(DEFAULT,3,5);insert into Puesto VALUES(DEFAULT,4,5);insert into Puesto VALUES(DEFAULT,5,5);insert into Puesto VALUES(DEFAULT,6,5);insert into Puesto VALUES(DEFAULT,7,5);insert into Puesto VALUES(DEFAULT,8,5);insert into Puesto VALUES(DEFAULT,9,5);insert into Puesto VALUES(DEFAULT,10,5);insert into Puesto VALUES(DEFAULT,11,5);insert into Puesto VALUES(DEFAULT,12,5);insert into Puesto VALUES(DEFAULT,13,5);insert into Puesto VALUES(DEFAULT,14,5);insert into Puesto VALUES(DEFAULT,15,5);insert into Puesto VALUES(DEFAULT,16,5);insert into Puesto VALUES(DEFAULT,17,5);insert into Puesto VALUES(DEFAULT,18,5);insert into Puesto VALUES(DEFAULT,19,5);insert into Puesto VALUES(DEFAULT,20,5);insert into Puesto VALUES(DEFAULT,21,5);insert into Puesto VALUES(DEFAULT,22,5);insert into Puesto VALUES(DEFAULT,23,5);insert into Puesto VALUES(DEFAULT,24,5);insert into Puesto VALUES(DEFAULT,25,5);insert into Puesto VALUES(DEFAULT,26,5);insert into Puesto VALUES(DEFAULT,27,5);insert into Puesto VALUES(DEFAULT,28,5);insert into Puesto VALUES(DEFAULT,29,5);insert into Puesto VALUES(DEFAULT,30,5);insert into Puesto VALUES(DEFAULT,31,5);insert into Puesto VALUES(DEFAULT,32,5);insert into Puesto VALUES(DEFAULT,33,5);insert into Puesto VALUES(DEFAULT,34,5);insert into Puesto VALUES(DEFAULT,35,5);insert into Puesto VALUES(DEFAULT,36,5);insert into Puesto VALUES(DEFAULT,37,5);insert into Puesto VALUES(DEFAULT,38,5);insert into Puesto VALUES(DEFAULT,39,5);insert into Puesto VALUES(DEFAULT,40,5);insert into Puesto VALUES(DEFAULT,41,5);insert into Puesto VALUES(DEFAULT,42,5);insert into Puesto VALUES(DEFAULT,43,5);insert into Puesto VALUES(DEFAULT,44,5);insert into Puesto VALUES(DEFAULT,45,5);insert into Puesto VALUES(DEFAULT,46,5);insert into Puesto VALUES(DEFAULT,47,5);insert into Puesto VALUES(DEFAULT,48,5);insert into Puesto VALUES(DEFAULT,49,5);insert into Puesto VALUES(DEFAULT,50,5);
-
-insert into Grada VALUES(DEFAULT,'Grada central',8000,1);
-insert into Grada VALUES(DEFAULT,'Mezzanina',3200,1);
-insert into Grada VALUES(DEFAULT,'Palco con pantalla privada',1300,1);
-
-insert into Entrada VALUES(DEFAULT,'A','Este',1);
-insert into Entrada VALUES(DEFAULT,'B','Este',1);
-insert into Entrada VALUES(DEFAULT,'C','Centro',1);
-insert into Entrada VALUES(DEFAULT,'D','Centro',1);
-insert into Entrada VALUES(DEFAULT,'E','Oeste',1);
-insert into Entrada VALUES(DEFAULT,'F','Oeste',1);
-insert into Entrada VALUES(DEFAULT,'A','Este',2);
-insert into Entrada VALUES(DEFAULT,'B','Este',2);
-insert into Entrada VALUES(DEFAULT,'C','Centro',2);
-insert into Entrada VALUES(DEFAULT,'D','Centro',2);
-insert into Entrada VALUES(DEFAULT,'E','Oeste',2);
-insert into Entrada VALUES(DEFAULT,'F','Oeste',2);
-insert into Entrada VALUES(DEFAULT,'A','Este',3);
-insert into Entrada VALUES(DEFAULT,'B','Este',3);
-insert into Entrada VALUES(DEFAULT,'C','Centro',3);
-insert into Entrada VALUES(DEFAULT,'D','Centro',3);
-insert into Entrada VALUES(DEFAULT,'E','Oeste',3);
-insert into Entrada VALUES(DEFAULT,'F','Oeste',3);
-
-insert into Estacionamiento VALUES(DEFAULT,4000,1);
-insert into Estacionamiento VALUES(DEFAULT,4000,3);
-
-insert into Nivel VALUES(DEFAULT,125,100,50,1);
-insert into Nivel VALUES(DEFAULT,140,110,60,1);
-insert into Nivel VALUES(DEFAULT,250,200,125,2);
-insert into Nivel VALUES(DEFAULT,100,70,60,3);
-
+--Apuestas en taquillas
 insert into Taquilla_Apuesta VALUES(DEFAULT,1,1);
 insert into Taquilla_Apuesta VALUES(DEFAULT,2,1);
 insert into Taquilla_Apuesta VALUES(DEFAULT,3,1);
@@ -1995,12 +2014,14 @@ insert into Taquilla_Apuesta VALUES(DEFAULT,6,2);
 insert into Taquilla_Apuesta VALUES(DEFAULT,7,2);
 insert into Taquilla_Apuesta VALUES(DEFAULT,8,2);
 
+--Usuarios
 insert into Usuario VALUES(DEFAULT,'nasetien.20@est.ucab.edu.ve','bgf07052021','2022-11-20',null,null,null,null,null,4);
 insert into Usuario VALUES(DEFAULT,'faparilli@gmail.com','2369rinconada','2022-12-18',13339835,null,null,null,null,2);
 insert into Usuario VALUES(DEFAULT,'educon001@gmail.com','ardosalvo2','2022-12-22',null,null,null,null,27670971,1);
 insert into Usuario VALUES(DEFAULT,'apandawriter@outlook.es','amoablackmidi','2022-12-20',null,null,null,null,29551908,1);
 insert into Usuario VALUES(DEFAULT,'yonder999@outlook.es','hipodromo9yonder','2022-12-17',null,null,18110290,null,null,1);
 
+--Venta de boletos en taquillas
 insert into Taquilla_Boleto VALUES(DEFAULT,1,1);
 insert into Taquilla_Boleto VALUES(DEFAULT,2,1);
 insert into Taquilla_Boleto VALUES(DEFAULT,3,1);
@@ -2032,29 +2053,40 @@ insert into Taquilla_Boleto VALUES(DEFAULT,10,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,11,2);
 insert into Taquilla_Boleto VALUES(DEFAULT,12,2);
 
+--Tipos de boletos
 insert into Boleto VALUES(DEFAULT,80.00,1);
 insert into Boleto VALUES(DEFAULT,80.00,2);
 insert into Boleto VALUES(DEFAULT,200.00,3);
 insert into Boleto VALUES(DEFAULT,1500.00,4);
 
+--Venta de boletos
 insert into Venta_Boleto VALUES(DEFAULT,'2022-11-24',240.00,22,null,28426562);
 insert into Venta_Boleto VALUES(DEFAULT,'2022-11-24',160.00,13,null,27670971);
 insert into Venta_Boleto VALUES(DEFAULT,'2022-11-25',3000.00,14,null,29553823);
 insert into Venta_Boleto VALUES(DEFAULT,'2022-11-25',80.00,3,null,27670971);
 insert into Venta_Boleto VALUES(DEFAULT,'2022-11-25',600.00,8,null,29583211);
 
-insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,2,1);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,2,1);
-insert into Detallado_Venta VALUES(DEFAULT,1500.00,3,4);
-insert into Detallado_Venta VALUES(DEFAULT,1500.00,3,4);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,4,1);
-insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3);
-insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3);
-insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3);
+----Metodo De pago---
+insert into metodo_pago VALUES(DEFAULT,'Tarjeta de Credito');
+insert into metodo_pago VALUES(DEFAULT,'Tarjeta de Debito');
+insert into metodo_pago VALUES(DEFAULT,'Efectivo');
+insert into metodo_pago VALUES(DEFAULT,'Pago Movil');
+insert into metodo_pago VALUES(DEFAULT,'Tranferencia');
 
+--Detalles de las ventas
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,2,1,2);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,2,1,2);
+insert into Detallado_Venta VALUES(DEFAULT,1500.00,3,4,3);
+insert into Detallado_Venta VALUES(DEFAULT,1500.00,3,4,3);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,4,1,4);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3,4);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3,5);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3,5);
+
+--Restaurantes
 insert into Restaurant VALUES(299792458,'La Terraza',350,3);
 insert into Restaurant VALUES(279733963,'La Dupla',200,2);
 
@@ -2065,23 +2097,24 @@ insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-29 19:40:10',11596,29979245
 insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-04 18:00:25',10852,299792458);
 insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 18:10:25',3760,279733963);
 insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-10 18:30:45',4985,279733963);
-insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 19:10:25',8654,29279733963);
+insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-26 19:10:25',8654,279733963);
 insert into Venta_Restaurant VALUES(DEFAULT,'2022-12-11 19:45:10',2575,279733963);
 
-----Horario Restaurant---
-insert into Restaurant_horario VALUES(DEFAULT,3,299792458);
+--Horarios
+insert into Horario VALUES(DEFAULT,'SABADO','14:00:00','21:00:00',1);
+insert into Horario VALUES(DEFAULT,'DOMINGO','14:00:00','21:00:00',1);
+insert into Horario VALUES(DEFAULT,'SABADO','12:30:00','21:00:00',1);
+insert into Horario VALUES(DEFAULT,'DOMINGO','12:30:00','21:00:00',null);
+insert into Horario VALUES(DEFAULT,'SABADO','11:00:00','19:00:00',null);
+insert into Horario VALUES(DEFAULT,'DOMINGO','11:00:00','19:00:00',null);
+
+----Horario Restaurant
+insert into Restaurant_Horario VALUES(DEFAULT,3,299792458);
 insert into Restaurant_Horario VALUES(DEFAULT,4,299792458);
-insert into Restaurant_horario VALUES(DEFAULT,1,279733963);
-insert into Restaurant_horario VALUES(DEFAULT,2,279733963);
+insert into Restaurant_Horario VALUES(DEFAULT,1,279733963);
+insert into Restaurant_Horario VALUES(DEFAULT,2,279733963);
 
-
-insert into Horario VALUES(DEFAULT,'SABADO','14:00:00','21:00:00',null,1);
-insert into Horario VALUES(DEFAULT,'DOMINGO','14:00:00','21:00:00',null,1);
-insert into Horario VALUES(DEFAULT,'SABADO','12:30:00','21:00:00',1,null);
-insert into Horario VALUES(DEFAULT,'DOMINGO','12:30:00','21:00:00',1,null);
-insert into Horario VALUES(DEFAULT,'SABADO','11:00:00','19:00:00',null,2);
-insert into Horario VALUES(DEFAULT,'DOMINGO','11:00:00','19:00:00',null,2);
-
+--Pistas
 insert into Pista VALUES(DEFAULT,1800,16,2,'ARENA',1);
 insert into Pista VALUES(DEFAULT,1400,12,1,'GRAVA',1);
 
@@ -2089,6 +2122,7 @@ insert into Paddock VALUES(DEFAULT,18,1);
 
 insert into Circulo_Ganadores VALUES(DEFAULT,3,1);
 
+--Historicos de entrenadores
 insert into Historico_Entrenador VALUES(DEFAULT,'2016-03-17',null,TRUE,3,13339835);
 insert into Historico_Entrenador VALUES(DEFAULT,'2016-03-17','2016-03-16',FALSE,2,13339835);
 insert into Historico_Entrenador VALUES(DEFAULT,'2016-03-22',null,TRUE,2,5132768);
@@ -2097,6 +2131,7 @@ insert into Historico_Entrenador VALUES(DEFAULT,'2018-11-12',null,TRUE,1,6371724
 insert into Historico_Entrenador VALUES(DEFAULT,'2004-10-03','2018-11-12',FALSE,4,6371724);
 insert into Historico_Entrenador VALUES(DEFAULT,'2018-11-12',null,TRUE,4,11922339);
 
+--Propietarios de studs
 insert into Propietario_Stud VALUES(DEFAULT,100,1,5222820);
 insert into Propietario_Stud VALUES(DEFAULT,60,2,13779603);
 insert into Propietario_Stud VALUES(DEFAULT,40,2,3719492);
@@ -2248,6 +2283,7 @@ insert into Propietario_Stud VALUES(DEFAULT,100,82,5972079);
 insert into Propietario_Stud VALUES(DEFAULT,50,83,3719492);
 insert into Propietario_Stud VALUES(DEFAULT,50,83,15149582);
 
+--Colores de los studs
 insert into Stud_Color VALUES(DEFAULT,TRUE,FALSE,15,1);
 insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,15,1);
 insert into Stud_Color VALUES(DEFAULT,FALSE,TRUE,5,1);
@@ -3420,7 +3456,7 @@ insert into Ejemplar VALUES(302,'Queen Greisa','A','Y','2019-01-12',
 insert into Ejemplar VALUES(303,'Paula del Carmen','C','Y','2019-04-03',
                             '2024-03-04',459,28,null,null,248,5);
 
-----Tipo de medicamento---
+----Tipos de medicamentos---
 insert into Tipo_medicamento VALUES(DEFAULT,'Antiflamatorio');
 insert into Tipo_medicamento VALUES(DEFAULT,'Diurético');
 insert into Tipo_medicamento VALUES(DEFAULT,'Analgesico');
@@ -3431,20 +3467,12 @@ insert into Tipo_medicamento VALUES(DEFAULT,'Antipirético');
 insert into Tipo_medicamento VALUES(DEFAULT,'Hormona');
 insert into Tipo_medicamento VALUES(DEFAULT,'Multivitaminico');
 
----Medicamento--
-
+---Medicamentos
 insert into medicamento VALUES(DEFAULT,'Buta','Tratamiento contra los dolores articulares',1);
 insert into medicamento VALUES(DEFAULT,'Laxis','Previene el sangrado respiratorio',2);
 insert into medicamento VALUES(DEFAULT,'Tiroxina','Hipotiroidismo y acelera el metabolismo',8);
 insert into medicamento VALUES(DEFAULT,'Power pak nitro','Mejora la respiración y la respuesta al dolor',9);
 insert into medicamento VALUES(DEFAULT,'Etorfina','Estimulante de energia',3);
-
-----Metodo De pago---
-insert into metodo_pago VALUES(DEFAULT,'Tarjeta de Credito');
-insert into metodo_pago VALUES(DEFAULT,'Tarjeta de Debito');
-insert into metodo_pago VALUES(DEFAULT,'Efectivo');
-insert into metodo_pago VALUES(DEFAULT,'Pago Movil');
-insert into metodo_pago VALUES(DEFAULT,'Tranferencia');
 
 --BI_Clave, FK_Ejemplar, FK_Jinete, BI_Jinete_Peso, BI_Ejemplar_Peso
 insert into Binomio VALUES(DEFAULT,201,16929383,53,401);
