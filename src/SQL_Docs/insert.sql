@@ -1,4 +1,3 @@
---Tipo_Medicamento, Tipo_Apuesta, Propietario, Ejemplar, Binomio, vENTA_RESTAURANT
 
 --Lugares
 insert into Lugar(L_Nombre,L_Tipo) values ('Amazonas','Estado');
