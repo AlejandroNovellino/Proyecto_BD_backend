@@ -834,9 +834,11 @@ class LogInEndPoint(Resource):
             # make the query searching from correo
             usuario = {}
             try:
-                usuario = db.session.execute(db.select(Usuario).filter_by(u_correo_e=correo)).one()
-            except:
+                usuario = Usuario.query.filter_by(u_correo_e=correo).first()
+            except BaseException as e:
+                print(e)
                 usuario = None
+            print(usuario)
 
             # if correo does not exist
             if not usuario: 
@@ -846,7 +848,7 @@ class LogInEndPoint(Resource):
                         "password": False
                     }), 404
             
-            if usuario['u_password'] != password:
+            if usuario.u_password != password:
                 return simplejson.dumps({
                         "msg": "No existe usuario con este correo",
                         "correo": True,

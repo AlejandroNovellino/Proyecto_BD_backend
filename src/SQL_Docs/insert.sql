@@ -1918,6 +1918,7 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Usuario');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('SIGNIN', 'Usuario');
 
 --Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1
