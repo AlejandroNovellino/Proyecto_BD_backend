@@ -452,10 +452,10 @@ create table Restaurant(
 );
 
 create table Horario(
-	HO_Clave				serial NOT NULL UNIQUE,
+	HO_Clave					serial NOT NULL UNIQUE,
 	HO_Dia_Semana			varchar(9) NOT NULL,
-	HO_Hora_Apertura		time NOT NULL,
-	HO_Hora_Cierre			time NOT NULL,
+	HO_Hora_Apertura	time NOT NULL,
+	HO_Hora_Cierre		time NOT NULL,
 	FK_Hipodromo			integer,
 	/*Checks*/
 	constraint Check_Dia_Semana_Horario CHECK (HO_Dia_Semana in ('LUNES','MARTES','MIERCOLES','JUEVES','VIERNES','SABADO','DOMINGO')),
@@ -521,7 +521,7 @@ create table Venta_Restaurant(
 	VR_Clave					serial NOT NULL UNIQUE,
 	VR_Fecha_Hora			timestamp NOT NULL,
 	VR_Monto_Total		numeric(10) NOT NULL,
-	FK_Restaurant			integer NOT NULL,
+	FK_Restaurant			numeric(10) NOT NULL,
 
 	/*Clave primaria*/
 	constraint PK_Venta_Restaurant primary key (VR_Clave),
