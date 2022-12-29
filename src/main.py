@@ -123,6 +123,13 @@ usuario_parser.add_argument('fk_jinete')
 usuario_parser.add_argument('fk_veterinario')
 usuario_parser.add_argument('fk_aficionado')
 usuario_parser.add_argument('fk_tipo_usuario')
+# AccionUsuario --------------------------------------------------------------------------------
+accion_usuario_parser = reqparse.RequestParser()
+accion_usuario_parser.add_argument('au_clave') 
+accion_usuario_parser.add_argument('au_fecha_hora')
+accion_usuario_parser.add_argument('au_clave_elemento_afectado')
+accion_usuario_parser.add_argument('fk_usuario')
+accion_usuario_parser.add_argument('fk_accion')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -252,6 +259,19 @@ class UsuarioSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 usuario_schema = UsuarioSchema()
+
+# Accion Usuario schema
+class AccionUsuarioSchema(ma.SQLAlchemyAutoSchema):
+    # Accion
+    accion = ma.Nested(AccionSchema)
+    # Usuario
+    usuario = ma.Nested(UsuarioSchema)
+    class Meta:
+        model = AccionUsuario
+        include_fk = True
+        json_module = simplejson
+# instance the class
+accion_usuario_schema = AccionUsuarioSchema()
 
 # Lugar schema
 class LugarSchema(ma.SQLAlchemyAutoSchema):
@@ -821,6 +841,74 @@ class LugarListEndPoint(Resource):
         return [lugar_schema.dump(lugar) for lugar in lugares]
 # add the endpoint ot the api
 api.add_resource(LugarListEndPoint, '/lugares')
+
+
+### Accion_Usuario ###
+
+# RUD for one AccionUsuario
+class AccionUsuarioEndPoint(Resource):
+    def get(self, accion_usuario_id):
+        accion_usuario = AccionUsuario.query.get(accion_usuario_id)
+        # ejemplar does not exist
+        if not accion_usuario:
+            abort(404, message="Accion usuario {} doesn't exist".format(accion_usuario_id))
+
+        return accion_tipo_usuario_schema.dump(accion_usuario)
+
+    def delete(self, accion_usuario_id):
+        accion_usuario = AccionUsuario.query.get(accion_usuario_id)
+        response = deleteElement(accion_usuario)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, accion_usuario_id):
+        args = accion_usuario_parser.parse_args()
+        accion_usuario = AccionUsuario.query.get(accion_usuario_id)
+        #update the accion_usuario
+        accion_usuario.fk_tipousuario = args["fk_tipousuario"]
+        accion_usuario.fk_accion = args["fk_accion"]
+
+        try:
+            db.session.commit()
+            return accion_usuario_schema.dump(accion_usuario), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(AccionUsuarioEndPoint, '/accion-usuarios/<accion_usuario_id>')
+
+# list all AccionTipoUsuario and create one
+class AccionUsuarioListEndPoint(Resource):
+    def get(self):
+        acciones_usuarios = AccionUsuario.query.all()
+        return [accion_usuario_schema.dump(accion_usuario) for accion_usuario in acciones_usuarios]
+
+    def post(self):
+        try:
+            args = accion_usuario_parser.parse_args()
+            accion_usuario = AccionUsuario.create(**args)
+            return accion_usuario_schema.dump(accion_usuario), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(AccionUsuarioListEndPoint, '/accion-usuarios')
+
+
+### Permisos para el tipo de Usuario ###
+class PermisosTipoUsuarioEndPoint(Resource):
+    def get(self, tipo_usuario_id):
+        acciones_tipo_usuario = AccionTipoUsuario.query.filter_by(fk_tipousuario=tipo_usuario_id)
+
+        # acciones_tipo_usuario empty
+        if not acciones_tipo_usuario:
+            abort(404, message="User type {} does not have permissions".format(tipo_usuario_id))
+
+        return [accion_schema.dump(element.accion) for element in acciones_tipo_usuario], 200
+# add the endpoint ot the api
+api.add_resource(PermisosTipoUsuarioEndPoint, '/permisos-tipo-usuario/<tipo_usuario_id>')
 
 
 ### Login ###

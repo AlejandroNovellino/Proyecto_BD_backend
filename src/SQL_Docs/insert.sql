@@ -1917,7 +1917,13 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Usuario');
-insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('SIGNIN', 'Usuario');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('LOGIN', 'Usuario');
+
+--Acciones para el tipo de usuario
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,2);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,6);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,10);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,14);
 
 --Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1
@@ -2115,7 +2121,6 @@ insert into Restaurant_Horario VALUES(DEFAULT,2,279733963);
 
 --Pistas
 insert into Pista VALUES(DEFAULT,1800,16,2,'ARENA',1);
-insert into Pista VALUES(DEFAULT,1400,12,1,'GRAVA',1);
 
 insert into Paddock VALUES(DEFAULT,18,1);
 
@@ -2991,17 +2996,22 @@ insert into Carrera VALUES(DEFAULT,null,'2022-08-28','16:10:00',8,null,1300,null
   insert into Ejemplar VALUES(1,'Fighting Brave','T','C','2015-03-04','2024-03-04',401,1,null,null,129,3);
   insert into Ejemplar VALUES(2,'Princess Snow White','T','Y','2014-03-04','2024-03-04',392,1,null,null,128,3);
 insert into Ejemplar VALUES(201,'Boiled Milk','T','Y','2020-03-04','2020-03-04',401,1,1,2,130,3);
+insert into Ejemplar VALUES(201,'Boiled Milk','T','Y','2020-03-04','2020-03-04',401,1,1,2,130,3);
   insert into Ejemplar VALUES(3,'Inducement','C','C','2013-03-11','2024-03-04',411,2,null,null,126,3);
   insert into Ejemplar VALUES(4,'Lunaromo','C','Y','2015-03-11','2024-03-04',404,2,null,null,125,3);
+insert into Ejemplar VALUES(202,'Arlet','C','Y','2020-03-11','2024-03-04',403,2,3,4,127,3);
 insert into Ejemplar VALUES(202,'Arlet','C','Y','2020-03-11','2024-03-04',403,2,3,4,127,3);
   insert into Ejemplar VALUES(5,'Roger Rocket','T','C','2014-01-18','2024-03-04',401,3,null,null,123,3);
   insert into Ejemplar VALUES(6,'Pinky del Prado','T','Y','2014-01-18','2024-03-04',400,3,null,null,122,3);
 insert into Ejemplar VALUES(203,'Paint White','T','Y','2020-01-18','2024-03-04',396,3,5,6,124,3);
+insert into Ejemplar VALUES(203,'Paint White','T','Y','2020-01-18','2024-03-04',396,3,5,6,124,3);
   insert into Ejemplar VALUES(7,'Messner','C','C','2014-05-01','2024-03-04',399,1,null,null,120,3);
   insert into Ejemplar VALUES(8,'La Viva','C','Y','2015-03-01','2024-03-04',399,1,null,null,119,3);
 insert into Ejemplar VALUES(204,'La Viva','C','Y','2020-03-01','2024-03-04',401,1,7,8,121,3);
+insert into Ejemplar VALUES(204,'La Viva','C','Y','2020-03-01','2024-03-04',401,1,7,8,121,3);
   insert into Ejemplar VALUES(9,'Fifth Edition','C','C','2012-09-10','2024-03-04',398,4,null,null,117,3);
   insert into Ejemplar VALUES(10,'La Bienquerida','C','Y','2015-02-20','2024-03-04',400,4,null,null,116,3);
+insert into Ejemplar VALUES(205,'Paine','C','Y','2020-02-10','2024-03-04',395,4,9,10,118,3);
 insert into Ejemplar VALUES(205,'Paine','C','Y','2020-02-10','2024-03-04',395,4,9,10,118,3);
   insert into Ejemplar VALUES(11,'Thabiaan','Z','C','2014-06-20','2024-03-04',410,5,null,null,114,3);
   insert into Ejemplar VALUES(12,'La Gran Dama','Z','Y','2013-11-20','2024-03-04',407,5,null,null,113,3);
