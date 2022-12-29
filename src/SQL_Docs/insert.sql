@@ -1920,10 +1920,24 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('LOGIN', 'Usuario');
 
 --Acciones para el tipo de usuario
+--Aficionado
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,2);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,6);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,10);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,14);
+--Administrador
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,1);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,2);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,3);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,4);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,5);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,6);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,7);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,8);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,9);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,10);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,11);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,12);
 
 --Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1

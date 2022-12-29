@@ -902,11 +902,26 @@ class PermisosTipoUsuarioEndPoint(Resource):
     def get(self, tipo_usuario_id):
         acciones_tipo_usuario = AccionTipoUsuario.query.filter_by(fk_tipousuario=tipo_usuario_id)
 
+        permisos = {}
+        for element in acciones_tipo_usuario:
+
+            accion = element.accion.acc_nombre
+            tabla_objectivo = element.accion.acc_tabla_objetivo
+
+            if tabla_objectivo in permisos.keys():
+                permisos[tabla_objectivo].append(accion)
+            else:
+                permisos.update({
+                    tabla_objectivo: [accion]
+                })
+
         # acciones_tipo_usuario empty
         if not acciones_tipo_usuario:
             abort(404, message="User type {} does not have permissions".format(tipo_usuario_id))
 
-        return [accion_schema.dump(element.accion) for element in acciones_tipo_usuario], 200
+        # To return all the actions from DB
+        # [accion_schema.dump(element.accion) for element in acciones_tipo_usuario]
+        return simplejson.dumps(permisos), 200
 # add the endpoint ot the api
 api.add_resource(PermisosTipoUsuarioEndPoint, '/permisos-tipo-usuario/<tipo_usuario_id>')
 
