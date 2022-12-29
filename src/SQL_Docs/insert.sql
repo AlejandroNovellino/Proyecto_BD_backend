@@ -2988,472 +2988,257 @@ insert into Carrera VALUES(DEFAULT,null,'2022-08-28','16:10:00',8,null,1300,null
 -- FK_Madre, FK_Padre, FK_Puesto, FK_Caballeriza
 --insert into Ejemplar VALUES(1,'Alfredo','C','C','2017-04-04','2017-04-04',90,1,null,null,1,1);
 
-insert into Ejemplar VALUES(201,'Boiled Milk','T','Y','2020-03-04','2020-03-04',401,1,1,2,130,3);
   insert into Ejemplar VALUES(1,'Fighting Brave','T','C','2015-03-04','2024-03-04',401,1,null,null,129,3);
   insert into Ejemplar VALUES(2,'Princess Snow White','T','Y','2014-03-04','2024-03-04',392,1,null,null,128,3);
-insert into Ejemplar VALUES(202,'Arlet','C','Y','2020-03-11','2024-03-04',403,2,3,4,127,3);
+insert into Ejemplar VALUES(201,'Boiled Milk','T','Y','2020-03-04','2020-03-04',401,1,1,2,130,3);
   insert into Ejemplar VALUES(3,'Inducement','C','C','2013-03-11','2024-03-04',411,2,null,null,126,3);
   insert into Ejemplar VALUES(4,'Lunaromo','C','Y','2015-03-11','2024-03-04',404,2,null,null,125,3);
-insert into Ejemplar VALUES(203,'Paint White','T','Y','2020-01-18','2024-03-04',396,3,5,6,124,3);
+insert into Ejemplar VALUES(202,'Arlet','C','Y','2020-03-11','2024-03-04',403,2,3,4,127,3);
   insert into Ejemplar VALUES(5,'Roger Rocket','T','C','2014-01-18','2024-03-04',401,3,null,null,123,3);
   insert into Ejemplar VALUES(6,'Pinky del Prado','T','Y','2014-01-18','2024-03-04',400,3,null,null,122,3);
-insert into Ejemplar VALUES(204,'La Viva','C','Y','2020-03-01','2024-03-04',401,1,7,8,121,3);
+insert into Ejemplar VALUES(203,'Paint White','T','Y','2020-01-18','2024-03-04',396,3,5,6,124,3);
   insert into Ejemplar VALUES(7,'Messner','C','C','2014-05-01','2024-03-04',399,1,null,null,120,3);
   insert into Ejemplar VALUES(8,'La Viva','C','Y','2015-03-01','2024-03-04',399,1,null,null,119,3);
-insert into Ejemplar VALUES(205,'Paine','C','Y','2020-02-10','2024-03-04',395,4,9,10,118,3);
+insert into Ejemplar VALUES(204,'La Viva','C','Y','2020-03-01','2024-03-04',401,1,7,8,121,3);
   insert into Ejemplar VALUES(9,'Fifth Edition','C','C','2012-09-10','2024-03-04',398,4,null,null,117,3);
   insert into Ejemplar VALUES(10,'La Bienquerida','C','Y','2015-02-20','2024-03-04',400,4,null,null,116,3);
-insert into Ejemplar VALUES(206,'Alessandria','Z','Y','2020-03-20','2024-03-04',399,5,11,12,115,3);
+insert into Ejemplar VALUES(205,'Paine','C','Y','2020-02-10','2024-03-04',395,4,9,10,118,3);
   insert into Ejemplar VALUES(11,'Thabiaan','Z','C','2014-06-20','2024-03-04',410,5,null,null,114,3);
   insert into Ejemplar VALUES(12,'La Gran Dama','Z','Y','2013-11-20','2024-03-04',407,5,null,null,113,3);
-insert into Ejemplar VALUES(207,'Kaiser Barcelona','C','C','2015-02-01','2024-03-04',437,6,13,14,112,3);
+insert into Ejemplar VALUES(206,'Alessandria','Z','Y','2020-03-20','2024-03-04',399,5,11,12,115,3);
 insert into Ejemplar VALUES(13,'United States','C','C','2009-02-12','2024-03-04',431,6,null,null,111,3);
 insert into Ejemplar VALUES(14,'Glamorella','C','Y','2008-02-01','2024-03-04',435,6,null,null,110,3);
-insert into Ejemplar VALUES(208,'The Agent','C','C','2017-04-02','2024-03-04',480,7,15,16,109,3);
+insert into Ejemplar VALUES(207,'Kaiser Barcelona','C','C','2015-02-01','2024-03-04',437,6,13,14,112,3);
 insert into Ejemplar VALUES(15,'Champlain','C','C','2011-04-02','2024-03-04',488,7,null,null,108,3);
 insert into Ejemplar VALUES(16,'Blue Secret','C','Y','2012-01-02','2024-03-04',491,7,null,null,107,3);
-insert into Ejemplar VALUES(209,'My Dreaming Mate','C','C','2017-02-10','2024-03-04',447,8,17,18,106,3);
+insert into Ejemplar VALUES(208,'The Agent','C','C','2017-04-02','2024-03-04',480,7,15,16,109,3);
 insert into Ejemplar VALUES(17,'Great Hunter','C','C','2009-04-02','2024-03-04',443,8,null,null,105,3);
 insert into Ejemplar VALUES(18,'Miss Venezuela','C','Y','2010-06-22','2024-03-04',441,8,null,null,104,3);
-insert into Ejemplar VALUES(210,'Abuelo Yeye','A','C','2016-03-18','2024-03-04',436,7,19,20,103,3);
+insert into Ejemplar VALUES(209,'My Dreaming Mate','C','C','2017-02-10','2024-03-04',447,8,17,18,106,3);
 insert into Ejemplar VALUES(19,'Stalwartly','A','C','2009-05-18','2024-03-04',434,7,null,null,102,3);
 insert into Ejemplar VALUES(20,'Nonna Amanda','A','Y','2009-05-27','2024-03-04',436,7,null,null,101,3);
-insert into Ejemplar VALUES(211,'Del Capi','T','C','2017-01-01','2024-03-04',477,5,11,21,100,2);
+insert into Ejemplar VALUES(210,'Abuelo Yeye','A','C','2016-03-18','2024-03-04',436,7,19,20,103,3);
 insert into Ejemplar VALUES(21,'Reina Luisa','T','Y','2011-11-01','2024-03-04',477,5,null,null,99,2);
-insert into Ejemplar VALUES(212,'Mr. Gil','C','C','2016-05-07','2024-03-04',417,9,22,23,98,2);
+insert into Ejemplar VALUES(211,'Del Capi','T','C','2017-01-01','2024-03-04',477,5,11,21,100,2);
 insert into Ejemplar VALUES(22,'Aguila Negra','C','C','2010-05-07','2024-03-04',424,9,null,null,97,2);
 insert into Ejemplar VALUES(23,'Power Girl','C','Y','2010-09-07','2024-03-04',419,9,null,null,96,2);
+insert into Ejemplar VALUES(212,'Mr. Gil','C','C','2016-05-07','2024-03-04',417,9,22,23,98,2);
+insert into Ejemplar VALUES(24,'Margaritena','C','Y','2011-02-23','2024-03-04',419,8,null,null,94,2);
 insert into Ejemplar VALUES(213,'Trujillano','C','C','2017-02-24','2024-03-04',418,8,17,24,95,2);
-insert into Ejemplar VALUES(24,'Margaritena','C','Y','2011-02-23',
-                            '2024-03-04',419,8,null,null,94,2);
-insert into Ejemplar VALUES(114,'Gray Champ','C','C','2017-04-12',
-                            '2024-03-04',448,7,15,25,93,2);
-insert into Ejemplar VALUES(25,'Del Valle','C','Y','2010-09-12',
-                            '2024-03-04',444,7,null,null,92,2);
-insert into Ejemplar VALUES(215,'Shooting Range','C','C','2017-02-22',
-                            '2024-03-04',425,1,26,27,91,2);
-insert into Ejemplar VALUES(26,'Borrego','C','C','2011-03-22',
-                            '2024-03-04',435,1,null,null,90,2);
-insert into Ejemplar VALUES(27,'Strategic Solution','C','Y','2012-02-11',
-                            '2024-03-04',435,1,null,null,89,2);
-insert into Ejemplar VALUES(216,'Rey Enigma','T','C','2019-02-01',
-                            '2024-03-04',428,5,11,28,88,2);
-insert into Ejemplar VALUES(28,'Great News','T','Y','2014-09-11',
-                            '2024-03-04',409,5,null,null,87,2);
-insert into Ejemplar VALUES(217,'King Miggy','C','C','2019-01-03',
-                            '2024-03-04',414,6,29,30,86,2);
-insert into Ejemplar VALUES(29,'Big Prairie','C','C','2013-02-03',
-                            '2024-03-04',405,6,null,null,85,2);
-insert into Ejemplar VALUES(30,'Feel The Love','C','Y','2012-11-03',
-                            '2024-03-04',412,6,null,null,84,2);
-insert into Ejemplar VALUES(218,'Amigo Jorge','A','C','2019-02-21',
-                            '2024-03-04',432,10,31,32,83,2);
-insert into Ejemplar VALUES(31,'Cryptograph','A','C','2013-01-24',
-                            '2024-03-04',417,10,null,null,82,2);
-insert into Ejemplar VALUES(32,'Towering Susan','A','Y','2012-12-21',
-                            '2024-03-04',427,10,null,null,81,2);
-insert into Ejemplar VALUES(219,'Street Prince','T','C','2019-02-26',
-                            '2024-03-04',430,5,11,33,80,2);
-insert into Ejemplar VALUES(33,'Karola Princess','T','Y','2013-02-06',
-                            '2024-03-04',423,5,null,null,79,2);
-insert into Ejemplar VALUES(220,'Dumpling','C','C','2019-02-14',
-                            '2024-03-04',426,11,34,35,78,2);
-insert into Ejemplar VALUES(34,'Vacation','C','C','2012-09-14',
-                            '2024-03-04',450,11,null,null,77,2);
-insert into Ejemplar VALUES(35,'Gran Estefania','C','Y','2013-02-22',
-                            '2024-03-04',430,11,null,null,76,2);
-insert into Ejemplar VALUES(221,'Mr. Martins','C','C','2019-03-10',
-                            '2024-03-04',389,1,1,36,75,2);
-insert into Ejemplar VALUES(36,'Phantom Punch','C','Y','2013-11-10',
-                            '2024-03-04',396,1,null,null,74,2);
-insert into Ejemplar VALUES(222,'Eon Yaguari','C','C','2019-05-15',
-                            '2024-03-04',363,12,37,38,73,2);
-insert into Ejemplar VALUES(37,'Dreaming of Gold','C','C','2012-09-15',
-                            '2024-03-04',358,12,null,null,72,2);
-insert into Ejemplar VALUES(38,'Kabbalah','C','Y','2013-02-09',
-                            '2024-03-04',363,12,null,null,71,2);
-insert into Ejemplar VALUES(223,'Party Prince','C','C','2019-01-03',
-                            '2024-03-04',460,5,11,39,70,2);
-insert into Ejemplar VALUES(39,'Bengala','C','Y','2014-01-03',
-                            '2024-03-04',454,5,null,null,69,2);
-insert into Ejemplar VALUES(224,'High Potential','T','C','2019-04-18',
-                            '2024-03-04',394,11,40,41,68,2);
-insert into Ejemplar VALUES(40,'Poltergeist','T','C','2011-08-18',
-                            '2024-03-04',385,11,null,null,67,2);
-insert into Ejemplar VALUES(41,'Revenge','T','Y','2012-04-22',
-                            '2024-03-04',394,11,null,null,66,2);
-insert into Ejemplar VALUES(225,'Black Andrew','Z','C','2019-02-24',
-                            '2024-03-04',408,8,42,43,65,2);
-insert into Ejemplar VALUES(42,'Jupiter Pluvius','Z','C','2012-04-24',
-                            '2024-03-04',399,8,null,null,64,2);
-insert into Ejemplar VALUES(43,'Marjorie C','Z','Y','2012-09-10',
-                            '2024-03-04',409,8,null,null,63,2);
-insert into Ejemplar VALUES(226,'Amor de Madre','C','Y','2018-05-25',
-                            '2024-03-04',406,6,29,44,62,2);
-insert into Ejemplar VALUES(44,'Sky Patches','C','Y','2012-03-25',
-                            '2024-03-04',416,6,null,null,61,2);
-insert into Ejemplar VALUES(227,'Caracciola','C','Y','2019-01-26',
-                            '2024-03-04',432,11,45,46,60,2);
-insert into Ejemplar VALUES(45,'Keep Thinking','C','C','2011-06-26',
-                            '2024-03-04',431,11,null,null,59,2);
-insert into Ejemplar VALUES(46,'Abuela Lili','C','Y','2012-06-26',
-                            '2024-03-04',423,11,null,null,58,2);
-insert into Ejemplar VALUES(228,'Yaqui Desings','C','Y','2019-02-02',
-                            '2024-03-04',443,13,47,48,57,2);
-insert into Ejemplar VALUES(47,'Ruffalex','C','C','2012-08-02',
-                            '2024-03-04',444,13,null,null,56,2);
-insert into Ejemplar VALUES(48,'Correntina','C','Y','2012-01-22',
-                            '2024-03-04',457,13,null,null,55,2);
-insert into Ejemplar VALUES(229,'Money Is Money','C','Y','2018-01-01',
-                            '2024-03-04',451,11,1,49,54,2);
-insert into Ejemplar VALUES(49,'Glowing Report','C','Y','2012-12-01',
-                            '2024-03-04',448,11,null,null,53,2);
-insert into Ejemplar VALUES(230,'Queen of Success','A','Y','2018-05-08',
-                            '2024-03-04',425,7,15,50,52,2);
-insert into Ejemplar VALUES(50,'The Dark Angel','A','Y','2012-05-23',
-                            '2024-03-04',424,7,null,null,51,2);
-insert into Ejemplar VALUES(231,'Jaicelita','T','Y','2018-05-12',
-                            '2024-03-04',445,11,51,52,50,1);
-insert into Ejemplar VALUES(51,'Colonial Causeway','T','C','2011-09-12',
-                            '2024-03-04',431,11,null,null,49,1);
-insert into Ejemplar VALUES(52,'Miss Santona','T','Y','2011-05-31',
-                            '2024-03-04',423,11,null,null,48,1);
-insert into Ejemplar VALUES(232,'Bella Fina','Z','Y','2019-05-07',
-                            '2024-03-04',437,3,42,53,47,1);
-insert into Ejemplar VALUES(53,'Smartly Bred','Z','Y','2014-01-07',
-                            '2024-03-04',441,3,null,null,46,1);
-insert into Ejemplar VALUES(233,'Turbinada','C','Y','2019-05-26',
-                            '2024-03-04',406,3,5,54,45,1);
-insert into Ejemplar VALUES(54,'Pine Shelter','C','Y','2012-11-21',
-                            '2024-03-04',423,3,null,null,44,1);
-insert into Ejemplar VALUES(234,'Mind The Gap','C','Y','2018-01-23',
-                            '2024-03-04',404,2,55,56,43,1);
-insert into Ejemplar VALUES(55,'Honest Man','C','C','2011-10-13',
-                            '2024-03-04',414,2,null,null,42,1);
-insert into Ejemplar VALUES(56,'Fascinating Gal','C','Y','2012-01-14',
-                            '2024-03-04',405,2,null,null,41,1);
-insert into Ejemplar VALUES(235,'Anarita Spirit','C','Y','2018-01-22',
-                            '2024-03-04',429,14,57,58,40,1);
-insert into Ejemplar VALUES(57,'Golden Spikes','C','C','2012-04-22',
-                            '2024-03-04',405,14,null,null,39,1);
-insert into Ejemplar VALUES(58,'Anarita','C','Y','2011-11-08',
-                            '2024-03-04',428,14,null,null,38,1);
-insert into Ejemplar VALUES(236,'Miss Zenali','A','Y','2018-04-18',
-                            '2024-03-04',375,13,59,60,37,1);
-insert into Ejemplar VALUES(59,'Siete C','A','C','2013-04-18',
-                            '2024-03-04',372,13,null,null,36,1);
-insert into Ejemplar VALUES(60,'Dazzle Me','A','Y','2012-12-18',
-                            '2024-03-04',374,13,null,null,35,1);
-insert into Ejemplar VALUES(237,'Srta Emiliana','C','Y','2018-01-08',
-                            '2024-03-04',411,15,61,62,34,1);
-insert into Ejemplar VALUES(61,'Deliberately','C','C','2012-03-28',
-                            '2024-03-04',407,15,null,null,33,1);
-insert into Ejemplar VALUES(62,'Reina del Mar','C','Y','2012-01-17',
-                            '2024-03-04',393,15,null,null,32,1);
-insert into Ejemplar VALUES(238,'Chaviela','C','Y','2018-02-11',
-                            '2024-03-04',402,16,63,64,31,1);
-insert into Ejemplar VALUES(63,'Sidereus Nuncius','C','C','2012-04-15',
-                            '2024-03-04',401,16,null,null,30,1);
-insert into Ejemplar VALUES(64,'Cherokee Queen','C','Y','2011-02-23',
-                            '2024-03-04',385,16,null,null,29,1);
-insert into Ejemplar VALUES(239,'Latina Europea','C','Y','2018-04-12',
-                            '2024-03-04',395,7,29,65,28,1);
-insert into Ejemplar VALUES(65,'Kevin s Grace','C','Y','2013-01-11',
-                            '2024-03-04',393,7,null,null,27,1);
-insert into Ejemplar VALUES(240,'Conchita Dancer','C','Y','2018-04-27',
-                            '2024-03-04',419,17,66,67,26,1);
-insert into Ejemplar VALUES(66,'Minimise Risk','C','C','2011-11-27',
-                            '2024-03-04',420,17,null,null,25,1);
-insert into Ejemplar VALUES(67,'Miss Encantada','C','Y','2012-03-12',
-                            '2024-03-04',423,17,null,null,24,1);
-insert into Ejemplar VALUES(241,'Massars','C','Y','2018-01-29',
-                            '2024-03-04',442,11,2,68,23,1);
-insert into Ejemplar VALUES(68,'The Cats All That','C','Y','2011-07-25',
-                            '2024-03-04',433,11,null,null,22,1);
-insert into Ejemplar VALUES(242,'Cara Mia','C','Y','2018-03-21',
-                            '2024-03-04',416,12,69,38,21,1);
-insert into Ejemplar VALUES(69,'Lord Trondor','C','C','2011-06-11',
-                            '2024-03-04',419,12,null,null,20,1);
-insert into Ejemplar VALUES(243,'Snow Sensations','C','Y','2018-04-27',
-                            '2024-03-04',447,10,70,71,19,1);
-insert into Ejemplar VALUES(70,'King Music','C','C','2011-09-21',
-                            '2024-03-04',442,10,null,null,19,1);
-insert into Ejemplar VALUES(71,'Baby Come Back','C','Y','2011-06-08',
-                            '2024-03-04',451,10,null,null,18,1);
-insert into Ejemplar VALUES(244,'Victoria Fer','Z','Y','2018-01-31',
-                            '2024-03-04',435,15,61,72,17,1);
-insert into Ejemplar VALUES(72,'Sweet Fabi','Z','Y','2013-01-30',
-                            '2024-03-04',445,15,null,null,16,1);
-insert into Ejemplar VALUES(245,'Mamba Mentality','C','Y','2018-01-19',
-                            '2024-03-04',401,11,73,35,15,1);
-insert into Ejemplar VALUES(73,'Miners Lamp','C','C','2010-10-19',
-                            '2024-03-04',400,11,null,null,14,1);
-insert into Ejemplar VALUES(246,'Mariecurie','C','Y','2017-01-10',
-                            '2024-03-04',440,6,74,75,13,1);
-insert into Ejemplar VALUES(74,'Yesby Jimminy','C','C','2010-08-10',
-                            '2024-03-04',440,6,null,null,12,1);
-insert into Ejemplar VALUES(75,'Mad Light','C','Y','2010-05-18',
-                            '2024-03-04',434,6,null,null,11,1);
-insert into Ejemplar VALUES(247,'Royal Honey','A','Y','2017-01-08',
-                            '2024-03-04',387,7,15,76,10,1);
-insert into Ejemplar VALUES(76,'Queen Alice','A','Y','2010-09-28',
-                            '2024-03-04',392,7,null,null,9,1);
-insert into Ejemplar VALUES(248,'Versailles','A','Y','2017-01-01',
-                            '2024-03-04',363,12,77,78,8,1);
-insert into Ejemplar VALUES(77,'Documentary','A','C','2011-01-25',
-                            '2024-03-04',371,12,null,null,7,1);
-insert into Ejemplar VALUES(78,'Gran Sha','A','Y','2010-05-21',
-                            '2024-03-04',372,12,null,null,6,1);
-insert into Ejemplar VALUES(249,'La Chacha','T','Y','2017-01-31',
-                            '2024-03-04',413,18,80,81,5,1);
-insert into Ejemplar VALUES(80,'Macho Again','T','C','2011-01-18',
-                            '2024-03-04',414,18,null,null,4,1);
-insert into Ejemplar VALUES(81,'Jamba Jack','T','Y','2010-12-04',
-                            '2024-03-04',416,18,null,null,3,1);
-insert into Ejemplar VALUES(250,'Rosa Amelia','C','Y','2017-04-05',
-                            '2024-03-04',424,7,15,82,2,1);
-insert into Ejemplar VALUES(82,'Dulcet Tone','C','Y','2010-10-27',
-                            '2024-03-04',425,7,null,null,1,1);
-insert into Ejemplar VALUES(251,'La Dama','A','Y','2017-01-20',
-                            '2024-03-04',421,15,61,83,131,3);
-insert into Ejemplar VALUES(83,'Damasoly','A','Y','2012-01-20',
-                            '2024-03-04',413,15,null,null,132,3);
-insert into Ejemplar VALUES(252,'Magic Victory','C','Y','2017-04-29',
-                            '2024-03-04',461,9,84,85,133,3);
-insert into Ejemplar VALUES(84,'Seeking a Dream','C','C','2011-02-27',
-                            '2024-03-04',457,9,null,null,134,3);
-insert into Ejemplar VALUES(85,'Dayana','C','Y','2010-08-29',
-                            '2024-03-04',454,9,null,null,135,3);
-insert into Ejemplar VALUES(253,'Lady Arantxa','C','Y','2017-06-11',
-                            '2024-03-04',419,19,86,87,136,3);
-insert into Ejemplar VALUES(86,'Ministerpul','C','C','2010-11-11',
-                            '2024-03-04',417,19,null,null,137,3);
-insert into Ejemplar VALUES(87,'Princesa Oreana','C','Y','2011-02-16',
-                            '2024-03-04',410,19,null,null,138,3);
-insert into Ejemplar VALUES(254,'Star Treck','C','Y','2017-01-23',
-                            '2024-03-04',411,29,88,89,139,3);
-insert into Ejemplar VALUES(88,'Pedro Caiman','C','C','2010-06-23',
-                            '2024-03-04',410,29,null,null,140,3);
-insert into Ejemplar VALUES(89,'Revolution Star','C','Y','2011-01-04',
-                            '2024-03-04',408,29,null,null,141,3);
-insert into Ejemplar VALUES(255,'Lasciati Andare','C','Y','2017-04-03',
-                            '2024-03-04',438,3,34,90,142,3);
-insert into Ejemplar VALUES(90,'Meetmeinthemiddle','C','Y','2010-11-04',
-                            '2024-03-04',445,3,null,null,143,3);
-insert into Ejemplar VALUES(256,'Strength Pasarella','A','Y','2017-01-28',
-                            '2024-03-04',448,8,22,91,144,3);
-insert into Ejemplar VALUES(91,'Soy Princesa','A','Y','2010-11-17',
-                            '2024-03-04',442,8,null,null,145,3);
-insert into Ejemplar VALUES(257,'Princesa Pilar','C','Y','2017-01-15',
-                            '2024-03-04',457,20,92,93,146,3);
-insert into Ejemplar VALUES(92,'Pleasant Strike','C','C','2010-05-04',
-                            '2024-03-04',461,20,null,null,147,3);
-insert into Ejemplar VALUES(93,'Srta Miranda','C','Y','2011-01-31',
-                            '2024-03-04',456,20,null,null,148,3);
-insert into Ejemplar VALUES(258,'Racing Icons','T','Y','2016-05-08',
-                            '2024-03-04',422,13,94,null,149,3);
-insert into Ejemplar VALUES(94,'Z Humor','T','C','2010-06-28',
-                            '2024-03-04',420,13,null,null,150,3);
-insert into Ejemplar VALUES(259,'Miranda Queen','C','Y','2016-03-17',
-                            '2024-03-04',460,21,22,95,151,4);
-insert into Ejemplar VALUES(95,'Gran Palabra','C','Y','2009-11-17',
-                            '2024-03-04',453,21,null,null,152,4);
-insert into Ejemplar VALUES(260,'Estrella Morena','C','Y','2015-03-17',
-                            '2024-03-04',393,22,51,96,153,4);
-insert into Ejemplar VALUES(96,'Lady Pia','C','Y','2008-11-27',
-                            '2024-03-04',397,22,null,null,154,4);
-insert into Ejemplar VALUES(261,'Cautelosa','A','Y','2016-03-12',
-                            '2024-03-04',455,11,97,98,155,4);
-insert into Ejemplar VALUES(97,'Prussian','A','C','2010-02-12',
-                            '2024-03-04',463,11,null,null,156,4);
-insert into Ejemplar VALUES(98,'Of The Felix','A','Y','2011-04-12',
-                            '2024-03-04',463,11,null,null,157,4);
-insert into Ejemplar VALUES(262,'Mother Love','C','Y','2016-02-14',
-                            '2024-03-04',439,11,99,100,158,4);
-insert into Ejemplar VALUES(99,'Da Tara','C','C','2009-10-24',
-                            '2024-03-04',436,11,null,null,159,4);
-insert into Ejemplar VALUES(100,'Teodosia','C','Y','2010-05-14',
-                            '2024-03-04',448,11,null,null,160,4);
-insert into Ejemplar VALUES(263,'Black Truffle','C','Y','2016-02-28',
-                            '2024-03-04',407,23,101,102,161,4);
-insert into Ejemplar VALUES(101,'Abduction','C','C','2009-02-28',
-                            '2024-03-04',405,23,null,null,162,4);
-insert into Ejemplar VALUES(102,'Close to Perfect','C','Y','2011-02-28',
-                            '2024-03-04',405,23,null,null,163,4);
-insert into Ejemplar VALUES(264,'Carolinita','C','Y','2016-05-18',
-                            '2024-03-04',410,13,103,104,164,4);
-insert into Ejemplar VALUES(103,'Tiz West','C','C','2009-12-18',
-                            '2024-03-04',404,13,null,null,165,4);
-insert into Ejemplar VALUES(104,'Madame Kalau','C','Y','2010-05-18',
-                            '2024-03-04',390,13,null,null,166,4);
-insert into Ejemplar VALUES(265,'Asombrosa','C','Y','2016-01-07',
-                            '2024-03-04',404,24,92,105,167,4);
-insert into Ejemplar VALUES(105,'Swinging Maria','C','Y','2009-09-07',
-                            '2024-03-04',405,24,null,null,168,4);
-insert into Ejemplar VALUES(266,'In Fact','C','Y','2016-02-13',
-                            '2024-03-04',431,6,74,106,169,4);
-insert into Ejemplar VALUES(106,'Liliana Sister','C','Y','2010-05-13',
-                            '2024-03-04',436,6,null,null,170,4);
-insert into Ejemplar VALUES(267,'Sweet Rain','C','Y','2016-02-11',
-                            '2024-03-04',419,25,40,107,171,4);
-insert into Ejemplar VALUES(107,'Queen Turandot','C','Y','2010-01-20',
-                            '2024-03-04',418,25,null,null,172,4);
-insert into Ejemplar VALUES(268,'De Miquias','A','C','2016-02-11',
-                            '2024-03-04',491,26,108,109,173,4);
-insert into Ejemplar VALUES(108,'Hatch The Storm','A','C','2009-12-11',
-                            '2024-03-04',480,26,null,null,174,4);
-insert into Ejemplar VALUES(109,'Oasis The Jak','A','Y','2010-04-21',
-                            '2024-03-04',475,26,null,null,175,4);
-insert into Ejemplar VALUES(269,'On Fire Horse','C','C','2016-02-17',
-                            '2024-03-04',447,20,92,110,176,4);
-insert into Ejemplar VALUES(110,'T.P. Grant','C','Y','2009-10-17',
-                            '2024-03-04',457,20,null,null,177,4);
-insert into Ejemplar VALUES(270,'Great Enanex','C','C','2015-03-06',
-                            '2024-03-04',425,6,29,111,178,4);
-insert into Ejemplar VALUES(111,'Perfumada','C','Y','2015-03-06',
-                            '2024-03-04',426,6,null,null,179,4);
-insert into Ejemplar VALUES(271,'Aaron King','C','C','2016-04-06',
-                            '2024-03-04',434,11,73,112,180,4);
-insert into Ejemplar VALUES(112,'Luisana Queen','C','Y','2010-04-06',
-                            '2024-03-04',440,11,null,null,181,4);
-insert into Ejemplar VALUES(272,'Money Strong','A','C','2016-02-02',
-                            '2024-03-04',398,27,113,114,182,4);
-insert into Ejemplar VALUES(113,'Earth Planet','A','C','2009-09-02',
-                            '2024-03-04',385,27,null,null,182,4);
-insert into Ejemplar VALUES(114,'Hennesseys Gold','A','Y','2010-02-02',
-                            '2024-03-04',396,27,null,null,183,4);
-insert into Ejemplar VALUES(273,'Chely Flow','C','C','2016-05-18',
-                            '2024-03-04',408,28,115,116,184,4);
-insert into Ejemplar VALUES(115,'Water Jet','C','C','2008-05-18',
-                            '2024-03-04',408,28,null,null,185,4);
-insert into Ejemplar VALUES(116,'Criolla Girl','C','Y','2009-05-18',
-                            '2024-03-04',406,28,null,null,186,4);
-insert into Ejemplar VALUES(274,'Gold Water','A','C','2016-05-31',
-                            '2024-03-04',428,29,117,118,187,4);
-insert into Ejemplar VALUES(117,'Patena','A','C','2010-05-21',
-                            '2024-03-04',420,29,null,null,188,4);
-insert into Ejemplar VALUES(118,'Tour Lady','A','Y','2009-07-31',
-                            '2024-03-04',427,29,null,null,189,4);
-insert into Ejemplar VALUES(275,'Lan','A','C','2015-04-20',
-                            '2024-03-04',418,30,80,119,190,4);
-insert into Ejemplar VALUES(119,'Stars Land','A','Y','2009-08-20',
-                            '2024-03-04',412,30,null,null,191,4);
-insert into Ejemplar VALUES(276,'Running Jet','C','C','2015-04-13',
-                            '2024-03-04',465,13,94,120,192,4);
-insert into Ejemplar VALUES(120,'Lady Jet','C','Y','2008-04-20',
-                            '2024-03-04',448,13,null,null,193,4);
-insert into Ejemplar VALUES(277,'Luis The Great','C','C','2015-03-11',
-                            '2024-03-04',412,9,121,122,194,4);
-insert into Ejemplar VALUES(121,'Water Poet','C','C','2007-04-28',
-                            '2024-03-04',409,9,null,null,195,4);
-insert into Ejemplar VALUES(122,'Sun Daily','C','Y','2009-02-11',
-                            '2024-03-04',402,9,null,null,196,4);
-insert into Ejemplar VALUES(278,'My Playing Mate','T','C','2016-03-17',
-                            '2024-03-04',500,14,123,124,197,4);
-insert into Ejemplar VALUES(123,'Imaginary Sailor','T','C','2009-09-17',
-                            '2024-03-04',507,14,null,null,198,4);
-insert into Ejemplar VALUES(124,'Caramelo Blue','T','Y','2009-03-29',
-                            '2024-03-04',484,14,null,null,199,4);
-insert into Ejemplar VALUES(279,'Rey de Abril','T','C','2015-04-08',
-                            '2024-03-04',402,15,125,126,200,4);
-insert into Ejemplar VALUES(125,'Winstrella','T','C','2009-07-08',
-                            '2024-03-04',397,15,null,null,201,5);
-insert into Ejemplar VALUES(126,'Linda Abril','T','Y','2009-04-22',
-                            '2024-03-04',389,15,null,null,202,5);
-insert into Ejemplar VALUES(280,'Extraordinary','C','C','2016-01-21',
-                            '2024-03-04',493,20,92,127,203,5);
-insert into Ejemplar VALUES(127,'Acrobatica','C','Y','2010-01-21',
-                            '2024-03-04',483,20,null,null,204,5);
-insert into Ejemplar VALUES(281,'Morralete','C','C','2015-02-02',
-                            '2024-03-04',424,8,128,129,205,5);
-insert into Ejemplar VALUES(128,'Treasure Beach','C','C','2009-02-02',
-                            '2024-03-04',422,8,null,null,206,5);
-insert into Ejemplar VALUES(129,'Miss Overdrive','C','Y','2009-02-02',
-                            '2024-03-04',432,8,null,null,207,5);
-insert into Ejemplar VALUES(283,'Bambuco','C','C','2015-01-01',
-                            '2024-03-04',441,8,130,131,208,5);
-insert into Ejemplar VALUES(130,'Bannack','C','C','2015-01-01',
-                            '2024-03-04',441,8,null,null,209,5);
-insert into Ejemplar VALUES(131,'Audacious One','C','Y','2010-04-01',
-                            '2024-03-04',429,8,null,null,209,5);
-insert into Ejemplar VALUES(284,'Draxler','C','C','2016-01-20',
-                            '2024-03-04',452,30,99,132,210,5);
-insert into Ejemplar VALUES(132,'Que Milagro','C','Y','2008-11-01',
-                            '2024-03-04',440,30,null,null,211,5);
-insert into Ejemplar VALUES(285,'Stefale','C','C','2016-03-15',
-                            '2024-03-04',464,14,66,133,212,5);
-insert into Ejemplar VALUES(133,'Quiet Heroine','C','Y','2009-03-15',
-                            '2024-03-04',449,14,null,null,213,5);
-insert into Ejemplar VALUES(286,'Doctor Sotelo','C','C','2016-02-24',
-                            '2024-03-04',428,6,29,25,214,5);
-insert into Ejemplar VALUES(287,'Ironhide','A','C','2016-01-07',
-                            '2024-03-04',477,3,134,135,215,5);
-insert into Ejemplar VALUES(134,'Thunder Ridge','A','C','2009-02-07',
-                            '2024-03-04',473,3,null,null,216,5);
-insert into Ejemplar VALUES(135,'Queen of Cool','A','Y','2010-01-07',
-                            '2024-03-04',442,3,null,null,217,5);
-insert into Ejemplar VALUES(288,'Gran Moto','C','C','2016-01-30',
-                            '2024-03-04',449,15,null,null,218,5);
-insert into Ejemplar VALUES(136,'Mr Mistoffelees','C','Y','2010-01-30',
-                            '2024-03-04',438,15,null,null,219,5);
-insert into Ejemplar VALUES(137,'Princesa Maya','C','Y','2009-01-30',
-                            '2024-03-04',429,15,null,null,220,5);
-insert into Ejemplar VALUES(289,'Il Filangieri','A','C','2016-03-25',
-                            '2024-03-04',456,3,138,139,221,5);
-insert into Ejemplar VALUES(138,'League of Nations','A','C','2008-03-25',
-                            '2024-03-04',460,3,null,null,222,5);
-insert into Ejemplar VALUES(139,'Mi Nina Antuana','A','Y','2009-03-25',
-                            '2024-03-04',453,3,null,null,223,5);
-insert into Ejemplar VALUES(290,'Diosa del Son','C','Y','2019-03-01',
-                            '2024-03-04',403,10,31,140,224,5);
-insert into Ejemplar VALUES(140,'Awesome Flower','C','Y','2011-03-01',
-                            '2024-03-04',421,10,null,null,225,5);
-insert into Ejemplar VALUES(291,'Navratilova','C','Y','2019-01-01',
-                            '2024-03-04',384,8,141,142,226,5);
-insert into Ejemplar VALUES(141,'Slews Tizzy','C','C','2010-05-01',
-                            '2024-03-04',384,8,null,null,227,5);
-insert into Ejemplar VALUES(142,'La Rapida','C','Y','2011-01-27',
-                            '2024-03-04',386,8,null,null,228,5);
-insert into Ejemplar VALUES(292,'Elorza Princess','C','Y','2019-02-20',
-                            '2024-03-04',371,15,143,144,229,5);
-insert into Ejemplar VALUES(143,'Its a Knockout','C','C','2012-03-20',
-                            '2024-03-04',361,15,null,null,230,5);
-insert into Ejemplar VALUES(144,'Queen Margarita','C','Y','2011-12-20',
-                            '2024-03-04',365,15,null,null,231,5);
-insert into Ejemplar VALUES(293,'My Golondrina Mate','C','Y','2019-05-02',
-                            '2024-03-04',373,14,57,145,232,5);
-insert into Ejemplar VALUES(145,'My Flower Mate','C','Y','2012-04-02',
-                            '2024-03-04',367,14,null,null,233,5);
-insert into Ejemplar VALUES(294,'Mi Catira Emma','A','Y','2019-04-16',
-                            '2024-03-04',373,14,146,147,234,5);
-insert into Ejemplar VALUES(146,'Quick Mani','A','C','2012-09-16',
-                            '2024-03-04',367,14,null,null,235,5);
-insert into Ejemplar VALUES(147,'Carontes','A','Y','2012-04-16',
-                            '2024-03-04',372,14,null,null,236,5);
-insert into Ejemplar VALUES(295,'Amazing Boga','C','Y','2019-03-01',
-                            '2024-03-04',372,31,null,null,237,5);
-insert into Ejemplar VALUES(148,'Rio Negro','C','C','2013-03-01',
-                            '2024-03-04',372,31,null,null,238,5);
-insert into Ejemplar VALUES(149,'Azul Grana','C','Y','2012-09-01',
-                            '2024-03-04',372,31,null,null,239,5);
-insert into Ejemplar VALUES(296,'Sicarigua','Z','Y','2019-02-10',
-                            '2024-03-04',418,15,61,150,240,5);
-insert into Ejemplar VALUES(150,'Inesdecastro','Z','Y','2011-03-01',
-                            '2024-03-04',372,15,null,null,241,5);
-insert into Ejemplar VALUES(297,'Siberian Queen','C','Y','2019-02-22',
-                            '2024-03-04',399,29,125,112,242,5);
-insert into Ejemplar VALUES(298,'Axis Mundi','C','Y','2019-02-27',
-                            '2024-03-04',399,7,15,112,243,5);
-insert into Ejemplar VALUES(299,'Daniela Runner','C','Y','2019-04-25',
-                            '2024-03-04',433,7,15,140,244,5);
-insert into Ejemplar VALUES(300,'Lady Sophia','C','Y','2019-03-28',
-                            '2024-03-04',440,14,34,null,245,5);
-insert into Ejemplar VALUES(301,'Queen Evony','T','Y','2019-03-15',
-                            '2024-03-04',426,7,null,null,246,5);
-insert into Ejemplar VALUES(302,'Queen Greisa','A','Y','2019-01-12',
-                            '2024-03-04',441,7,15,null,247,5);
-insert into Ejemplar VALUES(303,'Paula del Carmen','C','Y','2019-04-03',
-                            '2024-03-04',459,28,null,null,248,5);
+insert into Ejemplar VALUES(25,'Del Valle','C','Y','2010-09-12','2024-03-04',444,7,null,null,92,2);
+insert into Ejemplar VALUES(114,'Gray Champ','C','C','2017-04-12','2024-03-04',448,7,15,25,93,2);
+insert into Ejemplar VALUES(26,'Borrego','C','C','2011-03-22','2024-03-04',435,1,null,null,90,2);
+insert into Ejemplar VALUES(27,'Strategic Solution','C','Y','2012-02-11','2024-03-04',435,1,null,null,89,2);
+insert into Ejemplar VALUES(215,'Shooting Range','C','C','2017-02-22','2024-03-04',425,1,26,27,91,2);
+insert into Ejemplar VALUES(28,'Great News','T','Y','2014-09-11','2024-03-04',409,5,null,null,87,2);
+insert into Ejemplar VALUES(216,'Rey Enigma','T','C','2019-02-01','2024-03-04',428,5,11,28,88,2);
+insert into Ejemplar VALUES(29,'Big Prairie','C','C','2013-02-03','2024-03-04',405,6,null,null,85,2);
+insert into Ejemplar VALUES(30,'Feel The Love','C','Y','2012-11-03','2024-03-04',412,6,null,null,84,2);
+insert into Ejemplar VALUES(217,'King Miggy','C','C','2019-01-03','2024-03-04',414,6,29,30,86,2);
+insert into Ejemplar VALUES(31,'Cryptograph','A','C','2013-01-24','2024-03-04',417,10,null,null,82,2);
+insert into Ejemplar VALUES(32,'Towering Susan','A','Y','2012-12-21','2024-03-04',427,10,null,null,81,2);
+insert into Ejemplar VALUES(218,'Amigo Jorge','A','C','2019-02-21','2024-03-04',432,10,31,32,83,2);
+insert into Ejemplar VALUES(33,'Karola Princess','T','Y','2013-02-06','2024-03-04',423,5,null,null,79,2);
+insert into Ejemplar VALUES(219,'Street Prince','T','C','2019-02-26','2024-03-04',430,5,11,33,80,2);
+insert into Ejemplar VALUES(34,'Vacation','C','C','2012-09-14','2024-03-04',450,11,null,null,77,2);
+insert into Ejemplar VALUES(35,'Gran Estefania','C','Y','2013-02-22','2024-03-04',430,11,null,null,76,2);
+insert into Ejemplar VALUES(220,'Dumpling','C','C','2019-02-14','2024-03-04',426,11,34,35,78,2);
+insert into Ejemplar VALUES(36,'Phantom Punch','C','Y','2013-11-10','2024-03-04',396,1,null,null,74,2);
+insert into Ejemplar VALUES(221,'Mr. Martins','C','C','2019-03-10','2024-03-04',389,1,1,36,75,2);
+insert into Ejemplar VALUES(37,'Dreaming of Gold','C','C','2012-09-15','2024-03-04',358,12,null,null,72,2);
+insert into Ejemplar VALUES(38,'Kabbalah','C','Y','2013-02-09','2024-03-04',363,12,null,null,71,2);
+insert into Ejemplar VALUES(222,'Eon Yaguari','C','C','2019-05-15','2024-03-04',363,12,37,38,73,2);
+insert into Ejemplar VALUES(39,'Bengala','C','Y','2014-01-03','2024-03-04',454,5,null,null,69,2);
+insert into Ejemplar VALUES(223,'Party Prince','C','C','2019-01-03','2024-03-04',460,5,11,39,70,2);
+insert into Ejemplar VALUES(40,'Poltergeist','T','C','2011-08-18','2024-03-04',385,11,null,null,67,2);
+insert into Ejemplar VALUES(41,'Revenge','T','Y','2012-04-22','2024-03-04',394,11,null,null,66,2);
+insert into Ejemplar VALUES(224,'High Potential','T','C','2019-04-18','2024-03-04',394,11,40,41,68,2);
+insert into Ejemplar VALUES(42,'Jupiter Pluvius','Z','C','2012-04-24','2024-03-04',399,8,null,null,64,2);
+insert into Ejemplar VALUES(43,'Marjorie C','Z','Y','2012-09-10','2024-03-04',409,8,null,null,63,2);
+insert into Ejemplar VALUES(225,'Black Andrew','Z','C','2019-02-24','2024-03-04',408,8,42,43,65,2);
+insert into Ejemplar VALUES(44,'Sky Patches','C','Y','2012-03-25','2024-03-04',416,6,null,null,61,2);
+insert into Ejemplar VALUES(226,'Amor de Madre','C','Y','2018-05-25','2024-03-04',406,6,29,44,62,2);
+insert into Ejemplar VALUES(45,'Keep Thinking','C','C','2011-06-26','2024-03-04',431,11,null,null,59,2);
+insert into Ejemplar VALUES(46,'Abuela Lili','C','Y','2012-06-26','2024-03-04',423,11,null,null,58,2);
+insert into Ejemplar VALUES(227,'Caracciola','C','Y','2019-01-26','2024-03-04',432,11,45,46,60,2);
+insert into Ejemplar VALUES(47,'Ruffalex','C','C','2012-08-02','2024-03-04',444,13,null,null,56,2);
+insert into Ejemplar VALUES(48,'Correntina','C','Y','2012-01-22','2024-03-04',457,13,null,null,55,2);
+insert into Ejemplar VALUES(228,'Yaqui Desings','C','Y','2019-02-02','2024-03-04',443,13,47,48,57,2);
+insert into Ejemplar VALUES(49,'Glowing Report','C','Y','2012-12-01','2024-03-04',448,11,null,null,53,2);
+insert into Ejemplar VALUES(229,'Money Is Money','C','Y','2018-01-01','2024-03-04',451,11,1,49,54,2);
+insert into Ejemplar VALUES(50,'The Dark Angel','A','Y','2012-05-23','2024-03-04',424,7,null,null,51,2);
+insert into Ejemplar VALUES(230,'Queen of Success','A','Y','2018-05-08','2024-03-04',425,7,15,50,52,2);
+insert into Ejemplar VALUES(51,'Colonial Causeway','T','C','2011-09-12','2024-03-04',431,11,null,null,49,1);
+insert into Ejemplar VALUES(52,'Miss Santona','T','Y','2011-05-31','2024-03-04',423,11,null,null,48,1);
+insert into Ejemplar VALUES(231,'Jaicelita','T','Y','2018-05-12','2024-03-04',445,11,51,52,50,1);
+insert into Ejemplar VALUES(53,'Smartly Bred','Z','Y','2014-01-07','2024-03-04',441,3,null,null,46,1);
+insert into Ejemplar VALUES(232,'Bella Fina','Z','Y','2019-05-07','2024-03-04',437,3,42,53,47,1);
+insert into Ejemplar VALUES(54,'Pine Shelter','C','Y','2012-11-21','2024-03-04',423,3,null,null,44,1);
+insert into Ejemplar VALUES(233,'Turbinada','C','Y','2019-05-26','2024-03-04',406,3,5,54,45,1);
+insert into Ejemplar VALUES(55,'Honest Man','C','C','2011-10-13','2024-03-04',414,2,null,null,42,1);
+insert into Ejemplar VALUES(56,'Fascinating Gal','C','Y','2012-01-14','2024-03-04',405,2,null,null,41,1);
+insert into Ejemplar VALUES(234,'Mind The Gap','C','Y','2018-01-23','2024-03-04',404,2,55,56,43,1);
+insert into Ejemplar VALUES(57,'Golden Spikes','C','C','2012-04-22','2024-03-04',405,14,null,null,39,1);
+insert into Ejemplar VALUES(58,'Anarita','C','Y','2011-11-08','2024-03-04',428,14,null,null,38,1);
+insert into Ejemplar VALUES(235,'Anarita Spirit','C','Y','2018-01-22','2024-03-04',429,14,57,58,40,1);
+insert into Ejemplar VALUES(59,'Siete C','A','C','2013-04-18','2024-03-04',372,13,null,null,36,1);
+insert into Ejemplar VALUES(60,'Dazzle Me','A','Y','2012-12-18','2024-03-04',374,13,null,null,35,1);
+insert into Ejemplar VALUES(236,'Miss Zenali','A','Y','2018-04-18','2024-03-04',375,13,59,60,37,1);
+insert into Ejemplar VALUES(61,'Deliberately','C','C','2012-03-28','2024-03-04',407,15,null,null,33,1);
+insert into Ejemplar VALUES(62,'Reina del Mar','C','Y','2012-01-17','2024-03-04',393,15,null,null,32,1);
+insert into Ejemplar VALUES(237,'Srta Emiliana','C','Y','2018-01-08','2024-03-04',411,15,61,62,34,1);
+insert into Ejemplar VALUES(63,'Sidereus Nuncius','C','C','2012-04-15','2024-03-04',401,16,null,null,30,1);
+insert into Ejemplar VALUES(64,'Cherokee Queen','C','Y','2011-02-23','2024-03-04',385,16,null,null,29,1);
+insert into Ejemplar VALUES(238,'Chaviela','C','Y','2018-02-11','2024-03-04',402,16,63,64,31,1);
+insert into Ejemplar VALUES(65,'Kevin s Grace','C','Y','2013-01-11','2024-03-04',393,7,null,null,27,1);
+insert into Ejemplar VALUES(239,'Latina Europea','C','Y','2018-04-12','2024-03-04',395,7,29,65,28,1);
+insert into Ejemplar VALUES(66,'Minimise Risk','C','C','2011-11-27','2024-03-04',420,17,null,null,25,1);
+insert into Ejemplar VALUES(67,'Miss Encantada','C','Y','2012-03-12','2024-03-04',423,17,null,null,24,1);
+insert into Ejemplar VALUES(240,'Conchita Dancer','C','Y','2018-04-27','2024-03-04',419,17,66,67,26,1);
+insert into Ejemplar VALUES(68,'The Cats All That','C','Y','2011-07-25','2024-03-04',433,11,null,null,22,1);
+insert into Ejemplar VALUES(241,'Massars','C','Y','2018-01-29','2024-03-04',442,11,2,68,23,1);
+insert into Ejemplar VALUES(69,'Lord Trondor','C','C','2011-06-11','2024-03-04',419,12,null,null,20,1);
+insert into Ejemplar VALUES(242,'Cara Mia','C','Y','2018-03-21','2024-03-04',416,12,69,38,21,1);
+insert into Ejemplar VALUES(70,'King Music','C','C','2011-09-21','2024-03-04',442,10,null,null,19,1);
+insert into Ejemplar VALUES(71,'Baby Come Back','C','Y','2011-06-08','2024-03-04',451,10,null,null,18,1);
+insert into Ejemplar VALUES(243,'Snow Sensations','C','Y','2018-04-27','2024-03-04',447,10,70,71,19,1);
+insert into Ejemplar VALUES(72,'Sweet Fabi','Z','Y','2013-01-30','2024-03-04',445,15,null,null,16,1);
+insert into Ejemplar VALUES(244,'Victoria Fer','Z','Y','2018-01-31','2024-03-04',435,15,61,72,17,1);
+insert into Ejemplar VALUES(73,'Miners Lamp','C','C','2010-10-19','2024-03-04',400,11,null,null,14,1);
+insert into Ejemplar VALUES(245,'Mamba Mentality','C','Y','2018-01-19','2024-03-04',401,11,73,35,15,1);
+insert into Ejemplar VALUES(74,'Yesby Jimminy','C','C','2010-08-10','2024-03-04',440,6,null,null,12,1);
+insert into Ejemplar VALUES(75,'Mad Light','C','Y','2010-05-18','2024-03-04',434,6,null,null,11,1);
+insert into Ejemplar VALUES(246,'Mariecurie','C','Y','2017-01-10','2024-03-04',440,6,74,75,13,1);
+insert into Ejemplar VALUES(76,'Queen Alice','A','Y','2010-09-28','2024-03-04',392,7,null,null,9,1);
+insert into Ejemplar VALUES(247,'Royal Honey','A','Y','2017-01-08','2024-03-04',387,7,15,76,10,1);
+insert into Ejemplar VALUES(77,'Documentary','A','C','2011-01-25','2024-03-04',371,12,null,null,7,1);
+insert into Ejemplar VALUES(78,'Gran Sha','A','Y','2010-05-21','2024-03-04',372,12,null,null,6,1);
+insert into Ejemplar VALUES(248,'Versailles','A','Y','2017-01-01','2024-03-04',363,12,77,78,8,1);
+insert into Ejemplar VALUES(80,'Macho Again','T','C','2011-01-18','2024-03-04',414,18,null,null,4,1);
+insert into Ejemplar VALUES(81,'Jamba Jack','T','Y','2010-12-04','2024-03-04',416,18,null,null,3,1);
+insert into Ejemplar VALUES(249,'La Chacha','T','Y','2017-01-31','2024-03-04',413,18,80,81,5,1);
+insert into Ejemplar VALUES(82,'Dulcet Tone','C','Y','2010-10-27','2024-03-04',425,7,null,null,1,1);
+insert into Ejemplar VALUES(250,'Rosa Amelia','C','Y','2017-04-05','2024-03-04',424,7,15,82,2,1);
+insert into Ejemplar VALUES(83,'Damasoly','A','Y','2012-01-20','2024-03-04',413,15,null,null,132,3);
+insert into Ejemplar VALUES(251,'La Dama','A','Y','2017-01-20','2024-03-04',421,15,61,83,131,3);
+insert into Ejemplar VALUES(84,'Seeking a Dream','C','C','2011-02-27','2024-03-04',457,9,null,null,134,3);
+insert into Ejemplar VALUES(85,'Dayana','C','Y','2010-08-29','2024-03-04',454,9,null,null,135,3);
+insert into Ejemplar VALUES(252,'Magic Victory','C','Y','2017-04-29','2024-03-04',461,9,84,85,133,3);
+insert into Ejemplar VALUES(86,'Ministerpul','C','C','2010-11-11','2024-03-04',417,19,null,null,137,3);
+insert into Ejemplar VALUES(87,'Princesa Oreana','C','Y','2011-02-16','2024-03-04',410,19,null,null,138,3);
+insert into Ejemplar VALUES(253,'Lady Arantxa','C','Y','2017-06-11','2024-03-04',419,19,86,87,136,3);
+insert into Ejemplar VALUES(88,'Pedro Caiman','C','C','2010-06-23','2024-03-04',410,29,null,null,140,3);
+insert into Ejemplar VALUES(89,'Revolution Star','C','Y','2011-01-04','2024-03-04',408,29,null,null,141,3);
+insert into Ejemplar VALUES(254,'Star Treck','C','Y','2017-01-23','2024-03-04',411,29,88,89,139,3);
+insert into Ejemplar VALUES(90,'Meetmeinthemiddle','C','Y','2010-11-04','2024-03-04',445,3,null,null,143,3);
+insert into Ejemplar VALUES(255,'Lasciati Andare','C','Y','2017-04-03','2024-03-04',438,3,34,90,142,3);
+insert into Ejemplar VALUES(91,'Soy Princesa','A','Y','2010-11-17','2024-03-04',442,8,null,null,145,3);
+insert into Ejemplar VALUES(256,'Strength Pasarella','A','Y','2017-01-28','2024-03-04',448,8,22,91,144,3);
+insert into Ejemplar VALUES(92,'Pleasant Strike','C','C','2010-05-04','2024-03-04',461,20,null,null,147,3);
+insert into Ejemplar VALUES(93,'Srta Miranda','C','Y','2011-01-31','2024-03-04',456,20,null,null,148,3);
+insert into Ejemplar VALUES(257,'Princesa Pilar','C','Y','2017-01-15','2024-03-04',457,20,92,93,146,3);
+insert into Ejemplar VALUES(94,'Z Humor','T','C','2010-06-28','2024-03-04',420,13,null,null,150,3);
+insert into Ejemplar VALUES(258,'Racing Icons','T','Y','2016-05-08','2024-03-04',422,13,94,60,149,3);
+insert into Ejemplar VALUES(95,'Gran Palabra','C','Y','2009-11-17','2024-03-04',453,21,null,null,152,4);
+insert into Ejemplar VALUES(259,'Miranda Queen','C','Y','2016-03-17','2024-03-04',460,21,22,95,151,4);
+insert into Ejemplar VALUES(96,'Lady Pia','C','Y','2008-11-27','2024-03-04',397,22,null,null,154,4);
+insert into Ejemplar VALUES(260,'Estrella Morena','C','Y','2015-03-17','2024-03-04',393,22,51,96,153,4);
+insert into Ejemplar VALUES(97,'Prussian','A','C','2010-02-12','2024-03-04',463,11,null,null,156,4);
+insert into Ejemplar VALUES(98,'Of The Felix','A','Y','2011-04-12','2024-03-04',463,11,null,null,157,4);
+insert into Ejemplar VALUES(261,'Cautelosa','A','Y','2016-03-12','2024-03-04',455,11,97,98,155,4);
+insert into Ejemplar VALUES(99,'Da Tara','C','C','2009-10-24','2024-03-04',436,11,null,null,159,4);
+insert into Ejemplar VALUES(100,'Teodosia','C','Y','2010-05-14','2024-03-04',448,11,null,null,160,4);
+insert into Ejemplar VALUES(262,'Mother Love','C','Y','2016-02-14','2024-03-04',439,11,99,100,158,4);
+insert into Ejemplar VALUES(101,'Abduction','C','C','2009-02-28','2024-03-04',405,23,null,null,162,4);
+insert into Ejemplar VALUES(102,'Close to Perfect','C','Y','2011-02-28','2024-03-04',405,23,null,null,163,4);
+insert into Ejemplar VALUES(263,'Black Truffle','C','Y','2016-02-28','2024-03-04',407,23,101,102,161,4);
+insert into Ejemplar VALUES(103,'Tiz West','C','C','2009-12-18','2024-03-04',404,13,null,null,165,4);
+insert into Ejemplar VALUES(104,'Madame Kalau','C','Y','2010-05-18','2024-03-04',390,13,null,null,166,4);
+insert into Ejemplar VALUES(264,'Carolinita','C','Y','2016-05-18','2024-03-04',410,13,103,104,164,4);
+insert into Ejemplar VALUES(105,'Swinging Maria','C','Y','2009-09-07','2024-03-04',405,24,null,null,168,4);
+insert into Ejemplar VALUES(265,'Asombrosa','C','Y','2016-01-07','2024-03-04',404,24,92,105,167,4);
+insert into Ejemplar VALUES(106,'Liliana Sister','C','Y','2010-05-13','2024-03-04',436,6,null,null,170,4);
+insert into Ejemplar VALUES(266,'In Fact','C','Y','2016-02-13','2024-03-04',431,6,74,106,169,4);
+insert into Ejemplar VALUES(107,'Queen Turandot','C','Y','2010-01-20','2024-03-04',418,25,null,null,172,4);
+insert into Ejemplar VALUES(267,'Sweet Rain','C','Y','2016-02-11','2024-03-04',419,25,40,107,171,4);
+insert into Ejemplar VALUES(108,'Hatch The Storm','A','C','2009-12-11','2024-03-04',480,26,null,null,174,4);
+insert into Ejemplar VALUES(109,'Oasis The Jak','A','Y','2010-04-21','2024-03-04',475,26,null,null,175,4);
+insert into Ejemplar VALUES(268,'De Miquias','A','C','2016-02-11','2024-03-04',491,26,108,109,173,4);
+insert into Ejemplar VALUES(110,'T.P. Grant','C','Y','2009-10-17','2024-03-04',457,20,null,null,177,4);
+insert into Ejemplar VALUES(269,'On Fire Horse','C','C','2016-02-17','2024-03-04',447,20,92,110,176,4);
+insert into Ejemplar VALUES(111,'Perfumada','C','Y','2015-03-06','2024-03-04',426,6,null,null,179,4);
+insert into Ejemplar VALUES(270,'Great Enanex','C','C','2015-03-06','2024-03-04',425,6,29,111,178,4);
+insert into Ejemplar VALUES(112,'Luisana Queen','C','Y','2010-04-06','2024-03-04',440,11,null,null,181,4);
+insert into Ejemplar VALUES(271,'Aaron King','C','C','2016-04-06','2024-03-04',434,11,73,112,180,4);
+insert into Ejemplar VALUES(113,'Earth Planet','A','C','2009-09-02','2024-03-04',385,27,null,null,182,4);
+insert into Ejemplar VALUES(114,'Hennesseys Gold','A','Y','2010-02-02','2024-03-04',396,27,null,null,183,4);
+insert into Ejemplar VALUES(272,'Money Strong','A','C','2016-02-02','2024-03-04',398,27,113,114,182,4);
+insert into Ejemplar VALUES(115,'Water Jet','C','C','2008-05-18','2024-03-04',408,28,null,null,185,4);
+insert into Ejemplar VALUES(116,'Criolla Girl','C','Y','2009-05-18','2024-03-04',406,28,null,null,186,4);
+insert into Ejemplar VALUES(273,'Chely Flow','C','C','2016-05-18','2024-03-04',408,28,115,116,184,4);
+insert into Ejemplar VALUES(117,'Patena','A','C','2010-05-21','2024-03-04',420,29,null,null,188,4);
+insert into Ejemplar VALUES(118,'Tour Lady','A','Y','2009-07-31','2024-03-04',427,29,null,null,189,4);
+insert into Ejemplar VALUES(274,'Gold Water','A','C','2016-05-31','2024-03-04',428,29,117,118,187,4);
+insert into Ejemplar VALUES(119,'Stars Land','A','Y','2009-08-20','2024-03-04',412,30,null,null,191,4);
+insert into Ejemplar VALUES(275,'Lan','A','C','2015-04-20','2024-03-04',418,30,80,119,190,4);
+insert into Ejemplar VALUES(120,'Lady Jet','C','Y','2008-04-20','2024-03-04',448,13,null,null,193,4);
+insert into Ejemplar VALUES(276,'Running Jet','C','C','2015-04-13','2024-03-04',465,13,94,120,192,4);
+insert into Ejemplar VALUES(121,'Water Poet','C','C','2007-04-28','2024-03-04',409,9,null,null,195,4);
+insert into Ejemplar VALUES(122,'Sun Daily','C','Y','2009-02-11','2024-03-04',402,9,null,null,196,4);
+insert into Ejemplar VALUES(277,'Luis The Great','C','C','2015-03-11','2024-03-04',412,9,121,122,194,4);
+insert into Ejemplar VALUES(123,'Imaginary Sailor','T','C','2009-09-17','2024-03-04',507,14,null,null,198,4);
+insert into Ejemplar VALUES(124,'Caramelo Blue','T','Y','2009-03-29','2024-03-04',484,14,null,null,199,4);
+insert into Ejemplar VALUES(278,'My Playing Mate','T','C','2016-03-17','2024-03-04',500,14,123,124,197,4);
+insert into Ejemplar VALUES(125,'Winstrella','T','C','2009-07-08','2024-03-04',397,15,null,null,201,5);
+insert into Ejemplar VALUES(126,'Linda Abril','T','Y','2009-04-22','2024-03-04',389,15,null,null,202,5);
+insert into Ejemplar VALUES(279,'Rey de Abril','T','C','2015-04-08','2024-03-04',402,15,125,126,200,4);
+insert into Ejemplar VALUES(127,'Acrobatica','C','Y','2010-01-21','2024-03-04',483,20,null,null,204,5);
+insert into Ejemplar VALUES(280,'Extraordinary','C','C','2016-01-21','2024-03-04',493,20,92,127,203,5);
+insert into Ejemplar VALUES(128,'Treasure Beach','C','C','2009-02-02','2024-03-04',422,8,null,null,206,5);
+insert into Ejemplar VALUES(129,'Miss Overdrive','C','Y','2009-02-02','2024-03-04',432,8,null,null,207,5);
+insert into Ejemplar VALUES(281,'Morralete','C','C','2015-02-02','2024-03-04',424,8,128,129,205,5);
+insert into Ejemplar VALUES(130,'Bannack','C','C','2015-01-01','2024-03-04',441,8,null,null,209,5);
+insert into Ejemplar VALUES(131,'Audacious One','C','Y','2010-04-01','2024-03-04',429,8,null,null,209,5);
+insert into Ejemplar VALUES(283,'Bambuco','C','C','2015-01-01','2024-03-04',441,8,130,131,208,5);
+insert into Ejemplar VALUES(132,'Que Milagro','C','Y','2008-11-01','2024-03-04',440,30,null,null,211,5);
+insert into Ejemplar VALUES(284,'Draxler','C','C','2016-01-20','2024-03-04',452,30,99,132,210,5);
+insert into Ejemplar VALUES(133,'Quiet Heroine','C','Y','2009-03-15','2024-03-04',449,14,null,null,213,5);
+insert into Ejemplar VALUES(285,'Stefale','C','C','2016-03-15','2024-03-04',464,14,66,133,212,5);
+insert into Ejemplar VALUES(286,'Doctor Sotelo','C','C','2016-02-24','2024-03-04',428,6,29,25,214,5);
+insert into Ejemplar VALUES(134,'Thunder Ridge','A','C','2009-02-07','2024-03-04',473,3,null,null,216,5);
+insert into Ejemplar VALUES(135,'Queen of Cool','A','Y','2010-01-07','2024-03-04',442,3,null,null,217,5);
+insert into Ejemplar VALUES(287,'Ironhide','A','C','2016-01-07','2024-03-04',477,3,134,135,215,5);
+insert into Ejemplar VALUES(136,'Mr Mistoffelees','C','Y','2010-01-30','2024-03-04',438,15,null,null,219,5);
+insert into Ejemplar VALUES(137,'Princesa Maya','C','Y','2009-01-30','2024-03-04',429,15,null,null,220,5);
+insert into Ejemplar VALUES(288,'Gran Moto','C','C','2016-01-30','2024-03-04',449,15,136,137,218,5);
+insert into Ejemplar VALUES(138,'League of Nations','A','C','2008-03-25','2024-03-04',460,3,null,null,222,5);
+insert into Ejemplar VALUES(139,'Mi Nina Antuana','A','Y','2009-03-25','2024-03-04',453,3,null,null,223,5);
+insert into Ejemplar VALUES(289,'Il Filangieri','A','C','2016-03-25','2024-03-04',456,3,138,139,221,5);
+insert into Ejemplar VALUES(140,'Awesome Flower','C','Y','2011-03-01','2024-03-04',421,10,null,null,225,5);
+insert into Ejemplar VALUES(290,'Diosa del Son','C','Y','2019-03-01','2024-03-04',403,10,31,140,224,5);
+insert into Ejemplar VALUES(141,'Slews Tizzy','C','C','2010-05-01','2024-03-04',384,8,null,null,227,5);
+insert into Ejemplar VALUES(142,'La Rapida','C','Y','2011-01-27','2024-03-04',386,8,null,null,228,5);
+insert into Ejemplar VALUES(291,'Navratilova','C','Y','2019-01-01','2024-03-04',384,8,141,142,226,5);
+insert into Ejemplar VALUES(143,'Its a Knockout','C','C','2012-03-20','2024-03-04',361,15,null,null,230,5);
+insert into Ejemplar VALUES(144,'Queen Margarita','C','Y','2011-12-20','2024-03-04',365,15,null,null,231,5);
+insert into Ejemplar VALUES(292,'Elorza Princess','C','Y','2019-02-20','2024-03-04',371,15,143,144,229,5);
+insert into Ejemplar VALUES(145,'My Flower Mate','C','Y','2012-04-02','2024-03-04',367,14,null,null,233,5);
+insert into Ejemplar VALUES(293,'My Golondrina Mate','C','Y','2019-05-02','2024-03-04',373,14,57,145,232,5);
+insert into Ejemplar VALUES(146,'Quick Mani','A','C','2012-09-16','2024-03-04',367,14,null,null,235,5);
+insert into Ejemplar VALUES(147,'Carontes','A','Y','2012-04-16','2024-03-04',372,14,null,null,236,5);
+insert into Ejemplar VALUES(294,'Mi Catira Emma','A','Y','2019-04-16','2024-03-04',373,14,146,147,234,5);
+insert into Ejemplar VALUES(148,'Rio Negro','C','C','2013-03-01','2024-03-04',372,31,null,null,238,5);
+insert into Ejemplar VALUES(149,'Azul Grana','C','Y','2012-09-01','2024-03-04',372,31,null,null,239,5);
+insert into Ejemplar VALUES(295,'Amazing Boga','C','Y','2019-03-01','2024-03-04',372,31,148,149,237,5);
+insert into Ejemplar VALUES(150,'Inesdecastro','Z','Y','2011-03-01','2024-03-04',372,15,null,null,241,5);
+insert into Ejemplar VALUES(296,'Sicarigua','Z','Y','2019-02-10','2024-03-04',418,15,61,150,240,5);
+insert into Ejemplar VALUES(297,'Siberian Queen','C','Y','2019-02-22','2024-03-04',399,29,125,112,242,5);
+insert into Ejemplar VALUES(298,'Axis Mundi','C','Y','2019-02-27','2024-03-04',399,7,15,112,243,5);
+insert into Ejemplar VALUES(299,'Daniela Runner','C','Y','2019-04-25','2024-03-04',433,7,15,140,244,5);
+insert into Ejemplar VALUES(300,'Lady Sophia','C','Y','2019-03-28','2024-03-04',440,14,34,null,245,5);
+insert into Ejemplar VALUES(301,'Queen Evony','T','Y','2019-03-15','2024-03-04',426,7,null,null,246,5);
+insert into Ejemplar VALUES(302,'Queen Greisa','A','Y','2019-01-12','2024-03-04',441,7,15,null,247,5);
+insert into Ejemplar VALUES(303,'Paula del Carmen','C','Y','2019-04-03','2024-03-04',459,28,null,null,248,5);
 
 ----Tipos de medicamentos---
 insert into Tipo_medicamento VALUES(DEFAULT,'Antiflamatorio');
@@ -3516,9 +3301,63 @@ insert into Binomio VALUES(DEFAULT,239,18333281,53,395);
 insert into Binomio VALUES(DEFAULT,240,25902227,53,419);
 insert into Binomio VALUES(DEFAULT,241,17252229,53,442);
 insert into Binomio VALUES(DEFAULT,242,20076649,53,416);
-insert into Binomio VALUES(DEFAULT,243,17098320,53,447);
-insert into Binomio VALUES(DEFAULT,244,17098320,53,436);
-insert into Binomio VALUES(DEFAULT,245,17098320,53,436);
-insert into Binomio VALUES(DEFAULT,246,17098320,53,436);
-insert into Binomio VALUES(DEFAULT,247,17098320,53,436);
-insert into Binomio VALUES(DEFAULT,248,17098320,53,436);
+insert into Binomio VALUES(DEFAULT,243,17098320,53.5,447);
+insert into Binomio VALUES(DEFAULT,244,18750673,53,435);
+insert into Binomio VALUES(DEFAULT,245,16702617,54,401);
+insert into Binomio VALUES(DEFAULT,246,16702617,54.5,440);
+insert into Binomio VALUES(DEFAULT,247,17528845,56.5,387);
+insert into Binomio VALUES(DEFAULT,248,22002987,53,363);
+insert into Binomio VALUES(DEFAULT,249,17878274,53,413);
+insert into Binomio VALUES(DEFAULT,250,18110328,53.5,424);
+insert into Binomio VALUES(DEFAULT,251,17987306,53,421);
+insert into Binomio VALUES(DEFAULT,252,18750673,53,461);
+insert into Binomio VALUES(DEFAULT,253,19467384,54.5,419);
+insert into Binomio VALUES(DEFAULT,254,20398837,53,411);
+insert into Binomio VALUES(DEFAULT,255,17665830,53.5,438);
+insert into Binomio VALUES(DEFAULT,256,25902227,55,448);
+insert into Binomio VALUES(DEFAULT,257,20012239,56.5,457);
+insert into Binomio VALUES(DEFAULT,258,16702617,55.5,422);
+insert into Binomio VALUES(DEFAULT,259,19467384,53,393);
+insert into Binomio VALUES(DEFAULT,260,15966989,54.5,455);
+insert into Binomio VALUES(DEFAULT,261,26630998,53,439);
+insert into Binomio VALUES(DEFAULT,262,19039824,53,407);
+insert into Binomio VALUES(DEFAULT,263,17528845,55.5,410);
+insert into Binomio VALUES(DEFAULT,264,19293169,53,404);
+insert into Binomio VALUES(DEFAULT,265,20754266,53.5,431);
+insert into Binomio VALUES(DEFAULT,266,17098320,55.5,419);
+insert into Binomio VALUES(DEFAULT,267,20076649,55,491);
+insert into Binomio VALUES(DEFAULT,268,26630998,53,447);
+insert into Binomio VALUES(DEFAULT,269,17528845,54,425);
+insert into Binomio VALUES(DEFAULT,270,18110328,53,434);
+insert into Binomio VALUES(DEFAULT,271,17528845,53,425);
+insert into Binomio VALUES(DEFAULT,272,24773280,53,398);
+insert into Binomio VALUES(DEFAULT,273,18333281,55,408);
+insert into Binomio VALUES(DEFAULT,274,18750673,53,428);
+insert into Binomio VALUES(DEFAULT,275,20754266,53,418);
+insert into Binomio VALUES(DEFAULT,276,15966989,53,465);
+insert into Binomio VALUES(DEFAULT,277,25902227,53.5,412);
+insert into Binomio VALUES(DEFAULT,278,19467384,53,500);
+insert into Binomio VALUES(DEFAULT,279,19273373,55,402);
+insert into Binomio VALUES(DEFAULT,280,25782833,57,493);
+insert into Binomio VALUES(DEFAULT,281,18110290,57,424);
+insert into Binomio VALUES(DEFAULT,282,15966989,55,441);
+insert into Binomio VALUES(DEFAULT,283,27221239,57,452);
+insert into Binomio VALUES(DEFAULT,284,17987306,55,464);
+insert into Binomio VALUES(DEFAULT,285,21939302,55,428);
+insert into Binomio VALUES(DEFAULT,286,20012239,58,477);
+insert into Binomio VALUES(DEFAULT,287,22002987,53,449);
+insert into Binomio VALUES(DEFAULT,288,18110328,53,456);
+insert into Binomio VALUES(DEFAULT,289,18110290,53,403);
+insert into Binomio VALUES(DEFAULT,290,24773280,53,384);
+insert into Binomio VALUES(DEFAULT,291,20012239,57,371);
+insert into Binomio VALUES(DEFAULT,292,17528845,53.5,373);
+insert into Binomio VALUES(DEFAULT,293,18750673,53,367);
+insert into Binomio VALUES(DEFAULT,294,19273373,53,372);
+insert into Binomio VALUES(DEFAULT,295,18889203,53,418);
+insert into Binomio VALUES(DEFAULT,296,15966989,53,399);
+insert into Binomio VALUES(DEFAULT,297,19293169,53,420);
+insert into Binomio VALUES(DEFAULT,298,20076649,53,393);
+insert into Binomio VALUES(DEFAULT,299,17098320,53,403);
+insert into Binomio VALUES(DEFAULT,300,27221239,53,426);
+insert into Binomio VALUES(DEFAULT,301,18110328,53.5,441);
+insert into Binomio VALUES(DEFAULT,302,21939302,53,417);
