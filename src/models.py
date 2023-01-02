@@ -1,6 +1,7 @@
 # coding: utf-8
 from flask_sqlalchemy import SQLAlchemy
-
+# errors imports
+from sqlalchemy.exc import IntegrityError
 
 db = SQLAlchemy()
 
@@ -17,10 +18,12 @@ class Accion(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class AccionTipoUsuario(db.Model):
@@ -39,10 +42,12 @@ class AccionTipoUsuario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class AccionUsuario(db.Model):
@@ -63,10 +68,12 @@ class AccionUsuario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Aficionado(db.Model):
@@ -93,10 +100,12 @@ class Aficionado(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class AplicacionMedicamento(db.Model):
@@ -114,10 +123,12 @@ class AplicacionMedicamento(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Apuesta(db.Model):
@@ -141,10 +152,12 @@ class Apuesta(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Binomio(db.Model):
@@ -165,10 +178,12 @@ class Binomio(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Boleto(db.Model):
@@ -186,10 +201,12 @@ class Boleto(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Caballeriza(db.Model):
@@ -208,10 +225,12 @@ class Caballeriza(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Carrera(db.Model):
@@ -239,10 +258,12 @@ class Carrera(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class CarreraPorcentajeDividendo(db.Model):
@@ -262,10 +283,12 @@ class CarreraPorcentajeDividendo(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class CategoriaCarrera(db.Model):
@@ -283,10 +306,12 @@ class CategoriaCarrera(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class CausaRetiro(db.Model):
@@ -303,10 +328,12 @@ class CausaRetiro(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class CirculoGanadore(db.Model):
@@ -324,10 +351,12 @@ class CirculoGanadore(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Color(db.Model):
@@ -342,10 +371,12 @@ class Color(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Comentario(db.Model):
@@ -365,10 +396,12 @@ class Comentario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class DetalladoVenta(db.Model):
@@ -390,10 +423,12 @@ class DetalladoVenta(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class DetalleApuesta(db.Model):
@@ -415,10 +450,12 @@ class DetalleApuesta(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Ejemplar(db.Model):
@@ -453,10 +490,12 @@ class Ejemplar(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class EjemplarPropietarioStud(db.Model):
@@ -476,10 +515,12 @@ class EjemplarPropietarioStud(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Entrada(db.Model):
@@ -498,10 +539,12 @@ class Entrada(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Entrenador(db.Model):
@@ -528,10 +571,12 @@ class Entrenador(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Estacionamiento(db.Model):
@@ -549,10 +594,12 @@ class Estacionamiento(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Grada(db.Model):
@@ -571,10 +618,12 @@ class Grada(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Hara(db.Model):
@@ -592,10 +641,12 @@ class Hara(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Hipodromo(db.Model):
@@ -616,10 +667,12 @@ class Hipodromo(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class HistoricoEntrenador(db.Model):
@@ -641,10 +694,12 @@ class HistoricoEntrenador(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class HistoricoPuesto(db.Model):
@@ -665,10 +720,12 @@ class HistoricoPuesto(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Horario(db.Model):
@@ -691,10 +748,12 @@ class Horario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Implemento(db.Model):
@@ -714,10 +773,12 @@ class Implemento(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Inscripcion(db.Model):
@@ -743,10 +804,12 @@ class Inscripcion(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Jinete(db.Model):
@@ -778,10 +841,12 @@ class Jinete(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Lugar(db.Model):
@@ -803,10 +868,12 @@ class Lugar(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Medicamento(db.Model):
@@ -825,10 +892,12 @@ class Medicamento(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class MetodoPago(db.Model):
@@ -843,10 +912,12 @@ class MetodoPago(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Nivel(db.Model):
@@ -866,10 +937,12 @@ class Nivel(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Paddock(db.Model):
@@ -887,10 +960,12 @@ class Paddock(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Pista(db.Model):
@@ -917,10 +992,12 @@ class Pista(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class PorcentajeDividendo(db.Model):
@@ -936,10 +1013,12 @@ class PorcentajeDividendo(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class PosicionParcial(db.Model):
@@ -959,10 +1038,12 @@ class PosicionParcial(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Propietario(db.Model):
@@ -990,10 +1071,12 @@ class Propietario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class PropietarioStud(db.Model):
@@ -1013,10 +1096,12 @@ class PropietarioStud(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Puesto(db.Model):
@@ -1037,10 +1122,12 @@ class Puesto(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Restaurant(db.Model):
@@ -1059,10 +1146,12 @@ class Restaurant(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class RestaurantHorario(db.Model):
@@ -1081,10 +1170,12 @@ class RestaurantHorario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class ResultadoEjemplar(db.Model):
@@ -1106,10 +1197,12 @@ class ResultadoEjemplar(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Retiro(db.Model):
@@ -1129,10 +1222,12 @@ class Retiro(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class SolicitudImplemento(db.Model):
@@ -1158,10 +1253,12 @@ class SolicitudImplemento(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Stud(db.Model):
@@ -1177,10 +1274,12 @@ class Stud(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class StudColor(db.Model):
@@ -1201,10 +1300,12 @@ class StudColor(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class TaquillaApuesta(db.Model):
@@ -1222,10 +1323,12 @@ class TaquillaApuesta(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class TaquillaBoleto(db.Model):
@@ -1243,10 +1346,12 @@ class TaquillaBoleto(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Telefono(db.Model):
@@ -1272,10 +1377,12 @@ class Telefono(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class TipoApuesta(db.Model):
@@ -1295,10 +1402,12 @@ class TipoApuesta(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class TipoCarrera(db.Model):
@@ -1321,10 +1430,12 @@ class TipoCarrera(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class TipoMedicamento(db.Model):
@@ -1339,10 +1450,12 @@ class TipoMedicamento(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class TipoUsuario(db.Model):
@@ -1357,10 +1470,12 @@ class TipoUsuario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Usuario(db.Model):
@@ -1390,10 +1505,12 @@ class Usuario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class VentaBoleto(db.Model):
@@ -1416,10 +1533,12 @@ class VentaBoleto(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class VentaRestaurant(db.Model):
@@ -1438,10 +1557,12 @@ class VentaRestaurant(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
 
 class Veterinario(db.Model):
@@ -1470,8 +1591,10 @@ class Veterinario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except Exception as error:
-            print(error.args)
+        except IntegrityError:
             db.session.rollback()
-            return False
+            raise Exception("Key not unique")
+        except Exception:
+            db.session.rollback()
+            raise Exception("A problem ocurred")
         return element
