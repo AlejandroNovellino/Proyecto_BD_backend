@@ -1921,23 +1921,42 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('LOGIN', 'Usuario');
 
 --Acciones para el tipo de usuario
 --Aficionado
+  ---- Permisos sobre ejemplar
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,2);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,6);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,10);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,14);
 --Administrador
+  ---- Permisos sobre ejemplar
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,1);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,2);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,3);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,4);
+  ---- Permisos sobre entrenador
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,5);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,6);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,7);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,8);
+  ---- Permisos sobre jinete
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,9);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,10);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,11);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,12);
+  ---- Permisos sobre stud
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,13);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,14);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,15);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,16);
+  ---- Permisos sobre carrera
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,17);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,18);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,19);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,20);
+  ---- Permisos sobre propietario
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,21);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,22);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,23);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,24);
 
 --Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1
