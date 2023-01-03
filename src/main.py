@@ -13,7 +13,7 @@ from models import *
 # marshmellow import
 from flask_marshmallow import Marshmallow 
 # flask-restful import
-from flask_restful import reqparse, abort, Resource, Api
+from flask_restful import reqparse, abort, Resource, Api, inputs
 # simple json module
 import simplejson
 
@@ -130,6 +130,14 @@ accion_usuario_parser.add_argument('au_fecha_hora')
 accion_usuario_parser.add_argument('au_clave_elemento_afectado')
 accion_usuario_parser.add_argument('fk_usuario')
 accion_usuario_parser.add_argument('fk_accion')
+# HistoricoEntrenador --------------------------------------------------------------------------------
+historico_entrenador_parser = reqparse.RequestParser()
+historico_entrenador_parser.add_argument('he_clave') 
+historico_entrenador_parser.add_argument('he_fecha_inicio')
+historico_entrenador_parser.add_argument('he_fecha_fin')
+historico_entrenador_parser.add_argument('he_activo',  type=inputs.boolean)
+historico_entrenador_parser.add_argument('fk_caballeriza')
+historico_entrenador_parser.add_argument('fk_entrenador')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -280,6 +288,24 @@ class LugarSchema(ma.SQLAlchemyAutoSchema):
         include_fk = True
 # instance the class
 lugar_schema = LugarSchema()
+
+# caballeriza schema
+class CaballerizaSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Caballeriza
+        include_fk = True
+        json_module = simplejson
+# instance the class
+caballeriza_schema = CaballerizaSchema()
+
+# caballeriza schema
+class HistoricoEntrenadorSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = HistoricoEntrenador
+        include_fk = True
+        json_module = simplejson
+# instance the class
+historico_entrenador_schema = HistoricoEntrenadorSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -967,6 +993,49 @@ class LogInEndPoint(Resource):
 # add the endpoint ot the api
 api.add_resource(LogInEndPoint, '/login')
 
+
+### HistoricoEntrenador ###
+
+# RUD for one historico
+class HistoricoEntrenadorEndPoint(Resource):
+    def delete(self, historico_id):
+        historico = HistoricoEntrenador.query.get(historico_id)
+        response = deleteElement(historico)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+# add the endpoint ot the api
+api.add_resource(HistoricoEntrenadorEndPoint, '/historico/entrenador/<historico_id>')
+
+# list all historicos and create one
+class HistoricoEntrenadorListEndPoint(Resource):
+    def get(self):
+        historicos = HistoricoEntrenador.query.all()
+        return [historico_entrenador_schema.dumps(historico) for historico in historicos]
+
+    def post(self):
+        try:
+            args = historico_entrenador_parser.parse_args()
+            print(args)
+            historico = HistoricoEntrenador.create(**args)
+            return historico_entrenador_schema.dumps(historico), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(HistoricoEntrenadorListEndPoint, '/historicos/entrenadores')
+
+
+### Caballeriza ###
+# shows a list of all caballerizas
+class CaballerizaListEndPoint(Resource):
+    def get(self):
+        caballerizas = Caballeriza.query.all()
+        return [caballeriza_schema.dumps(caballeriza) for caballeriza in caballerizas]
+
+# add the endpoint ot the api
+api.add_resource(CaballerizaListEndPoint, '/caballerizas')
 
 
 ### Color ###

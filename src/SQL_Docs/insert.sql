@@ -1878,46 +1878,50 @@ insert into Tipo_Usuario VALUES(DEFAULT,'Personal'); --jinete propietario veteri
 insert into Tipo_Usuario VALUES(DEFAULT,'Administrador');
 
 --Acciones
+  -- Ejemplar
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Ejemplar');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Ejemplar');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Ejemplar');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Ejemplar');
-------
+  -- Entrenador
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Entrenador');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Entrenador');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Entrenador');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Entrenador');
-------
+  -- Jinete
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Jinete');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Jinete');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Jinete');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Jinete');
-------
+  -- Stud
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Stud');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Stud');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Stud');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Stud');
-------
+  -- Carrera
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Carrera');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Carrera');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Carrera');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Carrera');
-------
+  -- Propietario
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Propietario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Propietario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Propietario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Propietario');
-------
+  -- Tipo_Usuario
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Tipo_Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Tipo_Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Tipo_Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Tipo_Usuario');
-------
+  -- Usuario
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Usuario');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('LOGIN', 'Usuario');
+  -- Historico Entrenador
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Historico_Entrenador');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Historico_Entrenador');
 
 --Acciones para el tipo de usuario
 --Aficionado
@@ -1926,6 +1930,7 @@ insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,2);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,6);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,10);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,14);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,33);
 --Administrador
   ---- Permisos sobre ejemplar
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,1);
@@ -1957,6 +1962,20 @@ insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,21);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,22);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,23);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,24);
+  ---- Permisos sobre Tipo_Usuario
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,25);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,26);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,27);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,28);
+  ---- Permisos sobre Usuario
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,29);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,30);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,31);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,32);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,33);
+  ---- Permisos sobre Historico Entrenador
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,34);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,35);
 
 --Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1
