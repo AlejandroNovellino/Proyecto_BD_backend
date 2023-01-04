@@ -138,6 +138,19 @@ historico_entrenador_parser.add_argument('he_fecha_fin')
 historico_entrenador_parser.add_argument('he_activo',  type=inputs.boolean)
 historico_entrenador_parser.add_argument('fk_caballeriza')
 historico_entrenador_parser.add_argument('fk_entrenador')
+# PropietarioStud --------------------------------------------------------------------------------
+propietario_stud_parser = reqparse.RequestParser()
+propietario_stud_parser.add_argument('ps_clave') 
+propietario_stud_parser.add_argument('ps_porcentaje')
+propietario_stud_parser.add_argument('fk_stud')
+propietario_stud_parser.add_argument('fk_propietario')
+# StudColor --------------------------------------------------------------------------------
+color_stud_parser = reqparse.RequestParser()
+color_stud_parser.add_argument('sc_clave') 
+color_stud_parser.add_argument('sc_chaquetilla', type=inputs.boolean)
+color_stud_parser.add_argument('sc_gorra', type=inputs.boolean)
+color_stud_parser.add_argument('fk_color')
+color_stud_parser.add_argument('fk_stud')
 # Color -----------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -232,6 +245,22 @@ class AficionadoSchema(ma.SQLAlchemyAutoSchema):
 # instance the class
 aficionado_schema = AficionadoSchema()
 
+# PropietarioStud schema
+class PropietarioStudSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = PropietarioStud
+        include_fk = True
+        json_module = simplejson
+# instance the class
+propietario_stud_schema = PropietarioStudSchema()
+
+# StudColor schema
+class StudColorSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = StudColor
+        include_fk = True
+# instance the class
+stud_color_schema = StudColorSchema()
 
 # Entrenador schema
 class EntrenadorSchema(ma.SQLAlchemyAutoSchema):
@@ -324,7 +353,8 @@ def deleteElement(model_object):
         db.session.delete(model_object)
         db.session.commit()
         return True
-    except:
+    except Exception as e:
+        print(e)
         db.session.rollback()
         return False
 
@@ -530,6 +560,22 @@ class StudEndPoint(Resource):
 
     def delete(self, stud_id):
         stud = Stud.query.get(stud_id)
+        #first get all the tables that include them and delete the matches in them
+        # StudPropietario
+        propietariosStud = PropietarioStud.query.filter_by(fk_stud=stud_id)
+        for element in propietariosStud:
+            response = deleteElement(element)
+            if not response: 
+                print("Oh no error al eliminar StudPropietario")
+                break
+        # StudColor
+        coloresStud = StudColor.query.filter_by(fk_stud=stud_id)
+        for element in coloresStud:
+            response = deleteElement(element)
+            if not response: 
+                print("Oh no error al eliminar StudColor")
+                break
+        # delete the stud
         response = deleteElement(stud)
         if response:
             return 'Deleted', 200
@@ -1025,6 +1071,70 @@ class HistoricoEntrenadorListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(HistoricoEntrenadorListEndPoint, '/historicos/entrenadores')
+
+
+### PropietarioStud ###
+
+# RUD for one PropietarioStud
+class PropietarioStudEndPoint(Resource):
+    def delete(self, element_id):
+        element = PropietarioStud.query.get(element_id)
+        response = deleteElement(element)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+# add the endpoint ot the api
+api.add_resource(PropietarioStudEndPoint, '/propietario/stud/<element_id>')
+
+# list all historicos and create one
+class PropietarioStudListEndPoint(Resource):
+    def get(self):
+        elements = PropietarioStud.query.all()
+        return [propietario_stud_schema.dumps(element) for element in elements]
+
+    def post(self):
+        try:
+            args = propietario_stud_parser.parse_args()
+            element = PropietarioStud.create(**args)
+            return propietario_stud_schema.dumps(element), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(PropietarioStudListEndPoint, '/propietarios/studs')
+
+
+### StudColor ###
+
+# RUD for one StudColor
+class StudColorEndPoint(Resource):
+    def delete(self, element_id):
+        element = StudColor.query.get(element_id)
+        response = deleteElement(element)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+# add the endpoint ot the api
+api.add_resource(StudColorEndPoint, '/color/stud/<element_id>')
+
+# list all historicos and create one
+class StudColorListEndPoint(Resource):
+    def get(self):
+        elements = StudColor.query.all()
+        return [stud_color_schema.dump(element) for element in elements]
+
+    def post(self):
+        try:
+            args = color_stud_parser.parse_args()
+            element = StudColor.create(**args)
+            return stud_color_schema.dump(element), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(StudColorListEndPoint, '/colores/studs')
 
 
 ### Caballeriza ###

@@ -1085,8 +1085,8 @@ class PropietarioStud(db.Model):
 
     ps_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     ps_porcentaje = db.Column(db.Numeric(10, 0), nullable=False)
-    fk_stud = db.Column(db.ForeignKey('stud.s_clave'), nullable=False)
-    fk_propietario = db.Column(db.ForeignKey('propietario.p_cedula'), nullable=False)
+    fk_stud = db.Column(db.ForeignKey('stud.s_clave', ondelete='CASCADE'), nullable=False)
+    fk_propietario = db.Column(db.ForeignKey('propietario.p_cedula', ondelete='CASCADE'), nullable=False)
 
     propietario = db.relationship('Propietario', primaryjoin='PropietarioStud.fk_propietario == Propietario.p_cedula', backref='propietario_studs')
     stud = db.relationship('Stud', primaryjoin='PropietarioStud.fk_stud == Stud.s_clave', backref='propietario_studs')
@@ -1097,7 +1097,8 @@ class PropietarioStud(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except IntegrityError:
+        except IntegrityError as e:
+            print(e)
             db.session.rollback()
             raise Exception("Key not unique")
         except Exception:
@@ -1289,8 +1290,8 @@ class StudColor(db.Model):
     sc_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     sc_chaquetilla = db.Column(db.Boolean, nullable=False)
     sc_gorra = db.Column(db.Boolean, nullable=False)
-    fk_color = db.Column(db.ForeignKey('color.col_clave'), nullable=False)
-    fk_stud = db.Column(db.ForeignKey('stud.s_clave'), nullable=False)
+    fk_color = db.Column(db.ForeignKey('color.col_clave', ondelete='CASCADE'), nullable=False)
+    fk_stud = db.Column(db.ForeignKey('stud.s_clave', ondelete='CASCADE'), nullable=False)
 
     color = db.relationship('Color', primaryjoin='StudColor.fk_color == Color.col_clave', backref='stud_colors')
     stud = db.relationship('Stud', primaryjoin='StudColor.fk_stud == Stud.s_clave', backref='stud_colors')
@@ -1304,7 +1305,8 @@ class StudColor(db.Model):
         except IntegrityError:
             db.session.rollback()
             raise Exception("Key not unique")
-        except Exception:
+        except Exception as e:
+            print(e)
             db.session.rollback()
             raise Exception("A problem ocurred")
         return element

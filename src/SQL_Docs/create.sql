@@ -537,8 +537,8 @@ create table Propietario_Stud(
 	/*Clave primaria*/
 	constraint PK_Propietario_Stud primary key (PS_Clave),
 	/*Claves foraneas*/
-	constraint fk_Stud foreign key (FK_Stud) references Stud(S_Clave),
-	constraint fk_Propietario foreign key (FK_Propietario) references Propietario(P_Cedula)
+	constraint fk_Stud foreign key (FK_Stud) references Stud(S_Clave) ON DELETE CASCADE,
+	constraint fk_Propietario foreign key (FK_Propietario) references Propietario(P_Cedula) ON DELETE CASCADE
 );
 
 create table Ejemplar_Propietario_Stud(
@@ -562,8 +562,8 @@ create table Stud_Color(
 	/*Clave primaria*/
 	constraint PK_Stud_Color primary key (SC_Clave),
 	/*Claves foraneas*/
-	constraint fk_Color foreign key (FK_Color) references Color(COL_Clave),
-	constraint fk_Stud foreign key (FK_Stud) references Stud(S_Clave)
+	constraint fk_Color foreign key (FK_Color) references Color(COL_Clave) ON DELETE CASCADE,
+	constraint fk_Stud foreign key (FK_Stud) references Stud(S_Clave) ON DELETE CASCADE
 );
 
 create	table Medicamento(
