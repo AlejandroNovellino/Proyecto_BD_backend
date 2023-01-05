@@ -1922,6 +1922,10 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('LOGIN', 'Usuario');
   -- Historico Entrenador
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Historico_Entrenador');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Historico_Entrenador');
+  -- Binomio
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Binomio');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Binomio');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Binomio');
 
 --Acciones para el tipo de usuario
 --Aficionado
@@ -1976,6 +1980,10 @@ insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,33);
   ---- Permisos sobre Historico Entrenador
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,34);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,35);
+  ---- Permisos sobre Binomio
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,36);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,37);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,38);
 
 --Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1

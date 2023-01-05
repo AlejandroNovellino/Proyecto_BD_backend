@@ -158,6 +158,13 @@ historico_puesto_parser.add_argument('hp_fecha_inicio')
 historico_puesto_parser.add_argument('hp_fecha_final')
 historico_puesto_parser.add_argument('fk_puesto')
 historico_puesto_parser.add_argument('fk_ejemplar')
+# Binomio --------------------------------------------------------------------------------
+binomio_parser = reqparse.RequestParser()
+binomio_parser.add_argument('bi_clave') 
+binomio_parser.add_argument('fk_ejemplar')
+binomio_parser.add_argument('fk_jinete')
+binomio_parser.add_argument('bi_jinete_peso')
+binomio_parser.add_argument('bi_ejemplar_peso')
 # Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -377,6 +384,19 @@ class HistoricoPuestoSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 historico_puesto_schema = HistoricoPuestoSchema()
+
+# Binomio schema
+class BinomioSchema(ma.SQLAlchemyAutoSchema):
+    #ejemplar
+    ejemplar = ma.Nested(lambda: EjemplarSchema(exclude=("parent","parent1",)))
+    #padre
+    jinete = ma.Nested(JineteSchema)
+    class Meta:
+        model = Binomio
+        include_fk = True
+        json_module = simplejson
+# instance the class
+binomio_schema = BinomioSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -1266,6 +1286,70 @@ class HistoricoPuestoListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(HistoricoPuestoListEndPoint, '/historicos/puestos')
+
+
+### Binomio ###
+
+# RUD for one binomio
+class BinomioEndPoint(Resource):
+    def get(self, binomio_id):
+        binomio = Binomio.query.get(binomio_id)
+        # ejemplar does not exist
+        if not binomio:
+            abort(404, message="Binomio {} doesn't exist".format(binomio_id))
+
+        return binomio_schema.dumps(binomio)
+
+    def delete(self, binomio_id):
+        binomio = Binomio.query.get(binomio_id)
+        response = deleteElement(binomio)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, binomio_id):
+        args = binomio_parser.parse_args()
+        binomio = Binomio.query.get(binomio_id)
+        #update the binomio
+        binomio.bi_clave = args["bi_clave"]
+        binomio.fk_ejemplar = args["fk_ejemplar"]
+        binomio.fk_jinete = args["fk_jinete"]
+        binomio.bi_jinete_peso = args["bi_jinete_peso"]
+        binomio.bi_ejemplar_peso = args["bi_ejemplar_peso"]
+        
+
+        try:
+            db.session.commit()
+            return binomio_schema.dumps(binomio), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(BinomioEndPoint, '/binomios/<binomio_id>')
+
+# list all binomios and create one
+class BinomioListEndPoint(Resource):
+    def get(self):
+        binomios = Binomio.query.all()
+        return [binomio_schema.dumps(binomio) for binomio in binomios]
+
+    def post(self):
+        try:
+            args = binomio_parser.parse_args()
+            # verify that the binomio dos not exist
+            exists = Binomio.query.filter_by(fk_ejemplar=args["fk_ejemplar"], fk_jinete=args["fk_jinete"]).first()
+            
+            if exists:
+                return 'Failed, binomio already exists', 400
+
+            binomio = Binomio.create(**args)
+            return binomio_schema.dumps(binomio), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(BinomioListEndPoint, '/binomios')
 
 
 ### Color ###
