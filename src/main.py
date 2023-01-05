@@ -2,6 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 import os
+import datetime
 from flask import Flask, request, jsonify, url_for
 from flask_migrate import Migrate
 from flask_swagger import swagger
@@ -130,7 +131,7 @@ accion_usuario_parser.add_argument('au_fecha_hora')
 accion_usuario_parser.add_argument('au_clave_elemento_afectado')
 accion_usuario_parser.add_argument('fk_usuario')
 accion_usuario_parser.add_argument('fk_accion')
-# HistoricoEntrenador --------------------------------------------------------------------------------
+# HistoricoEntrenador ----------------------------------------------------------------------------
 historico_entrenador_parser = reqparse.RequestParser()
 historico_entrenador_parser.add_argument('he_clave') 
 historico_entrenador_parser.add_argument('he_fecha_inicio')
@@ -144,21 +145,31 @@ propietario_stud_parser.add_argument('ps_clave')
 propietario_stud_parser.add_argument('ps_porcentaje')
 propietario_stud_parser.add_argument('fk_stud')
 propietario_stud_parser.add_argument('fk_propietario')
-# StudColor --------------------------------------------------------------------------------
+# StudColor --------------------------------------------------------------------------------------
 color_stud_parser = reqparse.RequestParser()
 color_stud_parser.add_argument('sc_clave') 
 color_stud_parser.add_argument('sc_chaquetilla', type=inputs.boolean)
 color_stud_parser.add_argument('sc_gorra', type=inputs.boolean)
 color_stud_parser.add_argument('fk_color')
 color_stud_parser.add_argument('fk_stud')
-# Color -----------------------------------------------------------------------------------
+# HistoricoPuesto --------------------------------------------------------------------------------
+historico_puesto_parser = reqparse.RequestParser()
+historico_puesto_parser.add_argument('hp_fecha_inicio') 
+historico_puesto_parser.add_argument('hp_fecha_final')
+historico_puesto_parser.add_argument('fk_puesto')
+historico_puesto_parser.add_argument('fk_ejemplar')
+# Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
 
-# schemas for the models ------------------------------------------------------------------
+# schemas for the models -------------------------------------------------------------------------
 
 # Ejemplar schema
 class EjemplarSchema(ma.SQLAlchemyAutoSchema):
+    #madre
+    parent = ma.Nested(lambda: EjemplarSchema(exclude=("parent","parent1",)))
+    #padre
+    parent1 = ma.Nested(lambda: EjemplarSchema(exclude=("parent","parent1",)))
     class Meta:
         model = Ejemplar
         include_fk = True
@@ -318,6 +329,15 @@ class LugarSchema(ma.SQLAlchemyAutoSchema):
 # instance the class
 lugar_schema = LugarSchema()
 
+# HistoricoEntrenador schema
+class HistoricoEntrenadorSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = HistoricoEntrenador
+        include_fk = True
+        json_module = simplejson
+# instance the class
+historico_entrenador_schema = HistoricoEntrenadorSchema()
+
 # caballeriza schema
 class CaballerizaSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
@@ -327,14 +347,36 @@ class CaballerizaSchema(ma.SQLAlchemyAutoSchema):
 # instance the class
 caballeriza_schema = CaballerizaSchema()
 
-# caballeriza schema
-class HistoricoEntrenadorSchema(ma.SQLAlchemyAutoSchema):
+# puesto schema
+class PuestoSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
-        model = HistoricoEntrenador
+        model = Puesto
         include_fk = True
         json_module = simplejson
 # instance the class
-historico_entrenador_schema = HistoricoEntrenadorSchema()
+puesto_schema = PuestoSchema()
+
+# Hara schema
+class HaraSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Hara
+        include_fk = True
+# instance the class
+hara_schema = HaraSchema()
+
+# HistoricoPuesto schema
+class HistoricoPuestoSchema(ma.SQLAlchemyAutoSchema):
+    # ejemplar
+    ejemplar = ma.Nested(EjemplarSchema)
+    # puesto
+    puesto = ma.Nested(PuestoSchema)
+    
+    class Meta:
+        model = HistoricoPuesto
+        include_fk = True
+        json_module = simplejson
+# instance the class
+historico_puesto_schema = HistoricoPuestoSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -1146,6 +1188,84 @@ class CaballerizaListEndPoint(Resource):
 
 # add the endpoint ot the api
 api.add_resource(CaballerizaListEndPoint, '/caballerizas')
+
+
+### Puesto ###
+class PuestoEndPoint(Resource):
+    def get(self, caballeriza_id):
+        puestos = Puesto.query.filter_by(fk_caballeriza=caballeriza_id)
+        # ejemplar does not exist
+        if not puestos:
+            abort(404, message="Error con los puestos de la caballeriza")
+
+        return [puesto_schema.dumps(puesto) for puesto in puestos]
+
+# add the endpoint ot the api
+api.add_resource(PuestoEndPoint, '/puestos/<caballeriza_id>')
+
+# shows a list of all caballerizas
+class PuestoListEndPoint(Resource):
+    def get(self):
+        puestos = Puesto.query.all()
+        return [puesto_schema.dumps(puesto) for puesto in puestos]
+
+# add the endpoint ot the api
+api.add_resource(PuestoListEndPoint, '/puestos')
+
+
+### Hara ###
+# shows a list of all caballerizas
+class HaraListEndPoint(Resource):
+    def get(self):
+        haras = Hara.query.all()
+        return [hara_schema.dump(hara) for hara in haras]
+
+# add the endpoint ot the api
+api.add_resource(HaraListEndPoint, '/haras')
+
+
+### HistoricoPuesto ###
+
+# RUD for one HistoricoPuesto
+class HistoricoPuestoEndPoint(Resource):
+    def put(self, element_id):
+        historico = HistoricoPuesto.query.filter_by(fk_puesto=element_id, hp_fecha_final=None).first()
+        #update the accion_usuario
+        historico.hp_fecha_final = datetime.datetime.now()
+
+        try:
+            db.session.commit()
+            return historico_puesto_schema.dumps(historico), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+
+    def delete(self, element_id):
+        element = HistoricoPuesto.query.get(element_id)
+        response = deleteElement(element)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+# add the endpoint ot the api
+api.add_resource(HistoricoPuestoEndPoint, '/historico/puesto/<element_id>')
+
+# list all historicos and create one
+class HistoricoPuestoListEndPoint(Resource):
+    def get(self):
+        elements = HistoricoPuesto.query.all()
+        return [historico_puesto_schema.dumps(element) for element in elements]
+
+    def post(self):
+        try:
+            args = historico_puesto_parser.parse_args()
+            element = HistoricoPuesto.create(**args)
+            return historico_puesto_schema.dumps(element), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(HistoricoPuestoListEndPoint, '/historicos/puestos')
 
 
 ### Color ###
