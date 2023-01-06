@@ -7,7 +7,7 @@ from flask import Flask, request, jsonify, url_for
 from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
-from utils import APIException, generate_sitemap
+from utils import APIException, generate_sitemap, generateReport
 from admin import setup_admin
 from models import *
 
@@ -174,6 +174,10 @@ cpd_parser.add_argument('fk_porcentaje_dividendo')
 # Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
+# Report ------------------------------------------------------------------------------------------
+report_parser = reqparse.RequestParser()
+report_parser.add_argument('file_name')
+report_parser.add_argument('db_table')
 
 # schemas for the models -------------------------------------------------------------------------
 
@@ -1491,6 +1495,34 @@ class ColorListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(ColorListEndPoint, '/colors')
+
+### Report ###
+# generate a report
+class ReportsEndPoint(Resource):
+    def post(self):
+        try:
+            args = report_parser.parse_args()
+            # get data
+            file_name = args["file_name"]
+            db_table = args["db_table"]
+
+            generateReport(file_name, db_table)
+
+            return 'Report generated', 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(ReportsEndPoint, '/reports')
+
+### Report ###
+# generate a report
+class ResetEndPoint(Resource):
+    def get(self):
+        return 'Reset needed', 200
+
+# add the endpoint ot the api
+api.add_resource(ResetEndPoint, '/reset')
 
 #------------------------------------------------------------------------------------------
 

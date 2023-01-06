@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StudColor" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="789233f1-ddb2-4a82-88f4-2f92947a3ed2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BD_app"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT  s.s_nombre, 
+CASE 
+When sc.sc_chaquetilla='true' Then 'Chaquetilla'
+When sc.sc_gorra='true' Then 'Gorra'
+else ''
+End AS Uniforme
+, c.col_Nombre 
+FROM stud s, stud_color sc, color c
+WHERE s.s_clave=sc.fk_stud
+AND      sc.fk_color=c.col_Clave;]]>
+	</queryString>
+	<field name="s_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="s_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="s_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stud"/>
+	</field>
+	<field name="uniforme" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="uniforme"/>
+		<property name="com.jaspersoft.studio.field.label" value="uniforme"/>
+	</field>
+	<field name="col_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="col_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="col_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="color"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="17" width="120" height="61" uuid="3612effe-5ea7-4d3d-8e7d-5130658fab97"/>
+				<imageExpression><![CDATA["inh_logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="2a66e365-16d5-4f87-b1c7-0260f7439205"/>
+				<textElement textAlignment="Center">
+					<font fontName="&#xD;&#xA;SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTES
+Hipodromo la Rinconada]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="99" width="570" height="2" uuid="2bcc01fd-8ad5-403f-9e76-7d90895c97f2">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="400" y="84" width="100" height="16" uuid="b2b377ed-d034-4f29-9365-f3673d8432ed"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="500" y="84" width="100" height="16" uuid="9e1b2513-519e-41bb-aefb-38578cdcdf65"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="138" y="19" width="304" height="30" backcolor="#1C3659" uuid="b26bd3bf-a1ca-473c-9bbf-f3507b787938"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listado de Stud con su Uniforme]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="140" y="21" width="102" height="25" forecolor="#FFFFFF" backcolor="#1C3659" uuid="f6392287-b66e-4964-b519-9b979a610446">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67a1ba3c-6f1b-452f-a745-111c343c0963"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Stud]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="242" y="21" width="100" height="25" forecolor="#FFFFFF" backcolor="#1C3659" uuid="d1169ca1-49c7-45ae-baeb-24ea7488b943">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0b15d803-4f65-41cd-98e8-213de8f667d1"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uniforme]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="341" y="21" width="100" height="25" forecolor="#FFFFFF" backcolor="#1C3659" uuid="cda9a8f9-ba5d-4c22-a488-6455ef002d3a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="656130f8-9f19-4aa9-839c-00315f17d7e2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Color]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="1" width="102" height="30" uuid="925dc46f-cfe6-4c55-8c75-2f753c9bb000">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67a1ba3c-6f1b-452f-a745-111c343c0963"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{s_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="241" y="1" width="101" height="30" uuid="4e0319bb-330f-44c3-acfc-fefbe7d1a2b0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0b15d803-4f65-41cd-98e8-213de8f667d1"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uniforme}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="1" width="100" height="30" uuid="668127ff-e513-407b-8655-871244bc7e51">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="656130f8-9f19-4aa9-839c-00315f17d7e2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{col_nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="5" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="5" width="566" height="80" uuid="d9a8bbc7-b673-4c78-92fc-73561f41e1c8"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[
+
+
+Representacion impresa de listado de usuarios registrados en la aplicacion del hipodromo 
+Para mas informacion visite la pagina web
+
+
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,4 +1,8 @@
 from flask import jsonify, url_for
+# jasper reports imports
+import os
+from platform import python_version
+from pyreportjasper import PyReportJasper
 
 class APIException(Exception):
     status_code = 400
@@ -39,3 +43,37 @@ def generate_sitemap(app):
         <p>Start working on your proyect by following the <a href="https://github.com/4GeeksAcademy/flask-rest-hello/blob/master/docs/_QUICK_START.md" target="_blank">Quick Start</a></p>
         <p>Remember to specify a real endpoint path like: </p>
         <ul style="text-align: left;">"""+links_html+"</ul></div>"
+
+# Reports ---------------------------------------------------------------------------------------------------------------------------
+def generateReport(file_name, db_table):
+
+    JDBC_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'jarDriver')
+    REPORTS_INPUT_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'reportsSchema')
+    REPORTS_OUTPUT_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'reports')
+
+    input_file = os.path.join(REPORTS_INPUT_DIR, file_name+'.jrxml')
+    output_file = os.path.join(REPORTS_OUTPUT_DIR, file_name)
+
+    conn = {
+        'driver': 'postgres',
+        'username': 'postgres',
+        'password': '1224',
+        'host': 'localhost',
+        'database': 'BD_app',
+        'schema': db_table,
+        'port': '5432',
+        'jdbc_driver' : 'org.postgresql.Driver',
+        'jdbc_dir': JDBC_DIR
+    }
+    pyreportjasper = PyReportJasper()
+    pyreportjasper.config(
+        input_file,
+        output_file,
+        db_connection=conn,
+        output_formats=["pdf"],
+        parameters={'python_version': python_version()},
+        locale='en_US'
+    )
+    pyreportjasper.process_report()
+
+    return True

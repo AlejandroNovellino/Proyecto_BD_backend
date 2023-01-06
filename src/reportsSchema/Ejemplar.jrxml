@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ejemplar" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ccbbd4e-25d7-4c88-8a78-865040a09730">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BD_app2"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT  e_nombre,
+CASE 
+When e_sexo='Y' Then 'Yegua'
+When e_sexo='C' Then 'Caballo'
+END As Sexo
+,CASE 
+When e_color_pelaje='A' Then 'Alazán'
+When e_color_pelaje='C' Then 'Castaño'
+When e_color_pelaje='Z' Then 'Zaino'
+When e_color_pelaje='T' Then 'Tordillo'
+END As Color_pelaje
+FROM ejemplar 
+ORDER BY e_fecha_nacimiento DESC;]]>
+	</queryString>
+	<field name="e_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="e_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="e_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ejemplar"/>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="sexo"/>
+		<property name="com.jaspersoft.studio.field.label" value="sexo"/>
+	</field>
+	<field name="color_pelaje" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="color_pelaje"/>
+		<property name="com.jaspersoft.studio.field.label" value="color_pelaje"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="c94b09dc-c1e1-4c25-aa80-23332dcf483b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTES
+Hipodromo la Rinconada]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="400" y="84" width="100" height="16" uuid="59db1907-fce9-4d28-91be-644f493fdf19"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="500" y="84" width="100" height="16" uuid="556ebea8-2cbc-46f2-951c-157092a87a71"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="99" width="570" height="2" uuid="b6019002-4b38-45b7-b639-e13261528a80">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="19" width="420" height="30" backcolor="#1C3659" uuid="33d71dc6-a6ec-4069-856b-782c68c18b18"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listado de ejemplares]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="110" y="30" width="125" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="8006c500-a11c-4760-a20c-7ab89b515eaf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e58832b9-e22c-463a-ad28-8e95c05f18d2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Ejemplar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="235" y="30" width="99" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="9a2a2e41-26b7-4185-88b9-1edb823a36be">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cebe7dc2-16fd-401f-acef-1ea28bc46de7"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="334" y="30" width="106" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="93722185-ebe6-4da7-8c55-2113339a1ba4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67040e94-254b-42da-918a-9d11872958c5"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Color de pelaje]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="110" y="0" width="126" height="30" uuid="71441c67-f9bd-4404-b7a0-22b791a0b063">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e58832b9-e22c-463a-ad28-8e95c05f18d2"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{e_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="0" width="100" height="30" uuid="5c664bae-7ea2-4016-8a02-66613984cf1f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cebe7dc2-16fd-401f-acef-1ea28bc46de7"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="334" y="0" width="106" height="30" uuid="31785bc2-a754-4e92-87ac-261562758789">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67040e94-254b-42da-918a-9d11872958c5"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{color_pelaje}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="5" width="566" height="80" uuid="ba59238a-6606-447e-a5ce-0290a0044a7e"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[
+
+
+Representacion impresa de listado de usuarios registrados en la aplicacion del hipodromo 
+Para mas informacion visite la pagina web
+
+
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

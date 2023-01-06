@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StudPropietarioEjemplar" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6f9c156-caac-4d9c-8d4b-9f0602db5008">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="17" width="120" height="61" uuid="306f5749-1ba0-48c7-ab95-f010a2ea8f8b"/>
+				<imageExpression><![CDATA["inh_logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="a13d6804-df37-4145-a319-8b7b606f4c4f"/>
+				<textElement textAlignment="Center">
+					<font fontName="&#xD;&#xA;SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTES
+Hipodromo la Rinconada]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="400" y="84" width="100" height="16" uuid="47ac70bc-1252-42e1-a707-d3f5ef5707e4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="500" y="84" width="100" height="16" uuid="a8cf2759-88e9-42f8-b34a-645f5455462d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="99" width="570" height="2" uuid="af5a6a00-0115-4491-a083-679840cf2c14">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="19" width="420" height="30" backcolor="#1C3659" uuid="73c5fb0c-74ff-4e5c-a4bb-aac7506987d6"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listados de Studs con sus ejemplares y propietarios]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="5" width="566" height="80" uuid="8429ce7b-c844-4f41-81f6-71dcc170c871"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[
+
+
+Representacion impresa de listado de usuarios registrados en la aplicacion del hipodromo 
+Para mas informacion visite la pagina web
+
+
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
