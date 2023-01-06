@@ -220,15 +220,6 @@ class StudSchema(ma.SQLAlchemyAutoSchema):
 # instance the class
 stud_schema = StudSchema()
 
-# Carrera schema
-class CarreraSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = Carrera
-        include_fk = True
-        json_module = simplejson
-# instance the class
-carrera_schema = CarreraSchema()
-
 # Propietario schema
 class PropietarioSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
@@ -451,6 +442,19 @@ class CarreraPorcentajeDividendoSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 cpd_schema = CarreraPorcentajeDividendoSchema()
+
+# Carrera schema
+class CarreraSchema(ma.SQLAlchemyAutoSchema):
+    #nested elements
+    tipo_carrera = ma.Nested(TipoCarreraSchema)
+    categoria_carrera = ma.Nested(CategoriaCarreraSchema)
+    pista = ma.Nested(PistaSchema)
+    class Meta:
+        model = Carrera
+        include_fk = True
+        json_module = simplejson
+# instance the class
+carrera_schema = CarreraSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
