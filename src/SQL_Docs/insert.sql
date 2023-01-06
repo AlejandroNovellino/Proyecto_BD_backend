@@ -5041,7 +5041,7 @@ insert into Posicion_Parcial VALUES(DEFAULT,0,'1:13.4',1,203);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:8.68',7,204);--Neg
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:13.7',2,205);--3Sub
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:7.0',3,206);
-insert into Posicion_Parcial VALUES(DEFAULT,0,'1:15,88',5,207);--TMult
+insert into Posicion_Parcial VALUES(DEFAULT,0,'1:15.88',5,207);--TMult
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:15.3',3,208);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:13.2',5,209);--1Baj
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:7.1',7,210);
@@ -5057,7 +5057,7 @@ insert into Posicion_Parcial VALUES(DEFAULT,0,'1:20.56',2,219);--TPart
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:26.3',1,220);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:14.0',1,221);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:18.2',9,222);
-insert into Posicion_Parcial VALUES(DEFAULT,0,'1:78.1',8,223);--PMal
+insert into Posicion_Parcial VALUES(DEFAULT,0,'1:58.1',8,223);--PMal
 insert into Posicion_Parcial VALUES(DEFAULT,0,'0:0.0',8,224);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:11.1',8,225);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:16.4',8,226);
@@ -5492,7 +5492,7 @@ insert into Posicion_Parcial VALUES(DEFAULT,800,'0:47.2',4,2);
 insert into Posicion_Parcial VALUES(DEFAULT,800,'0:46.0',0,3);
 insert into Posicion_Parcial VALUES(DEFAULT,800,'0:48.0',4,4);
 insert into Posicion_Parcial VALUES(DEFAULT,800,'0:46.2',9,5);
-insert into Posicion_Parcial VALUES(DEFAULT,800,'0:48,1',6,6);
+insert into Posicion_Parcial VALUES(DEFAULT,800,'0:48.1',6,6);
 insert into Posicion_Parcial VALUES(DEFAULT,800,'0:47.4',6,7);--SFMan
 insert into Posicion_Parcial VALUES(DEFAULT,800,'0:47.2',4,8);
 insert into Posicion_Parcial VALUES(DEFAULT,800,'0:45.1',0,9);--TPart
