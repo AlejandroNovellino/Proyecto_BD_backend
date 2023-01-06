@@ -749,8 +749,22 @@ class CarreraEndPoint(Resource):
         return carrera_schema.dumps(carrera)
 
     def delete(self, carrera_id):
+        # get the carrera
         carrera = Carrera.query.get(carrera_id)
+
+        # delete all the inscriptions
+        inscriptions = Inscripcion.query.filter_by(fk_carrera=carrera_id)
+        for element in inscriptions:
+            deleted = deleteElement(element)
+            if not deleted: return 'Can not delete, incripcion', 500
+        # delete carrera porcentaje dividendo
+        cpds = CarreraPorcentajeDividendo.query.filter_by(fk_carrera=carrera_id)
+        for element in cpds:
+            deleted = deleteElement(element)
+            if not deleted: return 'Can not delete, carrera porcentaje dividendo', 500
+        # delete the carrera
         response = deleteElement(carrera)
+
         if response:
             return 'Deleted', 200
         else:
@@ -770,6 +784,12 @@ class CarreraEndPoint(Resource):
         carrera.fk_tipo_carrera = args["fk_tipo_carrera"]
         carrera.fk_categoria_carrera = args["fk_categoria_carrera"]
         carrera.fk_pista = args["fk_pista"]
+
+        # delete carrera porcentaje dividendo
+        cpds = CarreraPorcentajeDividendo.query.filter_by(fk_carrera=carrera_id)
+        for element in cpds:
+            deleted = deleteElement(element)
+            if not deleted: return 'Can not delete, carrera porcentaje dividendo', 500
 
         try:
             db.session.commit()
