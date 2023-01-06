@@ -261,7 +261,8 @@ class Carrera(db.Model):
         except IntegrityError:
             db.session.rollback()
             raise Exception("Key not unique")
-        except Exception:
+        except Exception as e:
+            print(e)
             db.session.rollback()
             raise Exception("A problem ocurred")
         return element

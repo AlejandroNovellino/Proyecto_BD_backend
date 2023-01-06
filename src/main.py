@@ -165,6 +165,12 @@ binomio_parser.add_argument('fk_ejemplar')
 binomio_parser.add_argument('fk_jinete')
 binomio_parser.add_argument('bi_jinete_peso')
 binomio_parser.add_argument('bi_ejemplar_peso')
+# CarreraPorcentajeDividendo --------------------------------------------------------------------------------
+cpd_parser = reqparse.RequestParser()
+cpd_parser.add_argument('cpd_clave') 
+cpd_parser.add_argument('cpd_monto_otorgar')
+cpd_parser.add_argument('fk_carrera')
+cpd_parser.add_argument('fk_porcentaje_dividendo')
 # Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -397,6 +403,50 @@ class BinomioSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 binomio_schema = BinomioSchema()
+
+# CategoriaCarrera schema
+class CategoriaCarreraSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = CategoriaCarrera
+        include_fk = True
+# instance the class
+categoria_carrera_schema = CategoriaCarreraSchema()
+
+# TipoCarrera schema
+class TipoCarreraSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = TipoCarrera
+        include_fk = True
+        json_module = simplejson
+# instance the class
+tipo_carrera_schema = TipoCarreraSchema()
+
+# Pista schema
+class PistaSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Pista
+        include_fk = True
+        json_module = simplejson
+# instance the class
+pista_schema = PistaSchema()
+
+# PorcentajeDividendo schema
+class PorcentajeDividendoSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = PorcentajeDividendo
+        include_fk = True
+        json_module = simplejson
+# instance the class
+porcentaje_dividendo_schema = PorcentajeDividendoSchema()
+
+# CarreraPorcentajeDividendo schema
+class CarreraPorcentajeDividendoSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = CarreraPorcentajeDividendo
+        include_fk = True
+        json_module = simplejson
+# instance the class
+cpd_schema = CarreraPorcentajeDividendoSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -1350,6 +1400,78 @@ class BinomioListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(BinomioListEndPoint, '/binomios')
+
+
+### NumLlamadoCarrera ###
+# shows a list of num llamado for a date
+class NumLlamadoCarreraListEndPoint(Resource):
+    def get(self, date):
+        carreras_in_date = Carrera.query.filter_by(c_fecha=date)
+        
+        return [carrera_schema.dumps(element) for element in carreras_in_date]
+# add the endpoint ot the api
+api.add_resource(NumLlamadoCarreraListEndPoint, '/carrera/cun/llamado/<date>')
+
+
+### TipoCarrera ###
+# shows a list of all TipoCarrera
+class TipoCarreraListEndPoint(Resource):
+    def get(self):
+        elements = TipoCarrera.query.all()
+        return [tipo_carrera_schema.dumps(element) for element in elements]
+# add the endpoint ot the api
+api.add_resource(TipoCarreraListEndPoint, '/tipos/carrera')
+
+
+### CategoriaCarrera ###
+# shows a list of all TipoCarrera
+class CategoriaCarreraListEndPoint(Resource):
+    def get(self):
+        elements = CategoriaCarrera.query.all()
+        return [categoria_carrera_schema.dump(element) for element in elements]
+# add the endpoint ot the api
+api.add_resource(CategoriaCarreraListEndPoint, '/categorias/carrera')
+
+
+### Pista ###
+# shows a list of all TipoCarrera
+class PistaListEndPoint(Resource):
+    def get(self):
+        elements = Pista.query.all()
+        return [pista_schema.dumps(element) for element in elements]
+# add the endpoint ot the api
+api.add_resource(PistaListEndPoint, '/pistas')
+
+
+### PorcentajeDividendo ###
+# shows a list of all TipoCarrera
+class PorcentajeDividendoListEndPoint(Resource):
+    def get(self):
+        elements = PorcentajeDividendo.query.all()
+        return [porcentaje_dividendo_schema.dumps(element) for element in elements]
+# add the endpoint ot the api
+api.add_resource(PorcentajeDividendoListEndPoint, '/porcentajes/dividendo')
+
+
+### CarreraPorcentajeDividendo ###
+
+# create CarreraPorcentajeDividendo
+class CarreraPorcentajeDividendoListEndPoint(Resource):
+    def get(self):
+        elements = CarreraPorcentajeDividendo.query.all()
+        return [cpd_schema.dumps(element) for element in elements]
+
+    def post(self):
+        try:
+            args = cpd_parser.parse_args()
+
+            element = CarreraPorcentajeDividendo.create(**args)
+            return cpd_schema.dumps(element), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(CarreraPorcentajeDividendoListEndPoint, '/carrera/porcentaje/dividendo')
 
 
 ### Color ###
