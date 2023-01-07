@@ -171,6 +171,17 @@ cpd_parser.add_argument('cpd_clave')
 cpd_parser.add_argument('cpd_monto_otorgar')
 cpd_parser.add_argument('fk_carrera')
 cpd_parser.add_argument('fk_porcentaje_dividendo')
+# Inscripcion --------------------------------------------------------------------------------
+inscripcion_parser = reqparse.RequestParser()
+inscripcion_parser.add_argument('ins_clave') 
+inscripcion_parser.add_argument('ins_num_gualdrapa')
+inscripcion_parser.add_argument('ins_puesto_pista')
+inscripcion_parser.add_argument('ins_fecha')
+inscripcion_parser.add_argument('ins_ejemplar_favorito', type=inputs.boolean) 
+inscripcion_parser.add_argument('ins_precio_reclamado')
+inscripcion_parser.add_argument('fk_carrera')
+inscripcion_parser.add_argument('fk_binomio')
+inscripcion_parser.add_argument('fk_implemento')
 # Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -455,6 +466,27 @@ class CarreraSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 carrera_schema = CarreraSchema()
+
+# Implemento schema
+class ImplementoSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Implemento
+        include_fk = True
+# instance the class
+implemento_schema = ImplementoSchema()
+
+# Inscripcion schema
+class InscripcionSchema(ma.SQLAlchemyAutoSchema):
+    #nested elements
+    binomio = ma.Nested(BinomioSchema)
+    carrera = ma.Nested(CarreraSchema)
+    implemento = ma.Nested(ImplementoSchema)
+    class Meta:
+        model = Inscripcion
+        include_fk = True
+        json_module = simplejson
+# instance the class
+inscripcion_schema = InscripcionSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -1502,6 +1534,198 @@ class CarreraPorcentajeDividendoListEndPoint(Resource):
 api.add_resource(CarreraPorcentajeDividendoListEndPoint, '/carrera/porcentaje/dividendo')
 
 
+### Inscripcion ###
+
+# RUD for one Inscripcion
+class InscripcionEndPoint(Resource):
+    def get(self, inscripcion_id):
+        inscripcion = Inscripcion.query.get(inscripcion_id)
+        # ejemplar does not exist
+        if not inscripcion:
+            abort(404, message="Inscripcion {} doesn't exist".format(inscripcion_id))
+
+        return inscripcion_schema.dumps(inscripcion)
+
+    def delete(self, inscripcion_id):
+        # get the carrera
+        inscripcion = Inscripcion.query.get(inscripcion_id)
+        response = deleteElement(inscripcion)
+
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, carrera_id):
+        args = inscripcion_parser.parse_args()
+        inscripcion = Inscripcion.query.get(carrera_id)
+
+        #update the inscripcion
+        inscripcion.ins_num_gualdrapa = args["ins_num_gualdrapa"]
+        inscripcion.ins_puesto_pista = args["ins_puesto_pista"]
+        inscripcion.ins_fecha = args["ins_fecha"]
+        inscripcion.ins_ejemplar_favorito = args["ins_ejemplar_favorito"]
+        inscripcion.ins_precio_reclamado = args["ins_precio_reclamado"]
+        inscripcion.fk_carrera = args["fk_carrera"]
+        inscripcion.fk_binomio = args["fk_binomio"]
+        inscripcion.fk_implemento = args["fk_implemento"]
+
+        try:
+            db.session.commit()
+            return inscripcion_schema.dumps(inscripcion), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(InscripcionEndPoint, '/inscripciones/<inscripcion_id>')
+
+# list all Inscripciones and create one
+class InscripcionListEndPoint(Resource):
+    def get(self):
+        elements = Inscripcion.query.all()
+        return [inscripcion_schema.dumps(element) for element in elements]
+
+    def post(self):
+        try:
+            args = inscripcion_parser.parse_args()
+
+            # verify space in carrera
+            inscripciones = Inscripcion.query.filter_by(fk_carrera=args["fk_carrera"]).all()
+            inscripciones_len = len(inscripciones)
+            if inscripciones_len==12:
+                return 'Carrera full', 400
+            
+            for inscripcion in inscripciones: 
+                if inscripcion.fk_binomio==int(args["fk_binomio"]):
+                    return 'Ya se encuentra registrado', 400
+            
+            # set the gualdrapa and puesto pista
+            args["ins_num_gualdrapa"] = inscripciones_len+1
+            args["ins_puesto_pista"] = inscripciones_len+1
+            args["fk_implemento"] = 11
+
+            inscripcion = Inscripcion.create(**args)
+            return inscripcion_schema.dumps(inscripcion), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(InscripcionListEndPoint, '/inscripciones')
+
+# get victories of a ejemplar
+class VictoriesListEndPoint(Resource):
+    def get(self, ejemplar_id):
+        try:
+            elements =  db.engine.execute(f'''
+                SELECT COUNT(B.FK_Ejemplar), B.FK_Ejemplar
+                FROM Binomio B, Inscripcion I, Resultado_Ejemplar RE 
+                WHERE   B.FK_Ejemplar={ejemplar_id}     and
+                        I.FK_Binomio=B.BI_Clave         and
+                        RE.FK_Inscripcion=I.INS_Clave   and
+                        RE.RES_Orden_Llegada=1
+                GROUP BY B.FK_Ejemplar;
+            ''')
+
+            victories = (int(ejemplar_id), 0)
+            for element in elements:
+                if element: 
+                    victories = (element[1], element[0])
+                else:
+                    victories = (element[1], element[0])
+            
+            return simplejson.dumps(victories), 200
+
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(VictoriesListEndPoint, '/victories/<ejemplar_id>')
+
+# get victories for all binomios
+class BinomiosVictoriesEndPoint(Resource):
+    def get(self):
+        try:
+            binomios = Binomio.query.all()
+            ejemplares_victories = {}
+            
+            for binomio in binomios:
+
+                elements =  db.engine.execute(f'''
+                    SELECT COUNT(B.FK_Ejemplar), B.FK_Ejemplar
+                    FROM Binomio B, Inscripcion I, Resultado_Ejemplar RE 
+                    WHERE   B.FK_Ejemplar={binomio.fk_ejemplar}     and
+                            I.FK_Binomio=B.BI_Clave         and
+                            RE.FK_Inscripcion=I.INS_Clave   and
+                            RE.RES_Orden_Llegada=1
+                    GROUP BY B.FK_Ejemplar;
+                ''')
+
+                ejemplares_victories[binomio.fk_ejemplar] = 0
+                for element in elements:
+                    if element: 
+                        ejemplares_victories[binomio.fk_ejemplar] = element[0]
+                    else:
+                        ejemplares_victories[binomio.fk_ejemplar] = element[0]
+            
+            return simplejson.dumps(ejemplares_victories), 200
+
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(BinomiosVictoriesEndPoint, '/ejemplares/victories')
+
+# get carrera for ejemplar
+class CarrerasForEjemplarEndPoint(Resource):
+    def get(self, ejemplar_id, ejemplar_age, ejemplar_wins):
+        try:
+            ejemplar = Ejemplar.query.get(ejemplar_id)
+            filtered_carreras = []
+
+            today_date = datetime.datetime.now()
+            aux_date = f'{today_date.year}-{today_date.month}-{today_date.day}'
+
+            carreras = db.engine.execute(f'''
+            SELECT  C.C_Clave, C.C_Nombre, C.C_Fecha, C.C_Hora, 
+                    C.C_Num_Llamado, C.C_Pull_Dinero_Total, 
+                    C.C_Distancia, C.C_Comentario, C.FK_Tipo_Carrera, 
+                    C.FK_Categoria_Carrera, C.FK_Pista
+            FROM    Carrera C, Tipo_Carrera TC
+            WHERE   C.FK_Tipo_Carrera=TC.TC_Clave                                           and
+                    {ejemplar_age} BETWEEN TC.TC_Edad_Minima AND TC.TC_Edad_Maxima          and
+                    {ejemplar_wins} BETWEEN TC.TC_Victoria_Minima AND TC.TC_Victoria_Maxima and
+                    '{ejemplar.e_sexo}'=TC.TC_Sexo                                          and
+                    '{aux_date}'<=C.C_Fecha
+            ''')
+
+            '''for element in carreras:
+                print(element)
+                #filtered_carreras.append(element)
+                filtered_carreras.append({
+                    'c_clave':element[0],
+                    'c_nombre':element[1],
+                    'c_fecha':element[2],
+                    'c_hora':element[3],
+                    'c_num_llamado':element[4],
+                    'c_pull_dinero_total':element[5],
+                    'c_distancia':element[6],
+                    'c_comentario':element[7],
+                    'fk_tipo_carrera':element[8],
+                    'fk_categoria_carrera':element[9],
+                    'fk_pista':element[10],
+                })'''
+            
+            for element in carreras:
+                filtered_carreras.append(Carrera.query.get(element[0])) 
+            
+            return [carrera_schema.dumps(carrera) for carrera in filtered_carreras], 200
+
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(CarrerasForEjemplarEndPoint, '/carreras/ejemplar/<ejemplar_id>/<ejemplar_age>/<ejemplar_wins>')
+
 ### Color ###
 # shows a list of all colors, and lets you POST to add new colors
 class ColorListEndPoint(Resource):
@@ -1538,15 +1762,6 @@ class ReportsEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(ReportsEndPoint, '/reports')
-
-### Report ###
-# generate a report
-class ResetEndPoint(Resource):
-    def get(self):
-        return 'Reset needed', 200
-
-# add the endpoint ot the api
-api.add_resource(ResetEndPoint, '/reset')
 
 #------------------------------------------------------------------------------------------
 
