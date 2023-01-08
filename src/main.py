@@ -328,7 +328,7 @@ class UsuarioSchema(ma.SQLAlchemyAutoSchema):
     propietario = ma.Nested(PropietarioSchema)
     veterinario = ma.Nested(VeterinarioSchema)
     class Meta:
-        model = AccionTipoUsuario
+        model = Usuario
         include_fk = True
         json_module = simplejson
 # instance the class
@@ -953,6 +953,13 @@ class TipoUsuarioEndPoint(Resource):
 
     def delete(self, tipo_usuario_id):
         tipo_usuario = TipoUsuario.query.get(tipo_usuario_id)
+
+        # delete all the assignments of actions
+        actions = AccionTipoUsuario.query.filter_by(fk_tipousuario=tipo_usuario_id)
+        for element in actions: 
+            deleted = deleteElement(element)
+            if not deleted: return 'Can not delete tipo usuario accion', 500
+
         response = deleteElement(tipo_usuario)
         if response:
             return 'Deleted', 200
@@ -964,6 +971,12 @@ class TipoUsuarioEndPoint(Resource):
         tipo_usuario = TipoUsuario.query.get(tipo_usuario_id)
         #update the Stud
         tipo_usuario.tu_nombre = args["tu_nombre"]
+
+        # delete all the assignments of actions
+        actions = AccionTipoUsuario.query.filter_by(fk_tipousuario=tipo_usuario_id)
+        for element in actions: 
+            deleted = deleteElement(element)
+            if not deleted: return 'Can not delete tipo usuario accion', 500
 
         try:
             db.session.commit()
@@ -1026,7 +1039,7 @@ class AccionTipoUsuarioEndPoint(Resource):
             db.session.rollback()
             return 'Could not be updated', 400
 # add the endpoint ot the api
-api.add_resource(AccionTipoUsuarioEndPoint, '/accion-tipos-usuarios/<accion_tipo_usuario_id>')
+api.add_resource(AccionTipoUsuarioEndPoint, '/accion/tipo/usuario/<accion_tipo_usuario_id>')
 
 # list all AccionTipoUsuario and create one
 class AccionTipoUsuarioListEndPoint(Resource):
@@ -1043,7 +1056,7 @@ class AccionTipoUsuarioListEndPoint(Resource):
             print(e)
             return 'Failed', 400
 # add the endpoint ot the api
-api.add_resource(AccionTipoUsuarioListEndPoint, '/accion-tipos-usuarios')
+api.add_resource(AccionTipoUsuarioListEndPoint, '/acciones/tipo/usuario')
 
 
 ### Usuario ###
@@ -1809,6 +1822,18 @@ class CarrerasForEjemplarEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(CarrerasForEjemplarEndPoint, '/carreras/ejemplar/<ejemplar_id>/<ejemplar_age>/<ejemplar_wins>')
+
+
+### Accion ###
+# shows a list of all colors, and lets you POST to add new colors
+class AccionListEndPoint(Resource):
+    def get(self):
+        acciones = Accion.query.all()
+        return [accion_schema.dump(accion) for accion in acciones]
+
+# add the endpoint ot the api
+api.add_resource(AccionListEndPoint, '/acciones')
+
 
 ### Color ###
 # shows a list of all colors, and lets you POST to add new colors

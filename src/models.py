@@ -42,7 +42,8 @@ class AccionTipoUsuario(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except IntegrityError:
+        except IntegrityError as e:
+            print(e)
             db.session.rollback()
             raise Exception("Key not unique")
         except Exception:
