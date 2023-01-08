@@ -182,6 +182,13 @@ inscripcion_parser.add_argument('ins_precio_reclamado')
 inscripcion_parser.add_argument('fk_carrera')
 inscripcion_parser.add_argument('fk_binomio')
 inscripcion_parser.add_argument('fk_implemento')
+# Retiro --------------------------------------------------------------------------------
+retiro_parser = reqparse.RequestParser()
+retiro_parser.add_argument('r_clave') 
+retiro_parser.add_argument('r_fecha_retiro')
+retiro_parser.add_argument('r_descripcion')
+retiro_parser.add_argument('fk_causaretiro')
+retiro_parser.add_argument('fk_inscripcion') 
 # Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -487,6 +494,27 @@ class InscripcionSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 inscripcion_schema = InscripcionSchema()
+
+# CausaRetiro schema
+class CausaRetiroSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = CausaRetiro
+        include_fk = True
+        json_module = simplejson
+# instance the class
+causa_retiro_schema = CausaRetiroSchema()
+
+# Retiro schema
+class RetiroSchema(ma.SQLAlchemyAutoSchema):
+
+    causa_retiro = ma.Nested(CausaRetiroSchema)
+    inscripcion = ma.Nested(InscripcionSchema)
+    class Meta:
+        model = Retiro
+        include_fk = True
+        json_module = simplejson
+# instance the class
+retiro_schema = RetiroSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -1611,6 +1639,62 @@ class InscripcionListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(InscripcionListEndPoint, '/inscripciones')
+
+# list all Inscripciones and create one
+class ActiveInscripciones(Resource):
+    def get(self):
+
+        filtered_inscripciones = []
+
+        today_date = datetime.datetime.now()
+        aux_date = f'{today_date.year}-{today_date.month}-{today_date.day}'
+
+        inscripciones = db.engine.execute(f'''
+        SELECT  I.INS_Clave
+        FROM    Inscripcion I, Carrera C
+        WHERE   I.FK_Carrera=C.C_Clave          and
+                '{aux_date}'<=C.C_Fecha         and 
+                I.INS_Clave NOT IN (
+                    SELECT  R.FK_Inscripcion
+                    FROM    Retiro R
+                )
+        ''')
+
+        for element in inscripciones:
+            filtered_inscripciones.append(Inscripcion.query.get(element[0]))
+
+        return [inscripcion_schema.dumps(element) for element in filtered_inscripciones]
+# add the endpoint ot the api
+api.add_resource(ActiveInscripciones, '/inscripciones/activas')
+
+### CausaRetiro ###
+# shows a list of all CausaRetiro
+class CausaRetiroListEndPoint(Resource):
+    def get(self):
+        causas_retiros = CausaRetiro.query.all()
+        return [causa_retiro_schema.dumps(causa_retiro) for causa_retiro in causas_retiros]
+# add the endpoint ot the api
+api.add_resource(CausaRetiroListEndPoint, '/causas/retiros')
+
+### Retiro ###
+
+# create and get all RetiroSchema 
+class RetiroEndPoint(Resource):
+    def get(self):
+        elements = Retiro.query.all()
+        return [retiro_schema.dumps(element) for element in elements]
+
+    def post(self):
+        try:
+            args = retiro_parser.parse_args()
+
+            element = Retiro.create(**args)
+            return retiro_schema.dumps(element), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(RetiroEndPoint, '/retiros')
 
 # get victories of a ejemplar
 class VictoriesListEndPoint(Resource):

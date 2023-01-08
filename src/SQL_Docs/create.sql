@@ -660,7 +660,8 @@ create table Retiro(
 	/*Clave primaria*/
 	constraint PK_Retiro primary key(R_Clave),
 	/*Clave foranea*/
-	constraint FK_Causa_Retiro foreign key(FK_CausaRetiro) references Causa_Retiro(CR_Clave)
+	constraint FK_Causa_Retiro foreign key(FK_CausaRetiro) references Causa_Retiro(CR_Clave),
+	constraint fk_Inscripcion  foreign key(FK_Inscripcion) references Inscripcion(INS_Clave)
 );
 
 create table Resultado_Ejemplar(

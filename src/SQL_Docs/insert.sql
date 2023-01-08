@@ -1951,7 +1951,9 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Binomio');
   -- Inscripcion
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Inscripcion');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Inscripcion');
-insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Inscripcion');
+  -- Retiro
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Retiro');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Retiro');
 
 --Acciones para el tipo de usuario
 
@@ -2021,7 +2023,10 @@ insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,37);
   ---- Permisos sobre Inscripcion
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,38);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,39);
+  ---- Permisos sobre Retiro
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,40);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,41);
+
 
 --Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1
@@ -4521,7 +4526,7 @@ insert into Retiro VALUES(DEFAULT,'2022-09-04','inapetencia',8,274);
 insert into Retiro VALUES(DEFAULT,'2022-07-02','claudicacion miembro anterior izq',4,291);
 insert into Retiro VALUES(DEFAULT,'2022-07-15','claudicacion miembro anterior izq',4,332);
 insert into Retiro VALUES(DEFAULT,'2022-07-31','escaparse en los traqueos',8,402);
-insert into Retiro VALUES(DEFAULT,'2022-10-09','hemorragia pulmonar',8,446);
+insert into Retiro VALUES(DEFAULT,'2022-10-09','hemorragia pulmonar',8,442);
 
 --Clave, Orden_Llegada, Diferencia_Cuerpos, Dividendo_Pagado,
 --Speed_Rating, Variante_Pista, FK_Inscripcion

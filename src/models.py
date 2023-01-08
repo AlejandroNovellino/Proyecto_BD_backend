@@ -1216,9 +1216,10 @@ class Retiro(db.Model):
     r_fecha_retiro = db.Column(db.Date, nullable=False)
     r_descripcion = db.Column(db.String(45), nullable=False)
     fk_causaretiro = db.Column(db.ForeignKey('causa_retiro.cr_clave'), nullable=False)
-    fk_inscripcion = db.Column(db.Integer, nullable=False)
+    fk_inscripcion = db.Column(db.ForeignKey('inscripcion.ins_clave'), nullable=False)
 
     causa_retiro = db.relationship('CausaRetiro', primaryjoin='Retiro.fk_causaretiro == CausaRetiro.cr_clave', backref='retiros')
+    inscripcion = db.relationship('Inscripcion', primaryjoin='Retiro.fk_inscripcion == Inscripcion.ins_clave', backref='retiros')
 
     @classmethod
     def create(cls, **kwargs):
@@ -1226,7 +1227,8 @@ class Retiro(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except IntegrityError:
+        except IntegrityError as e:
+            print(e)
             db.session.rollback()
             raise Exception("Key not unique")
         except Exception:
