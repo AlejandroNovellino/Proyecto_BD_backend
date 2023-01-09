@@ -34,14 +34,10 @@ AND      sc.fk_color=c.col_Clave;]]>
 	</background>
 	<title>
 		<band height="101" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="17" width="120" height="61" uuid="3612effe-5ea7-4d3d-8e7d-5130658fab97"/>
-				<imageExpression><![CDATA["inh_logo.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="2a66e365-16d5-4f87-b1c7-0260f7439205"/>
 				<textElement textAlignment="Center">
-					<font fontName="&#xD;&#xA;SansSerif" size="16" isBold="true"/>
+					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[REPORTES
 Hipodromo la Rinconada]]></text>
@@ -55,14 +51,14 @@ Hipodromo la Rinconada]]></text>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="400" y="84" width="100" height="16" uuid="b2b377ed-d034-4f29-9365-f3673d8432ed"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="HH:mm">
 				<reportElement x="500" y="84" width="100" height="16" uuid="9e1b2513-519e-41bb-aefb-38578cdcdf65"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
@@ -73,7 +69,7 @@ Hipodromo la Rinconada]]></text>
 			<staticText>
 				<reportElement x="138" y="19" width="304" height="30" backcolor="#1C3659" uuid="b26bd3bf-a1ca-473c-9bbf-f3507b787938"/>
 				<textElement textAlignment="Center">
-					<font size="16" isBold="true"/>
+					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Listado de Stud con su Uniforme]]></text>
 			</staticText>
@@ -92,7 +88,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nombre Stud]]></text>
 			</staticText>
@@ -107,7 +103,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Uniforme]]></text>
 			</staticText>
@@ -122,7 +118,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Color]]></text>
 			</staticText>
@@ -141,7 +137,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{s_nombre}]]></textFieldExpression>
 			</textField>
@@ -156,7 +152,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{uniforme}]]></textFieldExpression>
 			</textField>
@@ -171,7 +167,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{col_nombre}]]></textFieldExpression>
 			</textField>
@@ -188,7 +184,7 @@ Hipodromo la Rinconada]]></text>
 			<staticText>
 				<reportElement x="9" y="5" width="566" height="80" uuid="d9a8bbc7-b673-4c78-92fc-73561f41e1c8"/>
 				<textElement>
-					<font fontName="SansSerif" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[
 

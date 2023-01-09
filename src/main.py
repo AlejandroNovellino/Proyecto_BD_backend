@@ -539,6 +539,21 @@ def deleteElement(model_object):
         return False
 
 
+def deleteInscripcion(inscripcion):
+    # delete retiros
+    retiros = Retiro.query.filter_by(fk_inscripcion=inscripcion.ins_clave)
+
+    for retiro in retiros:
+        if not deleteElement(retiro): 
+            return False
+
+    # delete inscripcion
+    if deleteElement(inscripcion):
+        return True
+    else:
+        return False
+
+
 ### Ejemplar ###
 
 # RUD for one Ejemplar
@@ -815,7 +830,7 @@ class CarreraEndPoint(Resource):
         # delete all the inscriptions
         inscriptions = Inscripcion.query.filter_by(fk_carrera=carrera_id)
         for element in inscriptions:
-            deleted = deleteElement(element)
+            deleted = deleteInscripcion(element)
             if not deleted: return 'Can not delete, incripcion', 500
         # delete carrera porcentaje dividendo
         cpds = CarreraPorcentajeDividendo.query.filter_by(fk_carrera=carrera_id)

@@ -30,14 +30,10 @@ AND he_activo='true']]>
 	</background>
 	<title>
 		<band height="101" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="17" width="120" height="61" uuid="1fbcb0e1-a96c-4737-a3c7-f8e06f78629a"/>
-				<imageExpression><![CDATA["inh_logo.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="a8dfdeca-6b36-4e71-889b-b76f52934b32"/>
 				<textElement textAlignment="Center">
-					<font fontName="&#xD;&#xA;SansSerif" size="16" isBold="true"/>
+					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[REPORTES
 Hipodromo la Rinconada]]></text>
@@ -45,14 +41,14 @@ Hipodromo la Rinconada]]></text>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="400" y="84" width="100" height="16" uuid="4576a77c-9627-4e40-bc0d-a5a9aac709b7"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="HH:mm">
 				<reportElement x="500" y="84" width="100" height="16" uuid="595e2442-fa65-40c4-8b14-a02f1a6595b0"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
@@ -69,7 +65,7 @@ Hipodromo la Rinconada]]></text>
 			<staticText>
 				<reportElement x="130" y="19" width="304" height="30" backcolor="#1C3659" uuid="a3fb11fa-9578-43eb-88d5-1b610eaade8c"/>
 				<textElement textAlignment="Center">
-					<font size="16" isBold="true"/>
+					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Listado de Entrenadores con su cuadra]]></text>
 			</staticText>
@@ -88,7 +84,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nombre]]></text>
 			</staticText>
@@ -103,7 +99,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Apellido]]></text>
 			</staticText>
@@ -118,7 +114,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Numero de caballeriza]]></text>
 			</staticText>
@@ -137,7 +133,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{p_primer_nombre}]]></textFieldExpression>
 			</textField>
@@ -152,7 +148,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{p_primer_apellido}]]></textFieldExpression>
 			</textField>
@@ -167,7 +163,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ca_numero}]]></textFieldExpression>
 			</textField>
@@ -184,7 +180,7 @@ Hipodromo la Rinconada]]></text>
 			<staticText>
 				<reportElement x="4" y="10" width="566" height="80" uuid="f985752b-92c4-434b-8295-96889fc73c04"/>
 				<textElement>
-					<font fontName="SansSerif" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[
 

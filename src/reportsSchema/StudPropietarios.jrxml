@@ -7,8 +7,7 @@
 		<![CDATA[SELECT  s.s_nombre, p.p_primer_nombre, p.p_primer_apellido ,ps.ps_porcentaje
 FROM stud s,propietario p, propietario_stud ps
 WHERE s.s_clave=ps.fk_stud
-AND      ps.fk_propietario=p.p_cedula
-]]>
+AND      ps.fk_propietario=p.p_cedula]]>
 	</queryString>
 	<field name="s_nombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="s_nombre"/>
@@ -35,14 +34,10 @@ AND      ps.fk_propietario=p.p_cedula
 	</background>
 	<title>
 		<band height="101" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="17" width="120" height="61" uuid="d4d0fe59-e4e9-479a-8e65-cc01e987ad20"/>
-				<imageExpression><![CDATA["inh_logo.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="50366203-1236-4b83-8ea6-78c078dab559"/>
 				<textElement textAlignment="Center">
-					<font fontName="&#xD;&#xA;SansSerif" size="16" isBold="true"/>
+					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[REPORTES
 Hipodromo la Rinconada]]></text>
@@ -50,14 +45,14 @@ Hipodromo la Rinconada]]></text>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="400" y="84" width="100" height="16" uuid="d84b5d36-00aa-4425-9fa3-ef9da36a59ae"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="HH:mm">
 				<reportElement x="500" y="84" width="100" height="16" uuid="3b9f6bc7-ebcd-490f-86c2-a6cecb59a345"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
@@ -74,7 +69,7 @@ Hipodromo la Rinconada]]></text>
 			<staticText>
 				<reportElement x="80" y="19" width="420" height="30" backcolor="#1C3659" uuid="4dbd2f48-05b4-4789-8eec-4c9195b90fc8"/>
 				<textElement textAlignment="Center">
-					<font size="16" isBold="true"/>
+					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Listado de Stud con sus propietarios y su porcentajes]]></text>
 			</staticText>
@@ -95,7 +90,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nombre Stud]]></text>
 			</staticText>
@@ -111,7 +106,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nombre Propietario]]></text>
 			</staticText>
@@ -127,7 +122,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Apellido Propietario]]></text>
 			</staticText>
@@ -143,7 +138,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Porcentaje (%)]]></text>
 			</staticText>
@@ -163,7 +158,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{p_primer_nombre}]]></textFieldExpression>
 			</textField>
@@ -179,7 +174,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{p_primer_apellido}]]></textFieldExpression>
 			</textField>
@@ -195,7 +190,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ps_porcentaje}]]></textFieldExpression>
 			</textField>
@@ -212,7 +207,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{s_nombre}]]></textFieldExpression>
 			</textField>
@@ -229,7 +224,7 @@ Hipodromo la Rinconada]]></text>
 			<staticText>
 				<reportElement x="9" y="5" width="566" height="80" uuid="a5756fbb-0631-4387-b8c6-d1f0965d1963"/>
 				<textElement>
-					<font fontName="SansSerif" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[
 

@@ -8,8 +8,7 @@
 	<queryString>
 		<![CDATA[SELECT  u_correo_e, tu_nombre
 FROM usuario, tipo_usuario
-WHERE fk_tipo_usuario=tu_clave
-]]>
+WHERE fk_tipo_usuario=tu_clave]]>
 	</queryString>
 	<field name="u_correo_e" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="u_correo_e"/>
@@ -32,14 +31,10 @@ WHERE fk_tipo_usuario=tu_clave
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 			</line>
-			<image>
-				<reportElement x="0" y="17" width="120" height="61" uuid="8101a344-51de-4ed9-9bb5-b400ca44d306"/>
-				<imageExpression><![CDATA["inh_logo.png"]]></imageExpression>
-			</image>
 			<staticText>
 				<reportElement x="152" y="23" width="300" height="49" uuid="98783302-3d26-46a1-8eda-7d394da9a59c"/>
 				<textElement textAlignment="Center">
-					<font fontName="&#xD;&#xA;SansSerif" size="16" isBold="true"/>
+					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[REPORTES
 Hipodromo la Rinconada]]></text>
@@ -47,14 +42,14 @@ Hipodromo la Rinconada]]></text>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="400" y="84" width="100" height="16" uuid="4ecbc45e-6ca2-4d93-8ec2-ea1f7f3b7adf"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="HH:mm">
 				<reportElement x="500" y="84" width="100" height="16" uuid="1c0e00cf-645e-4ca2-acff-d5b5a9030ce0"/>
 				<textElement>
-					<font size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
@@ -65,7 +60,7 @@ Hipodromo la Rinconada]]></text>
 			<staticText>
 				<reportElement x="137" y="19" width="297" height="30" uuid="acaee317-67b3-4bdf-a7ef-fa849140c06a"/>
 				<textElement textAlignment="Center">
-					<font size="16" isBold="true"/>
+					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Listado de usuarios con sus roles]]></text>
 			</staticText>
@@ -74,7 +69,7 @@ Hipodromo la Rinconada]]></text>
 	<columnHeader>
 		<band height="40" splitType="Stretch">
 			<staticText>
-				<reportElement x="152" y="10" width="150" height="30" uuid="199904e9-84da-4713-a0ce-ba2f7cdb4340">
+				<reportElement mode="Opaque" x="140" y="10" width="162" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="199904e9-84da-4713-a0ce-ba2f7cdb4340">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="90d6cfb4-9775-43b5-b036-5d41c3ddb6b8"/>
 				</reportElement>
 				<box>
@@ -84,12 +79,12 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font fontName="SansSerif" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Correo del Usuario]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="303" y="10" width="107" height="30" uuid="a50c2649-654e-49e6-a58a-9daf377a8905">
+				<reportElement mode="Opaque" x="303" y="10" width="107" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="a50c2649-654e-49e6-a58a-9daf377a8905">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24ea5be5-47fb-4e51-a349-db8e82890805"/>
 				</reportElement>
 				<box>
@@ -99,7 +94,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font fontName="SansSerif" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Rol del usuario]]></text>
 			</staticText>
@@ -108,7 +103,7 @@ Hipodromo la Rinconada]]></text>
 	<detail>
 		<band height="31" splitType="Stretch">
 			<textField>
-				<reportElement x="152" y="1" width="150" height="30" uuid="e59e941b-c021-418d-9f1c-f22b2ad9cf93">
+				<reportElement x="140" y="1" width="162" height="30" uuid="e59e941b-c021-418d-9f1c-f22b2ad9cf93">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="90d6cfb4-9775-43b5-b036-5d41c3ddb6b8"/>
 				</reportElement>
 				<box>
@@ -118,7 +113,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font fontName="SansSerif" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{u_correo_e}]]></textFieldExpression>
 			</textField>
@@ -133,7 +128,7 @@ Hipodromo la Rinconada]]></text>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font fontName="SansSerif" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tu_nombre}]]></textFieldExpression>
 			</textField>
@@ -150,7 +145,7 @@ Hipodromo la Rinconada]]></text>
 			<staticText>
 				<reportElement x="4" y="10" width="562" height="80" uuid="cb003d89-d258-41fe-98f2-36b31984002a"/>
 				<textElement>
-					<font fontName="SansSerif" size="12"/>
+					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[
 
