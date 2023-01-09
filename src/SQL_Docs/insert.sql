@@ -2125,7 +2125,7 @@ insert into Taquilla_Apuesta VALUES(DEFAULT,8,2);
 
 --Usuarios
 insert into Usuario VALUES(DEFAULT,'nasetien.20@est.ucab.edu.ve','bgf07052021','2022-11-20',null,null,null,null,null,4);
-insert into Usuario VALUES(DEFAULT,'faparilli@gmail.com','2369rinconada','2022-12-18',13339835,null,null,null,null,2);
+insert into Usuario VALUES(DEFAULT,'faparilli@gmail.com','2369rinconada','2022-12-18',13339835,null,null,null,null,1);
 insert into Usuario VALUES(DEFAULT,'educon001@gmail.com','ardosalvo2','2022-12-22',null,null,null,null,27670971,1);
 insert into Usuario VALUES(DEFAULT,'apandawriter@outlook.es','amoablackmidi','2022-12-20',null,null,null,null,29551908,1);
 insert into Usuario VALUES(DEFAULT,'yonder999@outlook.es','hipodromo9yonder','2022-12-17',null,null,18110290,null,null,1);

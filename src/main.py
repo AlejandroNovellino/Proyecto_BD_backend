@@ -214,6 +214,8 @@ ejemplar_schema = EjemplarSchema()
 
 # Entrenador schema
 class EntrenadorSchema(ma.SQLAlchemyAutoSchema):
+    #nested schemas
+    
     class Meta:
         model = Entrenador
         include_fk = True
