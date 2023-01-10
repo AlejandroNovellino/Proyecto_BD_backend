@@ -971,6 +971,10 @@ class TipoUsuarioEndPoint(Resource):
     def delete(self, tipo_usuario_id):
         tipo_usuario = TipoUsuario.query.get(tipo_usuario_id)
 
+        # verify if some user is using it
+        users = Usuario.query.filter_by(fk_tipo_usuario=tipo_usuario_id).all()
+        if users: return 'Can not delete tipo usuario, is being used', 500
+
         # delete all the assignments of actions
         actions = AccionTipoUsuario.query.filter_by(fk_tipousuario=tipo_usuario_id)
         for element in actions: 

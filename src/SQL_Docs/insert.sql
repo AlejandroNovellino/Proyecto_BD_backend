@@ -2068,16 +2068,18 @@ insert into Tipo_Carrera VALUES(DEFAULT,'Yeguas de 6 y mas annos, ganadoras de 2
 insert into Tipo_Carrera VALUES(DEFAULT,'Caballos de 6 y mas annos, ganadores de 2 y 3 carreras','C',6,20,2,3);
 insert into Tipo_Carrera VALUES(DEFAULT,'Caballos de 6 y mas annos, ganadores de 4,5,6 carreras','C',6,20,4,6);
 insert into Tipo_Carrera VALUES(DEFAULT,'Yeguas de 3 annos, debutantes o no ganadoras','Y',3,3,0,0);
+insert into Tipo_Carrera VALUES(DEFAULT,'Yeguas debutantes o no ganadoras','Y',0,20,0,0);
+insert into Tipo_Carrera VALUES(DEFAULT,'Caballos debutantes o no ganadoras','C',0,20,0,0);
 
 --Causas de retiros
-insert into Causa_Retiro VALUES(DEFAULT,'desc','Caneras',3);
-insert into Causa_Retiro VALUES(DEFAULT,'desc','Esparavanes',1);
-insert into Causa_Retiro VALUES(DEFAULT,'desc','Carpitis',4);
-insert into Causa_Retiro VALUES(DEFAULT,'desc','Tendonitis',2);
-insert into Causa_Retiro VALUES(DEFAULT,'desc','Castracion',2);
-insert into Causa_Retiro VALUES(DEFAULT,'desc','Miositis',2);
-insert into Causa_Retiro VALUES(DEFAULT,'desc','Erlichosis',1);
-insert into Causa_Retiro VALUES(DEFAULT,'desc','Otro',1);
+insert into Causa_Retiro VALUES(DEFAULT,'Las cañeras se lastiman debido a la fatiga cíclica de alta tensión, en otras palabras por sobre entrenamiento.','Caneras',3);
+insert into Causa_Retiro VALUES(DEFAULT,'El esparaván es una enfermedad crónica degenerativa que aparece con la edad y el trabajo: se manifiesta por los cambios en los huesos del corvejón, desmineralización del hueso y proliferación de osteofitos.','Esparavanes',1);
+insert into Causa_Retiro VALUES(DEFAULT,'La Carpitis es una inflamación aguda o crónica de la articulación del carpo, que generalmente compromete la cápsula articular, los ligamentos colaterales del carpo y los huesos que forman la articulación.','Carpitis',4);
+insert into Causa_Retiro VALUES(DEFAULT,'La tendinitis equina es una lesión que tiene lugar cuando existe un estiramiento excesivo de las fibras que conforman el tendón más allá de su límite físico, produciéndose así una ruptura de dichas fibras con la consecuente inflamación, que será relativa de acuerdo al número de fibras dañadas.','Tendonitis',2);
+insert into Causa_Retiro VALUES(DEFAULT,'La castración (también conocida como capón/castrado) es el procedimiento de quitar los testículos de un semental con el propósito de hacerlo infértil y reducir el comportamiento de los machos como sementales.','Castracion',2);
+insert into Causa_Retiro VALUES(DEFAULT,'La miositis, también conocida como golpe de sangre, es una enfermedad que destruye los músculos estriados del caballo. Un caballo con miositis tiene calambres generalizados muy dolorosos.','Miositis',2);
+insert into Causa_Retiro VALUES(DEFAULT,'La ehrlichiosis equina es una enfermedad rickettsial infecciosa. no contagiosa. que afecta principalmente a caballos pura sangre de carrera, pero que tarnbien se puede presentar en poneys.','Erlichosis',1);
+insert into Causa_Retiro VALUES(DEFAULT,'Otra enfermedad.','Otro',1);
 
 --Implementos
 insert into Implemento VALUES(DEFAULT,'Gringola','GR');

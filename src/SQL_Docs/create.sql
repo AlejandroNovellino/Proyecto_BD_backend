@@ -78,7 +78,7 @@ create	table Porcentaje_Dividendo(
 
 create	table Causa_Retiro(
 	CR_Clave				serial NOT NULL UNIQUE,
-	CR_Descripcion	varchar(45)	NOT NULL,
+	CR_Descripcion	varchar(500)	NOT NULL,
 	CR_Nombre				varchar(45) NOT NULL,
 	CR_Duracion			numeric(10) NOT NULL,
 	/*Clave primaria*/
