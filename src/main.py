@@ -189,6 +189,15 @@ retiro_parser.add_argument('r_fecha_retiro')
 retiro_parser.add_argument('r_descripcion')
 retiro_parser.add_argument('fk_causaretiro')
 retiro_parser.add_argument('fk_inscripcion') 
+# TipoApuesta --------------------------------------------------------------------------------
+tipo_apuesta_parser = reqparse.RequestParser()
+tipo_apuesta_parser.add_argument('ta_clave') 
+tipo_apuesta_parser.add_argument('ta_nombre')
+tipo_apuesta_parser.add_argument('ta_precio')
+tipo_apuesta_parser.add_argument('ta_saldo_minimo')
+tipo_apuesta_parser.add_argument('ta_precio_jugada_adicional') 
+tipo_apuesta_parser.add_argument('ta_cant_caballo_minimo_carrera') 
+tipo_apuesta_parser.add_argument('ta_num_ejemplar_minimo_necesario') 
 # Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -517,6 +526,15 @@ class RetiroSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 retiro_schema = RetiroSchema()
+
+# TipoApuesta schema
+class TipoApuestaSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = TipoApuesta
+        include_fk = True
+        json_module = simplejson
+# instance the class
+tipo_apuesta_schema = TipoApuestaSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -1854,6 +1872,77 @@ class AccionListEndPoint(Resource):
 
 # add the endpoint ot the api
 api.add_resource(AccionListEndPoint, '/acciones')
+
+
+### Tipo Apuesta ###
+
+# RUD for one tipo apuesta
+class TipoApuestaEndPoint(Resource):
+    def get(self, tipo_apuesta_id):
+        tipo_apuesta = TipoApuesta.query.get(tipo_apuesta_id)
+        # ejemplar does not exist
+        if not tipo_apuesta:
+            abort(404, message="Tipo apuesta {} doesn't exist".format(tipo_apuesta_id))
+
+        return tipo_apuesta_schema.dumps(tipo_apuesta)
+
+    def delete(self, tipo_apuesta_id):
+        tipo_apuesta = TipoApuesta.query.get(tipo_apuesta_id)
+
+        # set to null all the foreign keys to this tipo apuesta
+        apuestas = Apuesta.query.filter_by(fk_tipoapuesta=tipo_apuesta.ta_clave)
+        for apuesta in apuestas:
+            try:
+                apuesta.fk_tipoapuesta = None
+                db.session.commit()
+            except Exception as e:
+                print(e)
+                db.session.rollback()
+                return 'Could not be updated', 400
+
+        response = deleteElement(tipo_apuesta)
+        if response:
+            return 'Deleted', 200
+        else:
+            return 'Can not delete', 400
+
+    def put(self, tipo_apuesta_id):
+        args = tipo_apuesta_parser.parse_args()
+        tipo_apuesta = TipoApuesta.query.get(tipo_apuesta_id)
+        #update tipoapuesta
+        tipo_apuesta.ta_nombre = args["ta_nombre"]
+        tipo_apuesta.ta_precio = args["ta_precio"]
+        tipo_apuesta.ta_saldo_minimo = args["ta_saldo_minimo"]
+        tipo_apuesta.ta_precio_jugada_adicional = args["ta_precio_jugada_adicional"]
+        tipo_apuesta.ta_cant_caballo_minimo_carrera = args["ta_cant_caballo_minimo_carrera"]
+        tipo_apuesta.ta_num_ejemplar_minimo_necesario = args["ta_num_ejemplar_minimo_necesario"]
+
+        try:
+            db.session.commit()
+            return tipo_apuesta_schema.dumps(tipo_apuesta), 201
+        except:
+            db.session.rollback()
+            return 'Could not be updated', 400
+# add the endpoint ot the api
+api.add_resource(TipoApuestaEndPoint, '/tipos/apuesta/<tipo_apuesta_id>')
+
+# list all jinetes and create one
+class TipoApuestaList(Resource):
+    def get(self):
+        tipos_apuestas = TipoApuesta.query.all()
+        return [tipo_apuesta_schema.dumps(tipo_apuesta) for tipo_apuesta in tipos_apuestas]
+
+    def post(self):
+        try:
+            args = tipo_apuesta_parser.parse_args()
+            tipo_apuesta = TipoApuesta.create(**args)
+
+            return tipo_apuesta_schema.dumps(tipo_apuesta), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(TipoApuestaList, '/tipos/apuesta')
 
 
 ### Color ###

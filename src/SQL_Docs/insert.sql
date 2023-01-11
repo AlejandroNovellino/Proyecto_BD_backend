@@ -1954,6 +1954,11 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Inscripcion
   -- Retiro
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Retiro');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Retiro');
+  -- Tipo_Apuesta
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Tipo_Apuesta');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Tipo_Apuesta');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Tipo_Apuesta');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Tipo_Apuesta');
 
 --Acciones para el tipo de usuario
 
@@ -2026,6 +2031,11 @@ insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,39);
   ---- Permisos sobre Retiro
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,40);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,41);
+  ---- Permisos sobre Tipo_Apuesta
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,42);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,43);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,44);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,45);
 
 
 --Colores
@@ -6200,3 +6210,17 @@ insert into Historico_Puesto VALUES(DEFAULT,'2018-04-18','2019-05-02',57,236);
 insert into Historico_Puesto VALUES(DEFAULT,'2019-05-03','2019-08-03',89,236);
 insert into Historico_Puesto VALUES(DEFAULT,'2017-01-01','2020-12-07',13,248);
 insert into Historico_Puesto VALUES(DEFAULT,'2017-04-29','2018-09-14',98,252);
+
+-- Tipo apuesta
+insert into Tipo_Apuesta VALUES (default, 'Prueba 1', 45.5,   50,   90, 2, 2);
+insert into Tipo_Apuesta VALUES (default, 'Prueba 2', 48.5,   60,   80, 2, 2);
+insert into Tipo_Apuesta VALUES (default, 'Prueba 3', 50,     70,   80, 2, 2);
+insert into Tipo_Apuesta VALUES (default, 'Prueba 4', 60,     30,   90, 2, 2);
+insert into Tipo_Apuesta VALUES (default, 'Prueba 5', 190,   100,  300, 2, 2);
+
+-- Apuesta
+insert into Apuesta VALUES (default, 45, 1, '2020-12-12', 1, 1, null);
+insert into Apuesta VALUES (default, 45, 2, '2020-12-12', 1, 1, null);
+insert into Apuesta VALUES (default, 45, 3, '2020-12-12', 1, 1, null);
+insert into Apuesta VALUES (default, 45, 4, '2020-12-12', 1, 1, null);
+insert into Apuesta VALUES (default, 45, 5, '2020-12-12', 1, 1, null);
