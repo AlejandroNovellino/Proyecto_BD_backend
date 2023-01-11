@@ -1,4 +1,5 @@
 
+
 --Lugares
 insert into Lugar(L_Nombre,L_Tipo) values ('Amazonas','Estado');
 insert into Lugar(L_Nombre,L_Tipo) values ('Anzoategui','Estado');
@@ -6219,8 +6220,14 @@ insert into Tipo_Apuesta VALUES (default, 'Prueba 4', 60,     30,   90, 2, 2);
 insert into Tipo_Apuesta VALUES (default, 'Prueba 5', 190,   100,  300, 2, 2);
 
 -- Apuesta
-insert into Apuesta VALUES (default, 45, 1, '2020-12-12', 1, 1, null);
-insert into Apuesta VALUES (default, 45, 2, '2020-12-12', 1, 1, null);
-insert into Apuesta VALUES (default, 45, 3, '2020-12-12', 1, 1, null);
-insert into Apuesta VALUES (default, 45, 4, '2020-12-12', 1, 1, null);
-insert into Apuesta VALUES (default, 45, 5, '2020-12-12', 1, 1, null);
+insert into Apuesta VALUES (default, 45, 1, '2020-12-12', 1, 1, null,null);
+insert into Apuesta VALUES (default, 45, 2, '2020-12-12', 4, 1, null,null);
+insert into Apuesta VALUES (default, 45, 3, '2020-12-12', 4, 1, null,null);
+insert into Apuesta VALUES (default, 45, 4, '2020-12-12', 5, 1, null,null);
+insert into Apuesta VALUES (default, 45, 5, '2020-12-12', 4, 1, null,null);
+
+insert into Apuesta VALUES (default, 45, 1, '2020-12-13', 1, null, 28426562,20);
+insert into Apuesta VALUES (default, 45, 2, '2020-12-14', 2, null, 29553823,20);
+insert into Apuesta VALUES (default, 45, 3, '2020-12-15', 2, null, 29553823,1);
+insert into Apuesta VALUES (default, 45, 4, '2020-12-18', 3, null, 29551908,2);
+insert into Apuesta VALUES (default, 45, 5, '2020-12-20', 3, null, 29583211,2);
