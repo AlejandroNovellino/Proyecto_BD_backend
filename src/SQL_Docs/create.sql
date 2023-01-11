@@ -759,14 +759,14 @@ create Table Apuesta(
 	FK_TipoApuesta			integer not null,
 	FK_Usuario					integer,
 	FK_Aficionado				Numeric(10),
-	FK_TaquillaApuesta			Numeric(10)
+	FK_TaquillaApuesta			integer,
 	/*Clave primaria*/
 	constraint PK_Apuesta 		primary key(APU_Clave),
 	/*Claves foraneas*/
 	constraint FK_TipoApuesta 	foreign key(FK_TipoApuesta) references Tipo_Apuesta(TA_Clave),
 	constraint FK_Usuario 		foreign key(FK_Usuario) references Usuario(U_Clave),
-	constraint FK_Aficionado	foreign key(FK_Aficionado) references Aficionado(P_Cedula)
-	constraint FK_Aficionado	foreign key(FK_TaquillaApuesta) references TaquillaApuesta(taa_clave)
+	constraint FK_Aficionado	foreign key(FK_Aficionado) references Aficionado(P_Cedula),
+	constraint FK_TaquillaApuesta	foreign key(FK_TaquillaApuesta) references taquilla_apuesta(taa_clave)
 );
 
 create table Detalle_Apuesta(
