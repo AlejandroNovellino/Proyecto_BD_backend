@@ -195,9 +195,16 @@ tipo_apuesta_parser.add_argument('ta_clave')
 tipo_apuesta_parser.add_argument('ta_nombre')
 tipo_apuesta_parser.add_argument('ta_precio')
 tipo_apuesta_parser.add_argument('ta_saldo_minimo')
+tipo_apuesta_parser.add_argument('ta_multiplicador') 
 tipo_apuesta_parser.add_argument('ta_precio_jugada_adicional') 
-tipo_apuesta_parser.add_argument('ta_cant_caballo_minimo_carrera') 
-tipo_apuesta_parser.add_argument('ta_num_ejemplar_minimo_necesario') 
+tipo_apuesta_parser.add_argument('ta_cant_minima_caballos_necesaria_en_carrera') 
+tipo_apuesta_parser.add_argument('ta_cant_maxima_caballos_por_carrera') 
+tipo_apuesta_parser.add_argument('ta_cant_maxima_caballos')
+tipo_apuesta_parser.add_argument('ta_cant_valida_ultimas_carreras_programa')
+tipo_apuesta_parser.add_argument('ta_llegada_en_orden', type=inputs.boolean)
+tipo_apuesta_parser.add_argument('ta_limite_premiado_inferior') 
+tipo_apuesta_parser.add_argument('ta_limite_premiado_superior') 
+tipo_apuesta_parser.add_argument('ta_descripcion') 
 # Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -1889,7 +1896,7 @@ class TipoApuestaEndPoint(Resource):
     def delete(self, tipo_apuesta_id):
         tipo_apuesta = TipoApuesta.query.get(tipo_apuesta_id)
 
-        # set to null all the foreign keys to this tipo apuesta
+        # delete all apuestas referencing it
         apuestas = Apuesta.query.filter_by(fk_tipoapuesta=tipo_apuesta.ta_clave)
         for apuesta in apuestas:
             try:
@@ -1913,9 +1920,16 @@ class TipoApuestaEndPoint(Resource):
         tipo_apuesta.ta_nombre = args["ta_nombre"]
         tipo_apuesta.ta_precio = args["ta_precio"]
         tipo_apuesta.ta_saldo_minimo = args["ta_saldo_minimo"]
+        tipo_apuesta.ta_multiplicador = args["ta_multiplicador"]
         tipo_apuesta.ta_precio_jugada_adicional = args["ta_precio_jugada_adicional"]
-        tipo_apuesta.ta_cant_caballo_minimo_carrera = args["ta_cant_caballo_minimo_carrera"]
-        tipo_apuesta.ta_num_ejemplar_minimo_necesario = args["ta_num_ejemplar_minimo_necesario"]
+        tipo_apuesta.ta_cant_minima_caballos_necesaria_en_carrera = args["ta_cant_minima_caballos_necesaria_en_carrera"]
+        tipo_apuesta.ta_cant_maxima_caballos_por_carrera = args["ta_cant_maxima_caballos_por_carrera"]
+        tipo_apuesta.ta_cant_maxima_caballos = args["ta_cant_maxima_caballos"]
+        tipo_apuesta.ta_cant_valida_ultimas_carreras_programa = args["ta_cant_valida_ultimas_carreras_programa"]
+        tipo_apuesta.ta_llegada_en_orden = args["ta_llegada_en_orden"]
+        tipo_apuesta.ta_limite_premiado_inferior = args["ta_limite_premiado_inferior"]
+        tipo_apuesta.ta_limite_premiado_superior = args["ta_limite_premiado_superior"]
+        tipo_apuesta.ta_descripcion = args["ta_descripcion"]
 
         try:
             db.session.commit()

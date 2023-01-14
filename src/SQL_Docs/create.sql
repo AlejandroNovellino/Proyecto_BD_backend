@@ -99,13 +99,22 @@ create table Implemento(
 );
 
 create Table Tipo_Apuesta(
-	TA_Clave							serial not null unique,
-	TA_Nombre							Varchar(20) not null,
-	TA_Precio							Decimal(6,2) not null,
-	TA_Saldo_Minimo						Decimal(6,2),
-	TA_Precio_Jugada_Adicional			Numeric(10,2),
-	TA_Cant_Caballo_Minimo_Carrera		Numeric(3),
-	TA_Num_Ejemplar_Minimo_Necesario	Numeric(3),
+	TA_Clave																				serial not null unique,
+	TA_Nombre																				Varchar(20) not null,
+	TA_Precio																				Numeric(10,2), 	-- precio de la apuesta (trifecta sencilla)
+	TA_Saldo_Minimo																	Numeric(10,2), 	-- precio minimo a apostar (ganador, minimo x bs por cada x bs que se hayan apostado)
+	TA_Multiplicador																Numeric(10,2), 	-- multiplicador (5y6 electronico)
+	TA_Precio_Jugada_Adicional											Numeric(10,2),	-- precio jugada adicional (loto hipico))
+	TA_Cant_Minima_Caballos_Necesaria_En_Carrera   	integer, 				-- cantidad necesaria de caballos en la carrera para realizarla
+	TA_Cant_Maxima_Caballos_Por_Carrera							integer,				-- cantidad de caballos maximos para seleccionar por carrera
+	TA_Cant_Maxima_Caballos													integer,				-- cantidad de caballos maximos para seleccionar en general
+	TA_Cant_Valida_Ultimas_Carreras_Programa   			integer, 				-- valida para las ultimas N carreras del programa
+	TA_Llegada_En_Orden															boolean, 				-- si es necesario tener en cuenta o no el orden de llegada de los ejemplares (trifecta combinada, trifecta sencilla, superfecta)
+	TA_Limite_Premiado_Inferior											integer,				-- limite inferior de a quien se premiara
+	TA_Limite_Premiado_Superior											integer,				-- limite superior de a quien se premiara
+	-- Ejemplor de los dos anteriores limites es (Gana si llega del primero al tercero:
+	-- limite inferior: 1, limite superior: 3)
+	TA_Descripcion																	text,						-- descripcion
 	/*Clave primaria*/
 	constraint PK_Tipo_Apuesta primary key(TA_Clave)
 );
@@ -806,4 +815,15 @@ create table Historico_Puesto(
 	/*Claves foraneas*/
 	constraint fK_Puesto 		foreign key(FK_Puesto) references Puesto(PU_Clave),
 	constraint fK_Ejemplar	foreign key(FK_Ejemplar) references Ejemplar(E_Tatuaje_Labial)
+);
+
+create table Tipo_Apuesta_Carrera(
+	TAC_Clave					serial not null unique,
+	FK_Carrera 				integer,
+	FK_Tipo_Apuesta		integer,
+	/*Clave primaria*/	
+	constraint PK_Tipo_Apuesta_Carrera 	primary key(TAC_Clave),
+	/*Claves foraneas*/
+	constraint fk_Carrera foreign key(FK_Carrera) references Carrera(C_Clave),
+	constraint fk_Tipo_Apuesta foreign key(FK_Tipo_Apuesta) references Tipo_Apuesta(TA_Clave)
 );

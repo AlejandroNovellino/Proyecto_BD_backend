@@ -1398,11 +1398,43 @@ class TipoApuesta(db.Model):
 
     ta_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     ta_nombre = db.Column(db.String(20), nullable=False)
-    ta_precio = db.Column(db.Numeric(6, 2), nullable=False)
-    ta_saldo_minimo = db.Column(db.Numeric(6, 2))
+    ta_precio = db.Column(db.Numeric(10, 2))
+    ta_saldo_minimo = db.Column(db.Numeric(10, 2))
+    ta_multiplicador = db.Column(db.Numeric(10, 2))
     ta_precio_jugada_adicional = db.Column(db.Numeric(10, 2))
-    ta_cant_caballo_minimo_carrera = db.Column(db.Numeric(3, 0))
-    ta_num_ejemplar_minimo_necesario = db.Column(db.Numeric(3, 0))
+    ta_cant_minima_caballos_necesaria_en_carrera = db.Column(db.Integer)
+    ta_cant_maxima_caballos_por_carrera = db.Column(db.Integer)
+    ta_cant_maxima_caballos = db.Column(db.Integer)
+    ta_cant_valida_ultimas_carreras_programa = db.Column(db.Integer)
+    ta_llegada_en_orden = db.Column(db.Boolean)
+    ta_limite_premiado_inferior = db.Column(db.Integer)
+    ta_limite_premiado_superior = db.Column(db.Integer)
+    ta_descripcion = db.Column(db.Text)
+
+    @classmethod
+    def create(cls, **kwargs):
+        element = cls(**kwargs)
+        db.session.add(element)
+        try: 
+            db.session.commit()
+        except IntegrityError:
+            db.session.rollback()
+            raise Exception("Key not unique")
+        except Exception as e:
+            print(e)
+            db.session.rollback()
+            raise Exception("A problem ocurred")
+        return element
+
+class TipoApuestaCarrera(db.Model):
+    __tablename__ = 'tipo_apuesta_carrera'
+
+    tac_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
+    fk_carrera = db.Column(db.ForeignKey('carrera.c_clave'))
+    fk_tipo_apuesta = db.Column(db.ForeignKey('tipo_apuesta.ta_clave'))
+
+    carrera = db.relationship('Carrera', primaryjoin='TipoApuestaCarrera.fk_carrera == Carrera.c_clave', backref='tipo_apuesta_carreras')
+    tipo_apuesta = db.relationship('TipoApuesta', primaryjoin='TipoApuestaCarrera.fk_tipo_apuesta == TipoApuesta.ta_clave', backref='tipo_apuesta_carreras')
 
     @classmethod
     def create(cls, **kwargs):
