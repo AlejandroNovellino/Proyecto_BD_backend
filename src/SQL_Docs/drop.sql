@@ -12,6 +12,7 @@ drop table Retiro;
 drop table Comentario;
 drop table Aplicacion_Medicamento;
 drop table Inscripcion;
+drop table tipo_apuesta_carrera;
 drop table Carrera_Porcentaje_Dividendo;
 drop table Carrera;
 drop table Medicamento;

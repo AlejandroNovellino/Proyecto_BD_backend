@@ -101,17 +101,17 @@ create table Implemento(
 create Table Tipo_Apuesta(
 	TA_Clave																				serial not null unique,
 	TA_Nombre																				Varchar(20) not null,
-	TA_Precio																				Numeric(10,2), 	-- precio de la apuesta (trifecta sencilla)
-	TA_Saldo_Minimo																	Numeric(10,2), 	-- precio minimo a apostar (ganador, minimo x bs por cada x bs que se hayan apostado)
-	TA_Multiplicador																Numeric(10,2), 	-- multiplicador (5y6 electronico)
-	TA_Precio_Jugada_Adicional											Numeric(10,2),	-- precio jugada adicional (loto hipico))
-	TA_Cant_Minima_Caballos_Necesaria_En_Carrera   	integer, 				-- cantidad necesaria de caballos en la carrera para realizarla
-	TA_Cant_Maxima_Caballos_Por_Carrera							integer,				-- cantidad de caballos maximos para seleccionar por carrera
-	TA_Cant_Maxima_Caballos													integer,				-- cantidad de caballos maximos para seleccionar en general
-	TA_Cant_Valida_Ultimas_Carreras_Programa   			integer, 				-- valida para las ultimas N carreras del programa
-	TA_Llegada_En_Orden															boolean, 				-- si es necesario tener en cuenta o no el orden de llegada de los ejemplares (trifecta combinada, trifecta sencilla, superfecta)
-	TA_Limite_Premiado_Inferior											integer,				-- limite inferior de a quien se premiara
-	TA_Limite_Premiado_Superior											integer,				-- limite superior de a quien se premiara
+	TA_Precio																				Numeric(10,2) not null, 	-- precio de la apuesta (trifecta sencilla)
+	TA_Saldo_Minimo																	Numeric(10,2), 						-- precio minimo a apostar (ganador, minimo x bs por cada x bs que se hayan apostado)
+	TA_Multiplicador																Numeric(10,2), 						-- multiplicador (5y6 electronico)
+	TA_Precio_Jugada_Adicional											Numeric(10,2),						-- precio jugada adicional (loto hipico))
+	TA_Cant_Minima_Caballos_Necesaria_En_Carrera   	integer, 									-- cantidad necesaria de caballos en la carrera para realizarla
+	TA_Cant_Maxima_Caballos_Por_Carrera							integer,									-- cantidad de caballos maximos para seleccionar por carrera
+	TA_Cant_Maxima_Caballos													integer,									-- cantidad de caballos maximos para seleccionar en general
+	TA_Cant_Valida_Ultimas_Carreras_Programa   			integer, 									-- valida para las ultimas N carreras del programa
+	TA_Llegada_En_Orden															boolean not null, 				-- si es necesario tener en cuenta o no el orden de llegada de los ejemplares (trifecta combinada, trifecta sencilla, superfecta)
+	TA_Limite_Premiado_Inferior											integer not null,					-- limite inferior de a quien se premiara
+	TA_Limite_Premiado_Superior											integer not null,					-- limite superior de a quien se premiara
 	-- Ejemplor de los dos anteriores limites es (Gana si llega del primero al tercero:
 	-- limite inferior: 1, limite superior: 3)
 	TA_Descripcion																	text,						-- descripcion
@@ -438,7 +438,7 @@ create table Boleto(
 create table Detallado_Venta(
 	DV_Clave					serial NOT NULL UNIQUE,
 	DV_Precio_Venta		numeric(10,2) NOT NULL,
-	DV_Num_Boleto		numeric(10)
+	DV_Num_Boleto		numeric(10),
 	FK_Venta_Boleto		integer NOT NULL,
 	FK_Boleto					integer NOT NULL,
 	FK_MetodoPago			integer NOT NULL,
@@ -782,7 +782,7 @@ create Table Apuesta(
 create table Detalle_Apuesta(
 	DA_Clave										serial not null unique ,
 	DA_Orden_Llegada_Ejemplar		Numeric(2) not null,
-	DA_Monto_apostar				numeric(10,2) NOT NULL
+	DA_Monto_apostar				numeric(10,2) NOT NULL,
 	FK_Apuesta									integer not null,
 	FK_Inscripcion						  integer not null,
 	FK_MetodoPago								integer NOT NULL,
