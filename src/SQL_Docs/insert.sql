@@ -2280,17 +2280,18 @@ insert into metodo_pago VALUES(DEFAULT,'Pago Movil');
 insert into metodo_pago VALUES(DEFAULT,'Tranferencia');
 
 --Detalles de las ventas
-insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,2,1,2);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,2,1,2);
-insert into Detallado_Venta VALUES(DEFAULT,1500.00,3,4,3);
-insert into Detallado_Venta VALUES(DEFAULT,1500.00,3,4,3);
-insert into Detallado_Venta VALUES(DEFAULT,80.00,4,1,4);
-insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3,4);
-insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3,5);
-insert into Detallado_Venta VALUES(DEFAULT,200.00,5,3,5);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,1,1,1);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,2,1,2);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,2,1,2);
+insert into Detallado_Venta VALUES(DEFAULT,1500.00,1,3,4,3);
+insert into Detallado_Venta VALUES(DEFAULT,1500.00,1,3,4,3);
+insert into Detallado_Venta VALUES(DEFAULT,80.00,1,4,1,4);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,1,5,3,4);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,1,5,3,5);
+insert into Detallado_Venta VALUES(DEFAULT,200.00,1,5,3,5);
+
 
 --Restaurantes
 insert into Restaurant VALUES(299792458,'La Terraza',350,3);
