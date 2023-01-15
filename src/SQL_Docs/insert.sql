@@ -2044,6 +2044,9 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Tipo_Apuest
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Tipo_Apuesta');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('UPDATE', 'Tipo_Apuesta');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Tipo_Apuesta');
+  -- Resultado_Ejemplar
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Resultado_Ejemplar');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Resultado_Ejemplar');
 
 --Acciones para el tipo de usuario
 
@@ -2121,6 +2124,9 @@ insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,42);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,43);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,44);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,45);
+  ---- Permisos sobre Tipo_Apuesta
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,46);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,47);
 
 
 --Colores

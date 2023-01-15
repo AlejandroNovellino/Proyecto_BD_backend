@@ -10,6 +10,7 @@ from flask_cors import CORS
 from utils import APIException, generate_sitemap, generateReport
 from admin import setup_admin
 from models import *
+import json
 
 # marshmellow import
 from flask_marshmallow import Marshmallow 
@@ -205,6 +206,22 @@ tipo_apuesta_parser.add_argument('ta_llegada_en_orden', type=inputs.boolean)
 tipo_apuesta_parser.add_argument('ta_limite_premiado_inferior') 
 tipo_apuesta_parser.add_argument('ta_limite_premiado_superior') 
 tipo_apuesta_parser.add_argument('ta_descripcion') 
+# ResultadoEjemplar --------------------------------------------------------------------------------
+resultado_ejemplar_parser = reqparse.RequestParser()
+resultado_ejemplar_parser.add_argument('res_clave') 
+resultado_ejemplar_parser.add_argument('res_orden_llegada', type=int)
+resultado_ejemplar_parser.add_argument('res_diferencia_cuerpos')
+resultado_ejemplar_parser.add_argument('res_dividendo_pagado')
+resultado_ejemplar_parser.add_argument('res_speed_rating') 
+resultado_ejemplar_parser.add_argument('res_variante_pista') 
+resultado_ejemplar_parser.add_argument('fk_inscripcion')
+resultado_ejemplar_parser.add_argument('carrera_id')   
+# PosicionParcial --------------------------------------------------------------------------------
+posicion_parcial_parser = reqparse.RequestParser()
+posicion_parcial_parser.add_argument('pp_distancia') 
+posicion_parcial_parser.add_argument('pp_tiempo')
+posicion_parcial_parser.add_argument('pp_posicion')
+posicion_parcial_parser.add_argument('fk_resultado_ejemplar')
 # Color ------------------------------------------------------------------------------------------
 color_parser = reqparse.RequestParser()
 color_parser.add_argument('col_nombre')
@@ -542,6 +559,26 @@ class TipoApuestaSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 tipo_apuesta_schema = TipoApuestaSchema()
+
+# ResultadoEjemplar schema
+class ResultadoEjemplarSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = ResultadoEjemplar
+        include_fk = True
+        json_module = simplejson
+# instance the class
+resultado_ejemplar_schema = ResultadoEjemplarSchema()
+
+# ResultadoEjemplar schema
+class PosicionParcialSchema(ma.SQLAlchemyAutoSchema):
+    resultado_ejemplar = ma.Nested(ResultadoEjemplarSchema)
+
+    class Meta:
+        model = PosicionParcial
+        include_fk = True
+        json_module = simplejson
+# instance the class
+posicion_parcial_schema = PosicionParcialSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -918,6 +955,132 @@ class CarreraListEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(CarreraListEndPoint, '/carreras')
+
+
+# inscripciones para la carrera
+class InscripcionesCarrera(Resource):
+    def get(self, carrera_id):
+        # inscripciones para la carrera
+        inscripciones = Inscripcion.query.filter_by(fk_carrera=carrera_id).all()
+
+        return [inscripcion_schema.dumps(inscripcion) for inscripcion in inscripciones]
+# add the endpoint ot the api
+api.add_resource(InscripcionesCarrera, '/inscripciones/carrera/<carrera_id>')
+
+
+# list all carreras and create one
+class CarrerasToClose(Resource):
+    def get(self):
+        # filtered carreras
+        filtered_carreras = []
+
+        # take today date
+        today_date = datetime.datetime.now()
+        aux_date = f'{today_date.year}-{today_date.month}-{today_date.day}'
+
+        # filter by date and resultado ejemplar not registered for that inscription to that carrera
+        carreras_ids = db.engine.execute(f'''
+        SELECT  C.C_Clave
+        FROM    Carrera C
+        WHERE   C.C_Fecha = '{aux_date}' and
+                EXISTS (
+                    SELECT  *
+                    FROM    Inscripcion I
+                    WHERE   I.FK_Carrera = C.C_Clave and 
+                            I.INS_Clave not in (
+                                SELECT FK_Inscripcion
+                                FROM  Resultado_Ejemplar
+                            )
+                )
+        ;
+        ''')
+
+        # this does not work
+        ''''carreras_ids = db.engine.execute(f
+        SELECT  C.C_Clave
+        FROM    Carrera C, Inscripcion I
+        WHERE   C.C_Clave = I.FK_Carrera and
+                I.INS_Clave not in (
+                    SELECT FK_Inscripcion
+                    FROM  Resultado_Ejemplar
+                ) and
+                C.C_Fecha = '{aux_date}';
+        '''#)
+
+        for element in carreras_ids:
+            filtered_carreras.append(Carrera.query.get(element[0]))
+
+        return [carrera_schema.dumps(carrera) for carrera in filtered_carreras]
+# add the endpoint ot the api
+api.add_resource(CarrerasToClose, '/carreras/cierre')
+
+
+### ResultadoEjemplar ###
+
+# list all ResultadoEjemplar and create one
+class ResultadoEjemplarEndPoint(Resource):
+    def get(self):
+        resultados = ResultadoEjemplar.query.all()
+        return [resultado_ejemplar_schema.dumps(resultado) for resultado in resultados]
+
+    def post(self):
+        try:
+            args = resultado_ejemplar_parser.parse_args()
+            # calculate the dividendo a pagar
+            dividendos = CarreraPorcentajeDividendo.query.filter_by(fk_carrera=args["carrera_id"]).all()
+            montos_a_pagar = []
+            for dividendo in dividendos:
+                montos_a_pagar.append(dividendo.cpd_monto_otorgar)
+            
+            montos_a_pagar.sort(reverse=True)
+
+            try: 
+                args["res_dividendo_pagado"] = montos_a_pagar[args["res_orden_llegada"]-1]
+            except:
+                args["res_dividendo_pagado"] = 0
+            
+            # create the values
+            aux_values = {
+                'res_clave': args["res_clave"],
+                'res_orden_llegada': args["res_orden_llegada"],
+                'res_diferencia_cuerpos': args["res_diferencia_cuerpos"],
+                'res_dividendo_pagado': args["res_dividendo_pagado"],
+                'res_speed_rating': args["res_speed_rating"],
+                'res_variante_pista': args["res_variante_pista"],
+                'fk_inscripcion': args["fk_inscripcion"],
+            }
+
+            # create the resultado
+            resultado = ResultadoEjemplar.create(**aux_values)
+
+            return resultado_ejemplar_schema.dumps(resultado), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(ResultadoEjemplarEndPoint, '/resultado/ejemplar')
+
+
+### PosicionParcial ###
+
+# list all PosicionParcial and create one
+class PosicionParcialEndPoint(Resource):
+    def get(self):
+        posiciones_parciales = PosicionParcial.query.all()
+        return [posicion_parcial_schema.dumps(posicion_parcial) for posicion_parcial in posiciones_parciales]
+
+    def post(self):
+        try:
+            args = posicion_parcial_parser.parse_args()
+            # create the posicion actual
+            posicion_parcial = PosicionParcial.create(**args)
+
+            return posicion_parcial_schema.dumps(posicion_parcial), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(PosicionParcialEndPoint, '/posicion/parcial')
 
 
 ### Propietario ###
