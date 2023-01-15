@@ -438,6 +438,7 @@ create table Boleto(
 create table Detallado_Venta(
 	DV_Clave					serial NOT NULL UNIQUE,
 	DV_Precio_Venta		numeric(10,2) NOT NULL,
+	DV_Num_Boleto		numeric(10)
 	FK_Venta_Boleto		integer NOT NULL,
 	FK_Boleto					integer NOT NULL,
 	FK_MetodoPago			integer NOT NULL,
@@ -781,6 +782,7 @@ create Table Apuesta(
 create table Detalle_Apuesta(
 	DA_Clave										serial not null unique ,
 	DA_Orden_Llegada_Ejemplar		Numeric(2) not null,
+	DA_Monto_apostar				numeric(10,2) NOT NULL
 	FK_Apuesta									integer not null,
 	FK_Inscripcion						  integer not null,
 	FK_MetodoPago								integer NOT NULL,
