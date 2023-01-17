@@ -1692,20 +1692,20 @@ insert into Jinete VALUES(18110328,'Jonathan','Jesus','Aray','Lopez','M','dir',1
 insert into Jinete VALUES(17252229,'Daniel',null,'Hernandez',null,'M','dir',1.62,48,53,null,'1988-01-27',153);
 insert into Jinete VALUES(27221239,'Cipriano','Antonio','Gil',null,'M','dir',1.59,48,53,null,'1999-07-14',92);
 insert into Jinete VALUES(20076649,'Arnaldo','Jose','Chirinos','Maldonado','M','dir',1.53,48,54,null,'1988-09-05',177);
-insert into Jinete VALUES(16178233,'Edwin',null,'Jaramillo','Silva','M','dir',1.50,48,53,null,'1983-05-25',218);
-insert into Jinete VALUES(27559285,'Jose','Alejandro','Rivero',null,'M','dir',1.51,48,53,null,'2000-10-02',154);
-insert into Jinete VALUES(28009121,'Edicson',null,'Acevedo',null,'M','dir',1.66,48,53,null,'1999-08-14',25);
+insert into Jinete VALUES(16178233,'Edwin',null,'Jaramillo','Silva','M','dir',1.50,48,53,null,'1983-05-25',218);          --0
+insert into Jinete VALUES(27559285,'Jose','Alejandro','Rivero',null,'M','dir',1.51,48,53,null,'2000-10-02',154);          --0
+insert into Jinete VALUES(28009121,'Edicson',null,'Acevedo',null,'M','dir',1.66,48,53,null,'1999-08-14',25);              --0
 insert into Jinete VALUES(15966989,'Adrian','Antonio','Montes','Oropeza','M','dir',1.60,48,56,null,'1984-11-21',327);
 insert into Jinete VALUES(21939302,'Jonathan',null,'Herrera',null,'M','dir',1.57,48,53,null,'1992-04-21',192);
 insert into Jinete VALUES(18889203,'Edgardo',null,'Arevalo',null,'M','dir',1.61,48,53,null,'1990-02-05',92);
 insert into Jinete VALUES(25902227,'Jaime',null,'Lugo','C','M','dir',1.57,48,53,null,'1996-10-21',230);
 insert into Jinete VALUES(24773280,'Jose','Gilberto','Hernandez',null,'M','dir',1.63,48,53,null,'1995-01-16',235);
 insert into Jinete VALUES(19293169,'Francisco','Jose','Quevedo','Suarez','M','dir',1.55,48,53,'PROFESIONAL','1989-09-04',25);
-insert into Jinete VALUES(17878274,'Jervis','Jose','Alvarado','Torres','M','dir',1.59,48,53,null,'1987-12-08',601); --cm upata
-insert into Jinete VALUES(19235964,'Cindy','Paola','Carrero',null,'F','dir',1.51,48,53,null,'1989-02-20',1241); --sn juan bautista
-insert into Jinete VALUES(18750673,'Gerfrin','Jesus','Cordero','Villegas','M','dir',1.60,48,53,null,'1988-12-25',1485); --coche
-insert into Jinete VALUES(16702617,'Maria','Alejandra','Bruzual','Bruzual','F','dir',1.52,48,54,null,'1982-12-26',1178); --altagracia
-insert into Jinete VALUES(17528845,'Julio','Valmore','Moncada','Zambrano','M','dir',1.55,48,55,null,'1987-09-14',1239); --la concordia
+insert into Jinete VALUES(17878274,'Jervis','Jose','Alvarado','Torres','M','dir',1.59,48,53,null,'1987-12-08',601);
+insert into Jinete VALUES(19235964,'Cindy','Paola','Carrero',null,'F','dir',1.51,48,53,null,'1989-02-20',1241);
+insert into Jinete VALUES(18750673,'Gerfrin','Jesus','Cordero','Villegas','M','dir',1.60,48,53,null,'1988-12-25',1485);
+insert into Jinete VALUES(16702617,'Maria','Alejandra','Bruzual','Bruzual','F','dir',1.52,48,54,null,'1982-12-26',1178);
+insert into Jinete VALUES(17528845,'Julio','Valmore','Moncada','Zambrano','M','dir',1.55,48,55,null,'1987-09-14',1239);
 insert into Jinete VALUES(22002987,'Yaniel',null,'Caguado',null,'M','dir',1.59,48,53,null,'1993-03-23',778);
 insert into Jinete VALUES(20398837,'Yonecso',null,'Bermudez',null,'M','dir',1.62,48,53,null,'1991-09-03',839);
 insert into Jinete VALUES(17665830,'Carlos',null,'Brito',null,'M','dir',1.63,48,53,null,'1985-08-03',1220);
@@ -1715,24 +1715,24 @@ insert into Jinete VALUES(20754266,'Deyker','Douglas','Acosta','Meza','M','dir',
 insert into Jinete VALUES(19273373,'Kervin','B','Briceno',null,'M','dir',1.54,48,53,null,'1988-04-13',1171);
 insert into Jinete VALUES(18867433,'Jean','Carlos','Rodriguez',null,'M','dir',1.57,48,53,null,'1981-11-04',637);
 --jinetes de otras carreras
-insert into Jinete VALUES(17334079,'Jonathan','Antonio','Nava','Luzardo','M','dir',1.56,48,53,null,'1982-01-24',1463);
+insert into Jinete VALUES(17334079,'Jonathan','Antonio','Nava','Luzardo','M','dir',1.56,48,53,null,'1982-01-24',1463);    --0
 insert into Jinete VALUES(16782747,'Luis','David','Avila','Escorcia','M','dir',1.52,48,53,null,'1985-05-28',1439);
-insert into Jinete VALUES(17344079,'Jorge','Luis','Perez','Paez','M','dir',1.55,48,54,null,'1987-04-24',594);
+insert into Jinete VALUES(17344079,'Jorge','Luis','Perez','Paez','M','dir',1.55,48,54,null,'1987-04-24',594);             --0
 insert into Jinete VALUES(18530453,'Franklin','Jesus','Velasquez','Acevedo','M','dir',1.56,48,52,null,'1989-01-05',1239);
 insert into Jinete VALUES(17478063,'Keihton','Adolfo','Natera','Infante','M','dir',1.66,48,53,null,'1986-08-07',655);
-insert into Jinete VALUES(19455345,'Welder','Francisco','Alvarez','Landaeta','M','dir',1.59,48,53,null,'1985-08-06',476);
-insert into Jinete VALUES(19396551,'Aldry',null,'Siso',null,'M','dir',1.61,48,53,null,'1986-09-21',1487);
+insert into Jinete VALUES(19455345,'Welder','Francisco','Alvarez','Landaeta','M','dir',1.59,48,53,null,'1985-08-06',476); --0
+insert into Jinete VALUES(19396551,'Aldry',null,'Siso',null,'M','dir',1.61,48,53,null,'1986-09-21',1487);                 --0
 insert into Jinete VALUES(20766813,'Ferley','Alejandro','Infante','Rangel','M','dir',1.63,48,53,null,'1986-08-22',1485);
 insert into Jinete VALUES(23947451,'Jefferson','Javier','Diaz','Ponce','M','dir',1.56,48,51,null,'1986-08-21',1487);
-insert into Jinete VALUES(22641564,'Felix','Alejandro','Velasquez','Acevedo','M','dir',1.56,48,53,null,'1991-04-05',1239);
-insert into Jinete VALUES(16633926,'Jean','Carlos','Mundo',null,'M','dir',1.56,48,50,null,'1984-09-30',1382);
+insert into Jinete VALUES(22641564,'Felix','Alejandro','Velasquez','Acevedo','M','dir',1.56,48,53,null,'1991-04-05',1239);--0
+insert into Jinete VALUES(16633926,'Jean','Carlos','Mundo',null,'M','dir',1.56,48,50,null,'1984-09-30',1382);             --0
 insert into Jinete VALUES(20855029,'Adrian','Jose','Castellanos','Araujo','M','dir',1.58,48,53,null,'1988-11-05',1375);
 insert into Jinete VALUES(19338567,'Rafael',null,'Solano',null,'M','dir',1.59,48,53,null,'1989-03-14',1485);
-insert into Jinete VALUES(18853963,'Cesar','David','Gonzalez',null,'M','dir',1.61,48,50,null,'1988-06-19',574);
-insert into Jinete VALUES(18481831,'Ivian','Jose','Ruiz','Garcia','M','dir',1.62,48,53,null,'1987-08-24',750);
+insert into Jinete VALUES(18853963,'Cesar','David','Gonzalez',null,'M','dir',1.61,48,50,null,'1988-06-19',574);           --0
+insert into Jinete VALUES(18481831,'Ivian','Jose','Ruiz','Garcia','M','dir',1.62,48,53,null,'1987-08-24',750);            --0
 insert into Jinete VALUES(16232834,'Brett',null,'Parra',null,'M','dir',1.58,48,54,null,'1984-04-02',668);
-insert into Jinete VALUES(16376762,'Carlos','Jose','Rubio','Morillo','M','dir',1.55,48,54,null,'1983-02-08',1084);
-insert into Jinete VALUES(18497188,'Ignacio','Jose','Castellanos','Balza','M','dir',1.61,48,50,null,'1986-03-05',1438);
+insert into Jinete VALUES(16376762,'Carlos','Jose','Rubio','Morillo','M','dir',1.55,48,54,null,'1983-02-08',1084);        --0
+insert into Jinete VALUES(18497188,'Ignacio','Jose','Castellanos','Balza','M','dir',1.61,48,50,null,'1986-03-05',1438);   --0
 insert into Jinete VALUES(16310482,'Wilfred','Jesus','Vasquez','Tovar','M','dir',1.57,48,51,null,'1985-09-22',824);
 
 
@@ -3611,7 +3611,6 @@ insert into Ejemplar VALUES(504,'Principe Aaron','C','C','2016-04-20','2024-03-0
 insert into Ejemplar VALUES(505,'Fajador','C','C','2016-04-20','2024-03-04',473,27,null,null,894,38);
 insert into Ejemplar VALUES(506,'Jovic','C','C','2016-04-20','2024-03-04',473,27,null,null,893,38);
 insert into Ejemplar VALUES(507,'Kingston','C','C','2016-04-20','2024-03-04',473,27,null,null,892,38);
-insert into Ejemplar VALUES(508,'New Savior','C','C','2016-04-20','2024-03-04',473,27,null,null,891,38); 
 insert into Ejemplar VALUES(509,'Will Speed','C','C','2016-04-20','2024-03-04',473,27,null,null,890,37);
 insert into Ejemplar VALUES(510,'Compadre Chus','C','C','2016-04-20','2024-03-04',473,27,null,null,889,37);
 insert into Ejemplar VALUES(511,'Trucutru','C','C','2016-04-20','2024-03-04',473,27,null,null,888,37);
@@ -3629,7 +3628,6 @@ insert into Ejemplar VALUES(522,'Bahia Peric','C','Y','2019-04-20','2024-03-04',
 insert into Ejemplar VALUES(523,'Cadiz','C','Y','2019-04-20','2024-03-04',473,27,null,null,876,37);
 insert into Ejemplar VALUES(524,'Orgullosa','C','Y','2019-04-20','2024-03-04',473,27,null,null,875,37);
 insert into Ejemplar VALUES(525,'Malefica','C','Y','2019-04-20','2024-03-04',473,27,null,null,874,37);
-insert into Ejemplar VALUES(526,'Cadiz','C','Y','2019-04-20','2024-03-04',473,27,null,null,879,37);
 
 --clave, porcentaje, ejemplar, propstud
 insert into Ejemplar_Propietario_Stud VALUES(DEFAULT,100,201,1);
@@ -4148,6 +4146,132 @@ insert into Binomio VALUES(DEFAULT,296,20076649,53,403);
 insert into Binomio VALUES(DEFAULT,296,18853963,53,407);--301
 insert into Binomio VALUES(DEFAULT,298,20012239,51,420);
 insert into Binomio VALUES(DEFAULT,302,17987306,53,459);--303
+--ADICIONALES
+insert into Binomio VALUES(DEFAULT,401,17987306,53,421);
+insert into Binomio VALUES(DEFAULT,402,18750673,53,461);
+insert into Binomio VALUES(DEFAULT,403,19467384,54.5,419);
+insert into Binomio VALUES(DEFAULT,404,20398837,53,411);--307
+insert into Binomio VALUES(DEFAULT,405,17665830,53.5,438);
+insert into Binomio VALUES(DEFAULT,406,25902227,55,448);
+insert into Binomio VALUES(DEFAULT,407,20012239,56.5,457);
+insert into Binomio VALUES(DEFAULT,408,16702617,55.5,422);--311
+insert into Binomio VALUES(DEFAULT,409,19467384,53,393);
+insert into Binomio VALUES(DEFAULT,410,15966989,54.5,455);
+insert into Binomio VALUES(DEFAULT,411,26630998,53,439);
+insert into Binomio VALUES(DEFAULT,412,19039824,53,407);--315
+insert into Binomio VALUES(DEFAULT,413,17528845,55.5,410);
+insert into Binomio VALUES(DEFAULT,414,17987306,53,404);
+insert into Binomio VALUES(DEFAULT,415,20754266,53.5,431);
+insert into Binomio VALUES(DEFAULT,416,17098320,55.5,419);--319
+insert into Binomio VALUES(DEFAULT,417,20076649,55,491);
+insert into Binomio VALUES(DEFAULT,418,26630998,53,447);
+insert into Binomio VALUES(DEFAULT,419,17528845,54,425);
+insert into Binomio VALUES(DEFAULT,420,18110328,53,434);--323
+insert into Binomio VALUES(DEFAULT,421,17528845,53,425);
+insert into Binomio VALUES(DEFAULT,422,24773280,53,398);
+insert into Binomio VALUES(DEFAULT,423,18333281,55,408);
+insert into Binomio VALUES(DEFAULT,424,18750673,53,428);--327
+insert into Binomio VALUES(DEFAULT,425,20754266,53,418);
+insert into Binomio VALUES(DEFAULT,426,15966989,53,465);
+insert into Binomio VALUES(DEFAULT,427,25902227,53.5,412);
+insert into Binomio VALUES(DEFAULT,428,19467384,53,500);--331
+insert into Binomio VALUES(DEFAULT,429,19273373,55,402);
+insert into Binomio VALUES(DEFAULT,430,17987306,57,493);
+insert into Binomio VALUES(DEFAULT,431,18110290,57,424);
+insert into Binomio VALUES(DEFAULT,433,15966989,55,441);--335
+insert into Binomio VALUES(DEFAULT,434,27221239,57,452);
+insert into Binomio VALUES(DEFAULT,435,17987306,55,464);
+insert into Binomio VALUES(DEFAULT,436,21939302,55,428);
+insert into Binomio VALUES(DEFAULT,437,20012239,58,477);--339
+insert into Binomio VALUES(DEFAULT,438,22002987,53,449);
+insert into Binomio VALUES(DEFAULT,439,18110328,53,456);
+insert into Binomio VALUES(DEFAULT,440,18110290,53,403);
+insert into Binomio VALUES(DEFAULT,441,24773280,53,384);--343
+insert into Binomio VALUES(DEFAULT,442,20012239,57,371);
+insert into Binomio VALUES(DEFAULT,443,17528845,53.5,373);
+insert into Binomio VALUES(DEFAULT,444,18750673,53,367);
+insert into Binomio VALUES(DEFAULT,445,19273373,53,372);--347
+insert into Binomio VALUES(DEFAULT,446,18889203,53,418);
+insert into Binomio VALUES(DEFAULT,447,15966989,53,399);
+insert into Binomio VALUES(DEFAULT,448,19293169,53,420);
+insert into Binomio VALUES(DEFAULT,449,20076649,53,393);--351
+insert into Binomio VALUES(DEFAULT,450,17098320,53,403);
+insert into Binomio VALUES(DEFAULT,451,16929383,53,401);
+insert into Binomio VALUES(DEFAULT,452,19039824,53,411);
+insert into Binomio VALUES(DEFAULT,453,17987306,53,407);--355
+insert into Binomio VALUES(DEFAULT,454,18333281,53,409);
+insert into Binomio VALUES(DEFAULT,455,19467384,53,403);
+insert into Binomio VALUES(DEFAULT,456,20012239,53,405);
+insert into Binomio VALUES(DEFAULT,457,25782833,53,437);--359
+insert into Binomio VALUES(DEFAULT,458,18110290,53,480);
+insert into Binomio VALUES(DEFAULT,459,19467384,53,447);
+insert into Binomio VALUES(DEFAULT,460,17098320,54,436);
+insert into Binomio VALUES(DEFAULT,461,18110328,53,477);--363
+insert into Binomio VALUES(DEFAULT,462,17252229,53,417);
+insert into Binomio VALUES(DEFAULT,463,20012239,53,418);
+insert into Binomio VALUES(DEFAULT,464,18333281,53,448);
+insert into Binomio VALUES(DEFAULT,465,16929383,53,425);--367
+insert into Binomio VALUES(DEFAULT,466,18110290,53,428);
+insert into Binomio VALUES(DEFAULT,467,27221239,53,414);
+insert into Binomio VALUES(DEFAULT,468,20076649,54,432);
+insert into Binomio VALUES(DEFAULT,469,19467384,53,430);--371
+insert into Binomio VALUES(DEFAULT,470,19467384,53,449);
+insert into Binomio VALUES(DEFAULT,471,15966989,53,389);
+insert into Binomio VALUES(DEFAULT,472,18333281,53,363);
+insert into Binomio VALUES(DEFAULT,473,15966989,56,460);--375
+insert into Binomio VALUES(DEFAULT,474,21939302,53,394);
+insert into Binomio VALUES(DEFAULT,475,18889203,53.5,408);
+insert into Binomio VALUES(DEFAULT,476,20076649,53,406);
+insert into Binomio VALUES(DEFAULT,477,25902227,53,432);--379
+insert into Binomio VALUES(DEFAULT,478,17098320,53,443);
+insert into Binomio VALUES(DEFAULT,479,24773280,53,451);
+insert into Binomio VALUES(DEFAULT,480,18110328,53,425);
+insert into Binomio VALUES(DEFAULT,481,17987306,53,445);--383
+insert into Binomio VALUES(DEFAULT,482,19293169,53,437);
+insert into Binomio VALUES(DEFAULT,483,27221239,53,406);
+insert into Binomio VALUES(DEFAULT,484,17987306,53,404);
+insert into Binomio VALUES(DEFAULT,485,17878274,53,429);--387
+insert into Binomio VALUES(DEFAULT,486,19293169,53,376);
+insert into Binomio VALUES(DEFAULT,487,16929383,53,411);
+insert into Binomio VALUES(DEFAULT,488,19235964,53,402);
+insert into Binomio VALUES(DEFAULT,489,18333281,53,395);--391
+insert into Binomio VALUES(DEFAULT,490,25902227,53,419);
+insert into Binomio VALUES(DEFAULT,491,17252229,53,442);
+insert into Binomio VALUES(DEFAULT,492,20076649,53,416);
+insert into Binomio VALUES(DEFAULT,493,17098320,53.5,447);--395
+insert into Binomio VALUES(DEFAULT,494,18750673,53,435);
+insert into Binomio VALUES(DEFAULT,495,16702617,54,401);
+insert into Binomio VALUES(DEFAULT,496,16702617,54.5,440);
+insert into Binomio VALUES(DEFAULT,497,17528845,56.5,387);--399
+insert into Binomio VALUES(DEFAULT,498,22002987,53,363);
+insert into Binomio VALUES(DEFAULT,499,17878274,53,413);
+insert into Binomio VALUES(DEFAULT,500,18110328,53.5,424);
+insert into Binomio VALUES(DEFAULT,501,27221239,53,426);--403
+insert into Binomio VALUES(DEFAULT,502,18110328,53.5,441);
+insert into Binomio VALUES(DEFAULT,503,21939302,53,417);
+insert into Binomio VALUES(DEFAULT,504,20398837,53,411);
+insert into Binomio VALUES(DEFAULT,505,17665830,53.5,438);--407
+insert into Binomio VALUES(DEFAULT,506,25902227,55,448);
+insert into Binomio VALUES(DEFAULT,507,20012239,56.5,457);
+insert into Binomio VALUES(DEFAULT,509,19467384,53,393);--410
+insert into Binomio VALUES(DEFAULT,510,15966989,54.5,455);
+insert into Binomio VALUES(DEFAULT,511,26630998,53,439);
+insert into Binomio VALUES(DEFAULT,512,19039824,53,407);
+insert into Binomio VALUES(DEFAULT,513,17528845,55.5,410);--414
+insert into Binomio VALUES(DEFAULT,514,19293169,53,404);
+insert into Binomio VALUES(DEFAULT,515,20754266,53.5,431);
+insert into Binomio VALUES(DEFAULT,516,17098320,55.5,419);
+insert into Binomio VALUES(DEFAULT,517,20076649,55,491);--418
+insert into Binomio VALUES(DEFAULT,518,26630998,53,447);
+insert into Binomio VALUES(DEFAULT,519,17528845,54,425);
+insert into Binomio VALUES(DEFAULT,520,18110328,53,434);
+insert into Binomio VALUES(DEFAULT,521,17528845,53,425);--422
+insert into Binomio VALUES(DEFAULT,522,24773280,53,398);
+insert into Binomio VALUES(DEFAULT,523,18333281,55,408);
+insert into Binomio VALUES(DEFAULT,524,18750673,53,428);
+insert into Binomio VALUES(DEFAULT,525,20754266,53,418);--426
+insert into Binomio VALUES(DEFAULT,432,15966989,53,465);
+
 
 --INS_Clave, INS_Num_Gualdrapa, INS_Puesto_Pista, INS_Fecha
 --INS_Ejemplar_FAvorito, INS_Precio_Reclamado, FK_Carrera
@@ -4409,7 +4533,7 @@ insert into Inscripcion VALUES(DEFAULT,1,1,'2022-10-20',false,null,92,38,11);--2
 insert into Inscripcion VALUES(DEFAULT,3,3,'2022-08-04',false,null,85,171,11);
 insert into Inscripcion VALUES(DEFAULT,8,8,'2022-09-02',false,null,94,171,11);
 insert into Inscripcion VALUES(DEFAULT,2,2,'2022-09-16',false,null,95,39,11);
-insert into Inscripcion VALUES(DEFAULT,1,1,'2022-09-30',false,null,92,39,11);--223
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-09-30',false,null,92,39,11);--223
 
 insert into Inscripcion VALUES(DEFAULT,2,2,'2022-02-13',false,null,96,172,11);
 insert into Inscripcion VALUES(DEFAULT,5,5,'2022-08-18',false,null,97,172,11);--225
@@ -4688,6 +4812,438 @@ insert into Inscripcion VALUES(DEFAULT,6,6,'2022-09-16',false,null,189,100,11);-
 insert into Inscripcion VALUES(DEFAULT,9,9,'2022-05-26',false,null,195,303,11);
 insert into Inscripcion VALUES(DEFAULT,7,7,'2022-07-28',false,null,196,101,11);
 insert into Inscripcion VALUES(DEFAULT,1,3,'2022-09-09',false,null,182,101,11);--442
+
+--inscripciones de los ejemplares ganadores de carreras pasadas que no compiten el 27-11-22
+
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-09-30',false,null,11,304,11);
+insert into Inscripcion VALUES(DEFAULT,4,9,'2022-10-12',false,null,12,305,11);--444
+
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-08-04',false,null,13,306,11);
+insert into Inscripcion VALUES(DEFAULT,2,6,'2022-08-11',false,null,14,307,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-09-09',false,null,16,308,11);--447
+
+insert into Inscripcion VALUES(DEFAULT,9,9,'2021-12-30',false,null,17,309,11);
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-01-06',false,null,18,310,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-03-03',false,null,19,311,11);--450
+insert into Inscripcion VALUES(DEFAULT,9,9,'2022-03-10',false,null,20,311,11);--retirado
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2021-05-27',false,null,21,312,11);
+insert into Inscripcion VALUES(DEFAULT,9,9,'2021-06-04',false,null,22,313,11);
+insert into Inscripcion VALUES(DEFAULT,11,11,'2021-10-07',false,null,23,314,11);
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-09-23',false,null,24,315,11);--455
+
+insert into Inscripcion VALUES(DEFAULT,9,9,'2021-06-18',false,null,25,316,11);
+insert into Inscripcion VALUES(DEFAULT,12,12,'2021-08-05',false,null,26,73,11);
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-02-27',false,null,27,317,11);
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-04-29',false,null,28,318,11);--459
+--======++++++++++++==========--------------------
+--
+insert into Inscripcion VALUES(DEFAULT,10,10,'2022-07-07',false,null,30,13,11);
+insert into Inscripcion VALUES(DEFAULT,10,10,'2022-08-04',false,null,31,319,11);
+insert into Inscripcion VALUES(DEFAULT,10,10,'2022-09-02',false,null,32,320,11);--462
+
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-04-15',false,null,33,321,11);
+insert into Inscripcion VALUES(DEFAULT,11,12,'2022-04-29',false,null,34,318,11);
+
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-08-04',false,null,35,306,11);--465
+--
+--
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-09-23',false,null,36,315,11);--466
+
+--
+insert into Inscripcion VALUES(DEFAULT,10,10,'2022-07-14',false,null,38,322,11);--467
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-05-19',false,null,39,323,11);
+--
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-04-08',false,null,40,324,11);
+insert into Inscripcion VALUES(DEFAULT,11,13,'2022-08-18',false,null,41,325,11);--470
+
+--
+insert into Inscripcion VALUES(DEFAULT,12,14,'2022-08-25',false,null,42,326,11);
+insert into Inscripcion VALUES(DEFAULT,13,13,'2022-09-02',false,null,43,327,11);
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-10-06',false,null,44,328,11);--473
+
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-08-11',false,null,45,329,11);
+--
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-09-30',false,null,46,330,11);
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-10-13',false,null,47,331,11);--476
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-07-21',false,null,48,332,11);
+--
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-09-09',false,null,49,333,11);
+--
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-01-13',false,null,50,334,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-03-17',false,null,51,334,11);
+insert into Inscripcion VALUES(DEFAULT,8,9,'2022-08-17',false,null,52,427,11);
+insert into Inscripcion VALUES(DEFAULT,9,14,'2022-07-14',false,null,53,335,11);--482
+
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-07-07',false,null,54,336,11);
+--
+--
+--
+
+--
+--
+--
+--
+
+--
+
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-06-24',false,null,55,337,11);
+insert into Inscripcion VALUES(DEFAULT,10,12,'2022-08-11',false,null,56,338,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-09-09',false,null,57,339,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-09-30',false,null,58,340,11);--487
+
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-03-17',false,null,59,341,11);
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-04-22',false,null,60,342,11);
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-08-04',false,null,61,343,11);
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-10-06',false,null,62,341,11);--491
+
+insert into Inscripcion VALUES(DEFAULT,9,12,'2022-05-12',false,null,63,344,11);
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-06-10',false,null,64,345,11);
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-08-04',false,null,61,343,11);--494
+--
+
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-06-30',false,null,66,346,11);
+insert into Inscripcion VALUES(DEFAULT,11,11,'2022-09-02',false,null,67,347,11);
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-09-23',false,null,68,348,11);
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-10-20',false,null,69,349,11);--498
+
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-03-03',false,null,70,350,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-04-15',false,null,71,350,11);
+--
+--
+
+--
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-06-17',false,null,73,351,11);--501
+--
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-10-13',false,null,74,352,11);
+
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-07-14',false,null,75,353,11);
+--
+insert into Inscripcion VALUES(DEFAULT,6,10,'2022-08-25',false,null,65,354,11);--504
+insert into Inscripcion VALUES(DEFAULT,6,12,'2022-09-16',false,null,76,354,11);
+
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-01-20',false,null,77,355,11);
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-06-19',false,null,78,355,11);--507
+
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-06-03',false,null,79,348,11);
+insert into Inscripcion VALUES(DEFAULT,12,15,'2022-06-30',false,null,80,348,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-07-14',false,null,81,356,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-10-06',false,null,82,357,11);--511
+
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-01-06',false,null,83,358,11);
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-02-06',false,null,84,359,11);
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-08-04',false,null,85,347,11);--514
+--
+
+insert into Inscripcion VALUES(DEFAULT,10,10,'2022-01-13',false,null,86,360,11);
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-02-13',false,null,87,339,11);
+insert into Inscripcion VALUES(DEFAULT,11,11,'2022-03-03',false,null,88,361,11);--517
+--
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-09-09',false,null,89,362,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-09-23',false,null,90,363,11);
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-09-30',false,null,91,364,11);
+insert into Inscripcion VALUES(DEFAULT,11,11,'2022-10-20',false,null,92,365,11);--521
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-05-19',false,null,93,366,11);
+--
+--
+--
+
+--
+insert into Inscripcion VALUES(DEFAULT,9,9,'2022-09-02',false,null,94,367,11);
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-09-16',false,null,95,368,11);--524
+--
+
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-02-13',false,null,96,369,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-08-18',false,null,97,369,11);--526
+
+--
+--
+--
+--
+
+--
+--
+--
+--
+
+--
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-04-22',false,null,98,370,11);--527
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,9,9,'2022-02-27',false,null,99,337,11);
+--
+--
+--
+
+--
+--
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,9,15,'2022-08-04',false,null,101,371,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-09-23',false,null,102,371,11);
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-09-30',false,null,103,340,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-10-13',false,null,104,372,11);--532
+
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-04-22',false,null,105,373,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-05-19',false,null,106,373,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-06-17',false,null,107,374,11);
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-08-25',false,null,108,350,11);--536
+
+--
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-08-18',false,null,109,339,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-09-02',false,null,110,375,11);
+insert into Inscripcion VALUES(DEFAULT,9,11,'2022-09-23',false,null,111,375,11);--539
+
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-07-21',false,null,112,376,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-08-18',false,null,113,377,11);
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-09-02',false,null,110,378,11);--542
+--
+
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-04-08',false,null,115,379,11);
+insert into Inscripcion VALUES(DEFAULT,9,9,'2022-04-29',false,null,116,380,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-06-30',false,null,117,381,11);--545
+--
+
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-04-22',false,null,118,382,11);
+--
+--
+--
+
+--
+--
+--
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-10-13',false,null,120,352,11);--547
+
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-05-26',false,null,121,383,11);
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-07-07',false,null,122,384,11);--549
+--
+--
+
+--
+--
+--
+--
+
+--
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-05-12',false,null,123,385,11);
+--
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-07-28',false,null,124,386,11);--551
+
+insert into Inscripcion VALUES(DEFAULT,9,9,'2022-03-03',false,null,125,350,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-06-03',false,null,126,384,11);
+--
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-10-06',false,null,114,387,11);--554
+
+insert into Inscripcion VALUES(DEFAULT,10,10,'2022-08-11',false,null,127,388,11);
+--
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-09-09',false,null,128,372,11);
+--
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-07-21',false,null,129,389,11);
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-08-11',false,null,130,390,11);--558
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,12,13,'2022-05-12',false,null,132,391,11);
+insert into Inscripcion VALUES(DEFAULT,9,9,'2022-05-19',false,null,133,392,11);
+--
+insert into Inscripcion VALUES(DEFAULT,11,14,'2022-07-07',false,null,135,393,11);--561
+
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-07-21',false,null,136,394,11);
+--
+--
+--
+
+--
+--
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-05-26',false,null,138,395,11);
+insert into Inscripcion VALUES(DEFAULT,10,10,'2022-06-10',false,null,139,396,11);--564
+--
+--
+
+--
+--
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-03-24',false,null,140,397,11);
+--
+--
+--
+
+--
+--
+--
+--
+
+--
+--
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-06-17',false,null,141,397,11);
+--
+
+--
+insert into Inscripcion VALUES(DEFAULT,9,9,'2022-08-25',false,null,142,350,11);--567
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-04-29',false,null,143,318,11);
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-05-26',false,null,144,398,11);
+insert into Inscripcion VALUES(DEFAULT,8,10,'2022-06-17',false,null,145,322,11);--570
+--
+
+insert into Inscripcion VALUES(DEFAULT,2,2,'2021-07-15',false,null,147,399,11);
+insert into Inscripcion VALUES(DEFAULT,7,7,'2021-07-29',false,null,148,400,11);
+insert into Inscripcion VALUES(DEFAULT,3,3,'2021-09-10',false,null,149,401,11);
+insert into Inscripcion VALUES(DEFAULT,9,9,'2021-09-24',false,null,150,402,11);--574
+
+--
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-08-11',false,null,151,403,11);
+insert into Inscripcion VALUES(DEFAULT,13,13,'2022-09-09',false,null,152,404,11);
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-09-16',false,null,153,405,11);--577
+
+--
+--
+insert into Inscripcion VALUES(DEFAULT,14,14,'2022-04-08',false,null,155,406,11);
+--
+
+--
+--
+insert into Inscripcion VALUES(DEFAULT,14,14,'2022-06-30',false,null,157,407,11);--579
+--
+
+--
+--
+--
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-10-13',false,null,158,88,11);
+
+--
+--
+--
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-10-06',false,null,159,408,11);--581
+
+--
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-08-25',false,null,160,409,11);
+--
+--
+
+--
+--
+--
+--
+
+--
+--
+--
+--
+
+--
+--
+insert into Inscripcion VALUES(DEFAULT,7,7,'2021-08-19',false,null,161,87,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2021-11-11',false,null,162,410,11);--584
+
+--
+--
+insert into Inscripcion VALUES(DEFAULT,9,11,'2022-09-16',false,null,165,411,11);
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-10-13',false,null,166,412,11);
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-08-18',false,null,167,411,11);
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-09-02',false,null,168,407,11);--588
+--
+--
+
+--
+--
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-10-06',false,null,169,409,11);
+--
+
+--
+--
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,9,9,'2022-05-12',false,null,171,413,11);
+insert into Inscripcion VALUES(DEFAULT,7,9,'2022-06-10',false,null,172,411,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-09-09',false,null,173,414,11);--592
+--
+
+--
+--
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,15,15,'2022-06-10',false,null,174,88,11);
+--
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-07-21',false,null,175,415,11);
+--
+
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-07-07',false,null,176,416,11);--595
+--
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,7,7,'2022-04-15',false,null,177,83,11);
+--
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-06-30',false,null,179,407,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-08-11',false,null,180,403,11);
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-09-09',false,null,181,404,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-10-13',false,null,166,406,11);--600
+
+insert into Inscripcion VALUES(DEFAULT,11,13,'2022-09-09',false,null,182,417,11);
+
+insert into Inscripcion VALUES(DEFAULT,13,13,'2022-08-11',false,null,183,418,11);
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-09-02',false,null,184,419,11);
+insert into Inscripcion VALUES(DEFAULT,14,15,'2022-09-23',false,null,185,363,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-10-13',false,null,186,345,11);--605
+
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-07-21',false,null,187,420,11);
+insert into Inscripcion VALUES(DEFAULT,6,6,'2022-08-04',false,null,188,421,11);
+insert into Inscripcion VALUES(DEFAULT,12,12,'2022-09-16',false,null,189,368,11);--608
+--
+
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-07-07',false,null,190,422,11);
+insert into Inscripcion VALUES(DEFAULT,5,5,'2022-08-18',false,null,191,423,11);
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-09-30',false,null,192,424,11);--612
+--
+
+--
+
+--
+
+insert into Inscripcion VALUES(DEFAULT,2,2,'2022-01-13',false,null,193,425,11);
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-02-06',false,null,194,341,11);--614
+--
+--
+
+--
+
+--
+--
+
+insert into Inscripcion VALUES(DEFAULT,10,10,'2022-05-26',false,null,195,426,11);
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-07-28',false,null,196,426,11);--616
+--
+
 
 insert into Aplicacion_Medicamento VALUES(DEFAULT,'2022-11-26 13:10:25',3);
 insert into Aplicacion_Medicamento VALUES(DEFAULT,'2022-11-25 17:28:03',9);
@@ -5136,6 +5692,181 @@ insert into Resultado_Ejemplar VALUES(DEFAULT,4,6.5,22.00,66,0,438);
 insert into Resultado_Ejemplar VALUES(DEFAULT,5,5.5,5.00,70,0,439);
 insert into Resultado_Ejemplar VALUES(DEFAULT,11,17,26.00,55,0,440);
 insert into Resultado_Ejemplar VALUES(DEFAULT,3,2.5,24.00,67,0,441);
+--ejemplares ganadores de carreras pasadas
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,443);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,444);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,445);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,446);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,447);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,448);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,449);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,450);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,451);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,452);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,453);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,454);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,455);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,456);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,457);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,458);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,459);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,460);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,461);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,462);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,463);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,464);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,465);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,466);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,467);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,468);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,469);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,470);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,471);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,472);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,473);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,474);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,475);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,476);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,477);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,478);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,479);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,480);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,481);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,482);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,483);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,484);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,485);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,486);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,487);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,488);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,489);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,490);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,491);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,492);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,493);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,494);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,495);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,496);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,497);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,498);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,499);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,500);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,501);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,502);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,503);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,504);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,505);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,506);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,507);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,508);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,509);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,510);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,511);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,512);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,513);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,514);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,515);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,516);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,517);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,518);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,519);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,520);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,521);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,522);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,523);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,524);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,525);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,526);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,527);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,528);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,529);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,530);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,531);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,532);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,533);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,534);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,535);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,536);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,537);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,538);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,539);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,540);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,541);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,542);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,543);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,544);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,545);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,546);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,547);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,548);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,549);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,550);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,551);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,552);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,553);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,554);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,555);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,556);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,557);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,558);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,559);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,560);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,561);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,562);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,563);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,564);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,565);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,566);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,567);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,568);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,569);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,570);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,571);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,572);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,573);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,574);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,575);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,576);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,577);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,578);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,579);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,580);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,581);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,582);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,583);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,584);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,585);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,586);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,587);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,588);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,589);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,590);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,591);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,592);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,593);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,594);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,595);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,596);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,597);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,598);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,599);
+insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,600);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,601);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,602);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,603);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,604);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,605);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,606);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,607);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,608);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,609);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,610);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,611);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,612);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,613);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,614);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,615);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,616);
 
 --PP_Clave, PP_Distancia, PP_Tiempo, PP_Posicion, FK_Resultado
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:8.54',4,1);
