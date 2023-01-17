@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 import datetime
-from flask import Flask, request, jsonify, url_for
+from flask import Flask, request, jsonify, url_for, send_from_directory
 from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
@@ -2278,10 +2278,11 @@ class ReportsEndPoint(Resource):
             # get data
             file_name = args["file_name"]
             db_table = args["db_table"]
+            # get the url for the pdf
+            output_file = generateReport(file_name, db_table)
+            # return it plus '.pdf'
+            return output_file+'.pdf', '200'
 
-            generateReport(file_name, db_table)
-
-            return 'Report generated', 201
         except BaseException as e:
             print(e)
             return 'Failed', 400

@@ -76,4 +76,4 @@ def generateReport(file_name, db_table):
     )
     pyreportjasper.process_report()
 
-    return True
+    return output_file
