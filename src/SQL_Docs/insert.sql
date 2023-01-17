@@ -1983,6 +1983,7 @@ insert into Tipo_Usuario VALUES(DEFAULT,'Aficionado');
 insert into Tipo_Usuario VALUES(DEFAULT,'Entrenador');
 insert into Tipo_Usuario VALUES(DEFAULT,'Personal'); --jinete propietario veterinario
 insert into Tipo_Usuario VALUES(DEFAULT,'Administrador');
+insert into Tipo_Usuario VALUES(DEFAULT,'Venta_Boleto');
 
 --Acciones
   -- Ejemplar
@@ -2047,6 +2048,9 @@ insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('DELETE', 'Tipo_Apuest
   -- Resultado_Ejemplar
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Resultado_Ejemplar');
 insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Resultado_Ejemplar');
+  -- Apuesta
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('CREATE', 'Apuesta');
+insert into Accion(ACC_Nombre, ACC_Tabla_Objetivo) VALUES('READ',   'Apuesta');
 
 --Acciones para el tipo de usuario
 
@@ -2063,6 +2067,14 @@ insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,14);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,18);
   ---- Permisos sobre Inscripcion
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,39);
+  ---- Permisos sobre Apuesta
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(1,48);
+
+
+--Venta boleto
+  ---- Permisos sobre Apuesta
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(5,48);
+
 
 --Administrador
   ---- Permisos sobre ejemplar
@@ -2127,7 +2139,9 @@ insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,45);
   ---- Permisos sobre Tipo_Apuesta
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,46);
 insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,47);
-
+  ---- Permisos sobre Apuesta
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,48);
+insert into Accion_Tipo_Usuario(FK_TipoUsuario, FK_Accion) values(4,49);
 
 --Colores
 insert into Color VALUES(DEFAULT,'Azul');       --1
@@ -2232,6 +2246,7 @@ insert into Usuario VALUES(DEFAULT,'faparilli@gmail.com','2369rinconada','2022-1
 insert into Usuario VALUES(DEFAULT,'educon001@gmail.com','ardosalvo2','2022-12-22',null,null,null,null,27670971,1);
 insert into Usuario VALUES(DEFAULT,'apandawriter@outlook.es','amoablackmidi','2022-12-20',null,null,null,null,29551908,1);
 insert into Usuario VALUES(DEFAULT,'yonder999@outlook.es','hipodromo9yonder','2022-12-17',null,null,18110290,null,null,1);
+insert into Usuario VALUES(DEFAULT,'venta_apuesta@gmail.com','1111','2022-12-17',null,null,null,null,null,5);
 
 --Venta de boletos en taquillas
 insert into Taquilla_Boleto VALUES(DEFAULT,1,1);
@@ -6467,6 +6482,34 @@ insert into Historico_Puesto VALUES(DEFAULT,'2017-01-01','2020-12-07',13,248);
 insert into Historico_Puesto VALUES(DEFAULT,'2017-04-29','2018-09-14',98,252);
 
 -- Tipo apuesta
+-- TA_Clave
+-- TA_Nombre
+-- TA_Precio
+-- TA_Saldo_Minimo
+-- TA_Multiplicador
+-- TA_Precio_Jugada_Adicional
+-- TA_Cant_Minima_Caballos_Necesaria_En_Carrera
+-- TA_Cant_Maxima_Caballos_Por_Carrera
+-- TA_Cant_Maxima_Caballos
+-- TA_Cant_Valida_Ultimas_Carreras_Programa
+-- TA_Llegada_En_Orden --------------------
+-- TA_Limite_Premiado_Inferior
+-- TA_Limite_Premiado_Superior
+-- TA_Descripcion
+insert into Tipo_Apuesta VALUES (default, 'El 5 y 6', 50, null,  null, null, null, 16, 192, 6, true, 0, 0, 'Es el juego nacional, vale para las seis últimas carreras de viernes y domingo, se escoge un número de caballos en cada carrera y se va multiplicando por Bs. 50.');
+insert into Tipo_Apuesta VALUES (default, 'El 5 y 6 electronico', 100, null,  null, null, null, 16, 192, 6, true, 0, 0, 'Es válido para las seis últimas carreras de cada programa, se escoge cualquier número de caballos, se van multiplicando y luego se multiplica por 100.');
+insert into Tipo_Apuesta VALUES (default, 'Ganador', 100, null,  null, null, null, 1, 1, null, true, 1, 1, 'Son Bs. 5 mínimo por cada Bs. 100 jugados a cada caballo.');
+insert into Tipo_Apuesta VALUES (default, 'Place', 5, null,  null, null, 11, 1, 12, null, true, 1, 2, 'Se juega cuando hay más de diez caballos en la carrera. Paga al primero o al segundo, 5 Bs. mínimo por cada uno.');
+insert into Tipo_Apuesta VALUES (default, 'Trifecta sencilla', 200, null,  null, null, null, 3, 36, null, true, 1, 3, 'Se juegan tres caballos y se gana si llegan en el mismo orden en que se jugaron, cuesta 200 Bs.');
+insert into Tipo_Apuesta VALUES (default, 'Trifecta combinada', 1200, null,  null, null, null, 3, 36, null, false, 1, 3, 'Son tres caballos en cualquier orden, cuesta 1.200 Bs.');
+insert into Tipo_Apuesta VALUES (default, 'Superfecta Sencilla', 200, null,  null, null, null, 4, 48, null, true, 1, 4, 'Vale 200 Bs. Son cuatro caballos en el orden estricto de llegada.');
+insert into Tipo_Apuesta VALUES (default, 'Superfecta Combinada', 2400, null,  null, null, null, 4, 48, null, false, 1, 4, 'Vale Bs. 2.400. Son cuatro caballos en cualquier orden de llegada.');
+insert into Tipo_Apuesta VALUES (default, 'Loto Hipico', 200, null,  null, 200, null, 1, 12, null, false, 1, 3, 'Se juega en las diez últimas carreras de cada reunión. Gana si llega del primero al tercero. Se escoge un caballo por carrera. Son Bs. 200 y 200 el adicional.');
+insert into Tipo_Apuesta VALUES (default, 'Exacta Sencilla', 200, null,  null, null, null, 2, 24, null, true, 1, 2, 'Son Bs. 200 y se gana con el primero y el segundo en el orden de llegada.');
+insert into Tipo_Apuesta VALUES (default, 'Exacta Combinada', 400, null,  null, null, null, 2, 24, null, false, 1, 2, 'Son Bs. 400: dos caballos que lleguen primero y segundo, no importa el orden.');
+insert into Tipo_Apuesta VALUES (default, 'Doble Perfecta', 400, null,  null, null, null, 2, 24, null, true, 0, 0, 'Las carreras las escoge el hipódromo, normalmente son dos carreras consecutivas. Gana si el caballo llega como se jugó, es decir en el orden, vale Bs. 200.');
+insert into Tipo_Apuesta VALUES (default, 'Pool de Cuatro', null, null,  200, null, null, 1, 12, null, false, 1, 1, 'Cuatro carreras consecutivas ganando. Se multiplica Bs. 200 por cada caballo jugado');
+
 insert into Tipo_Apuesta VALUES (default, 'Prueba 1', 45.5,   50,   90, 2, 2);
 insert into Tipo_Apuesta VALUES (default, 'Prueba 2', 48.5,   60,   80, 2, 2);
 insert into Tipo_Apuesta VALUES (default, 'Prueba 3', 50,     70,   80, 2, 2);

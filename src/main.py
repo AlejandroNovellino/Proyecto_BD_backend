@@ -206,6 +206,22 @@ tipo_apuesta_parser.add_argument('ta_llegada_en_orden', type=inputs.boolean)
 tipo_apuesta_parser.add_argument('ta_limite_premiado_inferior') 
 tipo_apuesta_parser.add_argument('ta_limite_premiado_superior') 
 tipo_apuesta_parser.add_argument('ta_descripcion') 
+# Apuesta --------------------------------------------------------------------------------
+apuesta_parser = reqparse.RequestParser()
+apuesta_parser.add_argument('apu_clave') 
+apuesta_parser.add_argument('apu_saldo_total')
+apuesta_parser.add_argument('apu_combinacion')
+apuesta_parser.add_argument('apu_fecha_hora')
+apuesta_parser.add_argument('fk_tipoapuesta') 
+apuesta_parser.add_argument('fk_usuario') 
+apuesta_parser.add_argument('fk_aficionado') 
+# DetalleApuesta --------------------------------------------------------------------------------
+detalle_apuesta_parser = reqparse.RequestParser()
+detalle_apuesta_parser.add_argument('da_clave') 
+detalle_apuesta_parser.add_argument('da_orden_llegada_ejemplar')
+detalle_apuesta_parser.add_argument('fk_apuesta')
+detalle_apuesta_parser.add_argument('fk_inscripcion')
+detalle_apuesta_parser.add_argument('fk_metodopago') 
 # ResultadoEjemplar --------------------------------------------------------------------------------
 resultado_ejemplar_parser = reqparse.RequestParser()
 resultado_ejemplar_parser.add_argument('res_clave') 
@@ -560,6 +576,17 @@ class TipoApuestaSchema(ma.SQLAlchemyAutoSchema):
 # instance the class
 tipo_apuesta_schema = TipoApuestaSchema()
 
+# Apuesta schema
+class ApuestaSchema(ma.SQLAlchemyAutoSchema):
+    tipo_apuesta = ma.Nested(TipoApuestaSchema)
+    usuario = ma.Nested(UsuarioSchema)
+    class Meta:
+        model = Apuesta
+        include_fk = True
+        json_module = simplejson
+# instance the class
+apuesta_schema = ApuestaSchema()
+
 # ResultadoEjemplar schema
 class ResultadoEjemplarSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
@@ -579,6 +606,23 @@ class PosicionParcialSchema(ma.SQLAlchemyAutoSchema):
         json_module = simplejson
 # instance the class
 posicion_parcial_schema = PosicionParcialSchema()
+
+# MetodoPago schema
+class MetodoPagoSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = MetodoPago
+        include_fk = True
+# instance the class
+metodo_pago_schema = MetodoPagoSchema()
+
+# DetalleApuesta schema
+class DetalleApuestaSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = DetalleApuesta
+        include_fk = True
+        json_module = simplejson
+# instance the class
+detalle_apuesta_schema = DetalleApuestaSchema()
 
 # Color schema
 class ColorSchema(ma.SQLAlchemyAutoSchema):
@@ -1014,6 +1058,38 @@ class CarrerasToClose(Resource):
 # add the endpoint ot the api
 api.add_resource(CarrerasToClose, '/carreras/cierre')
 
+class CarrerasApostar(Resource):
+    def get(self):
+        # filtered carreras
+        filtered_carreras = []
+
+        # take today date
+        today_date = datetime.datetime.now()
+        aux_date = f'{today_date.year}-{today_date.month}-{today_date.day}'
+
+        # filter by date and resultado ejemplar not registered for that inscription to that carrera
+        carreras_ids = db.engine.execute(f'''
+        SELECT  C.C_Clave
+        FROM    Carrera C
+        WHERE   C.C_Fecha >= '{aux_date}' and
+                EXISTS (
+                    SELECT  *
+                    FROM    Inscripcion I
+                    WHERE   I.FK_Carrera = C.C_Clave and 
+                            I.INS_Clave not in (
+                                SELECT FK_Inscripcion
+                                FROM  Resultado_Ejemplar
+                            )
+                )
+        ;
+        ''')
+
+        for element in carreras_ids:
+            filtered_carreras.append(Carrera.query.get(element[0]))
+
+        return [carrera_schema.dumps(carrera) for carrera in filtered_carreras]
+# add the endpoint ot the api
+api.add_resource(CarrerasApostar, '/carreras/apostar/disponibles')
 
 ### ResultadoEjemplar ###
 
@@ -2120,6 +2196,59 @@ class TipoApuestaList(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(TipoApuestaList, '/tipos/apuesta')
+
+
+
+### Apuesta ###
+
+# list all DetalleApuesta and create one
+class ApuestaList(Resource):
+    def get(self):
+        apuestas = Apuesta.query.all()
+        return [apuesta_schema.dumps(apuesta) for apuesta in apuestas]
+
+    def post(self):
+        try:
+            args = apuesta_parser.parse_args()
+            apuesta = Apuesta.create(**args)
+
+            return apuesta_schema.dumps(apuesta), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(ApuestaList, '/apuestas')
+
+
+### DetalleApuesta ###
+
+# list all DetalleApuesta and create one
+class DetalleApuestaList(Resource):
+    def get(self):
+        detalles_apuestas = TipoApuesta.query.all()
+        return [detalle_apuesta_schema.dumps(detalle) for detalle in detalles_apuestas]
+
+    def post(self):
+        try:
+            args = detalle_apuesta_parser.parse_args()
+            detalle_apuesta = DetalleApuesta.create(**args)
+
+            return detalle_apuesta_schema.dumps(detalle_apuesta), 201
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(DetalleApuestaList, '/detalles/apuestas')
+
+
+### MetodoPago ###
+# shows a list of all MetodoPago
+class MetodoPagoEndPoint(Resource):
+    def get(self):
+        metodos_pago = MetodoPago.query.all()
+        return [metodo_pago_schema.dump(metodo_pago) for metodo_pago in metodos_pago]
+# add the endpoint ot the api
+api.add_resource(MetodoPagoEndPoint, '/metodos/pago')
 
 
 ### Color ###

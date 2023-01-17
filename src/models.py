@@ -452,11 +452,13 @@ class DetalleApuesta(db.Model):
         db.session.add(element)
         try: 
             db.session.commit()
-        except IntegrityError:
+        except IntegrityError as e:
             db.session.rollback()
+            print(e)
             raise Exception("Key not unique")
-        except Exception:
+        except Exception as e:
             db.session.rollback()
+            print(e)
             raise Exception("A problem ocurred")
         return element
 
