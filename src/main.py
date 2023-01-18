@@ -2369,8 +2369,6 @@ class ReportsTestEndPoint(Resource):
             db_table = args["db_table"]
             carrera = args["carrera"]
             clave = args["clave"]
-            print(clave)
-            print(type(clave))
             # generate the file
             path_to_report = generateReport(file_name, db_table, clave, carrera)
             

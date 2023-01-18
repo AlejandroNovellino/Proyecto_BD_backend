@@ -6974,7 +6974,7 @@ insert into Posicion_Parcial VALUES(DEFAULT,0,'1:13.2',1,448);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:13.3',1,449);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:13.1',1,450);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:20.1',1,451);
-insert into Posicion_Parcial VALUES(DEFAULT,0,'1:87.0',1,452);
+insert into Posicion_Parcial VALUES(DEFAULT,0,'1:53.0',1,452);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:12.2',1,453);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:05.0',1,454);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:20.4',1,455);
@@ -7430,7 +7430,7 @@ insert into Apuesta VALUES (default, 45, 4, '2020-12-18', 3, null, 29551908,2);
 insert into Apuesta VALUES (default, 45, 5, '2020-12-20', 3, null, 29583211,2);
 
 
-insert into detalle_apuesta VALUES (default,2,45.00,1,10 ,22);
+insert into detalle_apuesta VALUES (default,2,45.00,1,10 ,2);
 insert into detalle_apuesta VALUES (default,1,45.00,2, 20,2);
 insert into detalle_apuesta VALUES (default,1,45.00,3,30 ,2);
 insert into detalle_apuesta VALUES (default,1,45.00,4, 40,2);
@@ -7439,7 +7439,7 @@ insert into detalle_apuesta VALUES (default,1,45.00,6,50 ,2);
 insert into detalle_apuesta VALUES (default,1,45.00,7,55 ,2);
 insert into detalle_apuesta VALUES (default,1,45.00,8,60 ,2);
 insert into detalle_apuesta VALUES (default,1,45.00,9, 65,2);
-insert into detalle_apuesta VALUES (default,1,45.00,10,2);
+insert into detalle_apuesta VALUES (default,1,45.00,10,65,2);
 
 
 
