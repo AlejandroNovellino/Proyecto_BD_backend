@@ -1129,26 +1129,6 @@ class CarrerasWithResults(Resource):
 api.add_resource(CarrerasWithResults, '/carreras/con/resutlados/del/dia')
 
 
-class InscripcionesParaCarrera(Resource):
-    def get(self, carrera_id):
-        # filtered carreras
-        inscripciones = []
-
-        # filter by date fk
-        ins_ids = db.engine.execute(f'''
-        SELECT  I.INS_Clave
-        FROM    Inscripcion I
-        WHERE   I.FK_Carrera={carrera_id};
-        ''')
-
-        for element in ins_ids:
-            inscripciones.append(Inscripcion.query.get(element[0]))
-
-        return [inscripcion_schema.dumps(inscripcion) for inscripcion in inscripciones]
-# add the endpoint ot the api
-api.add_resource(InscripcionesParaCarrera, '/inscripciones/carrera/<carrera_id>')
-
-
 ### ResultadoEjemplar ###
 
 # list all ResultadoEjemplar and create one
@@ -1193,6 +1173,24 @@ class ResultadoEjemplarEndPoint(Resource):
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(ResultadoEjemplarEndPoint, '/resultado/ejemplar')
+
+
+class ResutladoInscripcionEndPoint(Resource):
+    def get(self, inscripcion_id):
+        resultado = ResultadoEjemplar.query.filter_by(fk_inscripcion=inscripcion_id).all()
+        return resultado_ejemplar_schema.dumps(resultado)
+# add the endpoint ot the api
+api.add_resource(ResutladoInscripcionEndPoint, '/resultado/inscripcion/<inscripcion_id>')
+
+
+
+class EntrenadorCaballeriza(Resource):
+    def get(self, e_cab):
+        resultado = HistoricoEntrenador.query.filter_by(fk_caballeriza=e_cab, he_activo=True).first()
+        entrenador = Entrenador.query.get(resultado.fk_entrenador)
+        return entrenador_schema.dumps(entrenador)
+# add the endpoint ot the api
+api.add_resource(EntrenadorCaballeriza, '/entrenador/caballeriza/<e_cab>')
 
 
 ### PosicionParcial ###
