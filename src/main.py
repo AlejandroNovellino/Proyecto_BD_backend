@@ -2196,7 +2196,7 @@ class TipoApuestaEndPoint(Resource):
         apuestas = Apuesta.query.filter_by(fk_tipoapuesta=tipo_apuesta.ta_clave).all()
         for apuesta in apuestas:
             # for each apuesta eliminar detalle apuesta
-            detalles_apuestas = Apuesta.query.filter_by(fk_apuesta=apuesta.apu_clave).all()
+            detalles_apuestas = DetalleApuesta.query.filter_by(fk_apuesta=apuesta.apu_clave).all()
             for detalle_apuesta in detalles_apuestas:
                 deleteElement(detalle_apuesta)
 
