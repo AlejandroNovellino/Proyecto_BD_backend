@@ -7428,3 +7428,18 @@ insert into Apuesta VALUES (default, 45, 2, '2020-12-14', 2, null, 29553823,20);
 insert into Apuesta VALUES (default, 45, 3, '2020-12-15', 2, null, 29553823,1);
 insert into Apuesta VALUES (default, 45, 4, '2020-12-18', 3, null, 29551908,2);
 insert into Apuesta VALUES (default, 45, 5, '2020-12-20', 3, null, 29583211,2);
+
+
+insert into detalle_apuesta VALUES (default,2,45.00,1,10 ,22);
+insert into detalle_apuesta VALUES (default,1,45.00,2, 20,2);
+insert into detalle_apuesta VALUES (default,1,45.00,3,30 ,2);
+insert into detalle_apuesta VALUES (default,1,45.00,4, 40,2);
+insert into detalle_apuesta VALUES (default,1,45.00,5,45 ,2);
+insert into detalle_apuesta VALUES (default,1,45.00,6,50 ,2);
+insert into detalle_apuesta VALUES (default,1,45.00,7,55 ,2);
+insert into detalle_apuesta VALUES (default,1,45.00,8,60 ,2);
+insert into detalle_apuesta VALUES (default,1,45.00,9, 65,2);
+insert into detalle_apuesta VALUES (default,1,45.00,10,2);
+
+
+
