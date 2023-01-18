@@ -6850,7 +6850,7 @@ insert into Posicion_Parcial VALUES(DEFAULT,800,'0:47.1',3,324);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:5.3',1,325);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:25.1',1,326);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:13.2',1,327);
-insert into Posicion_Parcial VALUES(DEFAULT,0,'1:88.0',1,328);
+insert into Posicion_Parcial VALUES(DEFAULT,0,'1:53.0',1,328);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:53.3',1,329);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:14.0',1,330);
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:21.3',2,331);
