@@ -5744,7 +5744,7 @@ insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,490);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,491);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,492);
 insert into Resultado_Ejemplar VALUES(DEFAULT,2,2,8.29,75,0,493);
-insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,494);
+insert into Resultado_Ejemplar VALUES(DEFAULT,3,2,8.29,75,0,494);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,495);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,496);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,497);
@@ -5865,7 +5865,6 @@ insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,611);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,612);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,613);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,614);
-insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,615);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,615);
 
 --PP_Clave, PP_Distancia, PP_Tiempo, PP_Posicion, FK_Resultado
