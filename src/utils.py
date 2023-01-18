@@ -45,11 +45,11 @@ def generate_sitemap(app):
         <ul style="text-align: left;">"""+links_html+"</ul></div>"
 
 # Reports ---------------------------------------------------------------------------------------------------------------------------
-def generateReport(file_name, db_table):
+def generateReport(file_name, db_table, clave=None, carrera=None):
 
     JDBC_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'jarDriver')
     REPORTS_INPUT_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'reportsSchema')
-    REPORTS_OUTPUT_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'reports')
+    REPORTS_OUTPUT_DIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'static/reports')
 
     input_file = os.path.join(REPORTS_INPUT_DIR, file_name+'.jrxml')
     output_file = os.path.join(REPORTS_OUTPUT_DIR, file_name)
@@ -71,7 +71,11 @@ def generateReport(file_name, db_table):
         output_file,
         db_connection=conn,
         output_formats=["pdf"],
-        parameters={'python_version': python_version()},
+        parameters={
+            'python_version': python_version(),
+            'clave': clave,
+            'carrera': carrera
+            },
         locale='en_US'
     )
     pyreportjasper.process_report()

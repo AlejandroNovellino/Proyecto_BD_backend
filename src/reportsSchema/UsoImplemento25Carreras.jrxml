@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="UsoImplemento25Carreras" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48cb1d42-d840-451e-a86f-4192f26c1070">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BD_app"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT l.i_nombre,(CAST(l.e AS float)/((SELECT count(*)  
+FROM inscripcion i, implemento IM, (SELECT c_fecha,c_clave
+				                    FROM carrera 
+				  				    order by c_fecha desc limit 25
+                                   )as c			  
+WHERE i.fk_carrera=c.c_clave
+and	im.i_codigo=i.fk_implemento
+	) + (select count(*)  
+			              	FROM inscripcion i, implemento IM, (SELECT c_fecha,c_clave
+																FROM carrera 
+				  												order by c_fecha desc limit 25
+				  												)as c,solicitud_implemento s			  
+					      WHERE i.fk_carrera=c.c_clave											
+		                  AND i.ins_clave=s.fk_inscripcion
+		 				  AND (im.i_codigo=s.fk_implemento)
+ 					     )) 
+)*100	
+FROM   ((SELECT CAST(count(*)  AS float) as e,im.i_nombre
+FROM inscripcion i, implemento IM, (SELECT c_fecha,c_clave
+				                    FROM carrera 
+				  				    order by c_fecha desc limit 25
+                                   )as c			  
+WHERE i.fk_carrera=c.c_clave
+and	im.i_codigo=i.fk_implemento
+	 Group by im.i_nombre )
+UNION																		
+(SELECT CAST(count(*)  AS float) as la,im.i_nombre
+			              	FROM inscripcion i, implemento IM, (SELECT c_fecha,c_clave
+																FROM carrera 
+				  												order by c_fecha desc limit 25
+				  												)as c,solicitud_implemento s			  
+					      WHERE i.fk_carrera=c.c_clave											
+		                  AND i.ins_clave=s.fk_inscripcion
+		 				  AND (im.i_codigo=s.fk_implemento)
+ 					     Group by im.i_nombre
+						  ))	as l
+Group by l.i_nombre,l.e	]]>
+	</queryString>
+	<field name="i_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="i_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="i_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="implemento"/>
+	</field>
+	<field name="?column?" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="?column?"/>
+		<property name="com.jaspersoft.studio.field.label" value="?column?"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="8a9853eb-eac1-49da-b881-f2f8dbcbd4ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTES
+Hipodromo la Rinconada]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="99" width="570" height="2" uuid="057add05-d0ee-4c24-aa8d-30710b6b737e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="400" y="84" width="100" height="16" uuid="f5f1a729-eebf-41ed-9e87-9e679da06a35"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="500" y="84" width="100" height="16" uuid="17ef8069-5f65-4586-aa29-23055477dcb6"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="19" width="420" height="45" backcolor="#1C3659" uuid="74ff1919-1d0e-45c3-ba5d-6300fea768de"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listado del Promedio de uso de los implementos en las últimas 25 carreras.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="30" width="140" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="fb9f0611-da96-485d-8cdf-2a3c275735ef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e55c56c4-1bf4-4de8-880c-5d4e66067725"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#080101"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Implemento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="220" y="30" width="260" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="e251071f-4683-4df9-af01-86f0ff70b33b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4edd1cd-3a40-457a-b41f-28452b9dc062"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#080101"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Porcentaje(%) de uso en las carreras]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="140" height="30" uuid="b1596a92-8591-4729-a7ae-a11ad1dac496">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e55c56c4-1bf4-4de8-880c-5d4e66067725"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{i_nombre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(-#,##0.###)">
+				<reportElement x="220" y="0" width="260" height="30" uuid="f5f80981-78e4-484c-9c6d-ba923cc66d67">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e4edd1cd-3a40-457a-b41f-28452b9dc062"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{?column?}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="5" width="566" height="80" uuid="cec3abe1-6d3c-4c8f-b963-10772c1f09a8"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[
+
+
+Representacion impresa de listado de usuarios registrados en la aplicacion del hipodromo 
+Para mas informacion visite la pagina web
+
+
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

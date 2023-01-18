@@ -11,6 +11,7 @@ from utils import APIException, generate_sitemap, generateReport
 from admin import setup_admin
 from models import *
 import json
+from werkzeug.utils import secure_filename
 
 # marshmellow import
 from flask_marshmallow import Marshmallow 
@@ -219,6 +220,7 @@ apuesta_parser.add_argument('fk_aficionado')
 detalle_apuesta_parser = reqparse.RequestParser()
 detalle_apuesta_parser.add_argument('da_clave') 
 detalle_apuesta_parser.add_argument('da_orden_llegada_ejemplar')
+detalle_apuesta_parser.add_argument('da_monto_apostar')
 detalle_apuesta_parser.add_argument('fk_apuesta')
 detalle_apuesta_parser.add_argument('fk_inscripcion')
 detalle_apuesta_parser.add_argument('fk_metodopago') 
@@ -245,6 +247,8 @@ color_parser.add_argument('col_nombre')
 report_parser = reqparse.RequestParser()
 report_parser.add_argument('file_name')
 report_parser.add_argument('db_table')
+report_parser.add_argument('carrera', type=int)
+report_parser.add_argument('clave', type=int)
 
 # schemas for the models -------------------------------------------------------------------------
 
@@ -1090,6 +1094,60 @@ class CarrerasApostar(Resource):
         return [carrera_schema.dumps(carrera) for carrera in filtered_carreras]
 # add the endpoint ot the api
 api.add_resource(CarrerasApostar, '/carreras/apostar/disponibles')
+
+class CarrerasWithResults(Resource):
+    def get(self):
+        # filtered carreras
+        filtered_carreras = []
+
+        # take today date
+        today_date = datetime.datetime.now()
+        aux_date = f'{today_date.year}-{today_date.month}-{today_date.day}'
+
+        # filter by date and resultado ejemplar not registered for that inscription to that carrera
+        carreras_ids = db.engine.execute(f'''
+        SELECT  C.C_Clave
+        FROM    Carrera C
+        WHERE   C.C_Fecha = '{aux_date}' and
+                EXISTS (
+                    SELECT  *
+                    FROM    Inscripcion I
+                    WHERE   I.FK_Carrera = C.C_Clave and 
+                            I.INS_Clave in (
+                                SELECT FK_Inscripcion
+                                FROM  Resultado_Ejemplar
+                            )
+                )
+        ;
+        ''')
+
+        for element in carreras_ids:
+            filtered_carreras.append(Carrera.query.get(element[0]))
+
+        return [carrera_schema.dumps(carrera) for carrera in filtered_carreras]
+# add the endpoint ot the api
+api.add_resource(CarrerasWithResults, '/carreras/con/resutlados/del/dia')
+
+
+class InscripcionesParaCarrera(Resource):
+    def get(self, carrera_id):
+        # filtered carreras
+        inscripciones = []
+
+        # filter by date fk
+        ins_ids = db.engine.execute(f'''
+        SELECT  I.INS_Clave
+        FROM    Inscripcion I
+        WHERE   I.FK_Carrera={carrera_id};
+        ''')
+
+        for element in ins_ids:
+            inscripciones.append(Inscripcion.query.get(element[0]))
+
+        return [inscripcion_schema.dumps(inscripcion) for inscripcion in inscripciones]
+# add the endpoint ot the api
+api.add_resource(InscripcionesParaCarrera, '/inscripciones/carrera/<carrera_id>')
+
 
 ### ResultadoEjemplar ###
 
@@ -2133,20 +2191,23 @@ class TipoApuestaEndPoint(Resource):
         return tipo_apuesta_schema.dumps(tipo_apuesta)
 
     def delete(self, tipo_apuesta_id):
+        # toma el tipo de apuesta
         tipo_apuesta = TipoApuesta.query.get(tipo_apuesta_id)
 
         # delete all apuestas referencing it
-        apuestas = Apuesta.query.filter_by(fk_tipoapuesta=tipo_apuesta.ta_clave)
+        apuestas = Apuesta.query.filter_by(fk_tipoapuesta=tipo_apuesta.ta_clave).all()
         for apuesta in apuestas:
-            try:
-                apuesta.fk_tipoapuesta = None
-                db.session.commit()
-            except Exception as e:
-                print(e)
-                db.session.rollback()
-                return 'Could not be updated', 400
+            # for each apuesta eliminar detalle apuesta
+            detalles_apuestas = Apuesta.query.filter_by(fk_apuesta=apuesta.apu_clave).all()
+            for detalle_apuesta in detalles_apuestas:
+                deleteElement(detalle_apuesta)
 
+            # delete apuesta
+            deleteElement(apuesta)
+
+        # delete tipo apuesta
         response = deleteElement(tipo_apuesta)
+
         if response:
             return 'Deleted', 200
         else:
@@ -2278,16 +2339,50 @@ class ReportsEndPoint(Resource):
             # get data
             file_name = args["file_name"]
             db_table = args["db_table"]
-            # get the url for the pdf
-            output_file = generateReport(file_name, db_table)
-            # return it plus '.pdf'
-            return output_file+'.pdf', '200'
+            # generate the file
+            generateReport(file_name, db_table)
+            # generate the file path
+            secured_filename = secure_filename(file_name+'.pdf')
+            image_path = os.path.join(app.static_folder, 'reports')
+            # prints to verify
+            print(image_path)
+            print(secured_filename)
+            print(os.path.join(image_path, secured_filename))
+            
+            if os.path.exists(os.path.join(image_path, secured_filename)):
+                return send_from_directory(image_path, secured_filename)
 
         except BaseException as e:
             print(e)
             return 'Failed', 400
 # add the endpoint ot the api
 api.add_resource(ReportsEndPoint, '/reports')
+
+### Report ###
+# generate a report
+class ReportsTestEndPoint(Resource):
+    def post(self):
+        try:
+            args = report_parser.parse_args()
+            # get data
+            file_name = args["file_name"]
+            db_table = args["db_table"]
+            carrera = args["carrera"]
+            clave = args["clave"]
+            print(clave)
+            print(type(clave))
+            # generate the file
+            path_to_report = generateReport(file_name, db_table, clave, carrera)
+            
+            if path_to_report:
+                return "http://127.0.0.1:8887/"+file_name+".pdf", 200
+
+        except BaseException as e:
+            print(e)
+            return 'Failed', 400
+# add the endpoint ot the api
+api.add_resource(ReportsTestEndPoint, '/reports/test')
+
 
 #------------------------------------------------------------------------------------------
 

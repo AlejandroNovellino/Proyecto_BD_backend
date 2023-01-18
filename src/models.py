@@ -438,6 +438,7 @@ class DetalleApuesta(db.Model):
 
     da_clave = db.Column(db.Integer, primary_key=True, server_default=db.FetchedValue())
     da_orden_llegada_ejemplar = db.Column(db.Numeric(2, 0), nullable=False)
+    da_monto_apostar = db.Column(db.Numeric(10, 2), nullable=False)
     fk_apuesta = db.Column(db.ForeignKey('apuesta.apu_clave'), nullable=False)
     fk_inscripcion = db.Column(db.ForeignKey('inscripcion.ins_clave'), nullable=False)
     fk_metodopago = db.Column(db.ForeignKey('metodo_pago.mp_clave'), nullable=False)

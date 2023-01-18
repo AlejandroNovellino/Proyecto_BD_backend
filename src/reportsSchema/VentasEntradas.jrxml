@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VentasEntradas" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ec8c5194-ccf1-4e74-9e04-081060be2df1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BD_app"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT count(*),sum(v.vb_total_venta), (select  sum(d.dv_num_boleto)
+											from detallado_venta d
+											)
+FROM venta_boleto v
+	]]>
+	</queryString>
+	<field name="count" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="count"/>
+		<property name="com.jaspersoft.studio.field.label" value="count"/>
+	</field>
+	<field name="sum" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="sum"/>
+		<property name="com.jaspersoft.studio.field.label" value="sum"/>
+	</field>
+	<field name="COLUMN_3" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="sum"/>
+		<property name="com.jaspersoft.studio.field.label" value="sum"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="fd937c96-29b8-45fd-8d10-9ce7b1ee899b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTES
+Hipodromo la Rinconada]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="99" width="570" height="2" uuid="e9bb7406-9064-4021-8113-511204b26022">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="400" y="84" width="100" height="16" uuid="9a6c4311-7be9-4eb3-9e30-425c4a05ed08"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="500" y="84" width="100" height="16" uuid="b4b102c9-8dcb-4f9c-85f2-1e2dda968613"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="19" width="550" height="41" backcolor="#1C3659" uuid="964dd280-0e4e-47c1-b375-8158556c7176"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de ventas en entradas al recinto]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="31" width="100" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="375daae7-6438-4ec4-a435-3087e1c04472">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84287d5d-a4a9-4646-b1c1-a9b62fca2960"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#080101"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nro de ventas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="218" y="31" width="100" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="fa148434-d5eb-4e0c-9d4c-ca2c7a54dc2b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b6d1ea33-ec05-4dab-84bc-b942df01d65c"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#080101"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de ventas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="316" y="31" width="114" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="ba6c4cb1-d201-4eca-a2e1-9ac912368bab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="734eb537-98a1-4a82-8d75-a8c653fba3c2"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#080101"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#080101"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de entradas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="118" y="0" width="100" height="30" uuid="d7127997-dc0d-4384-817a-e0ec57d9ffd7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84287d5d-a4a9-4646-b1c1-a9b62fca2960"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="-1" width="100" height="30" uuid="e7e35c00-9637-47dc-87c4-d8e5e9c4388c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b6d1ea33-ec05-4dab-84bc-b942df01d65c"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="-1" width="112" height="30" uuid="c59bcd94-574f-457b-965d-7c86bde949c1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="734eb537-98a1-4a82-8d75-a8c653fba3c2"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_3}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="5" width="566" height="80" uuid="5946b352-14f5-4150-92b2-28d46d2386a3"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[
+
+
+Representacion impresa de listado de usuarios registrados en la aplicacion del hipodromo 
+Para mas informacion visite la pagina web
+
+
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

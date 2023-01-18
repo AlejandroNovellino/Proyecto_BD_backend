@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TotalApuestaPorTaquillaTipoA" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b78cd021-e701-4530-b096-472cb8f24c27">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BD_app"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT count(*),t.taa_numero,ta.ta_nombre,sum(a.apu_saldo_total)
+FROM taquilla_apuesta t, apuesta a, tipo_apuesta ta
+WHERE a.fk_taquillaapuesta=t.taa_clave
+AND ta.ta_clave=a.fk_tipoapuesta
+Group by t.taa_clave,ta.ta_nombre]]>
+	</queryString>
+	<field name="count" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="count"/>
+		<property name="com.jaspersoft.studio.field.label" value="count"/>
+	</field>
+	<field name="taa_numero" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="taa_numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="taa_numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="taquilla_apuesta"/>
+	</field>
+	<field name="ta_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ta_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="ta_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_apuesta"/>
+	</field>
+	<field name="sum" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="sum"/>
+		<property name="com.jaspersoft.studio.field.label" value="sum"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="a7650337-fd17-4d8f-947c-30f0d3766763"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTES
+Hipodromo la Rinconada]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="400" y="84" width="100" height="16" uuid="b9731827-6ac2-40e8-9146-04f7a7717e82"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="500" y="84" width="100" height="16" uuid="8e8e891d-644b-4ca5-91a8-5c8cfc6d8eba"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="99" width="570" height="2" uuid="9e7f77b8-a06a-416e-8aff-bf00b3e63cfc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<staticText>
+				<reportElement x="76" y="13" width="420" height="45" backcolor="#1C3659" uuid="3d5a749e-012e-4033-98e4-bdfe84808275"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Listado total de apuestas por taquilla y por tipo de apuesta]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="293" y="23" width="121" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="30f35052-bb33-4df0-96d8-78ac354c2b90">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8eaf741c-9bf8-4054-99b6-d7cc476e6a9b"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Apuesta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="47" y="23" width="139" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="38d27b4d-303d-453e-8fd9-558ade6f07bc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="639c83d5-9ef5-41f6-b423-642d44560e2b"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero de taquilla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="415" y="23" width="130" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="c57fbecc-936e-4f33-b02c-90e41220a103">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04920d08-ed72-4191-9054-d494160552a5"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de ventas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="186" y="23" width="107" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="9d1cb925-0d6a-486d-a017-e01bcb81197b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9c3eef03-7e7a-441f-8242-e5e4271920d5"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo apuesta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="293" y="0" width="122" height="30" uuid="3a7a2070-c8f3-4533-987d-4daf155dbd00">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8eaf741c-9bf8-4054-99b6-d7cc476e6a9b"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="0" width="139" height="30" uuid="15f6f10e-37c8-4ea2-a399-11ff71e2ce92">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="639c83d5-9ef5-41f6-b423-642d44560e2b"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taa_numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="131" height="30" uuid="5be51f27-46f1-440f-b856-a3663055862c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04920d08-ed72-4191-9054-d494160552a5"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="0" width="107" height="30" uuid="8017f04c-c129-4d04-9bb1-c541dc40f452">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9c3eef03-7e7a-441f-8242-e5e4271920d5"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ta_nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="5" width="566" height="80" uuid="3ea5f530-d5e8-48a2-8581-ce73389ebebb"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[
+
+
+Representacion impresa de listado de usuarios registrados en la aplicacion del hipodromo 
+Para mas informacion visite la pagina web
+
+
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

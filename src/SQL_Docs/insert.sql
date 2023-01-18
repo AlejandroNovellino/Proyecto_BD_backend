@@ -3529,7 +3529,7 @@ insert into Ejemplar VALUES(422,'The Big Louis','C','C','2019-08-13','2024-03-04
 insert into Ejemplar VALUES(423,'Trusting Mate','A','C','2019-01-11','2024-03-04',439,19,null,null,976,42);
 insert into Ejemplar VALUES(424,'Strength Arno','C','C','2018-12-29','2024-03-04',492,14,null,null,975,42);
 insert into Ejemplar VALUES(425,'Papa Junior','C','C','2019-08-27','2024-03-04',461,27,null,null,974,42);
-insert into Ejemplar VALUES(426,'The Big Kamelot','Z','C','2018-11-30','2024-03-04',421,33,null,null,973,42);
+insert into Ejemplar VALUES(426,'The Big Kamelot','Z','C','2018-11-30','2024-03-04',421,25,null,null,973,42);
 insert into Ejemplar VALUES(427,'My Five Mate','C','C','2019-05-18','2024-03-04',438,1,null,null,972,42);
 insert into Ejemplar VALUES(428,'Soy del Castillo','A','C','2019-04-02','2024-03-04',478,13,null,null,971,42);
 insert into Ejemplar VALUES(429,'El Gran Jorge','C','C','2019-01-31','2024-03-04',399,31,null,null,970,41);
@@ -3544,7 +3544,7 @@ insert into Ejemplar VALUES(437,'My Funny Gold','Z','Y','2019-01-03','2024-03-04
 insert into Ejemplar VALUES(438,'La de Omar','A','Y','2018-10-04','2024-03-04',466,31,null,null,961,41);
 insert into Ejemplar VALUES(439,'La Sensacion','C','Y','2018-03-29','2024-03-04',451,19,null,null,960,41);
 insert into Ejemplar VALUES(440,'Aprile','A','Y','2018-09-22','2024-03-04',448,2,null,null,959,41);
-insert into Ejemplar VALUES(441,'Chipis Time','C','Y','2019-01-14','2024-03-04',419,33,null,null,958,41);
+insert into Ejemplar VALUES(441,'Chipis Time','C','Y','2019-01-14','2024-03-04',419,25,null,null,958,41);
 insert into Ejemplar VALUES(442,'Sweet Champ','T','Y','2018-08-09','2024-03-04',422,8,null,null,957,41);
 insert into Ejemplar VALUES(443,'Waya Waya','C','Y','2018-04-02','2024-03-04',493,28,null,null,956,41);
 insert into Ejemplar VALUES(444,'Cheetah','C','Y','2018-06-30','2024-03-04',428,17,null,null,955,41);
@@ -5223,7 +5223,7 @@ insert into Inscripcion VALUES(DEFAULT,12,12,'2022-09-16',false,null,189,368,11)
 
 insert into Inscripcion VALUES(DEFAULT,2,2,'2022-07-07',false,null,190,422,11);
 insert into Inscripcion VALUES(DEFAULT,5,5,'2022-08-18',false,null,191,423,11);
-insert into Inscripcion VALUES(DEFAULT,4,4,'2022-09-30',false,null,192,424,11);--612
+insert into Inscripcion VALUES(DEFAULT,4,4,'2022-09-30',false,null,192,424,11);--611
 --
 
 --
@@ -5231,7 +5231,7 @@ insert into Inscripcion VALUES(DEFAULT,4,4,'2022-09-30',false,null,192,424,11);-
 --
 
 insert into Inscripcion VALUES(DEFAULT,2,2,'2022-01-13',false,null,193,425,11);
-insert into Inscripcion VALUES(DEFAULT,3,3,'2022-02-06',false,null,194,341,11);--614
+insert into Inscripcion VALUES(DEFAULT,3,3,'2022-02-06',false,null,194,341,11);--613
 --
 --
 
@@ -5241,7 +5241,7 @@ insert into Inscripcion VALUES(DEFAULT,3,3,'2022-02-06',false,null,194,341,11);-
 --
 
 insert into Inscripcion VALUES(DEFAULT,10,10,'2022-05-26',false,null,195,426,11);
-insert into Inscripcion VALUES(DEFAULT,8,8,'2022-07-28',false,null,196,426,11);--616
+insert into Inscripcion VALUES(DEFAULT,8,8,'2022-07-28',false,null,196,426,11);--615
 --
 
 
@@ -5866,7 +5866,7 @@ insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,612);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,613);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,614);
 insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,615);
-insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,616);
+insert into Resultado_Ejemplar VALUES(DEFAULT,1,2,8.29,75,0,615);
 
 --PP_Clave, PP_Distancia, PP_Tiempo, PP_Posicion, FK_Resultado
 insert into Posicion_Parcial VALUES(DEFAULT,0,'1:8.54',4,1);
@@ -7327,13 +7327,7 @@ insert into Tipo_Apuesta VALUES (default, 'Loto Hipico', 200, null,  null, 200, 
 insert into Tipo_Apuesta VALUES (default, 'Exacta Sencilla', 200, null,  null, null, null, 2, 24, null, true, 1, 2, 'Son Bs. 200 y se gana con el primero y el segundo en el orden de llegada.');
 insert into Tipo_Apuesta VALUES (default, 'Exacta Combinada', 400, null,  null, null, null, 2, 24, null, false, 1, 2, 'Son Bs. 400: dos caballos que lleguen primero y segundo, no importa el orden.');
 insert into Tipo_Apuesta VALUES (default, 'Doble Perfecta', 400, null,  null, null, null, 2, 24, null, true, 0, 0, 'Las carreras las escoge el hipódromo, normalmente son dos carreras consecutivas. Gana si el caballo llega como se jugó, es decir en el orden, vale Bs. 200.');
-insert into Tipo_Apuesta VALUES (default, 'Pool de Cuatro', null, null,  200, null, null, 1, 12, null, false, 1, 1, 'Cuatro carreras consecutivas ganando. Se multiplica Bs. 200 por cada caballo jugado');
-
-insert into Tipo_Apuesta VALUES (default, 'Prueba 1', 45.5,   50,   90, 2, 2);
-insert into Tipo_Apuesta VALUES (default, 'Prueba 2', 48.5,   60,   80, 2, 2);
-insert into Tipo_Apuesta VALUES (default, 'Prueba 3', 50,     70,   80, 2, 2);
-insert into Tipo_Apuesta VALUES (default, 'Prueba 4', 60,     30,   90, 2, 2);
-insert into Tipo_Apuesta VALUES (default, 'Prueba 5', 190,   100,  300, 2, 2);
+insert into Tipo_Apuesta VALUES (default, 'Pool de Cuatro', 0, null,  200, null, null, 1, 12, null, false, 1, 1, 'Cuatro carreras consecutivas ganando. Se multiplica Bs. 200 por cada caballo jugado');
 
 -- Apuesta
 insert into Apuesta VALUES (default, 45, 1, '2020-12-12', 1, 1, null,null);

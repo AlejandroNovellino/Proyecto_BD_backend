@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TotalApuestaPorTaquiCarreraTipo" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="420d1bef-25a4-4d87-a99c-56b80a7fa0b3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BD_app"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT count(*),t.taa_numero,ta.ta_nombre,sum(a.apu_saldo_total), i.fk_carrera
+FROM taquilla_apuesta t, apuesta a, tipo_apuesta ta,detalle_apuesta d, inscripcion i
+WHERE a.fk_taquillaapuesta=t.taa_clave
+AND ta.ta_clave=a.fk_tipoapuesta
+AND d.fk_apuesta=a.apu_clave
+AND i.ins_clave=d.fk_inscripcion
+Group by t.taa_clave,i.fk_carrera,ta.ta_nombre]]>
+	</queryString>
+	<field name="count" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="count"/>
+		<property name="com.jaspersoft.studio.field.label" value="count"/>
+	</field>
+	<field name="taa_numero" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="taa_numero"/>
+		<property name="com.jaspersoft.studio.field.label" value="taa_numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="taquilla_apuesta"/>
+	</field>
+	<field name="ta_nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ta_nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="ta_nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tipo_apuesta"/>
+	</field>
+	<field name="sum" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="sum"/>
+		<property name="com.jaspersoft.studio.field.label" value="sum"/>
+	</field>
+	<field name="fk_carrera" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="fk_carrera"/>
+		<property name="com.jaspersoft.studio.field.label" value="fk_carrera"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="inscripcion"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="152" y="23" width="300" height="49" forecolor="#1C3659" backcolor="#FFFFFF" uuid="a84d41f5-1615-4a70-9ca4-ed5486525506"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTES
+Hipodromo la Rinconada]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="99" width="570" height="2" uuid="8a12741c-6371-4ff1-a078-233d90be4eab">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="400" y="84" width="100" height="16" uuid="aee907c5-d877-446e-8770-7b0f106ce15a"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="500" y="84" width="100" height="16" uuid="6e8ee1a7-b3f8-4b93-9661-b20cdbc4fb1f"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="19" width="420" height="45" backcolor="#1C3659" uuid="91cffe8d-8707-49b5-a86f-750ea2f94f3e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total pagado por taquilla por carrera y por tipo de apuestas.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="301" y="31" width="119" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="2514a84b-2da5-4974-a976-27a9ceaeb9f7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8bbf0849-47bb-4048-9d5f-e07f916beace"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de apuesta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="49" y="31" width="130" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="1d3ff767-0c89-4d18-acf4-5bc171065292">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a07e6141-0c46-4abe-abd3-e0492ac6aeba"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero de taquilla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="179" y="31" width="122" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="0a7fe74c-a1f2-4df0-a646-b9040420bd65">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c286eca-6c47-46f6-806d-d3d0a743856e"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de apuesta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="420" y="31" width="120" height="30" forecolor="#FFFFFF" backcolor="#1C3659" uuid="becc70cf-acfb-46f1-90ae-01cce88400b8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a715e40b-4293-4662-8dad-40ae777e6f34"/>
+				</reportElement>
+				<box>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de ventas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="301" y="0" width="119" height="30" uuid="0eec8baa-f5ae-4e55-a060-11a53dfa7fda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8bbf0849-47bb-4048-9d5f-e07f916beace"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="-1" width="129" height="30" uuid="1d8156a6-dfe4-4a52-a42b-f35bfe7ca1f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a07e6141-0c46-4abe-abd3-e0492ac6aeba"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{taa_numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="-1" width="121" height="30" uuid="9deba711-10aa-48d2-a434-25bf50de421e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c286eca-6c47-46f6-806d-d3d0a743856e"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ta_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="-1" width="120" height="30" uuid="9d2de5a3-0d8d-4463-9eca-af333dd5a7da">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a715e40b-4293-4662-8dad-40ae777e6f34"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="5" width="566" height="80" uuid="2d53c7f9-7660-4384-953b-b114008cb450"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[
+
+
+Representacion impresa de listado de usuarios registrados en la aplicacion del hipodromo 
+Para mas informacion visite la pagina web
+
+
+]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

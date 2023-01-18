@@ -782,7 +782,7 @@ create Table Apuesta(
 create table Detalle_Apuesta(
 	DA_Clave										serial not null unique ,
 	DA_Orden_Llegada_Ejemplar		Numeric(2) not null,
-	DA_Monto_apostar				numeric(10,2) NOT NULL,
+	DA_Monto_apostar						numeric(10,2) NOT NULL,
 	FK_Apuesta									integer not null,
 	FK_Inscripcion						  integer not null,
 	FK_MetodoPago								integer NOT NULL,
